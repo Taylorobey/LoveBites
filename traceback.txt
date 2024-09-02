@@ -1,24 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 23, in script
-    say "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the dark affords them."
-TypeError: say() missing 1 required positional argument: 'what'
+  File "game/story/intro_cutscene.rpy", line 28, in script
+    show bg street dog with Fade
+Exception: Expected transition to return a displayable, not a <partial <function Fade at 0x00000000039790d0> () {'old_widget': <renpy.display.layout.Fixed object at 0x000000000635e5b0>, 'new_widget': <renpy.display.layout.Fixed object at 0x0000000006358640>}>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 23, in script
-    say "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the dark affords them."
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 2572, in execute
-    Say.execute(self)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-TypeError: say() missing 1 required positional argument: 'what'
+  File "game/story/intro_cutscene.rpy", line 28, in script
+    show bg street dog with Fade
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 1361, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 1551, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 2188, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 2626, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 2540, in instantiate_transition
+    raise Exception("Expected transition to return a displayable, not a {!r}".format(trans))
+Exception: Expected transition to return a displayable, not a <partial <function Fade at 0x00000000039790d0> () {'old_widget': <renpy.display.layout.Fixed object at 0x000000000635e5b0>, 'new_widget': <renpy.display.layout.Fixed object at 0x0000000006358640>}>
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.0.24082114
 LoveBites 1.0
-Mon Sep  2 11:03:37 2024
+Mon Sep  2 15:24:10 2024

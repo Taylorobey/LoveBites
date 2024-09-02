@@ -14,6 +14,9 @@ define dog_approval = 0
 # Declare flags for story events. Default to False, then switch to True when event is triggered.
 define meat_eaten = False
 
+# Declare functions for use in scripts
+define flash = Fade(0.1, 0.0, 3.0, color="#fff")
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:

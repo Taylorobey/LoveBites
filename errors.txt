@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/intro_cutscene.rpy", line 1: Unexpected indentation at start of file.
+File "game/story/intro_cutscene.rpy", line 55: expected end of line
+    stop music intro_music
+               ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Mon Sep  2 11:35:48 2024
+Mon Sep  2 15:46:10 2024
