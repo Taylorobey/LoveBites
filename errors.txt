@@ -1,0 +1,8 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/story/intro_cutscene.rpy", line 1: Unexpected indentation at start of file.
+
+Ren'Py Version: Ren'Py 8.3.0.24082114
+Mon Sep  2 11:35:48 2024
