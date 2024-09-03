@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/intro_cutscene.rpy", line 55: expected end of line
-    stop music intro_music
-               ^
+File "game/story/waking_scene.rpy", line 222: end of line expected.
+    pass FailedRescueScene
+         ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Mon Sep  2 15:46:10 2024
+Tue Sep  3 19:34:34 2024

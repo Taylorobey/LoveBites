@@ -9,6 +9,7 @@ label WakingScene:
         scene bg room ceiling with dissolve
 
         #music cabin
+        ### Need music for cabin
 
         #SFX crickets
         play sound crickets loop
@@ -17,6 +18,7 @@ label WakingScene:
 
         #VSFX unblur (fade in-out as if waking up)
         #not sure if this is the right amount of blur since my placeholder is pretty low-res
+        # Seems good to me, we will double check with Bizzy
         window auto hide
         camera:
                 subpixel True 
@@ -31,10 +33,10 @@ label WakingScene:
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
 
         #SFX bed creak
+        ### Need bed creak asset
         #i don't know what a bed creak sounds like help
 
         #VFX red flash (on the edges)
-
         show pain:
                 subpixel True
                 alpha 0.0
@@ -86,15 +88,18 @@ label WakingScene:
         you "Oh, well... Fine, I guess, all things considered."
 
         #image ashina friendly
+        show ash friendly with dissolve
         ash "Good, good."
         ash "Now, sit up properly. I've prepared a meal for you."
 
         #SFX stomach growl
+        # Need stomach growl sfx asset
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
         ash "Here. Eat to your heart's content."
         
         #music unsettling
+        # Need unsettling music asset
         stop sound
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
@@ -146,6 +151,7 @@ label WakingScene:
                         "The meat is… surprisingly palatable. It has a deep, tender richness. You barely restrain yourself from stuffing your face ravenously. The clawing hunger soon subsides."
                         "You realize the woman has been watching you."
                         #image ashina friendly
+                        show ash friendly with dissolve
                         ash "Good girl. Now, get some rest."
                 "Abstain from eating.":
                         $ humanity += 1
@@ -192,6 +198,8 @@ label WakingScene:
                         stop sound fadeout 1.0
                         #image window with dogs
                         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
+                        #VSFX Slight Blue Tint (slow fade in)
+                        ### Need blue tint asset
                         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}sheep{/b} to be herded. A {b}pup{/b} to be corrected."
                         if meat_eaten == True:
                                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
@@ -205,5 +213,10 @@ label WakingScene:
                                                 "The dogs rush towards the meat, tail wagging. You don’t know why, but you smile."
                 "Head to bed.":
                         #there wasn't anything written for this choice
+                        # I think this is intentional, meant to skip the previous interaction.
                         pass
-        return
+        
+        "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
+
+        #Move to failed rescue scene
+        jump FailedRescueScene

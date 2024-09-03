@@ -31,7 +31,7 @@ label IntroductoryCutscene:
         
         #VSFX Crossfade Image
         #Image Street with one dog
-        show bg street dog with dissolve
+        scene bg street dog with dissolve
         
         #VSFX Slow Zoom on Image
         ###How much zoom?
@@ -40,7 +40,7 @@ label IntroductoryCutscene:
         
         #VSFX Crossfade Image
         #Image Street with three dogs
-        show bg street dogs with dissolve 
+        scene bg street dogs with dissolve 
         
         #VSFX Slow Zoom on Image
         ###How much zoom?
@@ -51,7 +51,7 @@ label IntroductoryCutscene:
         
         #VSFX Crossfade Image
         #Image Street with more dogs
-        show bg street many with dissolve 
+        scene bg street many with dissolve 
         
         #VSFX Medium Zoom on Image
         ###How much zoom?
@@ -65,17 +65,18 @@ label IntroductoryCutscene:
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
         
         #SFX Growling
+        ### Need a growling sfx
         #Music Introduction stops
         stop music
         
         #Image Black Screen
-        show bg color black with dissolve
+        scene bg color black with dissolve
         
         #VSFX Slow Typing, use cps tag
         narrator "{cps=10}YOU FEEL THEIR BREATH ON YOUR HEELS.{/cps}"
         
         #Image Street full of dogs
-        show bg street full with dissolve 
+        scene bg street full with dissolve 
         
         #Music Capture
         play music capture_music
@@ -109,10 +110,13 @@ label IntroductoryCutscene:
         #Image Black Screen
         scene bg color black with dissolve
         #not sure why this used "show"
+        # no particular reason
 
-        
         #Music Capture stops
         stop music
+
+        #paus slightly for dramatic effect/to let dissolve finish
+        pause(1.0)
         
         #Image Game Title Screen
         show logo:

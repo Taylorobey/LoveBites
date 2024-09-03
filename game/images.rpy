@@ -17,7 +17,9 @@ image bg color red    = "background_red"
 image wolf neutral = "ashina_wolf_sketch-no-tail"
 image wolf lunge   = "ashina_wolf_lunge_sketch-head"
 # ^are these characters?
+# I would say they fit in the category
 image ash neutral = "ashina_sketch"
+image ash friendly = "ashina_friendly"
 image aki neutral = "akari_sketch"
 image cam neutral = "cameron_sketch"
 
