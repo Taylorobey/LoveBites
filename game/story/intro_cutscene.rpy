@@ -1,7 +1,7 @@
 label IntroductoryCutscene:
 
         #Image Street Intersection
-        scene bg street empty
+        scene bg intersection
         
         #VSFX White Flash
         #SFX Car Speeding By
@@ -18,7 +18,7 @@ label IntroductoryCutscene:
         narrator "Then again, you know what kind of person that makes. You lived with them."
         
         #VSFX Shaking text
-        narrator "M o n s t e r s."
+        narrator "{sc}M o n s t e r s.{/sc}"
         narrator "…"
         
         #SFX Walking (ongoing)
@@ -31,7 +31,7 @@ label IntroductoryCutscene:
         
         #VSFX Crossfade Image
         #Image Street with one dog
-        show bg street dog with dissolve 
+        show bg street dog with dissolve
         
         #VSFX Slow Zoom on Image
         ###How much zoom?
@@ -90,10 +90,10 @@ label IntroductoryCutscene:
         narrator "They’re everywhere. In front of you. Behind you. Your body is suddenly alert and flooding with warmth. Your pulse is racing. You spot a side alley and turn without thinking."
         
         #Image Dead-End Alley
-        ### need assets for alley
+        scene bg alley with dissolve
         
         #Image Wolf
-        ### need assets for wolf
+        show wolf neutral
         
         #SFX Running stops
         stop sound
@@ -101,21 +101,29 @@ label IntroductoryCutscene:
         narrator "Your stomach lurches. You don’t have time to prepare for what comes next."
         
         #Image Wolf Lunging
-        ### need assets for wolf lunge
+        show wolf lunge with dissolve
 
         #VSFX Red flash
+        scene bg color red with dissolve
         
         #Image Black Screen
-        show bg color black with dissolve
+        scene bg color black with dissolve
+        #not sure why this used "show"
+
         
         #Music Capture stops
         stop music
         
         #Image Game Title Screen
-        ### need assets for game title
+        show logo:
+                xalign 0.5
+                yalign 0.5
         
         #SFX Howl
-        ### need assets for howl
+        play sound howl
+
+        #pause before changing scenes else logo won't show
+        pause(5.0)
 
         #move to waking scene
         jump WakingScene
