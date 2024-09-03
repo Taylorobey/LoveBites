@@ -177,6 +177,8 @@ label WakingScene:
                         stop sound
                         "You approach the window, and a low rumbling shakes the floor."
                         #sfx dogs barking
+                        play sound walk
+                        play sound barking
                         #closer to window
                         window auto hide
                         show bg room mc:
@@ -184,10 +186,10 @@ label WakingScene:
                                 linear 1.00 zoom 5.0 xpan 3.0 ypan -135.0 
                         with Pause(1.0)
                         window auto show
-                        stop sound
                         "You inch ever closer, and you hear dogs begin to growl and bark wildly."
                         #image window no dogs
                         "You finally reach the window and take a peek outside..."
+                        stop sound fadeout 1.0
                         #image window with dogs
                         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
                         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}sheep{/b} to be herded. A {b}pup{/b} to be corrected."
@@ -203,4 +205,5 @@ label WakingScene:
                                                 "The dogs rush towards the meat, tail wagging. You don’t know why, but you smile."
                 "Head to bed.":
                         #there wasn't anything written for this choice
+                        pass
         return
