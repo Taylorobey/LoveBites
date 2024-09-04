@@ -13,6 +13,7 @@ label IntroductoryCutscene:
         
         #Music Introduction
         play music intro_music loop
+        "A car speeds through the intersection and your heart nearly leaps out of your chest."
         narrator "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the dark affords them."
         narrator "You wonder what it’s like to feel that free. To never worry about how your actions affect others. To be so completely focused on the self."
         narrator "Then again, you know what kind of person that makes. You lived with them."
@@ -47,7 +48,7 @@ label IntroductoryCutscene:
         narrator "You know it’s dangerous to walk home alone before sunrise. Maybe part of you wants something to happen to you." 
         narrator "At least it would be something different, something new. Sometimes you feel as though you've been living the exact same day for these past three years. Go to work, pass out, repeat…"
         narrator "It was easier when you had something to fight against, someone to prove wrong. Now, you’re left alone with yourself, and you don’t like what you see."
-        narrator "…There sure are a lot of dogs out tonight. Sure, I see the occasional stray out at night, but this is something else…"
+        narrator "…There sure are a lot of dogs out tonight. Sure, you see the occasional stray out at night, but this is something else…"
         
         #VSFX Crossfade Image
         #Image Street with more dogs
@@ -85,6 +86,9 @@ label IntroductoryCutscene:
         play sound run loop
         
         #SFX Barking
+        play audio barking
+        #this is on the audio channel since on others it would replace the ongoing sound
+
         
         #VSFX Fast Zoom on Image
         ###How much zoom?
@@ -98,9 +102,14 @@ label IntroductoryCutscene:
         
         #SFX Running stops
         stop sound
+        #wasn't specified where we stop the barking so i'll stop it here
+        stop audio
         narrator "A large, intimidating wolf stands at the end of the alley. Although your mind is telling you to run, the sight of this ethereal creature freezes you in place."
         narrator "Your stomach lurches. You don’t have time to prepare for what comes next."
         
+        #image wolf snarling
+        show wolf snarl with dissolve
+        pause(1.0)
         #Image Wolf Lunging
         show wolf lunge with dissolve
 

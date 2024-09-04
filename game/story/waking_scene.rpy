@@ -200,7 +200,12 @@ label WakingScene:
                         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
                         #VSFX Slight Blue Tint (slow fade in)
                         ### Need blue tint asset
-                        "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}sheep{/b} to be herded. A {b}pup{/b} to be corrected."
+                        camera:
+                                matrixcolor TintMatrix("#1C4587")
+                        #not sure if this is too blue.
+                        #i don't know how to make this fade in
+                        "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}{color=#1C4587}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
+                        #got the shade of blue directly from the doc. should we keep the bold?
                         if meat_eaten == True:
                                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
                         else:
@@ -210,13 +215,12 @@ label WakingScene:
                                         "Toss the meat to the dogs.":
                                                 $ dog_approval += 1
                                                 "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
-                                                "The dogs rush towards the meat, tail wagging. You don’t know why, but you smile."
+                                                "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
                 "Head to bed.":
-                        #there wasn't anything written for this choice
-                        # I think this is intentional, meant to skip the previous interaction.
                         pass
         
         "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
-
+        #VSFX black screen
+        scene color black with dissolve
         #Move to failed rescue scene
         jump FailedRescueScene
