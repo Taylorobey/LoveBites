@@ -86,7 +86,7 @@ label IntroductoryCutscene:
         play sound run loop
         
         #SFX Barking
-        play audio barking
+        play sound barking
         #this is on the audio channel since on others it would replace the ongoing sound
 
         

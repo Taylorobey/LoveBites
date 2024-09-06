@@ -1,7 +1,7 @@
 # Declare audio files to use for music
 define audio.intro_music   = "Temp_General.wav"
 define audio.capture_music = "Temp_Action.mp3"
-define audio.cabin_music   = ""
+define audio.cabin_music   = "Temp_General.wav"
 
 # Declare audio files to use for sounds
 define audio.car       = "Car_Speeding_By.wav"

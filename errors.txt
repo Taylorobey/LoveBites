@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/waking_scene.rpy", line 222: end of line expected.
-    pass FailedRescueScene
-         ^
+File "game/story/failed_rescue_scene.rpy", line 125: parallel expects a non-empty block.
+    parallel:
+             ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Tue Sep  3 19:34:34 2024
+Thu Sep  5 20:53:41 2024

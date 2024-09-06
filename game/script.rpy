@@ -30,7 +30,10 @@ style bigtext:
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
-    jump IntroductoryCutscene
+    #temporary jump for testing
+    jump FailedRescueScene
+
+    #jump IntroductoryCutscene
     
     # This ends the game.
     return

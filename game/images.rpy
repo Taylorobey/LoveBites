@@ -15,14 +15,18 @@ image bg color red    = "background_red"
 
 # Declare character images
 image wolf neutral = "ashina_wolf_sketch-no-tail"
-image wolf snarl = "ashina_wolf_snarl_sketch-no-tail.png"
+image wolf snarl   = "ashina_wolf_snarl_sketch-no-tail.png"
 image wolf lunge   = "ashina_wolf_lunge_sketch-head"
 # ^are these characters?
 # I would say they fit in the category
-image ash neutral = "ashina_sketch"
-image ash friendly = "ashina_friendly"
-image aki neutral = "akari_sketch"
-image cam neutral = "cameron_sketch"
+image ash neutral       = "ashina_sketch"
+image ash friendly      = "ashina_friendly"
+image ash angry hybrid  = "ashina_sketch"
+image aki neutral       = "akari_sketch"
+image cam neutral       = "cameron_sketch"
+image cam friendly      = "cameron_sketch"
+image cam nervous       = "cameron_sketch"
+image cam scared        = "cameron_sketch"
 
 # Declare other images
 image logo = "logo.png"
