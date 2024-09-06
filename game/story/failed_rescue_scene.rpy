@@ -55,39 +55,42 @@ label FailedRescueScene:
 
         you "Cameron?!"
 
-        "You quickly realize you should be quiet if you don't want to draw any unwanted attention, so you lower your voice to a hushed tone."
+        "You quickly realize you should be quiet if you don’t want to draw any unwanted attention, so you lower your voice to a hushed tone."
 
-        you "What are you doing here?"
+        you "What are you {i}doing{/i} here?"
 
-        cam "What does it look like? I'm here to break you out! That is, if I could squeeze through this pinche window!"
+        cam "What does it look like? I’m here to break you out! That is, if I could squeeze through this pinche window!"
 
         # SFX Walking
         play sound walk
         # VSFX Zoom (as if walking towards the window)
+        #made the pov closer to the camera
         window auto hide
         camera:
                 subpixel True 
                 pos (0, 0) zoom 1.0 
-                linear 1.33 pos (-711, -405) zoom 1.71 
-        with Pause(1.43)
-        camera:
-                pos (-711, -405) zoom 1.71 
+                linear 1.5 pos (-2000, -1200) zoom 3.0
+        with Pause(1.5)
         window auto show
-
+        
+        stop sound
+        #moved this up, felt it was weird to still have walking noises when the camera stopped
         "With a nervous glance towards the door, you slide out of bed and approach your struggling friend."
 
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
-        stop sound
 
         #unsure why this is not showing
-        show cam neutral:
-                subpixel True xpos 0.5 ypos 2.16 zoom 2.18
+        #you had x and y align as x and y pos instead so cam was somewhere offscreen
+        show cam neutral with dissolve:
+                xalign 0.5 yalign 0.6 zoom 0.5
+                linear 1.0 yalign 0.75 zoom 0.5
+        #i think it looks better this way
 
         # SFX Creak
         ### Need creak sfx
 
-        "You take their arms and give a firm tug. Your strength surprises you as you're able to lift them into the cabin with ease."
+        "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
         # VSFX Fade out Cameron
         hide cam neutral with dissolve
@@ -96,7 +99,7 @@ label FailedRescueScene:
         window auto hide
         camera:
                 subpixel True 
-                pos (-711, -405) zoom 1.71 
+                pos (-2000, -1200) zoom 3.0
                 linear 1.33 pos (0, 0) zoom 1.0 
         with Pause(1.43)
         camera:
@@ -157,21 +160,23 @@ label FailedRescueScene:
                 xpos 0.5 
         window auto show
 
-        cam "This is going to sound crazy, but I saw the wolf turn into a woman. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
+        cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
+        #i shortened/rounded the waiting time
+        #we should figure out how to have this going whilst the dialogue is playing so it looks less awkward
         window auto hide
         show cam friendly:
                 subpixel True 
                 parallel:
                         xpos 0.5 
-                        linear 2.36 xpos 0.85 
-                        linear 2.17 xpos 0.5 
+                        linear 2 xpos 0.85 
+                        linear 2 xpos 0.5 
                 parallel:
                         yrotate 180.0 
-                        linear 2.37 yrotate 180.0 
+                        linear 2 yrotate 180.0 
                         linear 0.02 yrotate 0.0 
-        with Pause(4.63)
+        with Pause(4)
         show cam friendly:
                 xpos 0.5 yrotate 0.0 
         window auto show
@@ -185,18 +190,17 @@ label FailedRescueScene:
         # Image Cameron Neutral
         show cam neutral with dissolve
         # VSFX Cameron (slight up and down motion, as if shrugging)
+        #looked a bit like jumping so i messed with it a little
         window auto hide
         show cam nervous:
                 subpixel True 
                 ypos 1.0 
-                linear 0.15 ypos 0.95 
-                linear 0.15 ypos 1.0 
-        with Pause(0.40)
-        show cam nervous:
-                ypos 1.0 
+                linear 0.3 ypos 0.97
+                linear 0.3 ypos 1.0 
+        with Pause(0.6)
         window auto show
 
-        cam "They left in a big pack all of a sudden. Don't know where they ran off to, but figured this was my only chance to get you out of here."
+        cam "They left in a big pack all of a sudden. Don’t know where they ran off to, but figured this was my only chance to get you out of here."
 
         you "That was really risky, Cam."
 
@@ -211,31 +215,26 @@ label FailedRescueScene:
                 subpixel True 
                 parallel:
                         xpos 0.5 
-                        linear 2.36 xpos 0.15 
-                        linear 2.17 xpos 0.5 
+                        linear 2 xpos 0.15 
+                        linear 2 xpos 0.5 
                 parallel:
                         yrotate 0.0 
-                        linear 2.37 yrotate 0.0 
+                        linear 2 yrotate 0.0 
                         linear 0.02 yrotate 180.0 
-        with Pause(4.63)
-        show cam friendly:
-                xpos 0.5 yrotate 180.0 
+        with Pause(4)
         window auto show
-        cam "I'm probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
+        cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
 
         # VSFX Cameron (slight up and down motion, as if shrugging)
         window auto hide
-        show cam nervous:
+        show cam friendly:
                 subpixel True 
                 ypos 1.0 
-                linear 0.15 ypos 0.95 
-                linear 0.15 ypos 1.0 
-        with Pause(0.40)
-        show cam nervous:
-                ypos 1.0 
+                linear 0.3 ypos 0.97
+                linear 0.3 ypos 1.0 
+        with Pause(0.6)
         window auto show
-
-        cam "But, I dunno, I couldn’t leave without trying. So, come on, let's go home and I'll make you a nice, hot bowl of pozole. "
+        cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
 
         menu:
                 "Agree to go with Cameron.":
@@ -260,7 +259,7 @@ label UrgeCamLeave:
         #Ashina Approval Choice:
         $ ash_approval +=1
 
-        you "Cameron…It's not that easy. "
+        you "Cameron… It’s not that easy. "
 
         # Image Cameron Nervous
         show cam nervous with dissolve
@@ -269,14 +268,14 @@ label UrgeCamLeave:
 
         you "Sure, we could physically escape…"
 
-        you "But, something's obviously after me. What's to stop them from dragging me back here again? "
+        you "But, something’s obviously after me. What’s to stop them from dragging me back here again? "
 
         # Image Cameron Friendly
         show cam friendly with dissolve
 
-        cam "I'll watch over you. When you get out of work, I can pick you up and take you home. I'll even stay over at your place and keep a look out."
+        cam "I’ll watch over you. When you get out of work, I can pick you up and take you home. I’ll even stay over at your place and keep a look out."
 
-        you "And what makes you think they won't hurt you to get to me?"
+        you "And what makes you think they won’t hurt you to get to me?"
 
         # Image Cameron Nervous
         show cam nervous with dissolve
@@ -285,7 +284,7 @@ label UrgeCamLeave:
 
         you "You need to leave, Cameron. Before the dogs come back. Before she finds you."
 
-        cam "Fine, fine, I'll go. But I’m not just going to leave you out here."
+        cam "Fine, fine, I’ll go. But I’m not just going to leave you out here."
 
         cam "I’ll get help, and I’ll come back. Just hang tight, okay?"
 
@@ -298,7 +297,7 @@ label CamCaught:
 
         # Image Cameron Neutral
         show cam neutral with dissolve
-        "Cameron's hand reaches for the doorknob. When they open the door, your stomach drops."
+        "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
 
         # Image Cabin Door Open
         ### Need Cabin Door Open Asset
@@ -325,7 +324,7 @@ label CamCaught:
         # Image Cameron Scared
         show cam scared with dissolve
 
-        "In the blink of an eye, your captor wraps her claws around Cameron's throat. At any moment, she could pierce their skin and tear them to shreds."
+        "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."
 
         "She meets your gaze as she taunts you."
 
@@ -333,7 +332,7 @@ label CamCaught:
 
         ash "A friend of yours, I take it?"
 
-        "Cameron, in contrast to their big talk beforehand, is now frozen with fear in your captor's grasp."
+        "Cameron, in contrast to their big talk beforehand, is now frozen with fear in your captor’s grasp."
 
         # VSFX Ashina and Cameron (further away)
 
@@ -349,15 +348,15 @@ label CamCaught:
 
         # VSFX Ashina and Cameron (further away)
 
-        ash "It'd be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
+        ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
 
-        "You feel indignant over her calling you a "little pet", but decide this wouldn't be the time to object."
+        "You feel indignant over her calling you a \"little pet\", but decide this wouldn’t be the time to object."
 
-        ash "Perhaps, if you are a good girl, I'll have mercy on your little friend here."
+        ash "Perhaps, if you are a good girl, I’ll have mercy on your little friend here."
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
 
-        ash "Keep them in your thoughts whenever you feel like acting up again, won't you?"
+        ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
         # VSFX Ashina and Cameron quickly Fade Out
         hide ash angry hybrid with dissolve
@@ -375,9 +374,9 @@ label CamCaught:
         # Image Captive Cabin Room
         scene bg room mc with dissolve
 
-        "You have to be careful. Before, everything you did only affected you. Frankly, those stakes weren't very high. You've felt like your life is worth very little for a while now."
+        "You have to be careful. Before, everything you did only affected you. Frankly, those stakes weren’t very high. You’ve felt like your life is worth very little for a while now."
 
-        "But now, everything you do has Cameron's very life on the line. Everything counts now, and you'll do anything in your power to keep them safe."
+        "But now, everything you do has Cameron’s very life on the line. Everything counts now, and you\’ll do anything in your power to keep them safe."
 
         "Somehow, another wave of exhaustion hits you. Perhaps it’s sleep debt catching up to you."
 

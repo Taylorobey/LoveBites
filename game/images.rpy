@@ -21,12 +21,12 @@ image wolf lunge   = "ashina_wolf_lunge_sketch-head"
 # I would say they fit in the category
 image ash neutral       = "ashina_sketch"
 image ash friendly      = "ashina_friendly"
-image ash angry hybrid  = "ashina_sketch"
+image ash angry hybrid  = "ashina_hybrid_angry"
 image aki neutral       = "akari_sketch"
 image cam neutral       = "cameron_sketch"
-image cam friendly      = "cameron_sketch"
-image cam nervous       = "cameron_sketch"
-image cam scared        = "cameron_sketch"
+image cam friendly      = "cameron_friendly"
+image cam nervous       = "cameron_nervous"
+image cam scared        = "cameron_scared"
 
 # Declare other images
 image logo = "logo.png"
