@@ -1,5 +1,5 @@
 # Declare background images
-image bg intersection = "temp_street_intersection"
+image bg intersection = "intersection"
 image bg street empty = "background_street.bmp"
 image bg street dog   = "background_street_one_dog.bmp"
 image bg street dogs  = "background_street_three_dogs.bmp"
@@ -8,15 +8,18 @@ image bg street full  = "background_street_full_dogs.bmp"
 image bg alley        = "temp_alley"
 image bg room ceiling = "temp_cabin_ceiling"
 image bg room mc      = "temp_mc_room"
+image bg door closed  = "cabindoorclosed"
+image bg door open    = "cabindooropen"
+image bg wall         = "cabinwall"
 
 # Declare color backgrounds for effect use
 image bg color black  = "background_black.bmp"
 image bg color red    = "background_red"
 
 # Declare character images
-image wolf neutral = "ashina_wolf_sketch-no-tail"
-image wolf snarl   = "ashina_wolf_snarl_sketch-no-tail.png"
-image wolf lunge   = "ashina_wolf_lunge_sketch-head"
+image wolf neutral = "ashina_wolf.png"
+image wolf snarl   = "ashina_wolf_snarl.png"
+image wolf lunge   = "ashina_wolf_lunge.png"
 # ^are these characters?
 # I would say they fit in the category
 image ash neutral       = "ashina_sketch"

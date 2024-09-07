@@ -293,22 +293,26 @@ label UrgeCamLeave:
 label CamCaught:
 
         # Image Cabin Door Closed
-        ### Need Cabin Door asset
+        scene bg door closed with dissolve
 
         # Image Cameron Neutral
-        show cam neutral with dissolve
+        show cam neutral with dissolve:
+                xalign 0.7 zoom 1.5 
+
         "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
 
         # Image Cabin Door Open
-        ### Need Cabin Door Open Asset
+        show bg door open with dissolve
+        #so cam doesn't disappear
 
         # SFX Creak
         ### Need Creak sound effect
 
         # VSFX Fade In Ashina
         # Image Ashina Friendly
-        #unsure why this insists on displaying in center of screen
-        show ash friendly at right
+        #not sure why xalign is playing opposites
+        show ash friendly with dissolve:
+                subpixel True xalign 0.8 zoom 1.5
 
         # Music Capture
         play music capture_music loop
@@ -322,19 +326,25 @@ label CamCaught:
         "The woman’s features suddenly become beastly, claws curling out from her fingernails and fur sprouting through her skin."
 
         # Image Cameron Scared
-        show cam scared with dissolve
+        #again xalign is playing opposites i don't know whyyy aaaaaa
+        show cam scared with dissolve:
+                xalign 0.249
 
         "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."
 
         "She meets your gaze as she taunts you."
 
         # VSFX Ashina and Cameron (closer)
+        show ash angry hybrid with moveinleft:
+                xalign 0.5
 
         ash "A friend of yours, I take it?"
 
         "Cameron, in contrast to their big talk beforehand, is now frozen with fear in your captor’s grasp."
 
         # VSFX Ashina and Cameron (further away)
+        show ash angry hybrid with moveinleft:
+                xalign 0.7
 
         ash "At least this human knows their place. Had they dared to put up a fight, I would have killed them where they stood. "
 
@@ -343,10 +353,14 @@ label CamCaught:
         you "Let them go! Please…"
 
         # VSFX Ashina and Cameron (closer)
+        show ash angry hybrid with moveinleft:
+                xalign 0.5
 
         ash "You do not give the orders around here. Besides, that is something I simply cannot do." 
 
         # VSFX Ashina and Cameron (further away)
+        show ash angry hybrid with moveinleft:
+                xalign 0.7
 
         ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
 
@@ -355,6 +369,10 @@ label CamCaught:
         ash "Perhaps, if you are a good girl, I’ll have mercy on your little friend here."
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
+        show ash angry hybrid with dissolve:
+                subpixel True xpos 0.65 ypos 45 zoom 1.1
+        show cam scared with dissolve:
+                subpixel True xpos 0.3 ypos 45 zoom 1.1
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
@@ -363,7 +381,7 @@ label CamCaught:
         hide cam scared with dissolve
 
         # Image Cabin Door Closed
-        ### Need Cabin door asset
+        scene bg door closed with dissolve
         # SFX Creak
         ### Need Creak sfx
         # Music Cabin

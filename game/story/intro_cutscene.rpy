@@ -98,7 +98,7 @@ label IntroductoryCutscene:
         scene bg alley with dissolve
         
         #Image Wolf
-        show wolf neutral
+        show wolf neutral with dissolve
         
         #SFX Running stops
         stop sound
