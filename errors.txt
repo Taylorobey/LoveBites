@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/failed_rescue_scene.rpy", line 125: parallel expects a non-empty block.
-    parallel:
-             ^
+File "game/story/botched_escape_scene.rpy", line 191: choice menuitem expects a non-empty block.
+    "Resist Ashina":
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Thu Sep  5 20:53:41 2024
+Mon Sep  9 19:37:00 2024

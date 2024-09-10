@@ -1,6 +1,7 @@
 ﻿# Declare characters used by this game.
-define aki = Character("Akari")
+define aki = Character("???")
 #can we call her aki instead
+#should probably do the same as ashina and set name to ???, but with red color
 define ash = Character("???", color="#1C4587")
 #yes, that's the same shade of blue as everything else.
 #changed name to "???" and i think we'll just $ it to ashina when mc learns her name
@@ -31,7 +32,7 @@ style bigtext:
 # Each scene is its own file for organizational purposes
 label start:
     #temporary jump for testing
-    jump FailedRescueScene
+    jump WhoYouAreScene
 
     #jump IntroductoryCutscene
     
