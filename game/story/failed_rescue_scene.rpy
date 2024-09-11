@@ -64,7 +64,7 @@ label FailedRescueScene:
         # SFX Walking
         play sound walk
         # VSFX Zoom (as if walking towards the window)
-        #made the pov closer to the camera
+        # made the pov closer to the camera
         window auto hide
         camera:
                 subpixel True 
@@ -86,6 +86,7 @@ label FailedRescueScene:
                 xalign 0.5 yalign 0.6 zoom 0.5
                 linear 1.0 yalign 0.75 zoom 0.5
         #i think it looks better this way
+        ## Cameron could be closer to the screen when they first appear
 
         # SFX Creak
         ### Need creak sfx
@@ -120,6 +121,7 @@ label FailedRescueScene:
 
         cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
 
+        ## Can the dialogue appear as Cameron is moving around/pacing? that way it looks like they are talking while moving
         # VSFX Cameron (Slowly moving across the screen, as if pacing)     
         window auto hide
         show cam friendly:
@@ -308,6 +310,7 @@ label CamCaught:
         # SFX Creak
         ### Need Creak sound effect
 
+        ## Ashina and Cameron should be moving together at the parts where Ashina moves towards Cameron, as if she's pulling them around with her while taunting you, also hopefully with how Ashina's pose works Cameron can be more in front of her while she's menacing them.
         # VSFX Fade In Ashina
         # Image Ashina Friendly
         #not sure why xalign is playing opposites

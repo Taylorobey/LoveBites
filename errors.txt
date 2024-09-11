@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/story/botched_escape_scene.rpy", line 191: choice menuitem expects a non-empty block.
-    "Resist Ashina":
-                    ^
+File "game/story/botched_escape_scene.rpy", line 154: reached end of line when expecting ':'.
+    elif ash_approval >= 0
+                          ^
+
+File "game/story/botched_escape_scene.rpy", line 178: expected statement.
+    else:
+        ^
+
+File "game/story/who_you_are_scene.rpy", line 86: expected statement.
+    at right
+            ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Mon Sep  9 19:37:00 2024
+Tue Sep 10 20:06:53 2024

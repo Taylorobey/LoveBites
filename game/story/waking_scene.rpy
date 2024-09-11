@@ -165,6 +165,7 @@ label WakingScene:
 
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
         
+        ## slow this down
         hide ash with moveoutright
         
         #VSFX blur
@@ -252,4 +253,6 @@ label ExamineWindow:
                                 "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
+
+        ## show black screen for a moment to make it clear player fell asleep
         jump HeadtoBed

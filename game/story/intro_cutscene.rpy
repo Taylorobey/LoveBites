@@ -102,8 +102,6 @@ label IntroductoryCutscene:
         
         #SFX Running stops
         stop sound
-        #wasn't specified where we stop the barking so i'll stop it here
-        stop audio
         narrator "A large, intimidating wolf stands at the end of the alley. Although your mind is telling you to run, the sight of this ethereal creature freezes you in place."
         narrator "Your stomach lurches. You don’t have time to prepare for what comes next."
         
@@ -111,7 +109,11 @@ label IntroductoryCutscene:
         show wolf snarl with dissolve
         pause(1.0)
         #Image Wolf Lunging
+        ## possibly make this happen faster?
         show wolf lunge with dissolve
+
+        #stop barking
+        stop audio
 
         #VSFX Red flash
         scene bg color red with dissolve

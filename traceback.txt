@@ -1,24 +1,92 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/failed_rescue_scene.rpy", line 36, in script
-    You "Cameron?!"
-Exception: Sayer 'You' is not defined.
+  File "game/story/who_you_are_scene.rpy", line 89, in script
+    "The woman stops and languidly gestures forward. You’re distracted by the muscles in her arm, the sight vivid and detailed in a way that’s unsettling. A loveseat made of furs and hides lies before you."
+  File "game/ActionEditor.rpy", line 2964, in open_action_editor
+    renpy.call_screen("_new_action_editor")
+  File "game/ActionEditor_screens.rpy", line 1934, in event
+    if self.key and self.key[2] is not None and exclusive_check(self.key):
+  File "game/ActionEditor.rpy", line 1642, in exclusive_check
+    tag, layer, prop = key
+ValueError: too many values to unpack (expected 3)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/failed_rescue_scene.rpy", line 36, in script
-    You "Cameron?!"
+  File "game/story/who_you_are_scene.rpy", line 89, in script
+    "The woman stops and languidly gestures forward. You’re distracted by the muscles in her arm, the sight vivid and detailed in a way that’s unsettling. A loveseat made of furs and hides lies before you."
   File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 2572, in execute
     Say.execute(self)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'You' is not defined.
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\character.py", line 1451, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\character.py", line 1102, in do_display
+    display_say(who,
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\character.py", line 799, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 2188, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 3232, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\behavior.py", line 554, in event
+    rv = run(action)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\game.py", line 303, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "game/ActionEditor.rpy", line 2964, in open_action_editor
+    renpy.call_screen("_new_action_editor")
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\statementexports.py", line 345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 2188, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\core.py", line 3232, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\screen.py", line 793, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1523, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 288, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 288, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\viewport.py", line 587, in event
+    rv = super(Viewport, self).event(ev, x, y, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 288, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\display\layout.py", line 1294, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "game/ActionEditor_screens.rpy", line 1934, in event
+    if self.key and self.key[2] is not None and exclusive_check(self.key):
+  File "game/ActionEditor.rpy", line 1642, in exclusive_check
+    tag, layer, prop = key
+ValueError: too many values to unpack (expected 3)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.0.24082114
 LoveBites 1.0
-Thu Sep  5 19:56:59 2024
+Tue Sep 10 20:25:40 2024

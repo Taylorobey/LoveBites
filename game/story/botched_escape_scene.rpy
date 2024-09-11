@@ -151,7 +151,7 @@ label BotchedConverge2:
 
                 # VSFX Black
 
-        elif ash_approval >= 0
+        elif ash_approval >= 0:
 
                 #Image Ashina Hybrid Angry
                 #VSFX Ashina (closer)
@@ -180,6 +180,7 @@ label BotchedConverge2:
 
                 # Image Ashina Hybrid Angry
                 #VSFX Ashina (pacing)
+                show ashina_hybrid_angry
 
                 ash "You reckless, ungrateful fool. Clearly you do not understand your situation, despite me going to great lengths to explain it."
 

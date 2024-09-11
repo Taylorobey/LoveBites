@@ -28,6 +28,12 @@ style bigtext:
     outlines [(5, "#b70000", 0, 0)]
     italic True
 
+## Define some positions/zooms that are commonly used
+# Torso 
+# Bust
+# Lower Right
+
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
