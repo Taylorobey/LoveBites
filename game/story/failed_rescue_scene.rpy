@@ -1,26 +1,10 @@
 label FailedRescueScene:
         
-        #same as previous scene
-        camera:
-                subpixel True blur 20.0
-        # Image Captive Cabin Room (angled, zoomed in on ceiling)
-        scene bg room ceiling with dissolve
-
-        # VSFX Blur (as if waking up)
-        window auto hide
-        camera:
-                subpixel True 
-                linear 1.00 blur 5.0 
-                linear 1.00 blur 20.0 
-                linear 1.00 blur 0.0
-        with Pause(3)
-        camera:
-                blur 0.0 
-        window auto show
-        # Music Cabin
-        ### Need music for cabin
-        # SFX Creak
-        ### Need SFX for creak
+        call WakeUpSequence1
+        call WakeUpSequence2
+       
+        #SFX Creak
+        play sound creak
 
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
 
@@ -49,7 +33,6 @@ label FailedRescueScene:
         camera:
                 pos (0, 0) zoom 1.0 
         window auto show
-
 
         "Your eyes search the room for the noise and you notice a struggling figure wedged into the window. Somehow, even without getting a clear view, you know who it is."
 
@@ -89,7 +72,7 @@ label FailedRescueScene:
         ## Cameron could be closer to the screen when they first appear
 
         # SFX Creak
-        ### Need creak sfx
+        play sound creak
 
         "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
@@ -122,6 +105,7 @@ label FailedRescueScene:
         cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
 
         ## Can the dialogue appear as Cameron is moving around/pacing? that way it looks like they are talking while moving
+        ## Use ATL transform?
         # VSFX Cameron (Slowly moving across the screen, as if pacing)     
         window auto hide
         show cam friendly:
@@ -192,7 +176,7 @@ label FailedRescueScene:
         # Image Cameron Neutral
         show cam neutral with dissolve
         # VSFX Cameron (slight up and down motion, as if shrugging)
-        #looked a bit like jumping so i messed with it a little
+        # looked a bit like jumping so i messed with it a little
         window auto hide
         show cam nervous:
                 subpixel True 
@@ -308,12 +292,12 @@ label CamCaught:
         #so cam doesn't disappear
 
         # SFX Creak
-        ### Need Creak sound effect
+        play sound creak
 
         ## Ashina and Cameron should be moving together at the parts where Ashina moves towards Cameron, as if she's pulling them around with her while taunting you, also hopefully with how Ashina's pose works Cameron can be more in front of her while she's menacing them.
         # VSFX Fade In Ashina
         # Image Ashina Friendly
-        #not sure why xalign is playing opposites
+        # not sure why xalign is playing opposites
         show ash friendly with dissolve:
                 subpixel True xalign 0.8 zoom 1.5
 
@@ -329,7 +313,7 @@ label CamCaught:
         "The woman’s features suddenly become beastly, claws curling out from her fingernails and fur sprouting through her skin."
 
         # Image Cameron Scared
-        #again xalign is playing opposites i don't know whyyy aaaaaa
+        # again xalign is playing opposites i don't know whyyy aaaaaa
         show cam scared with dissolve:
                 xalign 0.249
 
@@ -386,9 +370,10 @@ label CamCaught:
         # Image Cabin Door Closed
         scene bg door closed with dissolve
         # SFX Creak
-        ### Need Creak sfx
+        play sound creak
+
         # Music Cabin
-        ### Need Cabin Music
+        play music cabin_music
 
         "Before you even have a chance to protest, your captor shuts the door. Your legs shake, threatening to give out, and you stumble back towards the bed."
 

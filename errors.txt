@@ -2,17 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/story/botched_escape_scene.rpy", line 154: reached end of line when expecting ':'.
-    elif ash_approval >= 0
-                          ^
+File "game/story/full_approval_akari_scene.rpy", line 4: Line with id FullApprovalAkariScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_akari_scene.rpyc:4
 
-File "game/story/botched_escape_scene.rpy", line 178: expected statement.
-    else:
-        ^
+File "game/story/full_approval_ashina_scene.rpy", line 4: Line with id FullApprovalAshinaScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_ashina_scene.rpyc:4
 
-File "game/story/who_you_are_scene.rpy", line 86: expected statement.
-    at right
-            ^
+File "game/story/full_approval_cameron_scene.rpy", line 4: Line with id FullApprovalCameronScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_cameron_scene.rpyc:4
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Tue Sep 10 20:06:53 2024
+Wed Sep 11 18:22:36 2024

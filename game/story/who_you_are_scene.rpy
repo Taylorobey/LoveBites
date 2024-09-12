@@ -1,44 +1,15 @@
 label WhoYouAreScene:
         #stop audio from previous scene
         stop sound
-        #VSFX blur
-        #i put this before scene so it wouldn't be unblurred whilst the scene was being dissolved in
-        camera:
-                subpixel True blur 20.0 
-
-        # image captive cabin room (angled, zoomed in on ceiling)
-        scene bg room ceiling with dissolve
-        #music cabin
-        ### Need music for cabin
-
-        #SFX crickets
-        play sound crickets loop
+        call WakeUpSequence1
         
         "When you next awake, something feels off. It only takes you a few moments to figure it out."
 
-        #VSFX unblur (fade in-out as if waking up)
-        # not sure if this is the right amount of blur since my placeholder is pretty low-res
-        # Seems good to me, we will double check with Bizzy
-        window auto hide
-        camera:
-                subpixel True 
-                linear 1.00 blur 5.0 
-                linear 1.00 blur 20.0 
-                linear 1.00 blur 0.0
-        with Pause(3)
-        camera:
-                blur 0.0 
-        window auto show
+        call WakeUpSequence2
 
         "You feel rested. No aches, no pains, a pleasant warmth radiating from within you. You can’t remember the last time you felt this good. But, there’s something else, too."
 
-        # VSFX Red Flash (on the screen edges like a blooming pain)
-        show pain:
-                subpixel True
-                alpha 0.0
-                linear 0.5 alpha 1.0 
-                linear 1.0 alpha 0.5
-                linear 2.0 alpha 0.0
+        call PainFlash
 
         "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing outside of the door to your room."
 
@@ -48,7 +19,7 @@ label WhoYouAreScene:
         "You sit up, and sure enough, the door opens and the woman steps in."
 
         # SFX Creak
-        ### Need creak sfx
+        play sound creak
 
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
@@ -73,16 +44,18 @@ label WhoYouAreScene:
 
         # Image Cabin Hall
         show bg wall
+
         # Image Cabin Hearth
+        show bg hearth
+
         ### need image for hearth
-        # SFX Fireplace
-        ### Need fireplace audio
+        play audio fireplace loop
 
         "The woman leads you out of your room, down the stairs, and into a spacious hearth. The area is well adorned, equipped with ornate furnishings and a large fireplace to keep the place warm, and to cook with you suppose. Not that she used it."
 
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
-        ## change transform to have her standing in front of chair
+        ## change transform to have her standing in front of chair once hearth bg is done
         show ash neutral at right 
         with dissolve
 
@@ -91,7 +64,7 @@ label WhoYouAreScene:
         ash "Well, don't just stand there. Sit."
 
         # VSFX Ashina (move center)
-        ## Need to redo this
+        ## Need to redo this once chair position is fixed
         window auto hide
         show ash neutral:
                 subpixel True 
@@ -134,12 +107,7 @@ label WhoYouAreScene:
         # VSFX Ashina (fade out)
         hide ash friendly with dissolve
         # VSFX Red Flash (on the screen edges like a blooming pain)
-        show pain:
-                subpixel True
-                alpha 0.0
-                linear 0.5 alpha 1.0 
-                linear 1.0 alpha 0.5
-                linear 2.0 alpha 0.0
+        call PainFlash
         # VSFX Zoom (as if looking down, at the table)
         window auto hide
         camera:
@@ -202,8 +170,8 @@ label WhoYouAreScene:
                 subpixel True
                 pos (0,0) zoom 1.0
         window auto show
-        ### need hearth bg
-        ## VSFX Effects gradually fade
+
+        # VSFX Effects gradually fade
         camera:
                 subpixel True 
                 linear 3.00 blur 0.0
@@ -220,7 +188,7 @@ label WhoYouAreScene:
         ash "That is- What you have become, what you must do to survive, and why you can never return to your old life."
 
         # Image Ashina Hybrid Thoughtful
-        ### Need ashina thoughtful
+        show ashina thoughtful with dissolve
 
         ash "I am, and you are, lykánthrōpos, lycanthrope, or in layman's terms, werewolf. Descendants of witches, able to infect others with our so-called curse."
 
@@ -277,11 +245,9 @@ label WhoYouAreScene:
         show ash angry hybrid at center
         with dissolve
 
-
         ash "We are carnivores. We crave raw meat like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
         # VSFX Ashina (close to the screen/MC)
-        
         window auto hide
         show ash angry hybrid:
                 subpixel True 
@@ -298,25 +264,28 @@ label WhoYouAreScene:
 
         # VSFX Ashina (further)
         # Image Ashina Hybrid Thoughtful
-        ### Need Ashina thoughtful image
-        # show ash thoughtful hybrid with dissolve
+        show ash thoughtful hybrid with dissolve
  
         ash "There is ugliness in what we are, but there is beauty, too. You will know it when you feel the wind flowing through your fur, and find you are a part of something so much greater than yourself."
 
         # VSFX Ashina (back to fullbody center)
         # Image Ashina Neutral
+        show ash neutral with dissolve
 
         "She looks at you expectantly as she looms over you, and you realize she’s waiting for a response."
 
         menu: 
                 # Ashina Approval Choice
                 "Respond with appreciation.":
+                        $ ash_approval += 1
                         jump AppreciationResponse
+                #Ashina Disapproval Choice
                 "Option Unavailable (Demo)":
+                        # "Respond with disgust.":
+                        $ ash_approval -= 1
                         return
 
 label AppreciationResponse:                        
-        $ ash_approval += 1
         "You nod slowly."
 
         you "You know, if I’m honest… I’ve always wanted to be part of something bigger than myself. For a long time I’ve felt… lost, I guess."
@@ -324,14 +293,14 @@ label AppreciationResponse:
         you "I thought I knew what I wanted, but everything just ended up being so… hard. Weirdly, I feel more in control now than I have in a while."
 
         # Image Ashina Caring
-        ### Need Ashina Caring image
+        show ash caring with dissolve
 
         "Ashina’s gaze softens."
 
         ash "The world can be cruel. No matter how clear your vision for the future, reality wears you down over time."
 
         # Image Ashina Thoughtful
-        ### Need Ashina Thoughtful image
+        show ash thoughtful with dissolve
 
         ash "There used to be more of us, you know. Now I fear we may be the last. I, too, once had dreams. Those dreams died with my kin."
 
@@ -349,15 +318,13 @@ label AppreciationResponse:
         ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
 
         # VSFX Ashina (fade out)
+        hide ash neutral with dissolve
 
         "With that, she leaves, taking the calm with her."
 
         jump BotchedEscapeScene
 
 label DisgustResponse:
-        #Ashina Disapproval Choice
-        $ ash_approval -= 1
-        # "Respond with disgust.":
         # "You glare."
         # you "I didn’t ask for this. I don’t want to be a monster. You want me to play nice? Forget it."
         # you "The only reason I’m even listening to you right now is because if I don’t, you’ll hurt Cameron. We don’t need to pretend this is anything it isn’t."

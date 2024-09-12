@@ -1,36 +1,10 @@
 label WakingScene:
 
-        #stop audio from previous scene
-        stop sound
-        #VSFX blur
-        #i put this before scene so it wouldn't be unblurred whilst the scene was being dissolved in
-        camera:
-                subpixel True blur 20.0 
-
-        # image captive cabin room (angled, zoomed in on ceiling)
-        scene bg room ceiling with dissolve
-
-        #music cabin
-        ### Need music for cabin
-
-        #SFX crickets
-        play sound crickets loop
+        call WakeUpSequence1
         
         "The cool evening breeze is the first thing you sense, then the chirping of crickets outside."
 
-        #VSFX unblur (fade in-out as if waking up)
-        #not sure if this is the right amount of blur since my placeholder is pretty low-res
-        # Seems good to me, we will double check with Bizzy
-        window auto hide
-        camera:
-                subpixel True 
-                linear 1.00 blur 5.0 
-                linear 1.00 blur 20.0 
-                linear 1.00 blur 0.0
-        with Pause(3)
-        camera:
-                blur 0.0 
-        window auto show
+        call WakeUpSequence2
 
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
 
@@ -39,12 +13,7 @@ label WakingScene:
         #i don't know what a bed creak sounds like help
 
         #VFX red flash (on the edges)
-        show pain:
-                subpixel True
-                alpha 0.0
-                linear 0.5 alpha 1.0 
-                linear 1.0 alpha 0.5
-                linear 2.0 alpha 0.0
+        call PainFlash
 
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
 
@@ -148,6 +117,7 @@ label WakingScene:
 
         
         menu:
+                #corruption choice
                 "Eat Ashina's meal.":
                         $ corruption += 1
                         $ ash_approval += 1
@@ -159,13 +129,14 @@ label WakingScene:
                         show ash friendly with dissolve
                         ash "Good girl. Now, get some rest."
 
+                #humanity choice
                 "Abstain from eating.":
                         $ humanity += 1
                         "You turn away from the plate on the side table. Ashina sighs."
 
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
         
-        ## slow this down
+        ## slow this down?
         hide ash with moveoutright
         
         #VSFX blur
@@ -185,15 +156,6 @@ label WakingScene:
                         jump ExamineWindow
                 "Head to bed.":
                         jump HeadtoBed
-
-label HeadtoBed:        
-        "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
-        
-        #VSFX black screen
-        scene color black with dissolve
-        
-        #Move to failed rescue scene
-        jump FailedRescueScene
 
 label ExamineWindow:
         #sfx walking
@@ -237,6 +199,7 @@ label ExamineWindow:
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
         #not sure if this is too blue.
         #i don't know how to make this fade in
+        #started with a plain white filter then transitioned color
         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}{color=#1C4587}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
         #got the shade of blue directly from the doc. should we keep the bold?
         #it looks good to me, we'll see if biz mentions it when I put the next build in the drive.
@@ -256,3 +219,13 @@ label ExamineWindow:
 
         ## show black screen for a moment to make it clear player fell asleep
         jump HeadtoBed
+
+label HeadtoBed:
+        #choices converge here        
+        "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
+        
+        #VSFX black screen
+        scene color black with dissolve
+        
+        #Move to failed rescue scene
+        jump FailedRescueScene

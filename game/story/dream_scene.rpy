@@ -1,6 +1,8 @@
 label DreamScene:
+        #stop audio from previous scene
+        stop sound
         # VSFX A moving, dreamy effect, like the movement of water
-        scene bg room mc with dissolve
+        scene bg dream with dissolve
         #don't know where this takes place
 
         "Your consciousness bubbles to the surface as sunlight heats your skin nearly to the point of burning. You squint down at your tiny hands, wet with tears."
@@ -13,6 +15,7 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
+        show neighbor with dissolve
 
         "A shadow crosses into your field of vision. You look up through bleary eyes to see your neighbor, crouched down with one hand extended towards you, palm side up."
 
@@ -39,6 +42,7 @@ label DreamScene:
         neighbor "We have the biggest collection of movies at home! You can pick your favorite!"
 
         # VSFX Shadowy Figure 1 fade out
+        hide neighbor with dissolve
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
@@ -46,6 +50,7 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
+        show neighbor with dissolve
 
         you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
 
@@ -76,6 +81,7 @@ label DreamScene:
         you "I {color=#ff0000}{b}hate{/color}{/b} you! I {color=#ff0000}{b}hate{/color}{/b} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/color}{/b} your baby! I never want to see you again!"
 
         # VSFX Shadowy Figure 1 fade out
+        hide neighbor with dissolve
 
         "You run out of the house, never stopping to look back." 
 
@@ -89,6 +95,7 @@ label DreamScene:
 
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
+        show teacher with dissolve
 
         teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
 
@@ -137,6 +144,7 @@ label DreamScene:
         "Your teacher gives you a big smile."
 
         # VSFX Shadowy Figure 2 fade out
+        hide teacher with dissolve
 
         "From then on, that was your lunch routine. Your teacher never asked any too-hard questions, and you two would just chat about the simple things." 
 
@@ -146,7 +154,7 @@ label DreamScene:
 
         "Lots of nasty rumors spread in speculation of their sudden discharge. You heard things that made you sick to your stomach. You want to believe in the kind teacher that tricked you into eating lunch, but doubts about their true nature haunt you to this day."
 
-        # VSFX Shadow Figures 1, 2, 3, 4, etc fade in and out
+        ## VSFX Shadow Figures 1, 2, 3, 4, etc fade in and out
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
