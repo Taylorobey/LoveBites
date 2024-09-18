@@ -6,7 +6,7 @@ define ash              = Character("???", color="#1C4587")
 #yes, that's the same shade of blue as everything else.
 #changed name to "???" and i think we'll just $ it to ashina when mc learns her name
 define cam              = Character("Cameron", color="#d3c71e")
-define you              = Character("You", color="#37871c")
+define you              = Character("You", color="#a3a3a3")
 define neighbor         = Character("Neighbor", color="#411c87")
 define teacher          = Character("Teacher", color="#411c87")
 
@@ -29,6 +29,9 @@ define cameron_leave    = False
 define cameron_help     = False
 define cameron_turning  = False
 define cameron_turned   = False
+define ash_lock         = False
+define aka_lock         = False
+define cam_lock         = False
 
 # Declare functions for use in scripts
 define flash = Fade(0.1, 0.0, 3.0, color="#fff")
@@ -44,10 +47,10 @@ style bigtext:
 # blur
 
 ## Define some positions/zooms that are commonly used
-# Torso 
-# Bust
+# Torso left/center/right
+# Bust left/center/right
 # Lower Right
-# Close to Player
+# Close to Player left/center/right
 
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes

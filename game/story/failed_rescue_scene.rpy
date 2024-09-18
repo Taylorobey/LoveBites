@@ -222,6 +222,7 @@ label FailedRescueScene:
         window auto show
         cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
 
+        "A shiver goes down your spine, and your breathing sounds... different. You get a {b}{color=#1C4587}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
         menu:
                 "Agree to go with Cameron.":
                         jump GoWithCam
@@ -233,6 +234,7 @@ label GoWithCam:
 
         #Cameron Approval Choice: 
         $ cam_approval += 1
+        $ ash_approval -= 1
 
         "You try to ignore that, in the back of your head, you hunger more for the plate of raw meat from earlier than a bowl of soup. You’d give anything to feel normal. Your tiny, dingy apartment doesn’t sound so bad right now."
 

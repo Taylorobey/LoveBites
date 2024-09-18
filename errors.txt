@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/full_approval_akari_scene.rpy", line 4: Line with id FullApprovalAkariScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_akari_scene.rpyc:4
-
-File "game/story/full_approval_ashina_scene.rpy", line 4: Line with id FullApprovalAshinaScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_ashina_scene.rpyc:4
-
-File "game/story/full_approval_cameron_scene.rpy", line 4: Line with id FullApprovalCameronScene_8f7c4d77 appears twice. The other line is game/story/Not Implemented/full_approval_cameron_scene.rpyc:4
+File "game/images.rpy", line 59: expected '=' not found.
+    image ui_choice
+                   ^
 
 Ren'Py Version: Ren'Py 8.3.0.24082114
-Wed Sep 11 18:22:36 2024
+Tue Sep 17 20:01:21 2024

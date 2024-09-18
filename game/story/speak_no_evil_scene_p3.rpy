@@ -30,6 +30,8 @@ label SpeakNoEvilSceneP3:
 
                 "You're uncertain of your future here, but you can at least rest easy now knowing that Cameron is safe. You are beyond exhausted and decide to go back to your room."
 
+                jump LettersScene
+
         #if Cameron agrees to be turned
         elif cameron_turning:
                 #Placeholder for the Cameron becomes a Lycan path

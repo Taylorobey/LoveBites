@@ -1,34 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  [Previous line repeated 5740 more times]
-  File "game/script.rpy", line 56, in script
-    play sound crickets loop
-Exception: Possible infinite loop.
+  File "game/images.rpy", line 4, in script
+    image bg street empty 2     = ""
+Exception: An empty string cannot be used as a displayable.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  File "game/story/waking_scene.rpy", line 3, in script call
-    call WakeUpSequence1
-  [Previous line repeated 5740 more times]
-  File "game/script.rpy", line 56, in script
-    play sound crickets loop
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\execution.py", line 61, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "game/images.rpy", line 4, in script
+    image bg street empty 2     = ""
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 924, in execute
+    renpy.exports.image(self.imgname, img)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\displayexports.py", line 73, in image
+    d = renpy.easy.displayable(d)
+  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\easy.py", line 117, in displayable
+    raise Exception("An empty string cannot be used as a displayable.")
+Exception: An empty string cannot be used as a displayable.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.0.24082114
 LoveBites 1.0
-Wed Sep 11 18:23:42 2024
+Tue Sep 17 20:42:07 2024
