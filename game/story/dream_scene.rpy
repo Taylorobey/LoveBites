@@ -2,8 +2,16 @@ label DreamScene:
         #stop audio from previous scene
         stop sound
         # VSFX A moving, dreamy effect, like the movement of water
-        scene bg dream with dissolve
-        #don't know where this takes place
+        scene bg color black with dissolve
+    
+        camera:
+                subpixel True zpos -100.0 
+        
+        show bg ripple one onlayer screens:
+                subpixel True xzoom 1.59 zoom 0.52
+
+
+        play music dream_music volume 0.3 fadein 1.0
 
         "Your consciousness bubbles to the surface as sunlight heats your skin nearly to the point of burning. You squint down at your tiny hands, wet with tears."
 
@@ -15,7 +23,10 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-        show neighbor with dissolve
+            
+        show neighbor with dissolve:
+                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
+
 
         "A shadow crosses into your field of vision. You look up through bleary eyes to see your neighbor, crouched down with one hand extended towards you, palm side up."
 
@@ -50,7 +61,9 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-        show neighbor with dissolve
+        show neighbor with dissolve:
+                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
+
 
         you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
 
@@ -95,7 +108,9 @@ label DreamScene:
 
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
-        show teacher with dissolve
+        show teacher with dissolve:
+                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
+
 
         teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
 
@@ -158,6 +173,7 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
+        #screen tints are broken now
         menu:
                 #Humanity choice
                 "People are complicated.":
@@ -182,4 +198,5 @@ label DreamScene:
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/color}{/b} be like them."
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
+
         jump WhoYouAreScene

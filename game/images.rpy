@@ -12,11 +12,35 @@ image bg door closed        = "bg/cabin_door_closed.png"
 image bg door open          = "bg/cabin_door_open.png"
 image bg wall               = "bg/cabin_wall.png"
 image bg hearth             = "bg/cabin_wall.png"
-image bg dream              = "temp/mc_room.jpg"
 image bg cabin exterior     = "temp/mc_room.jpg"
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky_color.png"
 image bg basement           = "temp/mc_room.jpg"
+
+image bg ripple one:
+    "bg/ripples/RPL_0101.png"
+    0.1 #this part defines how long to wait before next frame
+    "bg/ripples/RPL_0102.png"
+    0.1
+    "bg/ripples/RPL_0103.png"
+    0.1
+    "bg/ripples/RPL_0104.png"
+    0.1
+    "bg/ripples/RPL_0105.png"
+    0.1
+    "bg/ripples/RPL_0106.png"
+    0.1
+    "bg/ripples/RPL_0107.png"
+    0.1
+    "bg/ripples/RPL_0108.png"
+    0.1
+    "bg/ripples/RPL_0109.png"
+    0.1
+    "bg/ripples/RPL_0110.png"
+    0.1
+    "bg/ripples/RPL_0111.png"
+    0.1
+    repeat
 
 # Declare color backgrounds for effect use
 image bg color black        = "bg/color_black.bmp"
@@ -50,8 +74,34 @@ image cam scared            = "chars/cameron/cameron_scared.png"
 image cam frustrated        = "chars/cameron/cameron_frustrated.png"
 image cam caring            = "chars/cameron/cameron_caring.png"
 
-image neighbor              = "shadows/neighbor.gif"
-image teacher               = "shadows/teacher.gif"
+image neighbor:
+    "chars/shadows/neighbor/NEI_01.png"
+    0.2
+    "chars/shadows/neighbor/NEI_02.png"
+    0.2
+    "chars/shadows/neighbor/NEI_03.png"
+    0.2
+    "chars/shadows/neighbor/NEI_04.png"
+    0.2
+    "chars/shadows/neighbor/NEI_05.png"
+    0.2
+    "chars/shadows/neighbor/NEI_06.png"
+    0.2
+    repeat
+image teacher:
+    "chars/shadows/teacher/TEA_01.png"
+    0.2
+    "chars/shadows/teacher/TEA_02.png"
+    0.2
+    "chars/shadows/teacher/TEA_03.png"
+    0.2
+    "chars/shadows/teacher/TEA_04.png"
+    0.2
+    "chars/shadows/teacher/TEA_05.png"
+    0.2
+    "chars/shadows/teacher/TEA_06.png"
+    0.2
+    repeat
 
 # Declare other images
 image logo                  = "logo_white.png"

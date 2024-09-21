@@ -66,7 +66,7 @@ label start:
 
     #temporary jump for testing
     #jump WakingScene
-    jump FailedRescueScene
+    jump DreamScene
     #jump IntroductoryCutscene
     
     # This ends the game.
