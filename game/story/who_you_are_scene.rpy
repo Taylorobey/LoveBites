@@ -1,6 +1,7 @@
 label WhoYouAreScene:
         #stop audio from previous scene
         stop sound
+      
         call WakeUpSequence1
         
         "When you next awake, something feels off. It only takes you a few moments to figure it out."
@@ -18,9 +19,6 @@ label WhoYouAreScene:
 
         "You sit up, and sure enough, the door opens and the woman steps in."
 
-        # SFX Creak
-        play sound creak
-
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
         show ash neutral with dissolve
@@ -32,25 +30,40 @@ label WhoYouAreScene:
 
         "You’re not sure if you want to follow her, but it's not like you have much of a choice."
 
+        window auto hide
+
         # SFX Fade Out Crickets
         stop sound fadeout 1.0
 
         # SFX Walking
         play sound walk
         ## VSFX zooming and fading in and out of images as if walking through the cabin
-        
+
         # Image Cabin Door Open
-        show bg cabindooropen
+        show bg door open with dissolve
+        with Pause(1.0)
 
         # Image Cabin Hall
-        show bg wall
+        show bg hallway with dissolve:
+                subpixel True zoom 0.53
+        with Pause(1.0)
+
+        stop music fadeout 4.0
+
+        play audio fireplace volume 0.3 loop fadein 2.0
+
+        # Image Downstairs
+        show bg downstairs with dissolve:
+                subpixel True zoom 1.0
+        with Pause(1.0)
 
         # Image Cabin Hearth
-        show bg hearth
+        show bg hearth with dissolve:
+                subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
 
-        ### need image for hearth
-        play audio fireplace loop
+        window auto show
 
+        stop sound fadeout 1.0
         "The woman leads you out of your room, down the stairs, and into a spacious hearth. The area is well adorned, equipped with ornate furnishings and a large fireplace to keep the place warm, and to cook with you suppose. Not that she used it."
 
         # VSFX Ashina (fade in)
@@ -104,6 +117,8 @@ label WhoYouAreScene:
 
         "The woman reaches forward and delicately plucks a slice of raw meat, before lowering it to her lips. She chews it as if it were soft as butter, her eyes burning into you with an intensity." 
 
+        play music eerie_outdoors_music
+
         # VSFX Ashina (fade out)
         hide ash friendly with dissolve
         # VSFX Red Flash (on the screen edges like a blooming pain)
@@ -122,14 +137,14 @@ label WhoYouAreScene:
         "You avert your gaze to the raw meat on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
 
         ## VSFX Screen Shake (like a shiver)
-        window auto hide
-        show bg wall:
-                subpixel True 
-                linear 0.15 xpos 0.49 
-                linear 0.15 xpos 0.51 
-                linear 0.15 xpos 0.49 
-                linear 0.15 xpos 0.5 
-        window auto show
+        #window auto hide
+        #show bg wall:
+                #subpixel True 
+                #linear 0.15 xpos 0.49 
+                #linear 0.15 xpos 0.51 
+                #linear 0.15 xpos 0.49 
+                #linear 0.15 xpos 0.5 
+        #window auto show
 
         you "What did you do to me…? I don't feel normal. Every little thing feels…"
 
@@ -179,6 +194,8 @@ label WhoYouAreScene:
                 subpixel True
                 linear 3.0 alpha 0.0
 
+        stop music fadeout 3.0
+
         "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their depths, if you wanted to. You don’t. You definitely don’t."
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
@@ -188,13 +205,15 @@ label WhoYouAreScene:
         ash "That is- What you have become, what you must do to survive, and why you can never return to your old life."
 
         # Image Ashina Hybrid Thoughtful
-        show ashina thoughtful with dissolve
+        show ash thoughtful with dissolve
 
         ash "I am, and you are, lykánthrōpos, lycanthrope, or in layman's terms, werewolf. Descendants of witches, able to infect others with our so-called curse."
 
         ash "There are many historical accounts of our supposed origins, most claiming that our distant ancestors became as we are through acts of heinous depravity, usually related to the consumption of human flesh."
 
         ash "I have plenty of notes and readings on the subject that you will eventually be given access to, should you behave. Moving on."
+
+        hide ash thoughtful with dissolve
 
         # Image Ashina Neutral
         # VSFX Ashina (move back to fullbody, center)
