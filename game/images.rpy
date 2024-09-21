@@ -50,8 +50,8 @@ image cam scared            = "chars/cameron/cameron_scared.png"
 image cam frustrated        = "chars/cameron/cameron_frustrated.png"
 image cam caring            = "chars/cameron/cameron_caring.png"
 
-image neighbor              = "neighbor.gif"
-image teacher               = "teacher.gif"
+image neighbor              = "shadows/neighbor.gif"
+image teacher               = "shadows/teacher.gif"
 
 # Declare other images
 image logo                  = "logo.png"
