@@ -1,5 +1,4 @@
 # Declare background images
-# Declare background images
 image bg intersection       = "bg/intersection.png"
 image bg street dog         = "bg/street_one_dog.png"
 image bg street dogs        = "bg/street_two_dogs.png"
