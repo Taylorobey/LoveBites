@@ -54,5 +54,5 @@ image neighbor              = "shadows/neighbor.gif"
 image teacher               = "shadows/teacher.gif"
 
 # Declare other images
-image logo                  = "logo.png"
+image logo                  = "logo_white.png"
 image pain                  = "red_edges.png"
