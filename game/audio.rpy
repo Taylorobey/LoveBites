@@ -1,6 +1,6 @@
 # Declare audio files to use for music
 define audio.intro_music            = "MUS/Introduction_Endless_Night.mp3"
-define audio.capture_music          = "MUS/Capture_You_Feel_Their_Breath_On_Your_Heels.mp3"
+define audio.capture_music          = "MUS/Capture_You_Feel_Their_Breath.mp3"
 define audio.cabin_music            = "MUS/Cabin.mp3"
 define audio_dream_music            = "MUS/Dream.mp3"
 #placeholders until music is available
