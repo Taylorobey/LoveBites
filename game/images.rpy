@@ -34,7 +34,7 @@ image wolf lunge            = "chars/ashina/ashina_wolf_lunge_sketch.png"
 # I would say they fit in the category
 image ash neutral           = "chars/ashina/ashina_neutral.png"
 image ash friendly          = "chars/ashina/ashina_friendly.png"
-image ash friendly sadistic = "chars/ashina/ashina_friendly_sadistic.png"
+image ash friendly sadistic = "chars/ashina/ashina_friendly2.png"
 image ash angry hybrid      = "chars/ashina/ashina_hybrid_angry.png"
 image ash thoughtful        = "chars/ashina/ashina_thoughtful.png"
 image ash thoughtful hybrid = "chars/ashina/ashina_hybrid_thoughtful.png"
