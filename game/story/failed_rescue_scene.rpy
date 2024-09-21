@@ -1,10 +1,9 @@
 label FailedRescueScene:
         
         call WakeUpSequence1
-        call WakeUpSequence2
-       
         #SFX Creak
-        play sound creak
+        play sound creak volume 0.5
+        call WakeUpSequence2
 
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
 
@@ -72,7 +71,7 @@ label FailedRescueScene:
         ## Cameron could be closer to the screen when they first appear
 
         # SFX Creak
-        play sound creak
+        play sound creak volume 0.25
 
         "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
@@ -287,14 +286,16 @@ label CamCaught:
         show cam neutral with dissolve:
                 xalign 0.7 zoom 1.5 
 
+        stop music fadeout 2.0
         "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
+
+        # SFX Creak
+        play sound creak volume 0.5
 
         # Image Cabin Door Open
         show bg door open with dissolve
         #so cam doesn't disappear
 
-        # SFX Creak
-        play sound creak
 
         ## Ashina and Cameron should be moving together at the parts where Ashina moves towards Cameron, as if she's pulling them around with her while taunting you, also hopefully with how Ashina's pose works Cameron can be more in front of her while she's menacing them.
         # VSFX Fade In Ashina
@@ -304,7 +305,7 @@ label CamCaught:
                 subpixel True xalign 0.8 zoom 1.5
 
         # Music Capture
-        play music capture_music loop
+        play music capture_music volume 0.3 loop
 
         ash "My my, what do we have here?"
 
@@ -365,17 +366,21 @@ label CamCaught:
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
+        stop music fadeout 2.0
+
         # VSFX Ashina and Cameron quickly Fade Out
         hide ash angry hybrid with dissolve
         hide cam scared with dissolve
 
+        # SFX Creak
+        play sound creak volume 0.5
+
         # Image Cabin Door Closed
         scene bg door closed with dissolve
-        # SFX Creak
-        play sound creak
+
 
         # Music Cabin
-        play music cabin_music
+        play music cabin_music volume 0.3 fadein 2.0
 
         "Before you even have a chance to protest, your captor shuts the door. Your legs shake, threatening to give out, and you stumble back towards the bed."
 
@@ -406,7 +411,9 @@ label CamCaught:
 
         "…Just before you drift off, you notice your nails feel unusually sharp."
 
+        stop music fadeout 1.5
         # Image Black Screen
         scene bg color black with dissolve
+        with Pause(2.0)
 
         jump DreamScene
