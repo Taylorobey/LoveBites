@@ -1,13 +1,10 @@
 # Declare background images
+# Declare background images
 image bg intersection       = "bg/intersection.png"
-image bg street empty       = "bg/street_1.png"
-#image bg street empty 2     = ""
-#image bg street empty 3     = ""
-#image bg street empty 4     = ""
-image bg street dog         = "background_street_one_dog.bmp"
-image bg street dogs        = "background_street_three_dogs.bmp"
-image bg street many        = "background_street_many_dogs.bmp"
-image bg street full        = "background_street_full_dogs.bmp"
+image bg street dog         = "bg/street_one_dog.png"
+image bg street dogs        = "bg/street_two_dogs.png"
+image bg street many        = "bg/street_many_dogs.png"
+image bg street full        = "bg/street_full_dogs.png"
 image bg alley              = "bg/alley.png"
 
 image bg room ceiling       = "temp/cabin_ceiling.jpg"
@@ -23,8 +20,8 @@ image bg forest edge        = "bg/sky_color.png"
 image bg basement           = "temp/mc_room.jpg"
 
 # Declare color backgrounds for effect use
-image bg color black        = "background/color_black.bmp"
-image bg color red          = "background/color_red.jpg"
+image bg color black        = "bg/color_black.bmp"
+image bg color red          = "bg/color_red.jpg"
 
 # Declare character images
 image wolf neutral          = "chars/ashina/ashina_wolf_sketch-no-tail.png"
@@ -54,8 +51,8 @@ image cam scared            = "chars/cameron/cameron_scared.png"
 image cam frustrated        = "chars/cameron/cameron_frustrated.png"
 image cam caring            = "chars/cameron/cameron_caring.png"
 
-image neighbor              = "shadowy_figure_1"
-image teacher               = "shadowy_figure_2"
+image neighbor              = "neighbor.gif"
+image teacher               = "teacher.gif"
 
 # Declare other images
 image logo                  = "logo.png"
