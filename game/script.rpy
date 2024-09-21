@@ -52,6 +52,11 @@ style bigtext:
 # Lower Right
 # Close to Player left/center/right
 
+#Supplementary audio channels
+#Extra SFX
+init python:
+    renpy.music.register_channel('soundb', "sound")
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
