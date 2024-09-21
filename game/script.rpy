@@ -66,7 +66,7 @@ label start:
 
     #temporary jump for testing
     #jump WakingScene
-    jump WhoYouAreScene
+    jump BotchedEscapeScene
     #jump IntroductoryCutscene
     
     # This ends the game.
