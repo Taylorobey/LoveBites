@@ -243,20 +243,49 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        imagebutton:
+            idle "gui/button/back_button_idle.png"
+            hover "gui/button/back_button_hover.png"
+            action Rollback()
+            xpos 1402
+            ypos 725
 
-            xalign 0.5
-            yalign 1.0
+        imagebutton:
+            idle "gui/button/auto_button_idle.png"
+            hover "gui/button/auto_button_hover.png"
+            action Preference("auto-forward", "toggle")
+            xpos 1490
+            ypos 716
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+        imagebutton:
+            idle "gui/button/skip_button_idle.png"
+            hover "gui/button/skip_button_hover.png"
+            insensitive "gui/button/skip_button_ins.png"
+            action Skip() alternate Skip(fast=True, confirm=True)
+            xpos 1555
+            ypos 704
+
+        imagebutton:
+            idle "gui/button/qsave_button_idle.png"
+            hover "gui/button/qsave_button_hover.png"
+            action QuickSave()
+            xpos 1652
+            ypos 696
+
+        imagebutton:
+            idle "gui/button/qload_button_idle.png"
+            hover "gui/button/qload_button_hover.png"
+            insensitive "gui/button/qload_button_ins.png"
+            action QuickLoad()
+            xpos 1740
+            ypos 677
+
+        imagebutton:
+            idle "gui/button/menu_button_idle.png"
+            hover "gui/button/menu_button_hover.png"
+            action ShowMenu('preferences')
+            xpos 1822
+            ypos 677
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
