@@ -60,10 +60,14 @@ init python:
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
-    #temporary jump for testing
-    jump WakingScene
+    #this is needed for zooms to work properly
+    camera:
+        perspective True
 
-    #jump IntroductoryCutscene
+    #temporary jump for testing
+    #jump WakingScene
+
+    jump IntroductoryCutscene
     
     # This ends the game.
     return
