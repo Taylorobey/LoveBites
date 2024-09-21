@@ -9,8 +9,7 @@ label WakingScene:
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
 
         #SFX bed creak
-        ### Need bed creak asset
-        #i don't know what a bed creak sounds like help
+        play sound creak volume 0.5
 
         #VFX red flash (on the edges)
         call PainFlash
@@ -19,6 +18,7 @@ label WakingScene:
 
         #image captive cabin room (full view)
         scene bg room mc with dissolve
+        stop sound fadeout 1.0
 
         "You take a glance at your immediate surroundings. The room is mostly bare. Some fake-looking flowers decorate the minimal furnishings."
         
@@ -67,10 +67,12 @@ label WakingScene:
         # Need stomach growl sfx asset
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
+        stop music fadeout 1.0
         ash "Here. Eat to your heart's content."
         
         #music unsettling
         # Need unsettling music asset
+        play music eerie_outdoors_music fadein 0.5
         stop sound
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
@@ -93,6 +95,7 @@ label WakingScene:
         #vsfx centered text, dim surroundings
         #text "YOU NEED TO EAT THE RAW MEAT."
         window auto hide
+        play sound heart
         image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext")
         show hungertext
         show pain:
@@ -108,7 +111,8 @@ label WakingScene:
         hide pain with dissolve
 
         #image ashina neutral
-        
+        stop sound fadeout 1.0
+
         ash "Ah, so you finally understand the gravity of the situation."
         ash "You must eat this meal, or the beast will take you."
         you "The beast? What does that mean?"
@@ -147,12 +151,12 @@ label WakingScene:
         #VSFX return to normal
         camera:
                 linear 1.0 blur 0.0
-        "You force your eyes to focus. On the far wall, there is an open window. A possible escape route?"
+        "You force your eyes to focus. On the far wall, there is a window. A possible escape route?"
 
         #I set these to jump to labels, that way if we have nested menus, the indents don't get out of hand.
         #also, it looks neater for longer sections.
         menu:
-                "Examine the open window.":
+                "Examine the window.":
                         jump ExamineWindow
                 "Head to bed.":
                         jump HeadtoBed
@@ -174,7 +178,7 @@ label ExamineWindow:
         
         #sfx dogs barking
         play sound walk
-        play sound barking
+        play sound barking volume 0.25
         
         #closer to window
         window auto hide
@@ -188,10 +192,13 @@ label ExamineWindow:
         #image window no dogs
         "You finally reach the window and take a peek outside..."
         stop sound fadeout 1.0
+        stop music fadeout 1.0
         
         #image window with dogs
         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
         
+        play music connection_music volume 0.25
+
         #VSFX Slight Blue Tint (slow fade in)
         camera:
                 #matrixcolor TintMatrix("#1C4587")
@@ -217,15 +224,17 @@ label ExamineWindow:
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
 
-        ## show black screen for a moment to make it clear player fell asleep
         jump HeadtoBed
 
 label HeadtoBed:
-        #choices converge here        
+        #choices converge here 
+        stop music fadeout 1.0
+
         "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
         
         #VSFX black screen
-        scene color black with dissolve
+        scene bg color black with dissolve
+        with Pause(2.0)
         
         #Move to failed rescue scene
         jump FailedRescueScene

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/images.rpy", line 59: expected '=' not found.
-    image ui_choice
-                   ^
+File "game/story/waking_scene.rpy", line 73: expected simple expression
+    play music eerie_outdoors_music fadein
+                                          ^
 
-Ren'Py Version: Ren'Py 8.3.0.24082114
-Tue Sep 17 20:01:21 2024
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Sat Sep 21 12:20:18 2024

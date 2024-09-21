@@ -6,7 +6,7 @@ image bg street many        = "bg/street_many_dogs.png"
 image bg street full        = "bg/street_full_dogs.png"
 image bg alley              = "bg/alley.png"
 
-image bg room ceiling       = "temp/cabin_ceiling.jpg"
+image bg room ceiling       = "bg/cabin_ceiling.png"
 image bg room mc            = "bg/captive_room.png"
 image bg door closed        = "bg/cabin_door_closed.png"
 image bg door open          = "bg/cabin_door_open.png"

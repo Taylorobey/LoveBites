@@ -11,10 +11,10 @@ label WakeUpSequence1:
     scene bg room ceiling with dissolve
 
     #music cabin
-    play music cabin_music
+    play music cabin_music volume 0.3
 
     #SFX crickets
-    play sound crickets loop
+    play sound crickets loop volume 0.5
 
     return
 
