@@ -19,6 +19,21 @@ image bg cabin exterior     = "temp/mc_room.jpg"
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky.png"
 image bg basement           = "bg/captive_room.png"
+image bg window:
+    "bg/window.png"
+    subpixel True zoom 0.4
+
+image bg window eyes:
+    "bg/eyes/EYES_01.png" with dissolve
+    subpixel True zoom 0.4
+    1.5
+    "bg/eyes/EYES_02.png" with dissolve
+    subpixel True zoom 0.4
+    1.5
+    "bg/eyes/EYES_03.png" with dissolve
+    subpixel True zoom 0.4
+    1.5
+    repeat
 
 image bg ripple one:
     "bg/ripples/RPL_0101.png"
@@ -63,10 +78,10 @@ image ash neutral:
     "chars/ashina/ashina_neutral.png"
     subpixel True zoom 0.33 
 image ash friendly:
-    "chars/ashina/ashina_friendly.png"
+    "chars/ashina/ashina_friendly2.png"
     subpixel True zoom 0.33 
 image ash sadistic:
-    "chars/ashina/ashina_friendly2.png"
+    "chars/ashina/ashina_friendly.png"
     subpixel True zoom 0.33  
 image ash thoughtful:
     "chars/ashina/ashina_neutral.png"

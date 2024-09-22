@@ -69,7 +69,7 @@ label start:
         perspective True
 
     #temporary jump for testing
-    jump FailedRescueScene
+    jump WakingScene
     #jump IntroductoryCutscene
     
     # This ends the game.

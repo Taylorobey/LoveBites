@@ -1,4 +1,6 @@
 label WakingScene:
+        scene bg color black with dissolve
+        with Pause(0.5)
 
         call WakeUpSequence1
         
@@ -9,7 +11,8 @@ label WakingScene:
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
 
         #SFX bed creak
-        play sound creak volume 0.5
+        #play sound creak volume 0.5
+        #biz- don't like this
 
         #VFX red flash (on the edges)
         call PainFlash
@@ -65,9 +68,15 @@ label WakingScene:
 
         #SFX stomach growl
         # Need stomach growl sfx asset
+        play sound growl volume 0.5 fadeout 3.0
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
+
+        hide ash friendly 
+        with easeoutright
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
         stop music fadeout 1.0
+        show ash sadistic 
+        with easeinright
         ash "Here. Eat to your heart's content."
         
         #music unsettling
@@ -77,6 +86,9 @@ label WakingScene:
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
         you "You can't be serious…There's no way I can eat that!"
+
+        show ash neutral with dissolve
+
         ash "Are you really so sure? Doesn't your hunger just feel..."
 
         #VSFX ashina close up
@@ -111,7 +123,8 @@ label WakingScene:
         hide pain with dissolve
 
         #image ashina neutral
-        stop sound fadeout 1.0
+        stop sound fadeout 0.5
+        stop music fadeout 1.0
 
         ash "Ah, so you finally understand the gravity of the situation."
         ash "You must eat this meal, or the beast will take you."
@@ -187,14 +200,24 @@ label ExamineWindow:
                 linear 1.00 zoom 5.0 xpan 3.0 ypan -135.0 
         with Pause(1.0)
         window auto show
+
         "You inch ever closer, and you hear dogs begin to growl and bark wildly."
-        
+
+        window auto hide
         #image window no dogs
+        show bg window with dissolve
+        window auto show
+
         "You finally reach the window and take a peek outside..."
         stop sound fadeout 1.0
         stop music fadeout 1.0
         
+        window auto hide
         #image window with dogs
+        show bg window eyes with dissolve
+        with Pause(3.0)
+        window auto show
+
         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
         
         play music connection_music volume 0.25

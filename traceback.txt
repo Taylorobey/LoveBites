@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/speak_no_evil_scene_p2.rpy", line 177, in script
-    if Cameron Approval >= 0:
-SyntaxError: invalid syntax (game/story/speak_no_evil_scene_p2.rpy, line 177)
+  File "game/story/waking_scene.rpy", line 73, in script
+    with easeoutright(1.0)
+  File "game/story/waking_scene.rpy", line 73, in <module>
+    with easeoutright(1.0)
+Exception: MoveTransition can only be applied to one or all layers, not float.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/speak_no_evil_scene_p2.rpy", line 177, in script
-    if Cameron Approval >= 0:
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 1843, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/story/speak_no_evil_scene_p2.rpy, line 177)
+  File "game/story/waking_scene.rpy", line 73, in script
+    with easeoutright(1.0)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 1354, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/story/waking_scene.rpy", line 73, in <module>
+    with easeoutright(1.0)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\display\movetransition.py", line 538, in MoveTransition
+    raise Exception("MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__)
+Exception: MoveTransition can only be applied to one or all layers, not float.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
 LoveBites 1.0
-Sat Sep 21 18:11:40 2024
+Sun Sep 22 15:25:40 2024

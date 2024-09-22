@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/images.rpy", line 130: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    subpixel True zoom 0.33
-    ^
-
-File "game/images.rpy", line 150: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    subpixel True zoom 0.33
-    ^
+File "game/audio.rpy", line 15: expected '=' not found.
+    define audio.heart:
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Sep 22 15:00:52 2024
+Sun Sep 22 15:32:34 2024
