@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/speak_no_evil_scene_p1.rpy", line 67: Line is indented, but the preceding stop music statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    play audio fireplace volume 0.3 loop fadein 2.0
-    ^
+File "game/story/who_you_are_scene.rpy", line 178: expected end of line
+    stop sound heart fadeout 1.0
+               ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Sep 21 17:49:33 2024
+Sun Sep 22 11:54:16 2024

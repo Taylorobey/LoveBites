@@ -65,9 +65,8 @@ label SpeakNoEvilSceneP1:
         subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
 
     stop music fadeout 4.0
-
-    play audio fireplace volume 0.3 loop fadein 2.0
-
+    #play soundb fireplace volume 0.3 fadein 2.0 loop
+    #error here? 
     #Image Ashina Neutral (closer)
     show ash neutral with dissolve:
         subpixel True zoom 0.4

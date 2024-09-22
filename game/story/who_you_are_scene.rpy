@@ -175,7 +175,7 @@ label WhoYouAreScene:
 
         ash "Take a deep breath and look at me."
 
-        stop sound heart fadeout 1.0
+        stop sound fadeout 1.0
 
         # Image Ashina Neutral (same torso-up-view as before)
         # Image Cabin Hearth (full view)
