@@ -413,9 +413,10 @@ label CamCaught:
         "…Just before you drift off, you notice your nails feel unusually sharp."
 
         stop music fadeout 1.5
-        
+
         # Image Black Screen
         scene bg color black with dissolve
         with Pause(2.0)
 
+        #this scene breaks the dreamscene, but dreamscene plays fine if you jump straight to it
         jump DreamScene
