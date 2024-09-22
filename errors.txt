@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/waking_scene.rpy", line 73: expected simple expression
-    play music eerie_outdoors_music fadein
-                                          ^
+File "game/story/speak_no_evil_scene_p1.rpy", line 67: Line is indented, but the preceding stop music statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    play audio fireplace volume 0.3 loop fadein 2.0
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Sep 21 12:20:18 2024
+Sat Sep 21 17:49:33 2024

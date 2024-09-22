@@ -28,12 +28,12 @@ label WakeUpSequence2:
     with Pause(3)
     camera:
             blur 0.0 
-    window auto show
     return
 
 # common vfx that don't involve characters
 # VFX red flash (on the edges)
 label PainFlash:
+    window auto hide
     show pain:
                 subpixel True
                 alpha 0.0
