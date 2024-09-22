@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/story/who_you_are_scene.rpy", line 178: expected end of line
-    stop sound heart fadeout 1.0
-               ^
+File "game/images.rpy", line 130: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    subpixel True zoom 0.33
+    ^
+
+File "game/images.rpy", line 150: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    subpixel True zoom 0.33
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Sep 22 11:54:16 2024
+Sun Sep 22 15:00:52 2024

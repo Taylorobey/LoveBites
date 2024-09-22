@@ -53,10 +53,7 @@ label BotchedEscapeScene:
         # SFX Walking (stop)
         stop sound
         # Image Akari Bow Drawn (close)
-        show aki bow drawn with dissolve:
-                subpixel True zoom 0.33 
-
-
+        show aki bow drawn with dissolve
 
         "As you move into the foliage, you're stopped dead in your tracks. A silver arrow is aimed square between your eyes. The wielder of the bow is a sharp-eyed, hooded figure with hair black as night."
 
@@ -103,8 +100,7 @@ label PleadCase:
         aki "The smaller dogs you mentioned. Where are they now?"
 
         # Image Akari Bow Nocked
-        show aki bow nocked with dissolve:
-                subpixel True zoom 0.33 
+        show aki bow nocked with dissolve
         # The spelling on that is a pet peeve of mine
         # VSFX Akari (move horizontally across the screen, as if looking around)
 
@@ -113,8 +109,7 @@ label PleadCase:
         you "I don’t know, they were gone when I stepped outside. They must have run off somewhere, maybe-"
 
         #Image Akari Thoughtful
-        show aki thoughtful with dissolve:
-                subpixel True zoom 0.33 
+        show aki thoughtful with dissolve
 
         aki "The large one, the wolf-beast. That is their master, is it not?"
 
@@ -123,14 +118,12 @@ label PleadCase:
         you "My friend tried to rescue me, but now they’re trapped here too. She said she wouldn’t do anything to them so long as I behave, but…"
 
         # Image Akari Angry
-        show aki angry with dissolve:
-                subpixel True zoom 0.33 
+        show aki angry with dissolve
 
         aki "I see. So that lycanthrope is going around toying with the lives of innocent humans yet again. What a disgusting creature."
 
         # Image Akari Neutral
-        show aki neutral with dissolve:
-                subpixel True zoom 0.33 
+        show aki neutral with dissolve
 
         "The woman turns her bow and arrow away from you, continuing to scan the surroundings."
 
@@ -147,8 +140,7 @@ label PleadCase:
         #change name to show Akari after reveal
         $ aki = Character("Akari")
 
-        show aki neutral:
-                subpixel True zoom 0.33 
+        show aki neutral
         # VSFX Akari (closer)
 
         aki "But do not forget, you are still a monster. Try anything funny with me, and I will not hesitate to kill you."
@@ -167,8 +159,7 @@ label CallOut:
         "You desperately call out for Ashina and the hooded woman jumps slightly. She looks at you with a confused expression and lowers her bow."
 
         # Image Akari Bow Nocked
-        show aki bow nocked with dissolve:
-                subpixel True zoom 0.33 
+        show aki bow nocked with dissolve
 
         aki "Who are you yelling for? You should be the only one here."
 
@@ -177,19 +168,16 @@ label CallOut:
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
 
         # Image Akari Thoughtful
-        show aki thoughtful with dissolve:
-                subpixel True zoom 0.33 
+        show aki thoughtful with dissolve
 
         aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
 
         #change name to show Akari after reveal
         $ aki = Character("Akari")
 
-        show aki thoughtful:
-                subpixel True zoom 0.33 
+        show aki thoughtful
         #Image Akari Bow Nocked
-        show aki bow nocked:
-                subpixel True zoom 0.33 
+        show aki bow nocked
         #SFX Growl
         play audio growl
         #VSFX Akari (moves away and fades out)

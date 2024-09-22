@@ -47,13 +47,14 @@ label FailedRescueScene:
         play sound walk
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
-        window auto hide
-        camera:
-                subpixel True 
-                pos (0, 0) zoom 1.0 
-                linear 1.5 pos (-2000, -1200) zoom 3.0
-        with Pause(1.5)
-        window auto show
+        #window auto hide
+        #camera:
+                #subpixel True 
+                #pos (0, 0) zoom 1.0 
+                #linear 1.5 pos (-2000, -1200) zoom 3.0
+        #with Pause(1.5)
+        #window auto show
+        #broken?
         
         stop sound
         #moved this up, felt it was weird to still have walking noises when the camera stopped
@@ -412,6 +413,7 @@ label CamCaught:
         "…Just before you drift off, you notice your nails feel unusually sharp."
 
         stop music fadeout 1.5
+        
         # Image Black Screen
         scene bg color black with dissolve
         with Pause(2.0)

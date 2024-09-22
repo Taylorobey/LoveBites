@@ -17,8 +17,7 @@ label SpeakNoEvilSceneP1:
     scene bg room mc with dissolve
 
     #Image Ashina Caring
-    show ash caring with dissolve:
-        subpixel True zoom 0.36 
+    show ash caring with dissolve
 
     window auto show
 
@@ -27,8 +26,7 @@ label SpeakNoEvilSceneP1:
     window auto hide
 
     #Image Ashina Neutral
-    show ash neutral with dissolve:
-        subpixel True zoom 0.36 
+    show ash neutral with dissolve
 
     window auto show
 
@@ -68,32 +66,27 @@ label SpeakNoEvilSceneP1:
     #play soundb fireplace volume 0.3 fadein 2.0 loop
     #error here? 
     #Image Ashina Neutral (closer)
-    show ash neutral with dissolve:
-        subpixel True zoom 0.4
+    show ash neutral with dissolve
 
     "Once you read the bottom of the stairs and step into the hearth, Ashina turns and steps close to you. Her eyes burn into you with a lingering question."
 
     #Image Ashina Thoughtful
-    show ash thoughtful with dissolve:
-        subpixel True zoom 0.36 
+    show ash thoughtful with dissolve
 
     ash "Not that you would have gotten very far before I caught you, but you get my point."
 
     #Image Ashina Caring
-    show ash caring with dissolve:
-        subpixel True zoom 0.36 
+    show ash caring with dissolve
 
     ash "You were trying to get help for your friend, weren't you? You must be worried about them."
 
     #VSFX Ashina (further)
-    show ash caring with dissolve:
-        subpixel True zoom 0.3
+    show ash caring with dissolve
 
     ash "I'm not so cruel as to keep you two apart. I'll allow you a single visit."
 
     #Image Ashina Neutral
-    show ash neutral with dissolve:
-            subpixel True zoom 0.36
+    show ash neutral with dissolve
 
     ash "...with some stipulations."
 
@@ -102,8 +95,7 @@ label SpeakNoEvilSceneP1:
     you "I'll do anything to see them again!"
 
     #VSFX Ashina Friendly
-    show ash friendly with dissolve:
-        subpixel True zoom 0.36 
+    show ash friendly with dissolve
 
     #VSFX Ashina (closer)
 
@@ -114,20 +106,17 @@ label SpeakNoEvilSceneP1:
         ash "You have been quite obedient. It seems like you have a good head on those pretty little shoulders, as you clearly grasp the reality of your situation."
 
         #Image Ashina Caring
-        show ash caring with dissolve:
-            subpixel True zoom 0.36 
+        show ash caring with dissolve
 
         ash "I appreciate that. I am not unreasonable, and I feel you’ve earned a reward. So, let's make a deal."
 
         #Image Ashina Thoughtful
-        show ash thoughtful with dissolve:
-            subpixel True zoom 0.36 
+        show ash thoughtful with dissolve
 
         "She speaks with such arrogance that one could easily miss the vulnerable glint in her eyes, and the slight shift in her posture. You briefly wonder how she might look without that carefully crafted mask of hers."
 
         #Image Ashina Neutral
-        show ash neutral with dissolve:
-                subpixel True zoom 0.36 
+        show ash neutral with dissolve 
 
         ash "I'll agree to let your friend go, and they will be free to return to their normal life."
 
@@ -136,14 +125,12 @@ label SpeakNoEvilSceneP1:
         you "Wait a minute, if you're willing to do that…You must want something. Something big."
 
         #Image Ashina Friendly
-        show ash friendly with dissolve:
-            subpixel True zoom 0.36 
+        show ash friendly with dissolve
 
         ash "Very clever of you, pet. But, it is just one simple condition."
 
         #Image Ashina Thoughtful
-        show ash thoughtful with dissolve:
-            subpixel True zoom 0.36 
+        show ash thoughtful with dissolve
 
         ash "Your friend may never speak of us Lycans once they leave here. Not to the authorities. Not to their family. Not to anyone. I- we- will lose everything if that happens."
 
@@ -161,8 +148,7 @@ label SpeakNoEvilSceneP1:
         "Just like that, the feelings fade, leaving you a bit disoriented."
 
         #Image Ashina Neutral
-        show ash neutral with dissolve:
-            subpixel True zoom 0.36 
+        show ash neutral with dissolve
 
         ash "This is my home. The land of my people. All that I have left of them… Do you understand?"
 
@@ -177,16 +163,14 @@ label SpeakNoEvilSceneP1:
     you "But, if I can't…What are you going to do to them?"
 
     #Image Ashina Thoughtful
-    show ash thoughtful with dissolve:
-        subpixel True zoom 0.36 
+    show ash thoughtful with dissolve
 
     ash "If they refuse to cooperate, I will do what must be done."
 
     you "You don't mean that you'll…?"
 
     #Image Ashina Neutral
-    show ash neutral with dissolve:
-        subpixel True zoom 0.36 
+    show ash neutral with dissolve
 
     "Ashina gives you a meaningful look, and your stomach sinks. She hands you a key."
 
@@ -195,8 +179,7 @@ label SpeakNoEvilSceneP1:
     you "Wait! Isn’t there-"
 
     #VSFX Ashina Hybrid Angry
-    show ash angry hybrid with dissolve:
-        subpixel True zoom 1.0
+    show ash angry hybrid with dissolve
 
     ash "Go. Before I change my mind. Surely, you can convince them of something so simple."
 

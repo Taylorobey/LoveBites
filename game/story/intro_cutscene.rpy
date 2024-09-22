@@ -174,7 +174,7 @@ label IntroductoryCutscene:
                 offset (0,0) zoom 1.0        
         #Image Wolf
         show wolf neutral with dissolve:
-                subpixel True offset (794.0, 297.0) zoom 0.1 
+                subpixel True offset (794.0, 297.0)
 
 
         #SFX Running stops
@@ -192,7 +192,7 @@ label IntroductoryCutscene:
 
         #image wolf snarling
         show wolf snarl with dissolve:
-                subpixel True offset (794.0, 297.0) zoom 0.1
+                subpixel True offset (794.0, 297.0)
         play sound growl volume 1.5
 
         pause(1.5)

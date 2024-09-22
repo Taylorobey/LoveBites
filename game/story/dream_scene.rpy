@@ -1,12 +1,13 @@
 label DreamScene:
         #stop audio from previous scene
         stop sound
-        # VSFX A moving, dreamy effect, like the movement of water
+
         scene bg color black with dissolve
     
         camera:
                 subpixel True zpos -100.0 
         
+        # VSFX A moving, dreamy effect, like the movement of water
         show bg ripple one onlayer screens:
                 subpixel True xzoom 1.59 zoom 0.52
 
@@ -24,9 +25,7 @@ label DreamScene:
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
             
-        show neighbor with dissolve:
-                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
-
+        show neighbor with dissolve
 
         "A shadow crosses into your field of vision. You look up through bleary eyes to see your neighbor, crouched down with one hand extended towards you, palm side up."
 
@@ -61,9 +60,7 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-        show neighbor with dissolve:
-                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
-
+        show neighbor with dissolve
 
         you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
 
@@ -108,9 +105,7 @@ label DreamScene:
 
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
-        show teacher with dissolve:
-                subpixel True matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(603.0, -414.0, 0.0)*RotateMatrix(36.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) zoom 0.75
-
+        show teacher with dissolve
 
         teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
 

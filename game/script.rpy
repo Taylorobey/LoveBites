@@ -69,9 +69,8 @@ label start:
         perspective True
 
     #temporary jump for testing
-    #jump WakingScene
-    #jump SpeakNoEvilSceneP2
-    jump IntroductoryCutscene
+    jump FailedRescueScene
+    #jump IntroductoryCutscene
     
     # This ends the game.
     return

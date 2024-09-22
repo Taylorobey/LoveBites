@@ -50,60 +50,119 @@ image bg color black        = "bg/color_black.bmp"
 image bg color red          = "bg/color_red.jpg"
 
 # Declare character images
-image wolf neutral          = "chars/ashina/ashina_wolf_sketch-no-tail.png"
-image wolf snarl            = "chars/ashina/ashina_wolf_snarl_sketch.png"
+image wolf neutral:
+    "chars/ashina/ashina_wolf_sketch-no-tail.png"
+    subpixel True zoom 0.1
+image wolf snarl:
+    "chars/ashina/ashina_wolf_snarl_sketch.png"
+    subpixel True zoom 0.1
 image wolf lunge            = "chars/ashina/ashina_wolf_lunge_sketch.png"
-# ^are these characters?
-# I would say they fit in the category
-image ash neutral           = "chars/ashina/ashina_neutral.png"
-image ash friendly          = "chars/ashina/ashina_friendly.png"
-image ash friendly sadistic = "chars/ashina/ashina_friendly2.png"
-image ash angry hybrid      = "chars/ashina/ashina_hybrid_angry.png"
-image ash thoughtful        = "chars/ashina/ashina_neutral.png"
-image ash caring            = "chars/ashina/ashina_caring.png"
-image ash concerned         = "chars/ashina/ashina_concerned.png"
 
-image aki neutral           = "chars/akari/akari_neutral.png"
-image aki bow drawn         = "chars/akari/akari_bow.png"
-image aki bow nocked        = "chars/akari/akari_arrowready.png"
-image aki thoughtful        = "chars/akari/akari_neutral.png"
-image aki angry             = "chars/akari/akari_frustrated.png"
-image aki caring            = "chars/akari/akari_caring.png"
-image aki determined        = "chars/akari/akari_determined/png"
+#Ashina
+image ash neutral:
+    "chars/ashina/ashina_neutral.png"
+    subpixel True zoom 0.33 
+image ash friendly:
+    "chars/ashina/ashina_friendly.png"
+    subpixel True zoom 0.33 
+image ash sadistic:
+    "chars/ashina/ashina_friendly2.png"
+    subpixel True zoom 0.33  
+image ash thoughtful:
+    "chars/ashina/ashina_neutral.png"
+    subpixel True zoom 0.33 
+image ash caring:
+    "chars/ashina/ashina_caring.png"
+    subpixel True zoom 0.33 
+#temps
+image ash concerned:
+    "chars/ashina/ashina_sad.png"
+    subpixel True zoom 0.33
+image ash angry hybrid:
+    "chars/ashina/ashina_neutral.png"
 
-image cam neutral           = "chars/cameron/cameron_sketch.png"
-image cam friendly          = "chars/cameron/cameron_friendly.png"
-image cam nervous           = "chars/cameron/cameron_nervous.png"
-image cam scared            = "chars/cameron/cameron_scared.png"
-image cam frustrated        = "chars/cameron/cameron_frustrated.png"
-image cam caring            = "chars/cameron/cameron_caring.png"
+#Akari
+image aki neutral:
+    "chars/akari/akari_neutral.png"
+    subpixel True zoom 0.33 
+image aki bow drawn:
+    "chars/akari/akari_bow.png"
+    subpixel True zoom 0.33 
+image aki bow nocked:
+    "chars/akari/akari_arrowready.png"
+    subpixel True zoom 0.33 
+image aki thoughtful:
+    "chars/akari/akari_neutral.png"
+    subpixel True zoom 0.33 
+image aki angry:
+    "chars/akari/akari_frustrated.png"
+    subpixel True zoom 0.33 
+image aki caring:
+    "chars/akari/akari_caring.png"
+    subpixel True zoom 0.33
+image aki determined:
+    "chars/akari/akari_determined/png"
+    subpixel True zoom 0.33 
+
+#Cameron
+image cam neutral:
+    "chars/cameron/cameron_neutral.png"
+    subpixel True zoom 0.33 
+image cam friendly:
+    "chars/cameron/cameron_friendly.png"
+    subpixel True zoom 0.33 
+image cam caring:
+    "chars/cameron/cameron_caring.png"
+    subpixel True zoom 0.33
+#temps
+image cam scared:
+    "chars/cameron/cameron_neutral.png"
+    subpixel True zoom 0.33 
+image cam frustrated:
+    "chars/cameron/cameron_neutral.png"
+    subpixel True zoom 0.33
+image cam nervous:
+    "chars/cameron/cameron_neutral.png"
+    subpixel True zoom 0.33
 
 image neighbor:
     "chars/shadows/neighbor/NEI_01.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/neighbor/NEI_02.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/neighbor/NEI_03.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/neighbor/NEI_04.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/neighbor/NEI_05.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/neighbor/NEI_06.png"
+    subpixel True zoom 0.6
     0.2
     repeat
 image teacher:
     "chars/shadows/teacher/TEA_01.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/teacher/TEA_02.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/teacher/TEA_03.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/teacher/TEA_04.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/teacher/TEA_05.png"
+    subpixel True zoom 0.6
     0.2
     "chars/shadows/teacher/TEA_06.png"
+    subpixel True zoom 0.6
     0.2
     repeat
 
