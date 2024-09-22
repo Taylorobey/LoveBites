@@ -69,7 +69,8 @@ label start:
         perspective True
 
     #temporary jump for testing
-    jump WakingScene
+    jump TestScene
+    #jump WakingScene
     #jump IntroductoryCutscene
     
     # This ends the game.

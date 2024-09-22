@@ -1,4 +1,4 @@
-label WakingScene:
+label Scene:
         scene bg color black with dissolve
         with Pause(0.5)
 
@@ -41,20 +41,14 @@ label WakingScene:
         you "Who... who are you? Did you bring me here?"
 
         #VSFX ashina steps closer
-        window auto hide
-        show ash neutral:
-                subpixel True xzoom 1.0 
-                ypos 1.0 zoom 1.0 
-                linear 1.00 ypos 2.0 zoom 2.0
+        show ash neutral at step_close
         with Pause(1.00)
-        window auto show
 
         ash "That's not what I asked you."
         
         #VSFX ashina steps back
         window auto hide
-        show ash neutral:
-                linear 1.00 ypos 1.0 zoom 1.0
+        show ash neutral at step_away
         with Pause(1.00)
         window auto show
 
@@ -93,10 +87,7 @@ label WakingScene:
 
         #VSFX ashina close up
         window auto hide
-        show ash neutral:
-                subpixel True 
-                ypos 1.0 zoom 1.0 
-                linear 1.00 xpos 0.45 ypos 3.8 zoom 4.0 
+        show ash neutral at step_closer_center
         with Pause(1.0)
         window auto show
 
@@ -180,10 +171,7 @@ label ExamineWindow:
         
         #slow zoom into window
         window auto hide
-        show bg room mc:
-                subpixel True 
-                zoom 1.0 xpan 0.0 ypan 0.0 
-                linear 1.00 zoom 4.0 xpan 3.0 ypan -125.0 
+        show bg room mc at walk_to_window
         with Pause(1.0)
         window auto show
         stop sound
@@ -195,9 +183,7 @@ label ExamineWindow:
         
         #closer to window
         window auto hide
-        show bg room mc:
-                subpixel True 
-                linear 1.00 zoom 5.0 xpan 3.0 ypan -135.0 
+        show bg room mc at close_to_window
         with Pause(1.0)
         window auto show
 

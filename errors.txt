@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/audio.rpy", line 15: expected '=' not found.
-    define audio.heart:
-                      ^
+File "game/test_scene.rpy", line 90: show statement expects a non-empty block.
+    show ash neutral at step_closer_center:
+                                           ^
 
-Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Sep 22 15:32:34 2024
+Ren'Py Version: Ren'Py 8.3.0.24082114
+Sun Sep 22 19:53:45 2024
