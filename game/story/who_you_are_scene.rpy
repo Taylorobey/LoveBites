@@ -159,6 +159,8 @@ label WhoYouAreScene:
 
         ash "Overwhelming? Powerful? Perhaps even…Feral?"
 
+        play sound heart loop
+
         # VSFX Blur (as if lightheaded)
         camera:
                 subpixel True 
@@ -172,6 +174,8 @@ label WhoYouAreScene:
         "You hear a distant sigh, and some movement. It’s hard to concentrate on anything but the-"
 
         ash "Take a deep breath and look at me."
+
+        stop sound heart fadeout 1.0
 
         # Image Ashina Neutral (same torso-up-view as before)
         # Image Cabin Hearth (full view)

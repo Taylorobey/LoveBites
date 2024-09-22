@@ -18,7 +18,7 @@ image bg hearth             = "temp/hearth.png"
 image bg cabin exterior     = "temp/mc_room.jpg"
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky.png"
-image bg basement           = "temp/mc_room.jpg"
+image bg basement           = "bg/captive_room.png"
 
 image bg ripple one:
     "bg/ripples/RPL_0101.png"

@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/images.rpy", line 4, in script
-    image bg street empty 2     = ""
-Exception: An empty string cannot be used as a displayable.
+  File "game/story/speak_no_evil_scene_p2.rpy", line 177, in script
+    if Cameron Approval >= 0:
+SyntaxError: invalid syntax (game/story/speak_no_evil_scene_p2.rpy, line 177)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/images.rpy", line 4, in script
-    image bg street empty 2     = ""
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\ast.py", line 924, in execute
-    renpy.exports.image(self.imgname, img)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\exports\displayexports.py", line 73, in image
-    d = renpy.easy.displayable(d)
-  File "C:\Users\taylo\OneDrive\Desktop\renpy-8.3.0-sdk\renpy\easy.py", line 117, in displayable
-    raise Exception("An empty string cannot be used as a displayable.")
-Exception: An empty string cannot be used as a displayable.
+  File "game/story/speak_no_evil_scene_p2.rpy", line 177, in script
+    if Cameron Approval >= 0:
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 1843, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/story/speak_no_evil_scene_p2.rpy, line 177)
 
 Windows-10-10.0.19045 AMD64
-Ren'Py 8.3.0.24082114
+Ren'Py 8.3.2.24090902
 LoveBites 1.0
-Tue Sep 17 20:42:07 2024
+Sat Sep 21 18:11:40 2024
