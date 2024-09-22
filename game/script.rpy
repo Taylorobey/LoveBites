@@ -57,6 +57,10 @@ style bigtext:
 init python:
     renpy.music.register_channel('soundb', "sound")
 
+#For automatic VO rendering
+init python:
+    config.auto_voice = "VA/{id}.mp3"
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:

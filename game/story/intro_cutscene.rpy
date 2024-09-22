@@ -14,22 +14,17 @@ label IntroductoryCutscene:
         #Music Introduction
 
         $ renpy.pause(.2)
-        play voice nar1
-        voice sustain
+
         narrator "A car speeds through the intersection and your heart nearly leaps out of your chest."
-        play voice nar2
-        voice sustain
+
         narrator "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the darkness affords them."
-        play voice nar3
-        voice sustain
+
         narrator "You wonder what it’s like to feel that free. To never worry about how your actions affect others. To be so completely focused on the self."
-        play voice nar4
-        voice sustain
+
         narrator "Then again, you know what kind of person that makes. You lived with them."
         
         #VSFX Shaking text
-        play voice nar5
-        voice sustain
+
         narrator "{sc}M o n s t e r s.{/sc}"
         narrator "…"
         
@@ -45,11 +40,9 @@ label IntroductoryCutscene:
                 zoom 1.0 
                 linear 25 zoom 2.12 
 
-        play voice nar6
-        voice sustain
+
         narrator "You don’t want to think about that right now. It’s a wonder how the more exhausted your body is from work, the more active your mind gets."
-        play voice nar7
-        voice sustain
+
         narrator "And you are exhausted. That’s the perk of working the graveyard shift- it’s the only way to get your body to pass out nearly the moment you hit the bed."
 
         window auto hide
@@ -69,11 +62,9 @@ label IntroductoryCutscene:
                 linear 25 offset (5643.0, 1107.0) zoom 3.94 
         window auto show
 
-        play voice nar8
-        voice sustain
+
         narrator "You’ve always had trouble sleeping, even though it’s been three years since you moved out of that house."
-        play voice nar9
-        voice sustain
+
         narrator "You thought getting out would be the hardest part. Turns out freedom can be pretty suffocating."
 
         window auto hide
@@ -94,11 +85,8 @@ label IntroductoryCutscene:
                 linear 30 xanchor 0 xoffset 1377.0 
         window auto show
 
-        play voice nar10
-        voice sustain
         narrator "You know it’s dangerous to walk home alone before sunrise. Maybe part of you wants something to happen to you."
-        play voice nar11
-        voice sustain
+
         narrator "At least it would be something different, something new. Sometimes you feel as though you've been living the exact same day for these past three years. Go to work, pass out, repeat…"
 
         window auto hide
@@ -119,19 +107,13 @@ label IntroductoryCutscene:
 
         window auto show
 
-        play voice nar12
-        voice sustain
         narrator "It was easier when you had something to fight against, someone to prove wrong. Now, you’re left alone with yourself, and you don’t like what you see."
 
-        play voice nar13
-        voice sustain
         narrator "…There sure are a lot of dogs out tonight. Sure, you see the occasional stray out at night, but this is something else…"
         
         #SFX Heartbeat
         play soundb heart loop
         
-        play voice nar14
-        voice sustain
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
         
         window auto hide
@@ -149,8 +131,7 @@ label IntroductoryCutscene:
         scene bg color black with dissolve
         
         #VSFX Slow Typing, use cps tag
-        play voice nar15
-        voice sustain
+
         narrator "{cps=5}YOU FEEL THEIR BREATH ON YOUR HEELS.{/cps}"
         camera:
                 offset (0,0) zoom 1.0
@@ -178,8 +159,6 @@ label IntroductoryCutscene:
         #SFX Barking
         play soundb barking volume 0.5
 
-        play voice nar16
-        voice sustain
         narrator "They’re everywhere. In front of you. Behind you. Your body is suddenly alert and flooding with warmth. Your pulse is racing. You spot a side alley and turn without thinking."
 
         window auto hide
@@ -203,11 +182,8 @@ label IntroductoryCutscene:
 
         window auto show
 
-        play voice nar17
-        voice sustain
         narrator "A large, intimidating wolf stands at the end of the alley. Although your mind is telling you to run, the sight of this ethereal creature freezes you in place."
-        play voice nar18
-        voice sustain
+
         narrator "Your stomach lurches. You don’t have time to prepare for what comes next."
 
         window auto hide
