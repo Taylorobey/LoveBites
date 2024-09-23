@@ -1,8 +1,7 @@
 label FailedRescueScene:
-        
-        call WakeUpSequence1
         #SFX Creak
-        play sound creak volume 0.5
+        play soundb creak volume 0.5 noloop
+        call WakeUpSequence1
         call WakeUpSequence2
 
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
@@ -44,35 +43,29 @@ label FailedRescueScene:
         cam "What does it look like? I’m here to break you out! That is, if I could squeeze through this pinche window!"
 
         # SFX Walking
-        play sound walk
+        play soundb walk noloop
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
-        #window auto hide
-        #camera:
-                #subpixel True 
-                #pos (0, 0) zoom 1.0 
-                #linear 1.5 pos (-2000, -1200) zoom 3.0
-        #with Pause(1.5)
-        #window auto show
-        #broken?
+        window auto hide
+        camera:
+                subpixel True 
+                pos (0, 0) zoom 1.0 
+                linear 1.5 pos (-2000, -1200) zoom 3.0
+        with Pause(1.5)
+        window auto show
         
-        stop sound
+        stop soundb
         #moved this up, felt it was weird to still have walking noises when the camera stopped
         "With a nervous glance towards the door, you slide out of bed and approach your struggling friend."
 
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
-
-        #unsure why this is not showing
-        #you had x and y align as x and y pos instead so cam was somewhere offscreen
         show cam neutral with dissolve:
-                xalign 0.5 yalign 0.6 zoom 0.5
-                linear 1.0 yalign 0.75 zoom 0.5
-        #i think it looks better this way
-        ## Cameron could be closer to the screen when they first appear
+                xalign 0.5 yalign -0.4 zoom 1.5
+                linear 1.0 yalign -0.45 zoom 1.5
 
         # SFX Creak
-        play sound creak volume 0.25
+        play soundb creak volume 0.25 noloop
 
         "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
@@ -88,26 +81,14 @@ label FailedRescueScene:
         with Pause(1.43)
         camera:
                 pos (0, 0) zoom 1.0 
-        window auto show
 
-        # VSFX Fade in Cameron (full body this time, by the window)
-        show cam neutral with dissolve
         # Image Cameron Friendly
         show cam friendly with dissolve
-
+        window auto show
         cam "Phew! I thought I might be stuck there forever. Hey, have you been working out?"
 
         you "How did you find this place? No, scratch that…how did you even know I was here?"
 
-        # Image Cameron Neutral
-        show cam neutral with dissolve
-
-        cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
-
-        ## Can the dialogue appear as Cameron is moving around/pacing? that way it looks like they are talking while moving
-        ## Use ATL transform?
-        # VSFX Cameron (Slowly moving across the screen, as if pacing)     
-        window auto hide
         show cam friendly:
                 subpixel True 
                 parallel:
@@ -118,12 +99,17 @@ label FailedRescueScene:
                         yrotate 0.0 
                         linear 2.37 yrotate 0.0 
                         linear 0.02 yrotate 180.0 
+        window auto show
+
+        cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
+        # VSFX Cameron (Slowly moving across the screen, as if pacing)     
+
+        cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin."
+
+        window auto hide
         with Pause(4.63)
         show cam friendly:
                 xpos 0.5 yrotate 180.0 
-        window auto show
-
-        cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin."
 
         cam "Then…"
 
@@ -149,9 +135,6 @@ label FailedRescueScene:
         cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
-        #i shortened/rounded the waiting time
-        #we should figure out how to have this going whilst the dialogue is playing so it looks less awkward
-        window auto hide
         show cam friendly:
                 subpixel True 
                 parallel:
@@ -161,15 +144,17 @@ label FailedRescueScene:
                 parallel:
                         yrotate 180.0 
                         linear 2 yrotate 180.0 
-                        linear 0.02 yrotate 0.0 
-        with Pause(4)
-        show cam friendly:
-                xpos 0.5 yrotate 0.0 
+                        linear 0.02 yrotate 0.0  
         window auto show
 
         cam "I thought about going to the police, but no way they’d believe me. I went to work and tried to forget about it, but I couldn’t. So, here I am."
 
         "There’s a long pause before you respond, not really sure how to take in all of that information."
+
+        window auto hide
+        with Pause(4)
+        show cam friendly:
+                xpos 0.5 yrotate 0.0
 
         you "…How did you manage to get past the guard dogs?"
 
@@ -196,7 +181,6 @@ label FailedRescueScene:
         cam "I know, believe me. My heart was pounding the whole way here!"
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
-        window auto hide
         show cam friendly:
                 subpixel True 
                 parallel:
@@ -207,9 +191,9 @@ label FailedRescueScene:
                         yrotate 0.0 
                         linear 2 yrotate 0.0 
                         linear 0.02 yrotate 180.0 
-        with Pause(4)
         window auto show
         cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
+        with Pause(4)
 
         # VSFX Cameron (slight up and down motion, as if shrugging)
         window auto hide
@@ -285,7 +269,7 @@ label CamCaught:
 
         # Image Cameron Neutral
         show cam neutral with dissolve:
-                xalign 0.7 zoom 1.5 
+                xalign 0.6 zoom 1.5 
 
         stop music fadeout 2.0
         "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
@@ -297,13 +281,12 @@ label CamCaught:
         show bg door open with dissolve
         #so cam doesn't disappear
 
-
         ## Ashina and Cameron should be moving together at the parts where Ashina moves towards Cameron, as if she's pulling them around with her while taunting you, also hopefully with how Ashina's pose works Cameron can be more in front of her while she's menacing them.
         # VSFX Fade In Ashina
         # Image Ashina Friendly
         # not sure why xalign is playing opposites
         show ash friendly with dissolve:
-                subpixel True xalign 0.8 zoom 1.5
+                subpixel True xalign 0.4 zoom 1.5
 
         # Music Capture
         play music capture_music volume 0.3 loop
@@ -312,14 +295,15 @@ label CamCaught:
 
         # VSFX Crossfade Ashina Friendly into
         # Image Ashina Angry Hybrid
-        show ash angry hybrid with dissolve
+        show ash angry hybrid with dissolve:
+                subpixel True xalign 0.4 zoom 1.5
 
         "The woman’s features suddenly become beastly, claws curling out from her fingernails and fur sprouting through her skin."
 
         # Image Cameron Scared
         # again xalign is playing opposites i don't know whyyy aaaaaa
         show cam scared with dissolve:
-                xalign 0.249
+                xalign 0.6 zoom 1.5 
 
         "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."
 
@@ -328,6 +312,8 @@ label CamCaught:
         # VSFX Ashina and Cameron (closer)
         show ash angry hybrid with moveinleft:
                 xalign 0.5
+        show cam scared with moveinleft:
+                xalign 0.7
 
         ash "A friend of yours, I take it?"
 
@@ -336,6 +322,8 @@ label CamCaught:
         # VSFX Ashina and Cameron (further away)
         show ash angry hybrid with moveinleft:
                 xalign 0.7
+        show cam scared with moveinleft:
+                xalign 0.9
 
         ash "At least this human knows their place. Had they dared to put up a fight, I would have killed them where they stood. "
 
@@ -346,12 +334,16 @@ label CamCaught:
         # VSFX Ashina and Cameron (closer)
         show ash angry hybrid with moveinleft:
                 xalign 0.5
+        show cam scared with moveinleft:
+                xalign 0.7
 
         ash "You do not give the orders around here. Besides, that is something I simply cannot do." 
 
         # VSFX Ashina and Cameron (further away)
         show ash angry hybrid with moveinleft:
                 xalign 0.7
+        show cam scared with moveinleft:
+                xalign 0.9
 
         ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
 
@@ -361,9 +353,9 @@ label CamCaught:
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
         show ash angry hybrid with dissolve:
-                subpixel True xpos 0.65 ypos 45 zoom 1.1
+                subpixel True xpos 0.45 ypos 45 zoom 1.1
         show cam scared with dissolve:
-                subpixel True xpos 0.3 ypos 45 zoom 1.1
+                subpixel True xpos 0.55 ypos 45 zoom 1.1
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
