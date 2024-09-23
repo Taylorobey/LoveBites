@@ -17,16 +17,16 @@ label WhoYouAreScene:
         # Image Captive Cabin Room (full view)
         scene bg room mc with dissolve
 
-        "You sit up, and sure enough, the door opens and the woman steps in."
+        "You sit up, and sure enough, the door opens and your captor steps in."
 
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
-        show ash neutral with dissolve
+        show ash neutral with MoveTransition(1.0, enter=offscreenright)
 
         ash "Come. It’s time we had a talk."
 
         # VSFX Ashina (fade out)
-        hide ash neutral with dissolve
+        hide ash neutral with easeoutright
 
         "You’re not sure if you want to follow her, but it's not like you have much of a choice."
 
@@ -40,26 +40,41 @@ label WhoYouAreScene:
         ## VSFX zooming and fading in and out of images as if walking through the cabin
 
         # Image Cabin Door Open
-        show bg door open with dissolve
-        with Pause(1.0)
+        show bg door open with dissolve:
+                subpixel True
+                zoom 1.0
+                linear 2.00 zoom 2.0 yalign(0.5)
+        with Pause(0.5)
+        show bg door open:
+                zoom 2.0 yalign(0.5)
 
         # Image Cabin Hall
         show bg hallway with dissolve:
-                subpixel True zoom 0.53
-        with Pause(1.0)
-
+                subpixel True 
+                zoom 0.53
+                linear 2.00 zoom 1.0 xalign(0.8) yalign(0.3)
+        with Pause(0.5)
+        show bg hallway:
+                zoom 1.0 xalign(0.8) yalign(0.3)
+        
         stop music fadeout 4.0
 
         play audio fireplace volume 0.3 loop fadein 2.0
 
         # Image Downstairs
         show bg downstairs with dissolve:
-                subpixel True zoom 1.0
-        with Pause(1.0)
+                subpixel True
+                zoom 1.0
+                linear 2.50 zoom 2.0 xalign(0.55) yalign(0.2)
+        with Pause(0.5)
+        show bg downstairs:
+                zoom 2.0 xalign(0.55) yalign(0.2)
 
         # Image Cabin Hearth
         show bg hearth with dissolve:
-                subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
+                subpixel True
+                zoom 0.7
+                xalign(0.2) yalign(0.3)
 
         window auto show
 
