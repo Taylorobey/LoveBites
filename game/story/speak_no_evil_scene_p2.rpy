@@ -316,11 +316,8 @@ label ChoicetoRescue:
                         jump HelpCameronEscape
 
 label HelpCameronEscape:
-        "I did say that this option wasn't available."
-
-        "This is only a demo, after all"
-
-        return
+        narrator "Sorry, this option isn't available in the demo."
+        jump ChoicetoRescue
 
 label CorruptedChoice:
         "You give Cameron a flat, tired look."

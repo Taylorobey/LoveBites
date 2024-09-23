@@ -3,10 +3,7 @@ label DreamScene:
         stop sound
 
         scene bg color black with dissolve
-    
-        camera:
-                subpixel True zpos -100.0 
-        
+ 
         # VSFX A moving, dreamy effect, like the movement of water
         show bg ripple one onlayer screens:
                 subpixel True xzoom 1.59 zoom 0.52

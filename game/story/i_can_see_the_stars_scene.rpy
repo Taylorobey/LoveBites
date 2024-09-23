@@ -163,57 +163,58 @@ label ICanSeeTheStarsScene:
 
     ash "What is it?"
 
-    menu:
-        #Ashina Route Choice
-        "There is someone after you.":
-            #Locks you out of Akari’s route.
-            #Increases Ashina Approval
-            $ ash_approval += 1
-            $ aka_lock = True
+    label starsdemochoice:
+        menu:
+            #Ashina Route Choice
+            "There is someone after you.":
+                #Locks you out of Akari’s route.
+                #Increases Ashina Approval
+                $ ash_approval += 1
+                $ aka_lock = True
 
-            you "I need to tell you something. Someone is after you. The other night-"
+                you "I need to tell you something. Someone is after you. The other night-"
 
-            #Image Ashina Friendly
+                #Image Ashina Friendly
 
-            ash "What, that little miscreant in the woods? I’ve been giving her the run around for years, don’t you fret your little head about it."
+                ash "What, that little miscreant in the woods? I’ve been giving her the run around for years, don’t you fret your little head about it."
 
-            #Image Ashina Concerned
+                #Image Ashina Concerned
 
-            "Ashina waves a hand dismissively, but you catch her arm and look at her meaningfully. It gives her pause enough for you to carry on."
+                "Ashina waves a hand dismissively, but you catch her arm and look at her meaningfully. It gives her pause enough for you to carry on."
 
-            you "The other night, when… I went outside against your wishes…"
+                you "The other night, when… I went outside against your wishes…"
 
-            #Image Ashina Neutral
+                #Image Ashina Neutral
 
-            you "I met a huntress armed with a bow and arrow, who I now know is named Akari. She shot a note up to my window earlier tonight, asking to meet in two days’ time, and told me she intends to kill you, Ashina. Soon."
+                you "I met a huntress armed with a bow and arrow, who I now know is named Akari. She shot a note up to my window earlier tonight, asking to meet in two days’ time, and told me she intends to kill you, Ashina. Soon."
 
-            #Image Ashina Thoughtful
+                #Image Ashina Thoughtful
 
-            ash "Hm, I'd like to see her try. She's delusional if she thinks she can take me down. I will devise a way to deal with her, don’t you worry. I have no need- hm."
-            
-            "Ashina pauses, as if reconsidering her words. The arrogant atmosphere around her melts away, and she visibly softens. She takes a breath before meeting your gaze."
+                ash "Hm, I'd like to see her try. She's delusional if she thinks she can take me down. I will devise a way to deal with her, don’t you worry. I have no need- hm."
+                
+                "Ashina pauses, as if reconsidering her words. The arrogant atmosphere around her melts away, and she visibly softens. She takes a breath before meeting your gaze."
 
-            #Image Ashina Caring
+                #Image Ashina Caring
 
-            ash "Forgive me. I… appreciate you telling me this. I am glad I arrived that night before the huntress could do you any harm. My heart could not bear to lose yet another… of my kin."
+                ash "Forgive me. I… appreciate you telling me this. I am glad I arrived that night before the huntress could do you any harm. My heart could not bear to lose yet another… of my kin."
 
-            "You weren't prepared for Ashina to be so…caring towards you. You feel heat rise to your cheeks and instinctively look away before speaking again."
+                "You weren't prepared for Ashina to be so…caring towards you. You feel heat rise to your cheeks and instinctively look away before speaking again."
 
-            you "What should I do about the meeting then? Akari will be expecting me."
+                you "What should I do about the meeting then? Akari will be expecting me."
 
-            #Image Ashina Thoughtful
+                #Image Ashina Thoughtful
 
-            ash "Hm… Meet with her. Best she doesn’t know that anything is amiss. Learn her plan, and then we can prepare accordingly."
+                ash "Hm… Meet with her. Best she doesn’t know that anything is amiss. Learn her plan, and then we can prepare accordingly."
 
-            #Image Ashina Neutral
+                #Image Ashina Neutral
 
-            ash "You shouldn't be in any danger if she has no reason to believe you'll betray her. However… If something happens, call out to me, and I will come to your aid."
-        #Akari Route Choice
-        "Option not available. (demo)":
-            return
-        #Neutral/Cameron Route Choice
-        "Option not available. (demo)":
-            return
+                ash "You shouldn't be in any danger if she has no reason to believe you'll betray her. However… If something happens, call out to me, and I will come to your aid."
+            #Akari Route Choice
+            "Option not available. (demo)":
+                jump demoroute
+            #Neutral/Cameron Route Choice
+            "Option not available. (demo)":
+                jump demoroute
 
     #VSFX Ashina (fade out)
     #VSFX Pan (pan back up to the sky)
@@ -245,6 +246,10 @@ label ICanSeeTheStarsScene:
 
     #Music Starry Sky (fade out)
     #Image Sky (fade back to no color, then scene fade to black)
+
+label demoroute:
+    narrator "Sorry, this option isn't available in the demo."
+            jump starsdemochoice
 
 
 
