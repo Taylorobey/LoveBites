@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 57, in script
-    init python:
-  File "game/script.rpy", line 58, in <module>
-    renpy.sound.register_channel('soundb', "sound")
-AttributeError: module 'renpy.audio.sound' has no attribute 'register_channel'
+  File "game/story/waking_scene.rpy", line 73, in script
+    with easeoutright(1.0)
+  File "game/story/waking_scene.rpy", line 73, in <module>
+    with easeoutright(1.0)
+Exception: MoveTransition can only be applied to one or all layers, not float.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 57, in script
-    init python:
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 58, in <module>
-    renpy.sound.register_channel('soundb', "sound")
-AttributeError: module 'renpy.audio.sound' has no attribute 'register_channel'
+  File "game/story/waking_scene.rpy", line 73, in script
+    with easeoutright(1.0)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 1354, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/story/waking_scene.rpy", line 73, in <module>
+    with easeoutright(1.0)
+  File "C:\Users\Biz\Desktop\Renpy\renpy-8.3.2-sdk\renpy\display\movetransition.py", line 538, in MoveTransition
+    raise Exception("MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__)
+Exception: MoveTransition can only be applied to one or all layers, not float.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.2.24090902
 LoveBites 1.0
-Sun Sep 22 16:51:53 2024
+Sun Sep 22 15:25:40 2024

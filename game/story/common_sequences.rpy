@@ -1,5 +1,7 @@
 # functions to call for common parts of scenes
 label WakeUpSequence1:
+    #stop audio from previous scene
+    stop sound
     #VSFX blur
     #i put this before scene so it wouldn't be unblurred whilst the scene was being dissolved in
     camera:
