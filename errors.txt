@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/audio.rpy", line 15: expected '=' not found.
-    define audio.heart:
-                      ^
+File "game/story/failed_rescue_scene.rpy", line 50: camera statement expects a non-empty block.
+    camera:
+           ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Sep 22 15:32:34 2024
+Sun Sep 22 17:08:44 2024

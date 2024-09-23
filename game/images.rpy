@@ -95,6 +95,7 @@ image ash concerned:
     subpixel True zoom 0.33
 image ash angry hybrid:
     "chars/ashina/ashina_neutral.png"
+    subpixel True zoom 0.33
 
 #Akari
 image aki neutral:

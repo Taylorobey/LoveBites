@@ -10,9 +10,6 @@ label WakingScene:
 
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
 
-        #SFX bed creak
-        #play sound creak volume 0.5
-        #biz- don't like this
 
         #VFX red flash (on the edges)
         call PainFlash
