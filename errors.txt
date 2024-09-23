@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/test_scene.rpy", line 90: show statement expects a non-empty block.
-    show ash neutral at step_closer_center:
-                                           ^
+File "game/story/failed_rescue_scene.rpy", line 50: camera statement expects a non-empty block.
+    camera:
+           ^
 
-Ren'Py Version: Ren'Py 8.3.0.24082114
-Sun Sep 22 19:53:45 2024
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Sun Sep 22 17:08:44 2024
