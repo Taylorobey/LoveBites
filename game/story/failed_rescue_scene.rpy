@@ -47,11 +47,8 @@ label FailedRescueScene:
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
         window auto hide
-        camera:
-                subpixel True 
-                pos (0, 0) zoom 1.0 
-                linear 1.5 pos (-2000, -1200) zoom 3.0
-        with Pause(1.5)
+        show bg room mc at walk_to_window
+        with Pause(1.0)
         window auto show
         
         stop soundb
@@ -60,9 +57,8 @@ label FailedRescueScene:
 
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
-        show cam neutral with dissolve:
-                xalign 0.5 yalign -0.4 zoom 1.5
-                linear 1.0 yalign -0.45 zoom 1.5
+        show cam neutral at start_bust
+        with dissolve
 
         # SFX Creak
         play soundb creak volume 0.25 noloop
@@ -73,14 +69,8 @@ label FailedRescueScene:
         hide cam neutral with dissolve
         
         # VSFX Zoom (as if moving away from the window)
-        window auto hide
-        camera:
-                subpixel True 
-                pos (-2000, -1200) zoom 3.0
-                linear 1.33 pos (0, 0) zoom 1.0 
-        with Pause(1.43)
-        camera:
-                pos (0, 0) zoom 1.0 
+        show bg room mc at back_to_bg
+        pause(1.1)
 
         # Image Cameron Friendly
         show cam friendly with dissolve
@@ -89,72 +79,36 @@ label FailedRescueScene:
 
         you "How did you find this place? No, scratch that…how did you even know I was here?"
 
-        show cam friendly:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 2.36 xpos 0.15 
-                        linear 2.17 xpos 0.5 
-                parallel:
-                        yrotate 0.0 
-                        linear 2.37 yrotate 0.0 
-                        linear 0.02 yrotate 180.0 
-        window auto show
+        show cam friendly at pacing
 
         cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
         # VSFX Cameron (Slowly moving across the screen, as if pacing)     
 
-        cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin."
-
-        window auto hide
-        with Pause(4.63)
-        show cam friendly:
-                xpos 0.5 yrotate 180.0 
+        cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin." 
 
         cam "Then…"
 
+        show cam friendly at stop_pacing
         # Image Cameron Nervous
         show cam nervous with dissolve
         
         "Cameron pauses, their eyes nervously averting to the side."
 
         # VSFX Cameron (a brief shake of the sprite side to side, as if shivering/nervous)
-        window auto hide
-        show cam nervous:
-                subpixel True 
-                xpos 0.5 
-                linear 0.15 xpos 0.49 
-                linear 0.15 xpos 0.51 
-                linear 0.15 xpos 0.49 
-                linear 0.15 xpos 0.5 
-        with Pause(0.70)
-        show cam nervous:
-                xpos 0.5 
-        window auto show
+        show cam nervous at nervous_shake
 
         cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
-        show cam friendly:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 2 xpos 0.85 
-                        linear 2 xpos 0.5 
-                parallel:
-                        yrotate 180.0 
-                        linear 2 yrotate 180.0 
-                        linear 0.02 yrotate 0.0  
-        window auto show
+        show cam friendly at pacing
 
         cam "I thought about going to the police, but no way they’d believe me. I went to work and tried to forget about it, but I couldn’t. So, here I am."
 
+        show cam friendly at stop_pacing
+
         "There’s a long pause before you respond, not really sure how to take in all of that information."
 
-        window auto hide
-        with Pause(4)
-        show cam friendly:
-                xpos 0.5 yrotate 0.0
+        pause(4)
 
         you "…How did you manage to get past the guard dogs?"
 
@@ -181,19 +135,11 @@ label FailedRescueScene:
         cam "I know, believe me. My heart was pounding the whole way here!"
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
-        show cam friendly:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 2 xpos 0.15 
-                        linear 2 xpos 0.5 
-                parallel:
-                        yrotate 0.0 
-                        linear 2 yrotate 0.0 
-                        linear 0.02 yrotate 180.0 
-        window auto show
+        show cam friendly at pacing
         cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
-        with Pause(4)
+        
+        show cam friendly at stop_pacing
+        pause(4)
 
         # VSFX Cameron (slight up and down motion, as if shrugging)
         window auto hide
