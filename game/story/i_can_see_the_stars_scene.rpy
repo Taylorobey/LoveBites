@@ -249,7 +249,7 @@ label ICanSeeTheStarsScene:
 
 label demoroute:
     narrator "Sorry, this option isn't available in the demo."
-            jump starsdemochoice
+    jump starsdemochoice
 
 
 
