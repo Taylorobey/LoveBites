@@ -13,9 +13,11 @@ label WakingScene:
 
         #VFX red flash (on the edges)
         call PainFlash
-
+        play soundb heart
+        with Pause(0.7)
+        stop soundb fadeout 0.5
+        
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
-
         #image captive cabin room (full view)
         scene bg room mc with dissolve
         stop sound fadeout 1.0
@@ -96,7 +98,7 @@ label WakingScene:
         #text "YOU NEED TO EAT THE RAW MEAT."
         window auto hide
         play sound heart
-        image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext")
+        image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext", font="CabinSketch-Bold.ttf")
         show hungertext
         show pain:
                 subpixel True
