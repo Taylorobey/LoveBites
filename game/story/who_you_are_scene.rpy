@@ -1,8 +1,10 @@
 label WhoYouAreScene:
         #stop audio from previous scene
         stop sound
-      
+
         call WakeUpSequence1
+
+        hide bg onlayer screens with Dissolve(2.0)
         
         "When you next awake, something feels off. It only takes you a few moments to figure it out."
 

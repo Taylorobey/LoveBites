@@ -3,13 +3,12 @@ label DreamScene:
         stop sound
 
         scene bg color black with dissolve
- 
+        play music dream_music volume 0.3 fadein 0.5
         # VSFX A moving, dreamy effect, like the movement of water
-        show bg ripple one onlayer screens:
+        
+        show bg ripple one onlayer screens with Dissolve(3.0):
                 subpixel True xzoom 1.59 zoom 0.52
 
-
-        play music dream_music volume 0.3 fadein 1.0
 
         "Your consciousness bubbles to the surface as sunlight heats your skin nearly to the point of burning. You squint down at your tiny hands, wet with tears."
 
@@ -187,9 +186,9 @@ label DreamScene:
                         #should we use straight blue instead
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/color}{/b} be like them."
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
+        #camera:
+                #linear 1.0 matrixcolor TintMatrix("#fff")
         stop music fadeout (2.5)
-        hide bg ripple one with dissolve(3.0)
+        window auto hide
         with Pause(3.0)
         jump WhoYouAreScene
