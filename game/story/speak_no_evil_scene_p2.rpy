@@ -174,7 +174,7 @@ label DieIfTell:
 
         you "Do you really think people will let a monster like me live?"
 
-        if Cameron Approval >= 0:
+        if cam_approval >= 0:
                 #Music Goodbyes
                 #Image Cameron Frustrated
                 #VSFX Cameron (shake, as if shaking head no)
