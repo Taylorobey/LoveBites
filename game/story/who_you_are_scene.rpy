@@ -5,7 +5,7 @@ label WhoYouAreScene:
         call WakeUpSequence1
 
         hide bg onlayer screens with Dissolve(2.0)
-        
+
         "When you next awake, something feels off. It only takes you a few moments to figure it out."
 
         call WakeUpSequence2
@@ -40,7 +40,7 @@ label WhoYouAreScene:
         window auto hide
 
         # SFX Fade Out Crickets
-        stop sound fadeout 1.0
+        stop crickets fadeout 1.0
 
         # SFX Walking
         play sound walk
