@@ -94,7 +94,7 @@ image ash concerned:
     "chars/ashina/ashina_sad.png"
     subpixel True zoom 0.33
 image ash angry hybrid:
-    "chars/ashina/ashina_neutral.png"
+    "chars/ashina/ashina_friendly.png"
     subpixel True zoom 0.33
 image ash fighting:
     "chars/ashina/ashina_neutral.png"
@@ -114,7 +114,7 @@ image aki bow nocked:
     "chars/akari/akari_arrowready.png"
     subpixel True zoom 0.33 
 image aki thoughtful:
-    "chars/akari/akari_neutral.png"
+    "chars/akari/akari_thoughtful.png"
     subpixel True zoom 0.33 
 image aki angry:
     "chars/akari/akari_frustrated.png"

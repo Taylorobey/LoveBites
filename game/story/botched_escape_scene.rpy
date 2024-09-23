@@ -6,7 +6,7 @@ label BotchedEscapeScene:
         scene bg hearth
 
         "You're left with your own thoughts as Ashina departs upstairs. You begin to wander the cabin aimlessly."
-        play sound crickets fadein 0.5 loop
+        play crickets crickets fadein 0.5 loop
         # Image Cabin Door Open
         show bg door open with dissolve
         #SFX Fireplace (fade out)
@@ -38,7 +38,7 @@ label BotchedEscapeScene:
         you "…Nothing?"
 
         # SFX Walking
-        play sound walk
+        play sound walk loop
         # VSFX Cabin Ext.(zoom, as if walking)
 
         "You take a few cautious steps outside, thinking your eyes must be playing tricks on you. Where did all the dogs go? Was this another lucky break, like when Cameron snuck in?"
@@ -66,10 +66,24 @@ label BotchedEscapeScene:
         you "Monster…? Uh, I think this is a misunderstanding, maybe we could just-"
 
         # VSFX Akari (closer)
+        show aki bow drawn:
+                subpixel True 
+                ypos 1.0 zoom 1.0 
+                linear 0.19 ypos 1.13 zoom 1.12 
+        with Pause(0.29)
+        show aki bow drawn:
+                ypos 1.13 zoom 1.12
 
         aki "Stop. You will not fool me. I know you."
 
         # VSFX Akari (closer)
+        show aki bow drawn:
+                subpixel True 
+                ypos 1.13 zoom 1.12 
+                linear 0.2 ypos 1.43 zoom 1.36 
+        with Pause(0.3)
+        show aki bow drawn:
+                ypos 1.43 zoom 1.36 
 
         aki "I will have no mercy on you. Your death shall be painful, I will make sure of it. You will suffer for every life you have stolen, and I will have my revenge. You chose the wrong night to leave your little fortress, and now, you will finally pay."
 
@@ -89,13 +103,29 @@ label BotchedEscapeScene:
 label PleadCase:
         you "No, wait, please! I never asked to be a monster!"
 
-        # VSFX Akari (further)
+        # VSFX Akari nod
+        show aki bow drawn:
+                subpixel True 
+                ypos 1.43 
+                linear 0.15 ypos 1.45 
+                linear 0.10 ypos 1.4 
+                linear 0.05 ypos 1.43 
+        with Pause(0.40)
+        show aki bow drawn:
+                ypos 1.43 
 
         "The hooded woman looks surprised at your outburst. Her stance doesn't waver, but she nods slowly at you to continue."
 
         you "Where do I begin…? I was out late. A bunch of dogs, hundreds of them, cornered me into an alley. Then, a huge wolf-beast attacked me, dragged me here, and turned me into…"
 
         # VSFX Akari (further)
+        show aki bow drawn:
+                subpixel True 
+                ypos 1.43 zoom 1.36
+                linear 0.2 ypos 1.13 zoom 1.12
+        with Pause(0.3)
+        show aki bow drawn:
+                ypos 1.13 zoom 1.12
 
         aki "The smaller dogs you mentioned. Where are they now?"
 
@@ -105,11 +135,33 @@ label PleadCase:
         # VSFX Akari (move horizontally across the screen, as if looking around)
 
         "The woman lowers her bow, looking around suspiciously."
+        show aki bow nocked:
+                subpixel True 
+                parallel:
+                        xpos 0.5 
+                        linear 0.30 xpos 0.34 
+                        linear 0.10 xpos 0.34 
+                        linear 0.17 xpos 0.34 
+                        linear 0.30 xpos 0.34 
+                        linear 0.20 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                        linear 0.15 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                parallel:
+                        yrotate 0.0 
+                        linear 0.30 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+                        linear 0.17 yrotate -180.0 
+                        linear 0.30 yrotate -180.0 
+                        linear 0.20 yrotate -180.0 
+                        linear 0.10 yrotate -180.0 
+                        linear 0.15 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
 
         you "I don’t know, they were gone when I stepped outside. They must have run off somewhere, maybe-"
 
-        #Image Akari Thoughtful
-        show aki thoughtful with dissolve
+        show aki bow nocked:
+                xpos 0.66 yrotate 0.0
 
         aki "The large one, the wolf-beast. That is their master, is it not?"
 
@@ -122,32 +174,70 @@ label PleadCase:
 
         aki "I see. So that lycanthrope is going around toying with the lives of innocent humans yet again. What a disgusting creature."
 
-        # Image Akari Neutral
-        show aki neutral with dissolve
+        # Image Akari thoughtful
+        show aki thoughtful with dissolve
 
         "The woman turns her bow and arrow away from you, continuing to scan the surroundings."
 
         # VSFX Akari (move horizontally across the screen, as if looking around, other direction)
-
+        window auto hide
+        show aki thoughtful:
+                subpixel True 
+                parallel:
+                        xpos 0.66
+                        linear 0.30 xpos 0.34 
+                        linear 0.10 xpos 0.34 
+                        linear 0.17 xpos 0.34 
+                        linear 0.30 xpos 0.34 
+                        linear 0.20 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                        linear 0.15 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                parallel:
+                        yrotate 0.0 
+                        linear 0.30 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+                        linear 0.17 yrotate -180.0 
+                        linear 0.30 yrotate -180.0 
+                        linear 0.20 yrotate -180.0 
+                        linear 0.10 yrotate -180.0 
+                        linear 0.15 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+        with Pause(2.0)
+        show aki thoughtful:
+                xpos 0.66 yrotate 0.0 
+        window auto show
+        
         aki "Everything about this spells out a trap. I need to get out of here."
 
-        # VSFX Akari (move back to center)
+        show aki neutral with dissolve
+        with Pause(0.5)
+        show aki neutral:
+                subpixel True 
+                pos (0.66, 1.13) zoom 1.12 
+                linear 0.5 pos (0.5, 1.4) zoom 1.3 
 
         "She turns her dark gaze back to you."
+        window auto hide
+        with Pause(0.50)
+        show aki neutral:
+                pos (0.5, 1.4) zoom 1.3
+        
+        #change name to show Akari after reveal
+        $ aki = Character("Akari", color = "#871c1c")
 
         aki "Name's Akari. We have a common enemy. I will let you go, for now. Help me, and I will help you in turn."
 
-        #change name to show Akari after reveal
-        $ aki = Character("Akari")
-
-        show aki neutral
-        # VSFX Akari (closer)
+        show aki determined with dissolve
 
         aki "But do not forget, you are still a monster. Try anything funny with me, and I will not hesitate to kill you."
 
-        # VSFX Akari (moves away and fades out)
-        hide aki neutral
+        ###no matter what you do or delete, Akari dissapears early here?!?!?
+        
         "Akari backs into the foliage, disappearing in the blink of an eye. You notice how tense you feel, and allow yourself a moment to recover. A chill breeze ruffles your clothes."
+        
+        # VSFX Akari (moves away and fades out)
+        hide aki determined with dissolve
 
         "The tranquil moment doesn't last for long. You hear the approach of powerful footsteps, and you know you're in for it now."
 
@@ -155,7 +245,16 @@ label PleadCase:
 
 label CallOut:
         # VSFX Akari (as if jumping slightly in place)
-
+        show aki bow drawn:
+                subpixel True 
+                ypos 1.43 
+                linear 0.15 ypos 1.45 
+                linear 0.10 ypos 1.4 
+                linear 0.05 ypos 1.43 
+        with Pause(0.40)
+        show aki bow drawn:
+                ypos 1.43 
+        
         "You desperately call out for Ashina and the hooded woman jumps slightly. She looks at you with a confused expression and lowers her bow."
 
         # Image Akari Bow Nocked
@@ -164,6 +263,31 @@ label CallOut:
         aki "Who are you yelling for? You should be the only one here."
 
         # VSFX Akari (move slightly back and forth horizontally, a small look around)
+        show aki bow nocked:
+                subpixel True 
+                parallel:
+                        xpos 0.5 
+                        linear 0.30 xpos 0.34 
+                        linear 0.10 xpos 0.34 
+                        linear 0.17 xpos 0.34 
+                        linear 0.30 xpos 0.34 
+                        linear 0.20 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                        linear 0.15 xpos 0.66 
+                        linear 0.10 xpos 0.66 
+                parallel:
+                        yrotate 0.0 
+                        linear 0.30 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+                        linear 0.17 yrotate -180.0 
+                        linear 0.30 yrotate -180.0 
+                        linear 0.20 yrotate -180.0 
+                        linear 0.10 yrotate -180.0 
+                        linear 0.15 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+        with Pause(2.0)
+        show aki bow nocked:
+                xpos 0.66 yrotate 0.0 
 
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
 
@@ -179,13 +303,14 @@ label CallOut:
         #Image Akari Bow Nocked
         show aki bow nocked
         #SFX Growl
-        play audio growl
+        play soundb growl
         #VSFX Akari (moves away and fades out)
         hide aki bow nocked
         "There’s a sudden burst of movement and a fierce growling quickly approaching from behind you. Akari’s eyes go wide, and she quickly backs into the foliage, disappearing in the blink of an eye."
 
         #Image Wolf Ashina Snarling
         show wolf snarl with dissolve
+        stop soundb fadeout 0.5
         #Image Wolf Ashina Docile
         show wolf neutral with dissolve
 
@@ -193,10 +318,27 @@ label CallOut:
 
         ## VSFX Ashina (fading in and out between images like a pokemon evolution until settling into the latter image)
         # Image Ashina Neutral
+        window auto hide
         hide wolf neutral with dissolve
+        with Pause(0.2)
+        #show shifting ashina
         show ash neutral with dissolve
+        hide ash neutral with dissolve
+        with Pause(0.2)
+        show wolf neutral with dissolve
+        hide wolf neutral with dissolve
+        with Pause(0.2)
+        show ash neutral with dissolve
+        hide ash neutral with dissolve
+        with Pause(0.2)
+        show wolf neutral with dissolve
+        hide wolf neutral with dissolve
+        with Pause(0.2)
+        show ash neutral with dissolve
+        window auto show
 
         "You watch as, before your eyes, the wolf begins to change. You hear the sharp cracking of bone and the mushy contorting of flesh. You want to look away, but you can’t. Soon enough, Ashina stands before you."
+
 
         jump BotchedConverge1
 
@@ -209,26 +351,68 @@ label BotchedConverge1:
         ash "I seem to recall telling you to stay inside, did I not, pup?"
 
         # VSFX Ashina (closer)
+        show ash neutral:
+                subpixel True
+                linear 0.2 ypos 1.43 zoom 1.36 
+        with Pause(0.3)
+        show ash neutral:
+                ypos 1.43 zoom 1.36
 
         "You turn to face Ashina as she steps closer, looming over you. You reflexively swallow."
 
         you "You… did."
 
-        # VSFX Ashina (further, moving to the right)
+        # VSFX Ashina (moving to the right)
+        show ash neutral:
+                subpixel True 
+                parallel:
+                        xpos 0.5 
+                        linear 0.30 xpos 0.66
+                        linear 0.10 xpos 0.66
+                        linear 0.17 xpos 0.66
+                        linear 0.30 xpos 0.66
+                        linear 0.20 xpos 0.34
+                        linear 0.10 xpos 0.34
+                        linear 0.15 xpos 0.34
+                        linear 0.10 xpos 0.34
+                parallel:
+                        yrotate 0.0 
+                        linear 0.30 yrotate 0.0 
+                        linear 0.10 yrotate 0.0 
+                        linear 0.17 yrotate 180.0
+                        linear 0.30 yrotate 180.0 
+                        linear 0.20 yrotate 180.0 
+                        linear 0.10 yrotate 180.0 
+                        linear 0.15 yrotate 0.0 
+                        linear 0.10 yrotate 0.0
 
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
-        # VSFX Ashina (moving to the left)
+        # VSFX Ashina (shake)
+        show ash neutral:
+                subpixel True 
+                xpos 0.34 
+                linear 0.15 xpos 0.36 
+                linear 0.20 xpos 0.32 
+                linear 0.15 xpos 0.34 
 
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
-
-        # Image Ashina Hybrid Angry
+        
+        show ash neutral:
+                xpos 0.34
+        with Pause(0.5) 
         show ash angry hybrid with dissolve
+        with Pause(0.5)
+        # Image Ashina Hybrid Angry
         # VSFX Ashina (closer)
-
+        show ash angry hybrid:
+                subpixel True
+                linear 0.2 pos (0.5,2.0) zoom 2.0
+        
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
-
-        # Image Ashina Neutral (further, center)
+        show ash angry hybrid:
+                pos (0.5,2.0) zoom 2.0
+        with Pause (0.5)
         show ash neutral with dissolve
 
         ash "I will not tolerate your behavior. Get back inside. Now."
@@ -246,37 +430,51 @@ label BotchedConverge1:
 label ResistAshina:
         you "This isn’t about you! I wasn't doing anything wrong!"
 
+        show ash neutral:
+                subpixel True
+                linear 0.2 pos (0.5,1.55) zoom 1.66
+
         you "You think you can just turn me into some monster, ruin my life and act like I'm supposed to be grateful towards you? No! I've had enough!"
+
+        show ash neutral:
+                pos (0.5,1.55) zoom 1.66
+        with Pause(0.1)
+        #VSFX Ashina (fade out)
+        hide ash neutral with dissolve
 
         "You turn away from Ashina and intend to put some space between you."
 
-        #VSFX Ashina (fade out)
-        hide ash neutral with dissolve
-        #SFX Walking
-        play sound walk
-
-        ash "You will not walk away from me!"
-
-        #SFX Walking
         #Image Cabin Exterior POV Approaching
         show bg forest edge with dissolve:
                 subpixel True xzoom 1.0 yzoom 7.82
+        #SFX Walking
+        play sound walk loop
+
+        ash "You will not walk away from me!"
+
         stop sound
         #VSFX Zoom (as if being dragged to the door)
 
         "Ashina grabs your wrist and drags you struggling across the yard. As she does so, you notice a pair of dark eyes watching from the treeline."
 
+        window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
                 subpixel True xzoom 1.0 yzoom 1.0
         with Pause(1.0)
+
         #Image Hearth
         show bg hearth with dissolve:
-                subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
+                subpixel True xoffset 127.0 xzoom 1.0 zoom 0.72 
+
         #Image Ashina Hybrid Angry
         show ash angry hybrid with dissolve
-        #Music Cabin
-        play music cabin_music volume 0.3
+
+        #Fireplace
+        stop music fadeout 2.0
+        stop crickets fadeout 2.0
+        play soundb fireplace volume 0.3 loop fadein 2.0
+        window auto show
 
         "Ashina tosses you into the cabin, slams the front door shut, and snarls at you."
 
@@ -285,27 +483,44 @@ label ResistAshina:
         jump BotchedConverge2
 
 label GoWillingly:
-        "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you. Once inside, she approaches you with a fierce expression."
-
+        pause 0.5
         hide ash neutral with dissolve
-
-        play sound walk
         show bg forest edge with dissolve:
                 subpixel True xzoom 1.0 yzoom 7.82
+        
+        "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you."
+
+        window auto hide
+        play sound walk loop
         with Pause(1.0)
         show bg door open with dissolve:
                 subpixel True xzoom 1.0 yzoom 1.0
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
+                subpixel True xoffset 127.0 xzoom 1.0 zoom 0.72 
+
+        #Fireplace
+        stop sound
+        stop music fadeout 2.0
+        stop crickets fadeout 2.0
+        play soundb fireplace volume 0.3 loop fadein 2.0
+        window auto show
+
+        show ash angry hybrid with dissolve
+
+        "Once inside, she approaches you with a fierce expression."
 
         # Image Ashina Concerned
         show ash concerned with dissolve
+
         # VSFX as if  falling backwards onto the ground and looking up at Ashina
 
         "You stumble as your foot catches the edge of the walkway, causing you to topple over. Ashina regards you hesitantly."
 
         ash "I told you to stay inside. Why couldn’t you just listen to me?"
+
+        #for testing
+        #define ash_approval = 3
 
         jump BotchedConverge2
 
@@ -316,10 +531,36 @@ label BotchedConverge2:
 
                 # Image Ashina Thoughtful
                 show ash thoughtful with dissolve
+                with Pause(0.5)
                 # VSFX Ashina (as if pacing in frustration)
+                show ash thoughtful:
+                        subpixel True 
+                        parallel:
+                                xpos 0.5 
+                                linear 0.30 xpos 0.66
+                                linear 0.10 xpos 0.66
+                                linear 0.17 xpos 0.66
+                                linear 0.30 xpos 0.66
+                                linear 0.20 xpos 0.34
+                                linear 0.10 xpos 0.34
+                                linear 0.15 xpos 0.34
+                                linear 0.10 xpos 0.34
+                        parallel:
+                                yrotate 0.0 
+                                linear 0.30 yrotate 0.0 
+                                linear 0.10 yrotate 0.0 
+                                linear 0.17 yrotate 180.0
+                                linear 0.30 yrotate 180.0 
+                                linear 0.20 yrotate 180.0 
+                                linear 0.10 yrotate 180.0 
+                                linear 0.15 yrotate 0.0 
+                                linear 0.10 yrotate 0.0
 
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
-
+                
+                show ash thoughtful:
+                        xpos 0.34
+                with Pause(0.5)
                 # Image Ashina Caring
                 show ash caring with dissolve
 
@@ -348,17 +589,25 @@ label BotchedConverge2:
                 #VSFX Zoom (as if walking through the hearth)
                 #SFX Walking
                 play sound walk
+                show bg upstairs with dissolve:
+                        pos(0,0) zoom 1.0
 
                 "You feel her gaze on your back as you cross the hearth and head upstairs."
 
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
-                show bg room ceiling
+                show bg room ceiling with dissolve:
+                        pos(0,0) zoom 1.0
+
                 # VSFX Blur
+
+                stop sound
 
                 "When you find yourself lying in bed, you’re cradling your hand over your chest. You can still feel the warmth from when Ashina held it."
 
                 # VSFX Black
-                show bg color black
+                show bg color black with dissolve:
+                        pos(0,0) zoom 1.0
+                pause 1.0
 
                 jump SpeakNoEvilSceneP1
 
@@ -376,21 +625,31 @@ label BotchedConverge2:
                 ash "...Go to your room."
 
                 #VSFX Ashina (fade out)
-                hide ash concerned
-                #VSFX Zoom (as if walking through the hearth)
-                #SFX Walking
-                play sound walk
+                hide ash concerned with dissolve
 
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 
+                window auto hide
+                #VSFX Zoom (as if walking through the hearth)
+                #SFX Walking
+                play sound walk loop
+                show bg upstairs with dissolve:
+                        pos(0,0) zoom 1.0
+                with Pause(1.0)
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
-                show bg room ceiling
+                show bg room ceiling with dissolve:
+                        pos(0,0) zoom 1.0
                 # VSFX Blur
+
+                stop sound
+                window auto show
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."
 
                 # VSFX Black
-                show bg color black
+                show bg color black with dissolve:
+                        pos(0,0) zoom 1.0
+                pause 1.0
 
                 jump SpeakNoEvilSceneP1
 

@@ -66,7 +66,7 @@ label WhoYouAreScene:
         
         stop music fadeout 4.0
 
-        play audio fireplace volume 0.3 loop fadein 2.0
+        play soundb fireplace volume 0.3 loop fadein 2.0
 
         # Image Downstairs
         show bg downstairs with dissolve:
