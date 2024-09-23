@@ -96,6 +96,12 @@ image ash concerned:
 image ash angry hybrid:
     "chars/ashina/ashina_neutral.png"
     subpixel True zoom 0.33
+image ash fighting:
+    "chars/ashina/ashina_neutral.png"
+    subpixel True zoom 0.33 
+image ash hurt:
+    "chars/ashina/ashina_neutral.png"
+    subpixel True zoom 0.33 
 
 #Akari
 image aki neutral:
@@ -119,6 +125,16 @@ image aki caring:
 image aki determined:
     "chars/akari/akari_determined/png"
     subpixel True zoom 0.33 
+#temps
+image aki fighting:
+    "chars/akari/akari_arrowready.png"
+    subpixel True zoom 0.33 
+image aki dodging:
+    "chars/akari/akari_bow.png"
+    subpixel True zoom 0.33 
+image aki hurt:
+    "chars/akari/akari_neutral.png"
+    subpixel True zoom 0.33 
 
 #Cameron
 image cam neutral:
@@ -130,16 +146,16 @@ image cam friendly:
 image cam caring:
     "chars/cameron/cameron_caring.png"
     subpixel True zoom 0.33
+image cam frustrated:
+    "chars/cameron/cameron_frustrated.png"
+    subpixel True zoom 0.33
+image cam nervous:
+    "chars/cameron/cameron_nervous.png"
+    subpixel True zoom 0.33
 #temps
 image cam scared:
     "chars/cameron/cameron_neutral.png"
     subpixel True zoom 0.33 
-image cam frustrated:
-    "chars/cameron/cameron_neutral.png"
-    subpixel True zoom 0.33
-image cam nervous:
-    "chars/cameron/cameron_neutral.png"
-    subpixel True zoom 0.33
 
 image neighbor:
     "chars/shadows/neighbor/NEI_01.png"
@@ -182,6 +198,8 @@ image teacher:
     0.2
     repeat
 
+image dog                   = "chars/dogs/dog.png"
+image happy dog             = "chars/dogs/dog_happy.png"
 # Declare other images
 image logo                  = "logo_white.png"
 image pain                  = "red_edges.png"
