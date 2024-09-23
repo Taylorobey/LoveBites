@@ -56,6 +56,7 @@ style bigtext:
 #Extra SFX
 init python:
     renpy.music.register_channel('soundb', "sound")
+    renpy.music.register_channel('crickets', "sound")
 
 #For automatic VO rendering
 init python:
@@ -69,7 +70,7 @@ label start:
         perspective True
 
     #temporary jump for testing
-    jump WakingScene
+    jump FailedRescueScene
     #jump IntroductoryCutscene
     
     # This ends the game.

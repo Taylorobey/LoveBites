@@ -16,7 +16,7 @@ label WakingScene:
         play soundb heart
         with Pause(0.7)
         stop soundb fadeout 0.5
-        
+
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
         #image captive cabin room (full view)
         scene bg room mc with dissolve
@@ -61,7 +61,9 @@ label WakingScene:
 
         #SFX stomach growl
         # Need stomach growl sfx asset
-        play sound growl volume 0.5 fadeout 3.0
+        play sound growl volume 0.5
+        with Pause(2.0)
+        stop sound fadeout 1.0
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
 
         hide ash friendly 
@@ -237,7 +239,8 @@ label ExamineWindow:
 label HeadtoBed:
         #choices converge here 
         stop music fadeout 1.0
-
+        stop crickets fadeout 2.5
+        
         "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
         
         #VSFX black screen

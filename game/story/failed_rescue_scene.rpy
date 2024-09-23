@@ -4,33 +4,34 @@ label FailedRescueScene:
         call WakeUpSequence1
         call WakeUpSequence2
 
+        window auto show
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
+        #window auto hide
 
         # Image Captive Cabin Room (full view) 
         scene bg room mc with dissolve
 
         # VSFX Slow Pan or Back And Forth Pan (as if looking around the room, whichever looks more natural, before settling on the window)
-        window auto hide
-        camera:
-                subpixel True 
-                parallel:
-                        pos (0, 0) 
-                        linear 0.77 pos (-9, -153) 
-                        linear 0.33 pos (-9, -153) 
-                        linear 1.43 pos (-594, -195) 
-                        linear 0.32 pos (-594, -195) 
-                        linear 0.48 pos (0, 0) 
-                parallel:
-                        zoom 1.0 
-                        linear 0.78 zoom 1.25 
-                        linear 0.34 zoom 1.25 
-                        linear 1.41 zoom 1.31 
-                        linear 0.32 zoom 1.31 
-                        linear 0.48 zoom 1.0 
-        with Pause(3.43)
-        camera:
-                pos (0, 0) zoom 1.0 
-        window auto show
+        #camera:
+                #subpixel True 
+                #parallel:
+                        #pos (0, 0) 
+                        #linear 0.77 pos (-9, -153) 
+                        #linear 0.33 pos (-9, -153) 
+                        #linear 1.43 pos (-594, -195) 
+                        #linear 0.32 pos (-594, -195) 
+                        #linear 0.48 pos (0, 0) 
+                #parallel:
+                        #zoom 1.0 
+                        #linear 0.78 zoom 1.25 
+                        #linear 0.34 zoom 1.25 
+                        #linear 1.41 zoom 1.31 
+                        #linear 0.32 zoom 1.31 
+                        #linear 0.48 zoom 1.0 
+        #with Pause(3.43)
+        #camera:
+                #pos (0, 0) zoom 1.0 
+        #window auto show
 
         "Your eyes search the room for the noise and you notice a struggling figure wedged into the window. Somehow, even without getting a clear view, you know who it is."
 
@@ -89,6 +90,7 @@ label FailedRescueScene:
         cam "Then…"
 
         show cam friendly at stop_pacing
+        with Pause(1.0)
         # Image Cameron Nervous
         show cam nervous with dissolve
         
@@ -99,6 +101,10 @@ label FailedRescueScene:
 
         cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
+        show cam nervous
+        with Pause(0.5)
+        show cam friendly with dissolve
+        with Pause(0.5)
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
         show cam friendly at pacing
 
@@ -108,12 +114,17 @@ label FailedRescueScene:
 
         "There’s a long pause before you respond, not really sure how to take in all of that information."
 
+        window auto hide
         pause(4)
+        window auto show
 
         you "…How did you manage to get past the guard dogs?"
 
         # Image Cameron Neutral
         show cam neutral with dissolve
+        with Pause(0.5)
+        show cam nervous with dissolve
+        with Pause(0.5)
         # VSFX Cameron (slight up and down motion, as if shrugging)
         # looked a bit like jumping so i messed with it a little
         window auto hide
@@ -299,9 +310,9 @@ label CamCaught:
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
         show ash angry hybrid with dissolve:
-                subpixel True xpos 0.45 ypos 45 zoom 1.1
-        show cam scared with dissolve:
                 subpixel True xpos 0.55 ypos 45 zoom 1.1
+        show cam scared with dissolve:
+                subpixel True xpos 0.7 ypos 45 zoom 1.1
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
@@ -316,7 +327,6 @@ label CamCaught:
 
         # Image Cabin Door Closed
         scene bg door closed with dissolve
-
 
         # Music Cabin
         play music cabin_music volume 0.3 fadein 2.0
@@ -347,6 +357,8 @@ label CamCaught:
         window auto show
 
         "You lie down without thinking, your hands curling into fists and tears welling in your eyes. You fight to stay conscious, but it’s no use."
+
+        stop crickets fadeout 2.5
 
         "…Just before you drift off, you notice your nails feel unusually sharp."
 

@@ -12,7 +12,7 @@ label WakeUpSequence1:
     play music cabin_music volume 0.3
 
     #SFX crickets
-    play sound crickets loop volume 0.5
+    play crickets crickets loop volume 0.5
 
     return
 

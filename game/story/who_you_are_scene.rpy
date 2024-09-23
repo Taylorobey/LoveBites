@@ -12,6 +12,8 @@ label WhoYouAreScene:
 
         call PainFlash
         play soundb heart
+        with Pause(0.7)
+        stop soundb fadeout 0.5
 
         "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing outside of the door to your room."
 

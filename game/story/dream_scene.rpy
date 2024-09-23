@@ -165,14 +165,13 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
-        #screen tints are broken now
         menu:
                 #Humanity choice
                 "People are complicated.":
-                # VSFX screen slowly tints yellow
-                        camera:
-                                matrixcolor TintMatrix("#fff")
-                                linear 3.0 matrixcolor TintMatrix("#b29231")
+                # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
+                        #camera:
+                                #matrixcolor TintMatrix("#fff")
+                                #linear 3.0 matrixcolor TintMatrix("#b29231")
                                 #is this a good yellow?
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
@@ -181,14 +180,16 @@ label DreamScene:
                         
                 #Corruption choice
                 "People are selfish.":
-                        # VSFX screen slowly tints blue
-                        camera:
-                                matrixcolor TintMatrix("#fff")
-                                linear 3.0 matrixcolor TintMatrix("#1C4587")
+                        # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
+                        #camera:
+                                #matrixcolor TintMatrix("#fff")
+                                #linear 3.0 matrixcolor TintMatrix("#1C4587")
                         #should we use straight blue instead
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/color}{/b} be like them."
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
-
+        stop music fadeout (2.5)
+        hide bg ripple one with dissolve(3.0)
+        with Pause(3.0)
         jump WhoYouAreScene
