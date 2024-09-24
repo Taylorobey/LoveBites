@@ -284,11 +284,9 @@ label SpeakNoEvilSceneP1:
         subpixel True
         zoom 1.0
         linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
-    with Pause(2.1)
-    show bg downstairs:
-        zoom 2.0 xalign(0.5) yalign(0.01)
 
     show bg color black with Dissolve(3.0)
+
 
     window auto show
 
