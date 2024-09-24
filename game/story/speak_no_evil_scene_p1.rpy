@@ -141,7 +141,7 @@ label SpeakNoEvilSceneP1:
     ash "Oh? Anything? Good. Listen carefully to my words, girl."
 
     #for testing
-    define ash_approval = 3
+    #define ash_approval = 3
 
     if ash_approval >= 3:
         #nodding motion

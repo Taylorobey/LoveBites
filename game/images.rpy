@@ -158,6 +158,10 @@ image cam nervous:
 image cam scared:
     "chars/cameron/cameron_scared.png"
     subpixel True zoom 0.33 
+#temps
+image cam thoughtful:
+    "chars/cameron/cameron_neutral.png"
+    subpixel True zoom 0.33
 
 image neighbor:
     "chars/shadows/neighbor/NEI_01.png"
