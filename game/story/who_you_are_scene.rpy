@@ -1,4 +1,6 @@
 label WhoYouAreScene:
+        $ save_name = "Who You Are"
+
         #stop audio from previous scene
         stop sound
 

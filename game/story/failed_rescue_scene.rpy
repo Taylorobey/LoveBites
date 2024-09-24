@@ -1,4 +1,5 @@
 label FailedRescueScene:
+        $ save_name = "An Old Friend"
         pause(0.5)
         #otherwise the tint stays if you click too fast or use skip function
         camera:

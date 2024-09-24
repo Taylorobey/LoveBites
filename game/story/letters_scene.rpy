@@ -1,4 +1,6 @@
 label LettersScene:
+    $ save_name = "A Letter"
+    
     #Image Captive Cabin Room (angled towards ceiling)
     #Music Cabin
     #VSFX Blur (as if drifting asleep)

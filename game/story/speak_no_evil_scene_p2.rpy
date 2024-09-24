@@ -1,4 +1,5 @@
 label SpeakNoEvilSceneP2:
+        $ save_name = "Hear No Evil"
         
         #Image Cabin Door Closed
         show bg door closed:

@@ -1,4 +1,6 @@
 label SpeakNoEvilSceneP1:
+    $ save_name = "Speak No Evil"
+    
     #This scene triggers if you do not have -2 Approval with Ashina
     #stop audio from previous scene
     

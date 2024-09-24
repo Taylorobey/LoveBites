@@ -1,4 +1,6 @@
 label ICanSeeTheStarsScene:
+    $ save_name = "I Can See The Stars"
+    
     #Flags: Key information to defeating Ashina, or betraying Akari and preparing Ashina for the confrontation, or neither. Increased Humanity or Corruption.
 
     #Image Cabin Door Open

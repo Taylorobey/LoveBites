@@ -1,4 +1,6 @@
 label SpeakNoEvilSceneP3:
+        $ save_name = "See No Evil"
+        
         #Choices Converge here
         window auto hide
         show bg color black with Dissolve(3.0)

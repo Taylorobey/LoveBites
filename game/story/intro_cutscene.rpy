@@ -1,4 +1,6 @@
 label IntroductoryCutscene:
+        $ save_name = "Flirting with Disaster"
+        
         #Image Street Intersection
         scene bg intersection
         

@@ -1,4 +1,6 @@
 label WakingScene:
+        $ save_name = "Careful What You Wish For"
+        
         scene bg color black with dissolve
         with Pause(0.5)
 
