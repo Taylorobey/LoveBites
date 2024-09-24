@@ -221,7 +221,7 @@ label IntroductoryCutscene:
                 yalign 0.5
         
         #SFX Howl
-        play sound howl
+        play sound howl volume 0.5
 
         #pause before changing scenes else logo won't show
         pause(5.0)
