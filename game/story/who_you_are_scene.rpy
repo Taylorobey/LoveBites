@@ -71,7 +71,7 @@ label WhoYouAreScene:
         # Image Downstairs
         show bg downstairs with dissolve:
                 subpixel True
-                zoom 1.0
+                zoom 1.0 xalign(0.5) yalign(0.01)
                 linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
         with Pause(1.5)
         show bg downstairs:

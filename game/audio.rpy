@@ -20,4 +20,5 @@ define audio.creak                  = "SFX/Creak.mp3"
 define audio.growl                  = "SFX/Growl.wav"
 define audio.fireplace              = "SFX/Fireplace.mp3"
 define audio.knocking               = "SFX/Knock (Captive Room).mp3"
+define audio.mournfulhowls          = "SFX/Mournful_Howls.flac"
 #placeholders until audio effects are available

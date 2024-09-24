@@ -20,8 +20,10 @@ label SpeakNoEvilSceneP1:
     #Image Captive Cabin Room (full view)
     scene bg room mc with dissolve
 
+    stop sound
+
     #Image Ashina Caring
-    show ash caring with dissolve
+    show ash caring with easeinright
 
     window auto show
 
@@ -36,41 +38,65 @@ label SpeakNoEvilSceneP1:
 
     "Ashina stands tall above your bed. There's a kindness in her eyes, which fades away quickly when she realizes you're staring."
 
+    show ash thoughtful with dissolve
+
     ash "Don't get the wrong idea, pet. I haven't forgotten about your little escapade last night."
 
-    hide ash neutral with dissolve
+    hide ash thoughtful with easeoutright
 
     "She walks back out into the hall, gesturing for you to follow. You rise from the bed, and do so."
 
     window auto hide
-
-    #VSFX Ashina (fade out), fade into next bg, Zoom (as if walking)
+    stop crickets fadeout 2.0
+    play sound walk loop
     
-    #SFX Walking
-    play sound walk
-    #Image Cabin Door Open
-    show bg door open with dissolve
-    with Pause(1.0)
-    #Image Cabin Hall
-    show bg hallway with dissolve:
-        subpixel True zoom 0.53
+    # Image Cabin Door Open
+    show bg door open with dissolve:
+        subpixel True
+        zoom 1.0
+        linear 2.00 zoom 2.0 yalign(0.5)
+    with Pause(1.5)
+    show bg door open:
+        zoom 2.0 yalign(0.5)
 
+    # Image Cabin Hall
+    show bg hallway with dissolve:
+        subpixel True 
+        zoom 0.53
+        linear 2.00 zoom 1.0 xalign(0.8) yalign(0.3)
+    with Pause(1.5)
+    show bg hallway:
+        zoom 1.0 xalign(0.8) yalign(0.3)
+    
+    stop sound
     window auto show
     ash "But, it got me thinking. Perhaps it wasn’t that you were recklessly thinking of introducing lycanthropy to the masses. Perhaps you had a more altruistic motive."
     window auto hide
-
-    show bg downstairs with dissolve:
-        subpixel True zoom 1.0
-    with Pause(1.0)
-    #Image Cabin Hearth
-    show bg hearth with dissolve:
-        subpixel True xoffset 1018.0 xzoom 1.0 zoom 0.72 
-
+    
+    play sound walk loop
     stop music fadeout 4.0
-    #play soundb fireplace volume 0.3 fadein 2.0 loop
-    #error here? 
+    play soundb fireplace volume 0.3 loop fadein 2.0
+
+    # Image Downstairs
+    show bg downstairs with dissolve:
+        subpixel True
+        zoom 1.0
+        linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+    with Pause(1.5)
+    show bg downstairs:
+        zoom 2.0 xalign(0.5) yalign(0.01)
+
+    # Image Cabin Hearth
+    show bg hearth with dissolve:
+        subpixel True
+        zoom 0.7
+        pos(0.52,-0.2)
+
+    stop sound fadeout 1.0
     #Image Ashina Neutral (closer)
     show ash neutral with dissolve
+
+    window auto show
 
     "Once you read the bottom of the stairs and step into the hearth, Ashina turns and steps close to you. Her eyes burn into you with a lingering question."
 
@@ -98,14 +124,38 @@ label SpeakNoEvilSceneP1:
 
     you "I'll do anything to see them again!"
 
+    window auto hide
     #VSFX Ashina Friendly
-    show ash friendly with dissolve
-
+    show ash sadistic with dissolve
+    with Pause(1.0)
     #VSFX Ashina (closer)
+    show ash sadistic:
+        subpixel True 
+        pos (0.5, 1.0)
+        linear 0.50 pos (0.5, 2.0) zoom 2.0 
+    with Pause(0.60)
+    show ash sadistic:
+        pos (0.5, 2.0) zoom 2.0 
+    window auto show
 
     ash "Oh? Anything? Good. Listen carefully to my words, girl."
 
+    #for testing
+    define ash_approval = 3
+
     if ash_approval >= 3:
+        #nodding motion
+        window auto hide
+        show ash friendly:
+            subpixel True 
+            ypos 2.0 
+            linear 0.15 ypos 2.03 
+            linear 0.15 ypos 1.97 
+            linear 0.15 ypos 2.0 
+        with Pause(0.55)
+        show ash friendly:
+            ypos 2.0 
+        window auto show
 
         ash "You have been quite obedient. It seems like you have a good head on those pretty little shoulders, as you clearly grasp the reality of your situation."
 
@@ -141,13 +191,29 @@ label SpeakNoEvilSceneP1:
         #VSFX blue screen tint (slowly fade in)
         #SFX Fire (slowly fade in)
         #SFX Howls (slowly fade in)
+        camera:
+                #matrixcolor TintMatrix("#1C4587")
+                matrixcolor TintMatrix("#fff")
+                linear 3.0 matrixcolor TintMatrix("#1C4587")
+        play sound fireplace volume 2.5 fadein 3.0 loop
+        play crickets mournfulhowls volume 0.2 fadein 3.0 loop
+        play music connection_music volume 0.4 fadein 1.5
 
-        "There’s a haunted look in her eyes. A memory tugs at the edge of your consciousness. Crackling fire and mournful howls. Bottomless agony, threatening to pull you under."
+        "There’s a haunted look in her eyes. A {b}{color=#1C4587}memory{/b}{/color} tugs at the edge of your consciousness. Crackling fire and {b}{color=#1C4587}mournful{/b}{/color} howls. Bottomless agony, threatening to pull you {b}{color=#1C4587}under{/b}{/color}."
+
+        show ash sad with dissolve
 
         ash "They'll burn everything to the ground. The cabin. The dogs. You, over my dead body."
 
         #VSFX Blue (fade out)
         #SFX Fire and Howls (fade out)
+        pause(0.5)
+        #otherwise the tint stays if you click too fast or use skip function
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
+        stop sound fadeout 3.0
+        stop crickets fadeout 3.0
+        stop music fadeout 2.5
 
         "Just like that, the feelings fade, leaving you a bit disoriented."
 
@@ -178,6 +244,15 @@ label SpeakNoEvilSceneP1:
 
     "Ashina gives you a meaningful look, and your stomach sinks. She hands you a key."
 
+    show ash neutral:
+        subpixel True 
+        pos (0.5, 2.0)
+        linear 0.50 pos (0.5, 1.0) zoom 1.0 
+    with Pause(0.60)
+    show ash neutral:
+        pos (0.5, 1.0) zoom 1.0 
+    window auto show
+
     ash "Now, go to them. Descend from the hearth, and you shall find them in the basement. I will be waiting at the top of the stairs."
 
     you "Wait! Isn’t there-"
@@ -187,15 +262,44 @@ label SpeakNoEvilSceneP1:
 
     ash "Go. Before I change my mind. Surely, you can convince them of something so simple."
 
+    window auto hide
     #VSFX Ashina (fade out)
     hide ash angry hybrid with dissolve
 
     #SFX Walking
-    play sound walk
+    play sound walk loop
 
+    show bg downstairs with dissolve:
+        subpixel True zoom 1.0 pos (0.5, 0.01) 
+
+    with Pause(1.0)
+    stop sound
+    window auto show
     "She gives you a light push towards the stairs, and you can tell that the conversation is over. Your heart beats in anticipation as you descend."
+
+    window auto hide
+    play sound walk loop
+    # Image Downstairs
+    show bg downstairs:
+        subpixel True
+        zoom 1.0
+        linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+    with Pause(2.1)
+    show bg downstairs:
+        zoom 2.0 xalign(0.5) yalign(0.01)
+
+    show bg color black with Dissolve(3.0)
+
+    window auto show
 
     you "That's easy for her to say… She doesn't know how stubborn Cameron can be."
 
+    pause(0.5)
+        #just in case the tint stays if you click too fast or use skip function
+    camera:
+        linear 1.0 matrixcolor TintMatrix("#fff")
+
     stop sound
+    stop soundb fadeout 1.0
+
     jump SpeakNoEvilSceneP2
