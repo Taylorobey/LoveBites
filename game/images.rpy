@@ -123,7 +123,7 @@ image aki caring:
     "chars/akari/akari_caring.png"
     subpixel True zoom 0.33
 image aki determined:
-    "chars/akari/akari_determined/png"
+    "chars/akari/akari_determined.png"
     subpixel True zoom 0.33 
 #temps
 image aki fighting:
