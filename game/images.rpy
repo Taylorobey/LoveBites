@@ -84,15 +84,15 @@ image ash sadistic:
     "chars/ashina/ashina_friendly.png"
     subpixel True zoom 0.33  
 image ash thoughtful:
-    "chars/ashina/ashina_neutral.png"
-    subpixel True zoom 0.33 
+    "chars/ashina/ashina_thoughtful.png"
+    subpixel True zoom 0.33
 image ash caring:
     "chars/ashina/ashina_caring.png"
-    subpixel True zoom 0.33 
-#temps
-image ash concerned:
-    "chars/ashina/ashina_sad.png"
     subpixel True zoom 0.33
+image ash concerned:
+    "chars/ashina/ashina_concerned.png"
+    subpixel True zoom 0.33
+#temps
 image ash angry hybrid:
     "chars/ashina/ashina_friendly.png"
     subpixel True zoom 0.33
@@ -152,9 +152,8 @@ image cam frustrated:
 image cam nervous:
     "chars/cameron/cameron_nervous.png"
     subpixel True zoom 0.33
-#temps
 image cam scared:
-    "chars/cameron/cameron_nervous.png"
+    "chars/cameron/cameron_scared.png"
     subpixel True zoom 0.33 
 
 image neighbor:
