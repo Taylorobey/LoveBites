@@ -138,33 +138,14 @@ label PleadCase:
         # VSFX Akari (move horizontally across the screen, as if looking around)
 
         "The woman lowers her bow, looking around suspiciously."
-        show aki bow nocked:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 0.30 xpos 0.34 
-                        linear 0.10 xpos 0.34 
-                        linear 0.17 xpos 0.34 
-                        linear 0.30 xpos 0.34 
-                        linear 0.20 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                        linear 0.15 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                parallel:
-                        yrotate 0.0 
-                        linear 0.30 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-                        linear 0.17 yrotate -180.0 
-                        linear 0.30 yrotate -180.0 
-                        linear 0.20 yrotate -180.0 
-                        linear 0.10 yrotate -180.0 
-                        linear 0.15 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
+        show aki bow nocked at shortpacing
 
         you "I don’t know, they were gone when I stepped outside. They must have run off somewhere, maybe-"
 
-        show aki bow nocked:
-                xpos 0.66 yrotate 0.0
+        window auto hide
+        show aki bow nocked at stop_shortpacing
+        with Pause(1.0)
+        window auto show
 
         aki "The large one, the wolf-beast. That is their master, is it not?"
 
@@ -184,47 +165,16 @@ label PleadCase:
 
         # VSFX Akari (move horizontally across the screen, as if looking around, other direction)
         window auto hide
-        show aki thoughtful:
-                subpixel True 
-                parallel:
-                        xpos 0.66
-                        linear 0.30 xpos 0.34 
-                        linear 0.10 xpos 0.34 
-                        linear 0.17 xpos 0.34 
-                        linear 0.30 xpos 0.34 
-                        linear 0.20 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                        linear 0.15 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                parallel:
-                        yrotate 0.0 
-                        linear 0.30 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-                        linear 0.17 yrotate -180.0 
-                        linear 0.30 yrotate -180.0 
-                        linear 0.20 yrotate -180.0 
-                        linear 0.10 yrotate -180.0 
-                        linear 0.15 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-        with Pause(2.0)
-        show aki thoughtful:
-                xpos 0.66 yrotate 0.0 
+        show aki thoughtful at shortpacing
+        with Pause(4.0)
+        show aki thoughtful at stop_shortpacing
         window auto show
         
         aki "Everything about this spells out a trap. I need to get out of here."
 
         show aki neutral with dissolve
-        with Pause(0.5)
-        show aki neutral:
-                subpixel True 
-                pos (0.66, 1.13) zoom 1.12 
-                linear 0.5 pos (0.5, 1.4) zoom 1.3 
 
         "She turns her dark gaze back to you."
-        window auto hide
-        with Pause(0.50)
-        show aki neutral:
-                pos (0.5, 1.4) zoom 1.3
         
         #change name to show Akari after reveal
         $ aki = Character("Akari", color = "#871c1c")
@@ -264,31 +214,9 @@ label CallOut:
         aki "Who are you yelling for? You should be the only one here."
 
         # VSFX Akari (move slightly back and forth horizontally, a small look around)
-        show aki bow nocked:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 0.30 xpos 0.34 
-                        linear 0.10 xpos 0.34 
-                        linear 0.17 xpos 0.34 
-                        linear 0.30 xpos 0.34 
-                        linear 0.20 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                        linear 0.15 xpos 0.66 
-                        linear 0.10 xpos 0.66 
-                parallel:
-                        yrotate 0.0 
-                        linear 0.30 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-                        linear 0.17 yrotate -180.0 
-                        linear 0.30 yrotate -180.0 
-                        linear 0.20 yrotate -180.0 
-                        linear 0.10 yrotate -180.0 
-                        linear 0.15 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-        with Pause(2.0)
-        show aki bow nocked:
-                xpos 0.66 yrotate 0.0 
+        show aki bow nocked at shortpacing
+        with Pause(4.0)
+        show aki bow nocked at stop_shortpacing
 
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
 
@@ -386,6 +314,7 @@ label BotchedConverge1:
                         linear 0.10 yrotate 180.0 
                         linear 0.15 yrotate 0.0 
                         linear 0.10 yrotate 0.0
+        with Pause(1.0)
 
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
@@ -619,11 +548,19 @@ label BotchedConverge2:
                 hide ash neutral with dissolve
                 #VSFX Zoom (as if walking through the hearth)
                 #SFX Walking
-                play sound walk
+                play sound walk loop
                 show bg upstairs with dissolve:
                         subpixel True xpos 0.5 zoom 1.0
 
                 "You feel her gaze on your back as you cross the hearth and head upstairs."
+
+                show bg upstairs with dissolve:
+                        subpixel True
+                        zoom 1.0 xalign(0.5) yalign(0.01)
+                        linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+                with Pause(1.5)
+                show bg upstairs:
+                        zoom 2.0 xalign(0.5) yalign(0.01)
 
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
@@ -645,8 +582,8 @@ label BotchedConverge2:
 
         elif ash_approval >= -2:
 
-                #Image Ashina Hybrid Angry
-                show ash angry hybrid with dissolve
+                #Image Ashina 
+                show ash thoughtful with dissolve
                 #VSFX Ashina (closer)
 
                 "Ashina raises a hand as if she might hit you, and you reflexively flinch. She stops, a clear hesitation in her eyes."
@@ -667,8 +604,12 @@ label BotchedConverge2:
                 play sound walk loop
 
                 show bg upstairs with dissolve:
-                        subpixel True xpos 0.5 zoom 1.0 
-                with Pause(1.0)
+                        subpixel True
+                        zoom 1.0 xalign(0.5) yalign(0.01)
+                        linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+                with Pause(1.5)
+                show bg upstairs:
+                        zoom 2.0 xalign(0.5) yalign(0.01)
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
                         subpixel True xpos 0.5 zoom 1.0 

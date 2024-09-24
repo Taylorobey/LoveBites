@@ -4,12 +4,15 @@ label WakingScene:
 
         call WakeUpSequence1
         
+        window auto show
         "The cool evening breeze is the first thing you sense, then the chirping of crickets outside."
+        window auto hide
 
         call WakeUpSequence2
 
+        window auto show
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
-
+        window auto hide
 
         #VFX red flash (on the edges)
         call PainFlash
@@ -17,13 +20,18 @@ label WakingScene:
         with Pause(0.7)
         stop soundb fadeout 0.5
 
+        window auto show
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
+        window auto hide
+        
         #image captive cabin room (full view)
         scene bg room mc with dissolve
         stop sound fadeout 1.0
 
+        window auto show
         "You take a glance at your immediate surroundings. The room is mostly bare. Some fake-looking flowers decorate the minimal furnishings."
-        
+        window auto hide
+
         menu:
                 "You regret what you wished for.":
                         $ humanity += 1
@@ -33,16 +41,21 @@ label WakingScene:
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right?"
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
 
+        window auto hide
         #VSFX ashina slides in from the right
         #image ashina neutral
         show ash neutral with MoveTransition(1.0, enter=offscreenright)
+
+        window auto show
         ash "I see you're finally awake. Tell me, how was your slumber?"
         you "Who... who are you? Did you bring me here?"
+        window auto hide
 
         #VSFX ashina steps closer
         show ash neutral at step_close
         with Pause(1.00)
 
+        window auto show
         ash "That's not what I asked you."
         
         #VSFX ashina steps back
@@ -59,23 +72,31 @@ label WakingScene:
         ash "Good, good."
         ash "Now, sit up properly. I've prepared a meal for you."
 
+        window auto hide
         #SFX stomach growl
-        # Need stomach growl sfx asset
         play sound growl volume 0.5
         with Pause(2.0)
         stop sound fadeout 1.0
+        window auto show
+        
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
 
+        window auto hide
         hide ash friendly 
         with easeoutright
+        window auto show
+
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
+
+        window auto hide
         stop music fadeout 1.0
         show ash sadistic 
         with easeinright
+        window auto show
+
         ash "Here. Eat to your heart's content."
         
         #music unsettling
-        # Need unsettling music asset
         play music eerie_outdoors_music fadein 0.5
         stop sound
 
@@ -118,10 +139,19 @@ label WakingScene:
         stop sound fadeout 0.5
         stop music fadeout 1.0
 
+        show ash sad with dissolve
+        window auto show
+
         ash "Ah, so you finally understand the gravity of the situation."
+
+        show ash neutral with dissolve
+
         ash "You must eat this meal, or the beast will take you."
+
         you "The beast? What does that mean?"
+
         you "Did you do something to me?"
+
         ash "Do not question me, simply do as I tell you. Eat."
 
         
@@ -145,18 +175,25 @@ label WakingScene:
 
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
         
+        window auto hide
         ## slow this down?
-        hide ash with moveoutright
+        hide ash with easeoutright
         
         #VSFX blur
         camera:
                 linear 1.0 blur 20.0
+        window auto show
+
         "Seemingly satisfied with the interaction, Ashina exits the room. You notice that despite a full day’s rest, you’re struggling to keep your eyes open."
         
+        window auto hide
         #VSFX return to normal
         camera:
                 linear 1.0 blur 0.0
+        window auto show
+
         "You force your eyes to focus. On the far wall, there is a window. A possible escape route?"
+        window auto hide
 
         #I set these to jump to labels, that way if we have nested menus, the indents don't get out of hand.
         #also, it looks neater for longer sections.
@@ -178,12 +215,12 @@ label ExamineWindow:
         stop sound
         "You approach the window, and a low rumbling shakes the floor."
         
+        window auto hide
         #sfx dogs barking
         play sound walk
         play sound barking volume 0.25
         
         #closer to window
-        window auto hide
         show bg room mc at close_to_window
         with Pause(1.0)
         window auto show
@@ -206,6 +243,7 @@ label ExamineWindow:
         window auto show
 
         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
+
         
         play music connection_music volume 0.25
 
@@ -217,9 +255,10 @@ label ExamineWindow:
         #not sure if this is too blue.
         #i don't know how to make this fade in
         #started with a plain white filter then transitioned color
+        
         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}{color=#1C4587}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
-        #got the shade of blue directly from the doc. should we keep the bold?
-        #it looks good to me, we'll see if biz mentions it when I put the next build in the drive.
+        
+        
         if meat_eaten == True:
                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
         else:

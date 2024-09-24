@@ -26,14 +26,18 @@ label WhoYouAreScene:
 
         "You sit up, and sure enough, the door opens and your captor steps in."
 
+        window auto hide
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
         show ash neutral with MoveTransition(1.0, enter=offscreenright)
+        window auto show
 
         ash "Come. It’s time we had a talk."
 
+        window auto hide
         # VSFX Ashina (fade out)
         hide ash neutral with easeoutright
+        window auto show
 
         "You’re not sure if you want to follow her, but it's not like you have much of a choice."
 
@@ -164,7 +168,7 @@ label WhoYouAreScene:
                 subpixel True 
                 pos (0, 0) zoom 1.0 
                 linear 1.0 pos (729, 828) zoom 1.63 
-        with Pause(0.70)
+        with Pause(1.1)
         camera:
                 pos (729, 828) zoom 1.63 
         window auto show
@@ -208,13 +212,13 @@ label WhoYouAreScene:
 
         ash "Take a deep breath and look at me."
 
+        window auto hide
         stop sound fadeout 1.0
         pause(1.0)
         #skipping causes a zoom issue.
         
         # Image Ashina Neutral (same torso-up-view as before)
         # Image Cabin Hearth (full view)
-        window auto hide
         camera:
                 subpixel True 
                 linear 2.0 pos (0, 0) zoom 1.0
@@ -238,7 +242,7 @@ label WhoYouAreScene:
         camera:
                 subpixel True 
                 pos (0, 0) zoom 1.0
-        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their depths, if you wanted to. You don’t. You definitely don’t."
+        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {b}{color=#1C4587}depths{/b}{/color}, if you wanted to. You don’t. You definitely don’t."
         #need blue on "depths"
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
@@ -294,7 +298,7 @@ label WhoYouAreScene:
         ash "We have heightened strength, senses, and connection with one another and canines. As the full moon approaches, we become closer to our beast, our wolf, and can change our skin with more ease."
 
         window auto hide
-        with Pause(3.1)
+        with Pause(2.0)
         show ash neutral:
                 pos (-0.36, 0.03)
         window auto show
@@ -311,7 +315,7 @@ label WhoYouAreScene:
         window auto hide
         # Image Ashina Neutral
         # VSFX Ashina (move in from the left, as if coming around from behind the MC’s seat)
-        with Pause(2.60)
+        with Pause(1.0)
         show ash neutral:
                 pos (0.42, 0.03) 
         window auto show
@@ -320,22 +324,24 @@ label WhoYouAreScene:
 
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
-        show ash angry hybrid with dissolve
+        show ash angry hybrid with dissolve:
+                pos(0.33,0.08)
 
         ash "We are carnivores. We crave raw meat like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
                 subpixel True 
-                xpos 0.42 zoom 1.8 
-                linear 0.30 xpos 0.16 zoom 3.36 
+                pos(0.33,0.08) zoom 1.8 
+                linear 0.30 xpos 0.03 zoom 3.36
         with Pause(0.40)
         show ash angry hybrid:
-                xpos 0.16 zoom 3.36 
+                xpos 0.03 zoom 3.36 
 
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
-        show ash thoughtful with dissolve
+        show ash thoughtful with dissolve:
+                xpos 0.2
 
         ash "And this is why we cannot be around people. The sight of us losing control for even a moment, or worse, the mistakes we make under the wolf’s influence, will be punished with death or torture."
 
@@ -347,7 +353,7 @@ label WhoYouAreScene:
  
         ash "There is ugliness in what we are, but there is beauty, too. You will know it when you feel the wind flowing through your fur, and find you are a part of something so much greater than yourself."
 
-        with Pause(0.40)
+        with Pause(0.30)
         show ash thoughtful:
                 xpos 0.42 zoom 1.8
 
@@ -387,7 +393,7 @@ label AppreciationResponse:
         ash "There used to be more of us, you know. Now I fear we may be the last. I, too, once had dreams. Those dreams died with my kin."
 
         # Image Ashina Neutral
-        show ash neutral
+        show ash neutral with dissolve
 
         ash "But there is a strength that comes with acceptance. Change what you can, and accept what you cannot, I believe the saying goes."
 

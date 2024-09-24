@@ -20,8 +20,9 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-            
+        window auto hide
         show neighbor with dissolve
+        window auto show
 
         "A shadow crosses into your field of vision. You look up through bleary eyes to see your neighbor, crouched down with one hand extended towards you, palm side up."
 
@@ -47,16 +48,20 @@ label DreamScene:
 
         neighbor "We have the biggest collection of movies at home! You can pick your favorite!"
 
+        window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor with dissolve
+        window auto show
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
         "But, of course, good things don't last forever."
 
+        window auto hide
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
         show neighbor with dissolve
+        window auto show
 
         you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
 
@@ -86,8 +91,10 @@ label DreamScene:
 
         you "I {color=#ff0000}{b}hate{/color}{/b} you! I {color=#ff0000}{b}hate{/color}{/b} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/color}{/b} your baby! I never want to see you again!"
 
+        window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor with dissolve
+        window auto show
 
         "You run out of the house, never stopping to look back." 
 
@@ -99,9 +106,11 @@ label DreamScene:
 
         "The lunch bell rings, jolting you out of your seat."
 
+        window auto hide
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
         show teacher with dissolve
+        window auto show
 
         teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
 
@@ -149,8 +158,10 @@ label DreamScene:
 
         "Your teacher gives you a big smile."
 
+        window auto hide
         # VSFX Shadowy Figure 2 fade out
         hide teacher with dissolve
+        window auto show
 
         "From then on, that was your lunch routine. Your teacher never asked any too-hard questions, and you two would just chat about the simple things." 
 
@@ -164,6 +175,7 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
+        window auto hide
         menu:
                 #Humanity choice
                 "People are complicated.":

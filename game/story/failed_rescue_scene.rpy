@@ -61,16 +61,20 @@ label FailedRescueScene:
         #moved this up, felt it was weird to still have walking noises when the camera stopped
         "With a nervous glance towards the door, you slide out of bed and approach your struggling friend."
 
+        window auto hide
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
-        show cam neutral at start_bust
+        show cam neutral at start_bust 
         with dissolve
 
         # SFX Creak
         play soundb creak volume 0.25 noloop
 
+        window auto show
+
         "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
+        window auto hide
         # VSFX Fade out Cameron
         hide cam neutral with dissolve
         
@@ -94,11 +98,13 @@ label FailedRescueScene:
 
         cam "Then…"
 
+        window auto hide
         show cam friendly at stop_pacing
-        with Pause(1.0)
+        with Pause(1.5)
         # Image Cameron Nervous
         show cam nervous with dissolve
-        
+        window auto show
+
         "Cameron pauses, their eyes nervously averting to the side."
 
         # VSFX Cameron (a brief shake of the sprite side to side, as if shivering/nervous)
@@ -106,12 +112,15 @@ label FailedRescueScene:
 
         cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
+        window auto hide
         show cam nervous
         with Pause(0.5)
+
         show cam friendly with dissolve
         with Pause(0.5)
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
         show cam friendly at pacing
+        window auto show
 
         cam "I thought about going to the police, but no way they’d believe me. I went to work and tried to forget about it, but I couldn’t. So, here I am."
 
@@ -120,19 +129,17 @@ label FailedRescueScene:
         "There’s a long pause before you respond, not really sure how to take in all of that information."
 
         window auto hide
-        pause(4)
+        pause(2)
         window auto show
 
         you "…How did you manage to get past the guard dogs?"
 
+        window auto hide
         # Image Cameron Neutral
-        show cam neutral with dissolve
-        with Pause(0.5)
         show cam nervous with dissolve
         with Pause(0.5)
         # VSFX Cameron (slight up and down motion, as if shrugging)
         # looked a bit like jumping so i messed with it a little
-        window auto hide
         show cam nervous:
                 subpixel True 
                 ypos 1.0 
@@ -154,11 +161,11 @@ label FailedRescueScene:
         show cam friendly at pacing
         cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
         
+        window auto hide
         show cam friendly at stop_pacing
-        pause(4)
+        pause(2)
 
         # VSFX Cameron (slight up and down motion, as if shrugging)
-        window auto hide
         show cam friendly:
                 subpixel True 
                 ypos 1.0 
@@ -166,6 +173,7 @@ label FailedRescueScene:
                 linear 0.3 ypos 1.0 
         with Pause(0.6)
         window auto show
+
         cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
 
         "A shiver goes down your spine, and your breathing sounds... different. You get a {b}{color=#1C4587}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
@@ -219,6 +227,16 @@ label UrgeCamLeave:
         cam "…"
 
         you "You need to leave, Cameron. Before the dogs come back. Before she finds you."
+
+        show cam nervous:
+                subpixel True 
+                ypos 1.0 
+                linear 0.15 ypos 0.98 
+                linear 0.15 ypos 1.02 
+                linear 0.15 ypos 1.0 
+        with Pause(0.55)
+        show cam nervous:
+                ypos 1.0 
 
         cam "Fine, fine, I’ll go. But I’m not just going to leave you out here."
 

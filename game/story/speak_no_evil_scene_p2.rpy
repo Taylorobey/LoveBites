@@ -10,11 +10,7 @@ label SpeakNoEvilSceneP2:
         #Image Cabin Door Open
         show bg door open with dissolve:
                 subpixel True pos (0.5, -0.48) zoom 1.8
-        
-        #SFX Walking
-        play sound walk loop
-        with Pause(1.0)
-        stop sound
+
         #Image Basement Room    
         show bg basement with dissolve:
                 subpixel True zoom 1.5

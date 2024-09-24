@@ -32,8 +32,6 @@ label IntroductoryCutscene:
         play sound walk loop
         
         #VSFX Slow Zoom on Image
-        ###How much zoom?
-        
         window auto hide
         camera:
                 subpixel True 
@@ -55,7 +53,6 @@ label IntroductoryCutscene:
         scene bg street dog with dissolve
   
         #VSFX Slow Zoom on Image
-        ###How much zoom?
         camera:
                 subpixel True 
                 offset (0.0, 0.0) zoom 1.0 
@@ -138,11 +135,11 @@ label IntroductoryCutscene:
 
         stop sound fadeout .5
 
+        window auto hide
         #Image Street full of dogs
         scene bg street full with dissolve 
 
         #VSFX Fast Zoom on Image
-        window auto hide
         camera:
                 subpixel True 
                 offset (absolute(0.0), absolute(0.0)) zoom 1.0 
@@ -157,7 +154,7 @@ label IntroductoryCutscene:
         play sound run loop
         
         #SFX Barking
-        play soundb barking volume 0.5
+        play crickets barking volume 0.5
 
         narrator "They’re everywhere. In front of you. Behind you. Your body is suddenly alert and flooding with warmth. Your pulse is racing. You spot a side alley and turn without thinking."
 
