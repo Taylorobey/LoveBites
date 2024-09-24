@@ -115,12 +115,12 @@ label WhoYouAreScene:
 
         "There’s a glitter of amusement in her eyes, her lips twitching at a smirk."
 
+        # Change name to show ashina now that it's been revealed
+        $ ash  = Character("Ashina", color="#1C4587")
+
         ash "Ashina. Now, best you listen, unless you’d rather I pay your friend a visit."
 
         window auto hide
-
-        # Change name to show ashina now that it's been revealed
-        $ ash  = Character("Ashina", color="#1C4587")
 
         hide ash friendly with dissolve
 
@@ -142,11 +142,12 @@ label WhoYouAreScene:
         "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of raw meat sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
 
         "The woman reaches forward and delicately plucks a slice of raw meat, before lowering it to her lips. She chews it as if it were soft as butter, her eyes burning into you with an intensity." 
-
+        window auto hide
         play music eerie_outdoors_music
 
         # VSFX Ashina (fade out)
         hide ash friendly with dissolve
+
         # VSFX Red Flash (on the screen edges like a blooming pain)
         show pain onlayer screens:
                 subpixel True
@@ -162,10 +163,10 @@ label WhoYouAreScene:
         camera:
                 subpixel True 
                 pos (0, 0) zoom 1.0 
-                linear 3.00 pos (-900, -912) zoom 1.62 
-        with Pause(3.10)
+                linear 1.0 pos (729, 828) zoom 1.63 
+        with Pause(0.70)
         camera:
-                pos (-900, -912) zoom 1.62 
+                pos (729, 828) zoom 1.63 
         window auto show
 
         "You avert your gaze to the raw meat on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
@@ -174,10 +175,10 @@ label WhoYouAreScene:
         window auto hide
         camera:
                 subpixel True 
-                linear 0.15 xpos -1000 
-                linear 0.15 xpos -900 
-                linear 0.15 xpos -1000 
-                linear 0.15 xpos -900
+                linear 0.15 xpos 1000 
+                linear 0.15 xpos 900 
+                linear 0.15 xpos 1000 
+                linear 0.15 xpos 900
         window auto show
 
         you "What did you do to me…? I don't feel normal. Every little thing feels…"
@@ -208,7 +209,9 @@ label WhoYouAreScene:
         ash "Take a deep breath and look at me."
 
         stop sound fadeout 1.0
-
+        pause(1.0)
+        #skipping causes a zoom issue.
+        
         # Image Ashina Neutral (same torso-up-view as before)
         # Image Cabin Hearth (full view)
         window auto hide
@@ -240,6 +243,7 @@ label WhoYouAreScene:
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
 
+        window auto hide
         show ash sadistic:
                 subpixel True 
                 xpos 0.5 
@@ -249,6 +253,7 @@ label WhoYouAreScene:
         with Pause(0.85)
         show ash sadistic:
                 xpos 0.5 
+        window auto show
 
         ash "Now, pay attention. I am going to explain how your life will be from now on, girl."
 
@@ -269,13 +274,15 @@ label WhoYouAreScene:
 
         ash "I have plenty of notes and readings on the subject that you will eventually be given access to, should you behave. Moving on."
 
+        window auto hide
         # Image Ashina Neutral
         # VSFX Ashina (move back to fullbody, center)
         show ash neutral with dissolve
         with Pause(0.5)
         show ash neutral:
                 linear 1.0 pos(0.42,0.03) zoom 1.8
-
+        window auto show
+        
         "The woman stands, walking around you as she speaks."
 
         # VSFX Ashina (move from center to left)   
@@ -286,9 +293,11 @@ label WhoYouAreScene:
 
         ash "We have heightened strength, senses, and connection with one another and canines. As the full moon approaches, we become closer to our beast, our wolf, and can change our skin with more ease."
 
+        window auto hide
         with Pause(3.1)
         show ash neutral:
                 pos (-0.36, 0.03)
+        window auto show
 
         "Her hand runs along the back of your seat, nearly brushing your skin. It sends a shiver down your spine."
 
@@ -299,11 +308,13 @@ label WhoYouAreScene:
 
         ash "You will need to be trained to handle your beast, lest you be driven mad with hunger and rage. And trust me, pup, you do not want that to happen."
 
+        window auto hide
         # Image Ashina Neutral
         # VSFX Ashina (move in from the left, as if coming around from behind the MC’s seat)
         with Pause(2.60)
         show ash neutral:
                 pos (0.42, 0.03) 
+        window auto show
 
         "She gives you a very serious, knowing look. Then, her features contort as you’ve seen once before."
 

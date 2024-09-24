@@ -1,4 +1,9 @@
 label FailedRescueScene:
+        pause(0.5)
+        #otherwise the tint stays if you click too fast or use skip function
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
+        
         #SFX Creak
         play soundb creak volume 0.5 noloop
         call WakeUpSequence1
@@ -164,6 +169,8 @@ label FailedRescueScene:
         cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
 
         "A shiver goes down your spine, and your breathing sounds... different. You get a {b}{color=#1C4587}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
         menu:
                 "Agree to go with Cameron.":
                         jump GoWithCam
@@ -225,7 +232,7 @@ label CamCaught:
         scene bg door closed with dissolve
 
         # Image Cameron Neutral
-        show cam neutral with dissolve:
+        show cam neutral onlayer screens with dissolve:
                 xalign 0.6 zoom 1.5 
 
         stop music fadeout 2.0
@@ -245,6 +252,8 @@ label CamCaught:
         show ash friendly with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
+        show cam scared onlayer screens with dissolve
+
         # Music Capture
         play music capture_music volume 0.3 loop
 
@@ -259,7 +268,7 @@ label CamCaught:
 
         # Image Cameron Scared
         # again xalign is playing opposites i don't know whyyy aaaaaa
-        show cam scared with dissolve:
+        show cam scared onlayer screens with dissolve:
                 xalign 0.6 zoom 1.5 
 
         "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."
@@ -269,7 +278,7 @@ label CamCaught:
         # VSFX Ashina and Cameron (closer)
         show ash angry hybrid with moveinleft:
                 xalign 0.5
-        show cam scared with moveinleft:
+        show cam scared onlayer screens with moveinleft:
                 xalign 0.7
 
         ash "A friend of yours, I take it?"
@@ -279,7 +288,7 @@ label CamCaught:
         # VSFX Ashina and Cameron (further away)
         show ash angry hybrid with moveinleft:
                 xalign 0.7
-        show cam scared with moveinleft:
+        show cam scared onlayer screens with moveinleft:
                 xalign 0.9
 
         ash "At least this human knows their place. Had they dared to put up a fight, I would have killed them where they stood. "
@@ -291,7 +300,7 @@ label CamCaught:
         # VSFX Ashina and Cameron (closer)
         show ash angry hybrid with moveinleft:
                 xalign 0.5
-        show cam scared with moveinleft:
+        show cam scared onlayer screens with moveinleft:
                 xalign 0.7
 
         ash "You do not give the orders around here. Besides, that is something I simply cannot do." 
@@ -299,7 +308,7 @@ label CamCaught:
         # VSFX Ashina and Cameron (further away)
         show ash angry hybrid with moveinleft:
                 xalign 0.7
-        show cam scared with moveinleft:
+        show cam scared onlayer screens with moveinleft:
                 xalign 0.9
 
         ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
@@ -311,7 +320,7 @@ label CamCaught:
         # VSFX Ashina and Cameron (further away, as if backing out the door)
         show ash angry hybrid with dissolve:
                 subpixel True xpos 0.55 ypos 45 zoom 1.1
-        show cam scared with dissolve:
+        show cam scared onlayer screens with dissolve:
                 subpixel True xpos 0.7 ypos 45 zoom 1.1
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
@@ -320,7 +329,7 @@ label CamCaught:
 
         # VSFX Ashina and Cameron quickly Fade Out
         hide ash angry hybrid with dissolve
-        hide cam scared with dissolve
+        hide cam scared onlayer screens with dissolve
 
         # SFX Creak
         play sound creak volume 0.5

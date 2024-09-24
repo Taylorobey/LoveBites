@@ -231,21 +231,28 @@ label ExamineWindow:
                                 "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
                                 
                                 "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
+
+        pause(0.5)
+        #otherwise the tint stays if you click too fast or use skip function
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
 
         jump HeadtoBed
 
 label HeadtoBed:
-        #choices converge here 
+        #choices converge here
+
         stop music fadeout 1.0
         stop crickets fadeout 2.5
-        
+
         "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
         
         #VSFX black screen
         scene bg color black with dissolve
         with Pause(2.0)
-        
+        pause(0.5)
+        #otherwise the tint stays if you click too fast or use skip function
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
         #Move to failed rescue scene
         jump FailedRescueScene

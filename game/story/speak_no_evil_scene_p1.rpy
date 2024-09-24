@@ -1,6 +1,10 @@
 label SpeakNoEvilSceneP1:
     #This scene triggers if you do not have -2 Approval with Ashina
     #stop audio from previous scene
+    
+    camera:
+        subpixel True pos (0, 0) 
+
     stop sound
 
     call WakeUpSequence1

@@ -1,16 +1,19 @@
 label BotchedEscapeScene:
         #stop audio from previous scene
         #stop sound
+        ###I don't think we should rely on this, also need the fireplace from prev scene
 
         #Image Cabin Hearth
         scene bg hearth
 
         "You're left with your own thoughts as Ashina departs upstairs. You begin to wander the cabin aimlessly."
+
+        # SFX Crickets
         play crickets crickets fadein 0.5 loop
         # Image Cabin Door Open
         show bg door open with dissolve
         #SFX Fireplace (fade out)
-        # SFX Crickets
+        stop soundb fadeout 2.0
 
         "You realize the front door is open."
 
@@ -232,12 +235,10 @@ label PleadCase:
 
         aki "But do not forget, you are still a monster. Try anything funny with me, and I will not hesitate to kill you."
 
-        ###no matter what you do or delete, Akari dissapears early here?!?!?
-        
-        "Akari backs into the foliage, disappearing in the blink of an eye. You notice how tense you feel, and allow yourself a moment to recover. A chill breeze ruffles your clothes."
-        
         # VSFX Akari (moves away and fades out)
         hide aki determined with dissolve
+        
+        "Akari backs into the foliage, disappearing in the blink of an eye. You notice how tense you feel, and allow yourself a moment to recover. A chill breeze ruffles your clothes."
 
         "The tranquil moment doesn't last for long. You hear the approach of powerful footsteps, and you know you're in for it now."
 
@@ -294,16 +295,16 @@ label CallOut:
         # Image Akari Thoughtful
         show aki thoughtful with dissolve
 
-        aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
-
         #change name to show Akari after reveal
         $ aki = Character("Akari")
+
+        aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
 
         show aki thoughtful
         #Image Akari Bow Nocked
         show aki bow nocked
         #SFX Growl
-        play soundb growl
+        play soundb growl noloop
         #VSFX Akari (moves away and fades out)
         hide aki bow nocked
         "There’s a sudden burst of movement and a fierce growling quickly approaching from behind you. Akari’s eyes go wide, and she quickly backs into the foliage, disappearing in the blink of an eye."
@@ -465,7 +466,7 @@ label ResistAshina:
 
         #Image Hearth
         show bg hearth with dissolve:
-                subpixel True xoffset 127.0 xzoom 1.0 zoom 0.72 
+                subpixel True xpos 0.52 zoom 0.7
 
         #Image Ashina Hybrid Angry
         show ash angry hybrid with dissolve
@@ -497,23 +498,30 @@ label GoWillingly:
                 subpixel True xzoom 1.0 yzoom 1.0
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xoffset 127.0 xzoom 1.0 zoom 0.72 
+                subpixel True xpos 0.52 zoom 0.72 
 
         #Fireplace
         stop sound
         stop music fadeout 2.0
         stop crickets fadeout 2.0
         play soundb fireplace volume 0.3 loop fadein 2.0
-        window auto show
 
         show ash angry hybrid with dissolve
+        with Pause(0.5)
+        show ash angry hybrid:
+                subpixel True
+                linear 0.2 ypos 1.43 zoom 1.36 
+        with Pause(0.3)
+        show ash angry hybrid:
+                ypos 1.43 zoom 1.36
 
+        window auto show
         "Once inside, she approaches you with a fierce expression."
+
+        # VSFX as if  falling backwards onto the ground and looking up at Ashina
 
         # Image Ashina Concerned
         show ash concerned with dissolve
-
-        # VSFX as if  falling backwards onto the ground and looking up at Ashina
 
         "You stumble as your foot catches the edge of the walkway, causing you to topple over. Ashina regards you hesitantly."
 
@@ -528,7 +536,8 @@ label BotchedConverge2:
         #Choices Converge Here
 
         if ash_approval >= 3:
-
+                
+                window auto hide
                 # Image Ashina Thoughtful
                 show ash thoughtful with dissolve
                 with Pause(0.5)
@@ -555,27 +564,49 @@ label BotchedConverge2:
                                 linear 0.10 yrotate 180.0 
                                 linear 0.15 yrotate 0.0 
                                 linear 0.10 yrotate 0.0
+                window auto show
 
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
-                
+
+                window auto hide
                 show ash thoughtful:
-                        xpos 0.34
+                        pos (0.34, 1.43) yrotate 0.0
                 with Pause(0.5)
-                # Image Ashina Caring
-                show ash caring with dissolve
+                # Image Ashina sad
+                show ash sad with dissolve:
+                        pos (0.34, 1.43)
+                window auto show
 
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."
 
                 #VSFX Ashina (closer)
+                window auto hide
+                show ash sad:
+                        subpixel True 
+                        pos (0.34, 1.43) zoom 1.36 
+                        linear 0.50 pos (0.5, 2.0) zoom 2.0 
+                with Pause(0.60)
+                show ash sad:
+                        pos (0.5, 2.0) zoom 2.0 
+                window auto show
 
                 "She offers you a hand, and you hesitantly take it. She helps you up. You feel like a feather in her strong grasp, lifted with ease."
 
-                #VSFX Ashina (further)
                 #VSFX Zoom (as if being helped back onto your feet)
+                show ash caring with dissolve
 
                 ash "Perhaps you were feeling cooped up, and wanted to explore. I can’t blame you for that. However, you must restrain yourself."
 
                 #VSFX Ashina (further)
+                window auto hide
+                show ash caring:
+                        subpixel True 
+                        pos (0.5, 2.0) zoom 2.0 
+                        linear 0.20 pos (0.5, 1.3) zoom 1.33 
+                with Pause(0.30)
+                show ash caring:
+                        pos (0.5, 1.3) zoom 1.33 
+                window auto show
 
                 "Her grip on your hand lingers a moment longer, squeezing before pulling away."
 
@@ -590,23 +621,24 @@ label BotchedConverge2:
                 #SFX Walking
                 play sound walk
                 show bg upstairs with dissolve:
-                        pos(0,0) zoom 1.0
+                        subpixel True xpos 0.5 zoom 1.0
 
                 "You feel her gaze on your back as you cross the hearth and head upstairs."
 
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
-                        pos(0,0) zoom 1.0
+                        subpixel True xpos 0.5 zoom 1.0 
 
                 # VSFX Blur
 
                 stop sound
 
                 "When you find yourself lying in bed, you’re cradling your hand over your chest. You can still feel the warmth from when Ashina held it."
+                window auto hide
 
                 # VSFX Black
-                show bg color black with dissolve:
-                        pos(0,0) zoom 1.0
+                show bg color black with dissolve
+                
                 pause 1.0
 
                 jump SpeakNoEvilSceneP1
@@ -633,22 +665,23 @@ label BotchedConverge2:
                 #VSFX Zoom (as if walking through the hearth)
                 #SFX Walking
                 play sound walk loop
+
                 show bg upstairs with dissolve:
-                        pos(0,0) zoom 1.0
+                        subpixel True xpos 0.5 zoom 1.0 
                 with Pause(1.0)
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
-                        pos(0,0) zoom 1.0
+                        subpixel True xpos 0.5 zoom 1.0 
                 # VSFX Blur
 
                 stop sound
                 window auto show
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."
-
+                window auto hide
+                
                 # VSFX Black
-                show bg color black with dissolve:
-                        pos(0,0) zoom 1.0
+                show bg color black with dissolve
                 pause 1.0
 
                 jump SpeakNoEvilSceneP1

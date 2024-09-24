@@ -92,9 +92,12 @@ image ash caring:
 image ash concerned:
     "chars/ashina/ashina_concerned.png"
     subpixel True zoom 0.33
+image ash sad:
+    "chars/ashina/ashina_sad.png"
+    subpixel True zoom 0.33
 #temps
 image ash angry hybrid:
-    "chars/ashina/ashina_friendly.png"
+    "chars/ashina/ashina_thoughtful.png"
     subpixel True zoom 0.33
 image ash fighting:
     "chars/ashina/ashina_neutral.png"
