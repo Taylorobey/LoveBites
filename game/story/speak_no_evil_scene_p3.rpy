@@ -358,4 +358,6 @@ label SpeakNoEvilSceneP3:
                         subpixel True pos (0.16, 0.39)
                 with Pause(5.0)
 
+                jump CreditsScene
+
                 # (Demo Bad End)

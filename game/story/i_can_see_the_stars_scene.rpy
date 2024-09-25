@@ -415,7 +415,7 @@ label ICanSeeTheStarsScene:
     stop crickets fadeout 2.0
     with Pause(2.5)
 
-    return
+    jump CreditsScene
 
 label demoroute:
     narrator "Sorry, this option isn't available in the demo."
