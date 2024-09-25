@@ -407,7 +407,7 @@ label ICanSeeTheStarsScene:
 
     with Pause(6.0)
 
-    hide starryeffect with dissolve
+    hide starryeffect onlayer screens with dissolve
     show bg color black with Dissolve(2.0)
     stop music fadeout 2.0
     stop sound fadeout 2.0
