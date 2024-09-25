@@ -25,10 +25,10 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#cc0000'
+define gui.accent_color = '#982313'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#fff'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -39,7 +39,7 @@ define gui.hover_color = '#e06666'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = '#982313'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
@@ -182,9 +182,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## These customizations are used by the default interface:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(70, -1, 6, 6)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(70, -1, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -225,8 +225,8 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 414
-define gui.slot_button_height = 309
+define gui.slot_button_width = 413
+define gui.slot_button_height = 250
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
 define gui.slot_button_text_size = 21
 define gui.slot_button_text_xalign = 0.5
@@ -235,8 +235,8 @@ define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
 ## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+define config.thumbnail_width = 394
+define config.thumbnail_height = 222
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
@@ -274,7 +274,7 @@ define gui.pref_button_spacing = 0
 define gui.page_spacing = 0
 
 ## The spacing between file slots.
-define gui.slot_spacing = 15
+define gui.slot_spacing = 100
 
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
@@ -311,8 +311,8 @@ define gui.frame_tile = False
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
 define gui.bar_size = 38
-define gui.scrollbar_size = 18
-define gui.slider_size = 38
+define gui.scrollbar_size = 32
+define gui.slider_size = 51
 
 ## True if bar images should be tiled. False if they should be linearly scaled.
 define gui.bar_tile = False
@@ -343,7 +343,7 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 210
+define gui.history_height = 150
 
 ## Additional space to add between history screen entries.
 define gui.history_spacing = 0
@@ -351,14 +351,14 @@ define gui.history_spacing = 0
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
 define gui.history_name_xpos = 233
-define gui.history_name_ypos = 0
+define gui.history_name_ypos = 53
 define gui.history_name_width = 233
 define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
 define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+define gui.history_text_ypos = 56
+define gui.history_text_width = 1400
 define gui.history_text_xalign = 0.0
 
 

@@ -401,9 +401,7 @@ label ICanSeeTheStarsScene:
 
     window auto hide
     with Pause(1.5)
-
-    image thanks = Text("Thanks for playing the demo!", font="FrederickatheGreat-Regular.ttf", size=100)
-
+    
     show thanks with Dissolve(2.0):
         subpixel True pos (0.16, -0.58) 
 

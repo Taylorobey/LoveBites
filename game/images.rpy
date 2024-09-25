@@ -242,3 +242,6 @@ image happy dog             = "chars/dogs/dog_happy.png"
 # Declare other images
 image logo                  = "logo_white.png"
 image pain                  = "red_edges.png"
+image cred = Text(credits_s, font="FrederickatheGreat-Regular.ttf", text_align=0.5) #use this if you want to use special fonts
+image theend = Text("{size=80}THE END", font="FrederickatheGreat-Regular.ttf", text_align=0.5)
+image thanks = Text("Thanks for playing the demo!", font="FrederickatheGreat-Regular.ttf", size=100)

@@ -62,6 +62,18 @@ init python:
 init python:
     config.auto_voice = "VA/{id}.mp3"
 
+#Rolling credits
+init python:
+    credits = ('Project Lead', 'BizzyBee'), ('Artist', 'SabiSabi'), ('Artist', 'Shapeshift Stitch'), ('Artist', 'Robyn'),  ('Programmer', 'Taylorobey'), ('Programmer', 'Dot'), ('GUI', 'Chiara'), ('Writing', 'BizzyBee'), ('Music', 'BizzyBee')
+    credits_s = "{size=80}Credits\n\n"
+    c1 = ''
+    for c in credits:
+        if not c1==c[0]:
+            credits_s += "\n{size=40}" + c[0] + "\n"
+        credits_s += "{size=60}" + c[1] + "\n"
+        c1=c[0]
+    credits_s += "\n{size=40}Engine\n{size=60}Ren'py\n8.3.0" #Don't forget to set this to your Ren'py version
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
