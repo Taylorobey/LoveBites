@@ -1,5 +1,8 @@
 label IntroductoryCutscene:
         $ save_name = "Flirting with Disaster"
+
+        $ quick_menu = False
+        window auto hide
         
         #Image Street Intersection
         scene bg intersection
@@ -20,6 +23,9 @@ label IntroductoryCutscene:
 
         $ renpy.pause(.2)
 
+        window auto show
+        $ quick_menu = True
+
         narrator "A car speeds through the intersection and your heart nearly leaps out of your chest."
 
         narrator "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the darkness affords them."
@@ -37,17 +43,16 @@ label IntroductoryCutscene:
         play sound walk loop
         
         #VSFX Slow Zoom on Image
-        window auto hide
         camera:
                 subpixel True 
                 zoom 1.0 
                 linear 25 zoom 2.12 
 
-
         narrator "You don’t want to think about that right now. It’s a wonder how the more exhausted your body is from work, the more active your mind gets."
 
         narrator "And you are exhausted. That’s the perk of working the graveyard shift- it’s the only way to get your body to pass out nearly the moment you hit the bed."
 
+        $ quick_menu = False
         window auto hide
         with Pause(25)
         camera:
@@ -63,13 +68,15 @@ label IntroductoryCutscene:
                 offset (0.0, 0.0) zoom 1.0 
                 linear 25 offset (5643.0, 1107.0) zoom 3.94 
         window auto show
-
+        $ quick_menu = True
 
         narrator "You’ve always had trouble sleeping, even though it’s been three years since you moved out of that house."
 
         narrator "You thought getting out would be the hardest part. Turns out freedom can be pretty suffocating."
 
+        $ quick_menu = False
         window auto hide
+
         with Pause(25)
         camera:
                 offset (5643.0, 1107.0) zoom 3.94
@@ -86,12 +93,15 @@ label IntroductoryCutscene:
                 xanchor 0 xoffset absolute(0.0) 
                 linear 30 xanchor 0 xoffset 1377.0 
         window auto show
+        $ quick_menu = True
 
         narrator "You know it’s dangerous to walk home alone before sunrise. Maybe part of you wants something to happen to you."
 
         narrator "At least it would be something different, something new. Sometimes you feel as though you've been living the exact same day for these past three years. Go to work, pass out, repeat…"
 
+        $ quick_menu = False
         window auto hide
+
         with Pause(30)
         camera:
                 offset (0.0,0.0) zoom 1.72
@@ -108,6 +118,7 @@ label IntroductoryCutscene:
                 linear 25 offset (3987.0, 2043.0) zoom 4.09 
 
         window auto show
+        $ quick_menu = True
 
         narrator "It was easier when you had something to fight against, someone to prove wrong. Now, you’re left alone with yourself, and you don’t like what you see."
 
@@ -118,11 +129,13 @@ label IntroductoryCutscene:
         
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
         
+        $ quick_menu = False
         window auto hide
         with Pause(25)
         camera:
                 offset (3987.0, 2043.0) zoom 4.09 
         window auto show
+        $ quick_menu = True
 
         #SFX Growling
         play sound growl
@@ -140,6 +153,7 @@ label IntroductoryCutscene:
 
         stop sound fadeout .5
 
+        $ quick_menu = False
         window auto hide
         #Image Street full of dogs
         scene bg street full with dissolve 
@@ -151,6 +165,7 @@ label IntroductoryCutscene:
                 linear 10 offset (3204.0, 2124.0) zoom 4.89 
 
         window auto show
+        $ quick_menu = True
         
         #Music Capture
         play music capture_music volume 0.3
@@ -163,6 +178,7 @@ label IntroductoryCutscene:
 
         narrator "They’re everywhere. In front of you. Behind you. Your body is suddenly alert and flooding with warmth. Your pulse is racing. You spot a side alley and turn without thinking."
 
+        $ quick_menu = False
         window auto hide
         with Pause(10)
         camera:
@@ -183,11 +199,13 @@ label IntroductoryCutscene:
         stop sound
 
         window auto show
+        $ quick_menu = True
 
         narrator "A large, intimidating wolf stands at the end of the alley. Although your mind is telling you to run, the sight of this ethereal creature freezes you in place."
 
         narrator "Your stomach lurches. You don’t have time to prepare for what comes next."
 
+        $ quick_menu = False
         window auto hide
 
         stop soundb fadeout 3.0

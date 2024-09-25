@@ -64,8 +64,8 @@ init python:
 
 #Rolling credits
 init python:
-    credits = ('Project Lead', 'BizzyBee'), ('Artist', 'SabiSabi'), ('Artist', 'Shapeshift Stitch'), ('Artist', 'Robyn'),  ('Programmer', 'Taylorobey'), ('Programmer', 'Dot'), ('GUI', 'Chiara'), ('Writing', 'BizzyBee'), ('Music', 'BizzyBee')
-    credits_s = "{size=80}Credits\n\n"
+    credits = ('Project Lead', 'BizzyBee'), ('Artists', 'SabiSabi\nShapeshift Stitch\nrobyn'),  ('Programmers', 'Taylorobey\nDot\nBizzyBee'), ('GUI', 'Chiara'), ('Writing', 'starsapphire\nBizzyBee'), ('Music', 'Annish\nBizzyBee'), ('Voice Acting', 'MariaCorcobadoVA as The Narrator\nsamgrace as Ashina\nLauren Pak as Akari\nTwigs24 as Cameron')
+    credits_s = "{size=150}Credits\n"
     c1 = ''
     for c in credits:
         if not c1==c[0]:
@@ -82,8 +82,8 @@ label start:
         perspective True
 
     #temporary jump for testing
-    jump FailedRescueScene
-    #jump IntroductoryCutscene
+    #jump WakingScene
+    jump IntroductoryCutscene
     
     # This ends the game.
     return

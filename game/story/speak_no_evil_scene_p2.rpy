@@ -1,12 +1,20 @@
 label SpeakNoEvilSceneP2:
         $ save_name = "Hear No Evil"
+
+        $ quick_menu = False
+        window auto hide
         
         #Image Cabin Door Closed
         show bg door closed:
                 subpixel True pos (0.5, -0.48) zoom 1.8
 
+        
+        window auto show
+        $ quick_menu = True
+
         "You reach the basement and are hit with an earthy chill. You unlock the door with the key Ashina gave you, and step inside."
 
+        $ quick_menu = False
         window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
@@ -21,9 +29,11 @@ label SpeakNoEvilSceneP2:
                 subpixel True pos (0.58, -0.01) zoom 0.75 yrotate 180.0 
 
         window auto show
+        $ quick_menu = True
 
         "You find Cameron huddled in a corner of the room. They shift, acknowledging your presence, but don’t turn around."
 
+        $ quick_menu = False
         window auto hide
         show cam frustrated:
                 subpixel True 
@@ -35,11 +45,13 @@ label SpeakNoEvilSceneP2:
         show cam frustrated:
                 xpos 0.58 
         window auto show
+        $ quick_menu = True
 
         cam "I told you before, I won't eat. Not until you let me see her."
 
         you "Cam! It's me!"
 
+        $ quick_menu = False
         window auto hide
         #Image Cameron Friendly
         show cam friendly with dissolve
@@ -54,9 +66,11 @@ label SpeakNoEvilSceneP2:
         show cam friendly:
                 pos (0.58, -0.01) 
         window auto show
+        $ quick_menu = True
 
         cam "¡Dios mío!"
 
+        $ quick_menu = False
         window auto hide
         #VSFX Cameron (moves closer, then fades out)
         show cam friendly:
@@ -69,6 +83,7 @@ label SpeakNoEvilSceneP2:
         with Pause (0.1)
         hide cam friendly with dissolve
         window auto show
+        $ quick_menu = True
 
         "Cameron pulls you in for a big hug. Tears stream down their face as they squeeze you tight."
 
@@ -137,6 +152,9 @@ label SpeakNoEvilSceneP2:
                 cam "How do you expect me to just leave you here?!"
 
                 you "Cameron…"
+
+                $ quick_menu = False
+                window auto hide
 
                 if humanity >= 3:
                         menu:
@@ -217,6 +235,8 @@ label SpeakNoEvilSceneP2:
                 hide placeholder
 
 label DieIfTell:
+        window auto show
+        $ quick_menu = True
         you "Ashina won't be the only one affected if you tell people about this."
 
         #Image Cameron Nervous
@@ -273,6 +293,8 @@ label DieIfTell:
                 jump ChoicetoRescue
 
 label CareAboutAshina:
+        window auto show
+        $ quick_menu = True
         you "Ashina isn’t all bad, Cam. I don’t want anything to happen to her. I… I care about her. She isn’t keeping me here, I want to stay."
 
         #Image Cameron Nervous
@@ -330,6 +352,8 @@ label CareAboutAshina:
                 jump ChoicetoRescue
 
 label ShellKillYou:
+        window auto show
+        $ quick_menu = True
         you "This is serious, Cam. If you don’t agree to this, if she even suspects that you aren’t one hundred percent on board, she’s going to kill you. I know you. You’re not cut out for this."
 
         if cam_approval >= 0:
@@ -369,7 +393,8 @@ label CameronGoodbye:
 
         #Image Cameron Thoughtful
         show cam nervous with dissolve
-
+        window auto show
+        $ quick_menu = True
         "They give you a long, forlorn look, eyes tearing up."
 
         #Image Cameron Caring
@@ -396,7 +421,8 @@ label ChoicetoRescue:
                         scene bg door open with dissolve
                         with Pause(1.0)
                         show bg door closed with dissolve
-
+                        window auto show
+                        $ quick_menu = True
                         "You turn away wordlessly, defeated. Your expression falls, and everything feels fuzzy. You barely notice Cameron calling out behind you as you lock the door, and head back up the stairs."
                         
                         jump SpeakNoEvilSceneP3
@@ -408,10 +434,15 @@ label ChoicetoRescue:
                         jump HelpCameronEscape
 
 label HelpCameronEscape:
+        window auto show
+        $ quick_menu = True
         narrator "Sorry, this option isn't available in the demo."
         jump ChoicetoRescue
 
 label CorruptedChoice:
+        window auto show
+        $ quick_menu = True
+        
         "You give Cameron a flat, tired look."
 
         you "Can’t you see that you’re just causing me more trouble? I don’t want you here. Do I need to spell it out for you?"
@@ -464,18 +495,22 @@ label CorruptedChoice:
         jump SpeakNoEvilSceneP3
 
 label HumanityChoice:
+        window auto show
+        $ quick_menu = True
         "Your gaze softens, and you reach forward, taking Cameron’s hand."
 
         you "I know you, Cam. You don’t need to act tough. I promise, I’m going to be okay. It’s okay. You can go."
 
         if humanity_chance:
                 $ cameron_leave = True
+                $ quick_menu = False
+                window auto hide
 
                 #VSFX Screen (tints yellow)
                 #Music Goodbyes
                 play music goodbyes_music volume 0.3
                 #Image Cameron Neutral
-                window auto hide
+                
                 show cam neutral with dissolve
                 with Pause(0.2)
                 #VSFX Cameron (zoom closer then fade out)
@@ -483,6 +518,7 @@ label HumanityChoice:
                 with Pause(0.2)
                 hide cam nervous with dissolve
                 window auto show
+                $ quick_menu = True
 
                 "Cameron tries to keep a straight face, but breaks down into tears, pulling you into a tight hug. You hug them back, tighter than you’ve ever hugged anyone."
 

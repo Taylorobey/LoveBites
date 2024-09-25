@@ -1,6 +1,8 @@
 label LettersScene:
     $ save_name = "A Letter"
-    
+
+    $ quick_menu = False
+    window auto hide
     
     scene bg color black
     with Pause(0.5)
@@ -22,6 +24,7 @@ label LettersScene:
     #VSFX Zoom (towards window)
     #Image Window
     #SFX Dogs Barking
+    $ quick_menu = False
     window auto hide
     scene bg room mc with dissolve
     with Pause(0.5)
@@ -31,6 +34,7 @@ label LettersScene:
     with Pause(1.0)
     stop sound
     window auto show
+    $ quick_menu = True
 
     "The dogs yap and jump up at the window as if something’s there. You open the window and lean out, looking around. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
 
@@ -47,6 +51,9 @@ label LettersScene:
 
     #Image Letter (centered in front of the captive cabin room bg)
     #VSFX Text (on screen in more of a letter format rather than in dialogue box)
+
+    $ quick_menu = False
+    window auto hide
 
     show bg color black onlayer screens:
                 alpha 0.0
@@ -82,6 +89,7 @@ label LettersScene:
         linear 1.0 alpha 0.0
 
     window auto show
+    $ quick_menu = True
     
     you "...Akari."
 
