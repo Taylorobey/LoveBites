@@ -4,6 +4,9 @@ label IntroductoryCutscene:
         #Image Street Intersection
         scene bg intersection
         
+        show fog onlayer screens:
+                alpha 0.75
+
         #VSFX White Flash
         #SFX Car Speeding By
         play music intro_music loop volume 0.5
@@ -187,7 +190,8 @@ label IntroductoryCutscene:
 
         window auto hide
 
-        stop soundb fadeout 5.0
+        stop soundb fadeout 3.0
+        stop crickets fadeout 5.0
 
         #image wolf snarling
         show wolf snarl with dissolve:
@@ -204,6 +208,7 @@ label IntroductoryCutscene:
                 subpixel True offset (-70.0, -495.0) zoom 0.75 
         $ renpy.pause(delay=0.05, hard=False)
 
+        hide fog onlayer screens
 
         #VSFX Red flash
         scene bg color red with Dissolve(0.05)
