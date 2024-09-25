@@ -18,6 +18,7 @@ image bg hearth             = "temp/hearth.png"
 image bg cabin exterior     = "temp/mc_room.jpg"
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky.png"
+image bg sky color          = "bg/sky_color.png"
 image bg basement           = "bg/captive_room.png"
 image bg window:
     "bg/window.png"
@@ -58,6 +59,15 @@ image bg ripple one:
     0.1
     "bg/ripples/RPL_0111.png"
     0.1
+    repeat
+
+image starryeffect:
+    "bg/stars/starry_1.png" with Dissolve(2.0)
+    2
+    "bg/stars/starry_2.png" with Dissolve(2.0)
+    2
+    "bg/stars/starry_3.png" with Dissolve(2.0)
+    2
     repeat
 
 # Declare color backgrounds for effect use
