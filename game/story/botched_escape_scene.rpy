@@ -648,6 +648,11 @@ label BotchedConverge2:
                 # VSFX Blur
 
                 stop sound
+                
+                camera:
+                        subpixel True pos (0, 0) 
+
+
                 window auto show
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."
