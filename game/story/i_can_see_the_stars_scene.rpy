@@ -90,11 +90,11 @@ label ICanSeeTheStarsScene:
         you "I don't want to go outside. I've been through enough already tonight, I'm so tired…"
 
         #Image Ashina Hybrid Angry
-        show ash angry hybrid with dissolve
+        show ash annoyed with dissolve
 
         ash "I wasn't making a request. It will only be for a brief moment, so quit your whining."
 
-        hide ash angry hybrid with dissolve
+        hide ash annoyed with dissolve
 
         "Ashina grabs your wrist, and you can only resign yourself to being dragged along. "
 

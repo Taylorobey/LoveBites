@@ -96,7 +96,7 @@ label SpeakNoEvilSceneP1:
 
     stop sound fadeout 1.0
     #Image Ashina Neutral (closer)
-    show ash neutral with dissolve
+    show ash annoyed with dissolve
 
     window auto show
 
@@ -260,13 +260,13 @@ label SpeakNoEvilSceneP1:
     you "Wait! Isn’t there-"
 
     #VSFX Ashina Hybrid Angry
-    show ash angry hybrid with dissolve
+    show ash annoyed with dissolve
 
     ash "Go. Before I change my mind. Surely, you can convince them of something so simple."
 
     window auto hide
     #VSFX Ashina (fade out)
-    hide ash angry hybrid with dissolve
+    hide ash annoyed with dissolve
 
     #SFX Walking
     play sound walk loop

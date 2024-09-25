@@ -326,6 +326,9 @@ label WhoYouAreScene:
 
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
+        show ash thoughtful with dissolve:
+                pos(0.33,0.08)
+        with Pause(0.2)
         show ash angry hybrid with dissolve:
                 pos(0.33,0.08)
 

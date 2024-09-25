@@ -54,7 +54,9 @@ label WakingScene:
         window auto hide
 
         #VSFX ashina steps closer
-        show ash neutral at step_close
+        show ash annoyed with dissolve
+        with Pause(0.5)
+        show ash annoyed at step_close
         with Pause(1.00)
 
         window auto show
@@ -62,7 +64,7 @@ label WakingScene:
         
         #VSFX ashina steps back
         window auto hide
-        show ash neutral at step_away
+        show ash annoyed at step_away
         with Pause(1.00)
         window auto show
 
@@ -154,6 +156,8 @@ label WakingScene:
 
         you "Did you do something to me?"
 
+        show ash annoyed with dissolve
+
         ash "Do not question me, simply do as I tell you. Eat."
 
         
@@ -175,6 +179,8 @@ label WakingScene:
                         $ humanity += 1
                         "You turn away from the plate on the side table. Ashina sighs."
 
+                        show ash neutral with dissolve
+                        
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
         
         window auto hide

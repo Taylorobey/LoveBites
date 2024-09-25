@@ -108,6 +108,9 @@ image ash sad:
 image ash angry hybrid:
     "chars/ashina/ashina_angryhybrid.png"
     subpixel True zoom 0.37
+image ash annoyed:
+    "chars/ashina/ashina_annoyed.png"
+    subpixel True zoom 0.33
 #temps
 image ash fighting:
     "chars/ashina/ashina_neutral.png"

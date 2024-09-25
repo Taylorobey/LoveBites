@@ -249,42 +249,38 @@ label CallOut:
         # Image Ashina Neutral
         window auto hide
         hide wolf neutral with dissolve
-        with Pause(0.2)
         #show shifting ashina
-        show ash neutral with dissolve
-        hide ash neutral with dissolve
+        show wolf neutral with dissolve:
+                subpixel True
+                pos (0.4, 0.2)
+                xzoom 1.09 yzoom 1.5
         with Pause(0.2)
-        show wolf neutral with dissolve
         hide wolf neutral with dissolve
         with Pause(0.2)
-        show ash neutral with dissolve
-        hide ash neutral with dissolve
-        with Pause(0.2)
-        show wolf neutral with dissolve
-        hide wolf neutral with dissolve
-        with Pause(0.2)
+        show ash angry hybrid with dissolve
+        with Pause(0.4)
+        show ash thoughtful with dissolve
+        with Pause(0.4)
         show ash neutral with dissolve
         window auto show
 
         "You watch as, before your eyes, the wolf begins to change. You hear the sharp cracking of bone and the mushy contorting of flesh. You want to look away, but you can’t. Soon enough, Ashina stands before you."
-
 
         jump BotchedConverge1
 
 label BotchedConverge1:
         # Choices Converge Here
 
-        # Image Ashina Neutral
-        show ash neutral with dissolve
+        show ash annoyed with dissolve
 
         ash "I seem to recall telling you to stay inside, did I not, pup?"
 
         # VSFX Ashina (closer)
-        show ash neutral:
+        show ash annoyed:
                 subpixel True
                 linear 0.2 ypos 1.43 zoom 1.36 
         with Pause(0.3)
-        show ash neutral:
+        show ash annoyed:
                 ypos 1.43 zoom 1.36
 
         "You turn to face Ashina as she steps closer, looming over you. You reflexively swallow."
@@ -292,7 +288,7 @@ label BotchedConverge1:
         you "You… did."
 
         # VSFX Ashina (moving to the right)
-        show ash neutral:
+        show ash annoyed:
                 subpixel True 
                 parallel:
                         xpos 0.5 
@@ -319,7 +315,7 @@ label BotchedConverge1:
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
         # VSFX Ashina (shake)
-        show ash neutral:
+        show ash annoyed:
                 subpixel True 
                 xpos 0.34 
                 linear 0.15 xpos 0.36 
@@ -328,7 +324,7 @@ label BotchedConverge1:
 
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         
-        show ash neutral:
+        show ash annoyed:
                 xpos 0.34
         with Pause(0.5) 
         show ash angry hybrid with dissolve
@@ -343,7 +339,7 @@ label BotchedConverge1:
         show ash angry hybrid:
                 pos (0.5,2.0) zoom 2.0
         with Pause (0.5)
-        show ash neutral with dissolve
+        show ash annoyed with dissolve
 
         ash "I will not tolerate your behavior. Get back inside. Now."
 
@@ -360,17 +356,17 @@ label BotchedConverge1:
 label ResistAshina:
         you "This isn’t about you! I wasn't doing anything wrong!"
 
-        show ash neutral:
+        show ash annoyed:
                 subpixel True
                 linear 0.2 pos (0.5,1.55) zoom 1.66
 
         you "You think you can just turn me into some monster, ruin my life and act like I'm supposed to be grateful towards you? No! I've had enough!"
 
-        show ash neutral:
+        show ash annoyed:
                 pos (0.5,1.55) zoom 1.66
         with Pause(0.1)
         #VSFX Ashina (fade out)
-        hide ash neutral with dissolve
+        hide ash annoyed with dissolve
 
         "You turn away from Ashina and intend to put some space between you."
 
@@ -414,7 +410,7 @@ label ResistAshina:
 
 label GoWillingly:
         pause 0.5
-        hide ash neutral with dissolve
+        hide ash annoyed with dissolve
         show bg forest edge with dissolve:
                 subpixel True xzoom 1.0 yzoom 7.82
         
@@ -468,10 +464,10 @@ label BotchedConverge2:
                 
                 window auto hide
                 # Image Ashina Thoughtful
-                show ash thoughtful with dissolve
+                show ash annoyed with dissolve
                 with Pause(0.5)
                 # VSFX Ashina (as if pacing in frustration)
-                show ash thoughtful:
+                show ash annoyed:
                         subpixel True 
                         parallel:
                                 xpos 0.5 
@@ -498,7 +494,7 @@ label BotchedConverge2:
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
 
                 window auto hide
-                show ash thoughtful:
+                show ash annoyed:
                         pos (0.34, 1.43) yrotate 0.0
                 with Pause(0.5)
                 # Image Ashina sad

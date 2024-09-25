@@ -241,14 +241,14 @@ label SpeakNoEvilSceneP3:
 
                 "You shakily rise to your feet, but hesitate. You don’t have to just let this happen. You could…"
                 
-                show ash neutral:
+                show ash annoyed:
                         subpixel True 
                         xpos 0.3 
                         ease 0.15 xpos 0.32 
                         ease 0.15 xpos 0.28 
                         ease 0.15 xpos 0.3 
                 with Pause(0.55)
-                show ash neutral:
+                show ash annoyed:
                         xpos 0.3 
 
                 ash "I know what you're thinking. But, it's much too late to try and save them, pet. They've made their choice."

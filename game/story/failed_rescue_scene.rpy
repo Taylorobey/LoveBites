@@ -280,6 +280,8 @@ label CamCaught:
 
         # VSFX Crossfade Ashina Friendly into
         # Image Ashina Angry Hybrid
+        show ash thoughtful with dissolve
+        with Pause(0.2)
         show ash angry hybrid with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
