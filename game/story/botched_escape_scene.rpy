@@ -56,7 +56,7 @@ label BotchedEscapeScene:
         # SFX Walking (stop)
         stop sound
         # Image Akari Bow Drawn (close)
-        show aki bow drawn with dissolve
+        show aki bow drawn angry with dissolve
 
         "As you move into the foliage, you're stopped dead in your tracks. A silver arrow is aimed square between your eyes. The wielder of the bow is a sharp-eyed, hooded figure with hair black as night."
 
@@ -69,23 +69,23 @@ label BotchedEscapeScene:
         you "Monster…? Uh, I think this is a misunderstanding, maybe we could just-"
 
         # VSFX Akari (closer)
-        show aki bow drawn:
+        show aki bow drawn angry:
                 subpixel True 
                 ypos 1.0 zoom 1.0 
                 linear 0.19 ypos 1.13 zoom 1.12 
         with Pause(0.29)
-        show aki bow drawn:
+        show aki bow drawn angry:
                 ypos 1.13 zoom 1.12
 
         aki "Stop. You will not fool me. I know you."
 
         # VSFX Akari (closer)
-        show aki bow drawn:
+        show aki bow drawn angry:
                 subpixel True 
                 ypos 1.13 zoom 1.12 
                 linear 0.2 ypos 1.43 zoom 1.36 
         with Pause(0.3)
-        show aki bow drawn:
+        show aki bow drawn angry:
                 ypos 1.43 zoom 1.36 
 
         aki "I will have no mercy on you. Your death shall be painful, I will make sure of it. You will suffer for every life you have stolen, and I will have my revenge. You chose the wrong night to leave your little fortress, and now, you will finally pay."
@@ -106,7 +106,10 @@ label BotchedEscapeScene:
 label PleadCase:
         you "No, wait, please! I never asked to be a monster!"
 
+        window auto hide
         # VSFX Akari nod
+        show aki bow drawn with dissolve
+        with Pause(1.0)
         show aki bow drawn:
                 subpixel True 
                 ypos 1.43 
@@ -116,6 +119,7 @@ label PleadCase:
         with Pause(0.40)
         show aki bow drawn:
                 ypos 1.43 
+        window auto show
 
         "The hooded woman looks surprised at your outburst. Her stance doesn't waver, but she nods slowly at you to continue."
 
@@ -133,18 +137,19 @@ label PleadCase:
         aki "The smaller dogs you mentioned. Where are they now?"
 
         # Image Akari Bow Nocked
-        show aki bow nocked with dissolve
+        show aki bow nocked side with dissolve
         # The spelling on that is a pet peeve of mine
         # VSFX Akari (move horizontally across the screen, as if looking around)
 
         "The woman lowers her bow, looking around suspiciously."
-        show aki bow nocked at shortpacing
+        show aki bow nocked side at shortpacing
 
         you "I don’t know, they were gone when I stepped outside. They must have run off somewhere, maybe-"
 
         window auto hide
-        show aki bow nocked at stop_shortpacing
+        show aki bow nocked side at stop_shortpacing
         with Pause(1.0)
+        show aki bow nocked with dissolve
         window auto show
 
         aki "The large one, the wolf-beast. That is their master, is it not?"
@@ -172,7 +177,7 @@ label PleadCase:
         
         aki "Everything about this spells out a trap. I need to get out of here."
 
-        show aki neutral with dissolve
+        show aki thoughtful look with dissolve
 
         "She turns her dark gaze back to you."
         
@@ -209,32 +214,37 @@ label CallOut:
         "You desperately call out for Ashina and the hooded woman jumps slightly. She looks at you with a confused expression and lowers her bow."
 
         # Image Akari Bow Nocked
-        show aki bow nocked with dissolve
+        show aki bow nocked side with dissolve
 
         aki "Who are you yelling for? You should be the only one here."
 
         # VSFX Akari (move slightly back and forth horizontally, a small look around)
-        show aki bow nocked at shortpacing
-        with Pause(4.0)
-        show aki bow nocked at stop_shortpacing
+        show aki bow nocked side at shortpacing
 
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
-
+        
+        window auto hide
+        show aki bow nocked side at stop_shortpacing
+        with Pause(1.0)
         # Image Akari Thoughtful
-        show aki thoughtful with dissolve
+        show aki thoughtful look with dissolve
 
         #change name to show Akari after reveal
         $ aki = Character("Akari")
+        window auto show
 
         aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
 
-        show aki thoughtful
+        window auto hide
         #Image Akari Bow Nocked
-        show aki bow nocked
+        show aki bow nocked with dissolve
         #SFX Growl
         play soundb growl noloop
+        with Pause(1.0)
         #VSFX Akari (moves away and fades out)
-        hide aki bow nocked
+        hide aki bow nocked with dissolve
+        window auto show
+
         "There’s a sudden burst of movement and a fierce growling quickly approaching from behind you. Akari’s eyes go wide, and she quickly backs into the foliage, disappearing in the blink of an eye."
 
         #Image Wolf Ashina Snarling
@@ -324,6 +334,7 @@ label BotchedConverge1:
 
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         
+        window auto hide
         show ash annoyed:
                 xpos 0.34
         with Pause(0.5) 
@@ -334,7 +345,8 @@ label BotchedConverge1:
         show ash angry hybrid:
                 subpixel True
                 linear 0.2 pos (0.5,2.0) zoom 2.0
-        
+        window auto show
+
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
         show ash angry hybrid:
                 pos (0.5,2.0) zoom 2.0
@@ -444,7 +456,19 @@ label GoWillingly:
         "Once inside, she approaches you with a fierce expression."
 
         # VSFX as if  falling backwards onto the ground and looking up at Ashina
-
+        window auto hide
+        play sound run
+        camera:
+                subpixel True 
+                ypos 0 
+                ease_elastic 0.30 ypos 90 
+        with Pause(0.40)
+        camera:
+                ypos 90
+        with Pause(0.2) 
+        stop sound
+        show ash concerned with dissolve
+        window auto show        
         # Image Ashina Concerned
         show ash concerned with dissolve
 
@@ -518,6 +542,18 @@ label BotchedConverge2:
                 "She offers you a hand, and you hesitantly take it. She helps you up. You feel like a feather in her strong grasp, lifted with ease."
 
                 #VSFX Zoom (as if being helped back onto your feet)
+                play sound fast_walk
+                window auto hide
+                #VSFX Zoom/Movement (as if standing)
+                camera:
+                        subpixel True 
+                        ypos 90 
+                        ease_elastic 0.50 ypos 0 
+                with Pause(0.60)
+                camera:
+                        ypos 0
+                window auto show
+                stop sound
                 show ash caring with dissolve
 
                 ash "Perhaps you were feeling cooped up, and wanted to explore. I can’t blame you for that. However, you must restrain yourself."

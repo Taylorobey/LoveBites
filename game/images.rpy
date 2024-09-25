@@ -125,12 +125,21 @@ image aki neutral:
     subpixel True zoom 0.33 
 image aki bow drawn:
     "chars/akari/akari_bow.png"
+    subpixel True zoom 0.33
+image aki bow drawn angry:
+    "chars/akari/akari_bow_angry.png"
     subpixel True zoom 0.33 
 image aki bow nocked:
     "chars/akari/akari_arrowready.png"
     subpixel True zoom 0.33 
+image aki bow nocked side:
+    "chars/akari/akari_arrowready_looktoside.png"
+    subpixel True zoom 0.33 
 image aki thoughtful:
     "chars/akari/akari_thoughtful.png"
+    subpixel True zoom 0.33 
+image aki thoughtful look:
+    "chars/akari/akari_thoughtful_look.png"
     subpixel True zoom 0.33 
 image aki angry:
     "chars/akari/akari_frustrated.png"
