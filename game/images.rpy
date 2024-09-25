@@ -70,6 +70,17 @@ image starryeffect:
     2
     repeat
 
+image fog:
+    "bg/fog/fog_01.png" with Dissolve(2.0)
+    2
+    "bg/fog/fog_02.png" with Dissolve(2.0)
+    2
+    "bg/fog/fog_03.png" with Dissolve(2.0)
+    2
+    "bg/fog/fog_04.png" with Dissolve(2.0)
+    2
+    repeat
+
 # Declare color backgrounds for effect use
 image bg color black        = "bg/color_black.bmp"
 image bg color red          = "bg/color_red.jpg"
