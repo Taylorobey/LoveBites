@@ -324,7 +324,7 @@ label SpeakNoEvilSceneP3:
 
                 "You stumble into your room. You autopilot yourself into bed. Maybe if you go to sleep now, you can convince yourself that tonight was just a bad nightmare. Push this all deep down, where all the things you can’t deal with go."
 
-                play music eerie_outdoors_music
+                play music eerie_outdoors_music volume 1.5
                 
                 cam "AHHHH!"
 

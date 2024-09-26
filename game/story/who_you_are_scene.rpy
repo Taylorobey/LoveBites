@@ -171,7 +171,7 @@ label WhoYouAreScene:
         "The woman reaches forward and delicately plucks a slice of raw meat, before lowering it to her lips. She chews it as if it were soft as butter, her eyes burning into you with an intensity." 
         $ quick_menu = False
         window auto hide
-        play music eerie_outdoors_music
+        play music eerie_outdoors_music volume 1.5
 
         # VSFX Ashina (fade out)
         hide ash friendly with dissolve

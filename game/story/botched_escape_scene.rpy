@@ -44,7 +44,7 @@ label BotchedEscapeScene:
 
 
         # Music Eerie Outdoors
-        play music eerie_outdoors_music
+        play music eerie_outdoors_music volume 1.5
 
         you "…Nothing?"
 

@@ -128,7 +128,7 @@ label WakingScene:
         ash "Here. Eat to your heart's content."
         
         #music unsettling
-        play music eerie_outdoors_music fadein 0.5
+        play music eerie_outdoors_music volume 1.5 fadein 0.5
         stop sound
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
