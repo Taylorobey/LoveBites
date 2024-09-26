@@ -1,7 +1,7 @@
 label FailedRescueScene:
         $ save_name = "An Old Friend"
 
-        $ quick_menu = False
+
         window auto hide
         
         pause(0.5)
@@ -15,7 +15,7 @@ label FailedRescueScene:
         call WakeUpSequence2
 
         window auto show
-        $ quick_menu = True
+
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
         #window auto hide
 
@@ -58,18 +58,18 @@ label FailedRescueScene:
         play soundb walk noloop
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
-        $ quick_menu = False
+
         window auto hide
         show bg room mc at walk_to_window
         with Pause(1.0)
         window auto show
-        $ quick_menu = True
+
         
         stop soundb
         #moved this up, felt it was weird to still have walking noises when the camera stopped
         "With a nervous glance towards the door, you slide out of bed and approach your struggling friend."
 
-        $ quick_menu = False
+
         window auto hide
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
@@ -80,11 +80,11 @@ label FailedRescueScene:
         play soundb creak volume 0.25 noloop
 
         window auto show
-        $ quick_menu = True
+
 
         "You take their arms and give a firm tug. Your strength surprises you as you’re able to lift them into the cabin with ease."
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Fade out Cameron
         hide cam neutral with dissolve
@@ -96,7 +96,7 @@ label FailedRescueScene:
         # Image Cameron Friendly
         show cam friendly with dissolve
         window auto show
-        $ quick_menu = True
+
         cam "Phew! I thought I might be stuck there forever. Hey, have you been working out?"
 
         you "How did you find this place? No, scratch that…how did you even know I was here?"
@@ -110,14 +110,14 @@ label FailedRescueScene:
 
         cam "Then…"
 
-        $ quick_menu = False
+
         window auto hide
         show cam friendly at stop_pacing
         with Pause(1.5)
         # Image Cameron Nervous
         show cam nervous with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "Cameron pauses, their eyes nervously averting to the side."
 
@@ -126,7 +126,7 @@ label FailedRescueScene:
 
         cam "This is going to sound crazy, but I saw the wolf turn into a {i}woman{/i}. Then she took you inside. And honestly… I ran. I thought it had to be some crazy dream."
 
-        $ quick_menu = False
+
         window auto hide
         show cam nervous
         with Pause(0.5)
@@ -136,7 +136,7 @@ label FailedRescueScene:
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
         show cam friendly at pacing
         window auto show
-        $ quick_menu = True
+
 
         cam "I thought about going to the police, but no way they’d believe me. I went to work and tried to forget about it, but I couldn’t. So, here I am."
 
@@ -144,15 +144,15 @@ label FailedRescueScene:
 
         "There’s a long pause before you respond, not really sure how to take in all of that information."
 
-        $ quick_menu = False
+
         window auto hide
         pause(2)
         window auto show
-        $ quick_menu = True
+
 
         you "…How did you manage to get past the guard dogs?"
 
-        $ quick_menu = False
+
         window auto hide
         # Image Cameron Neutral
         show cam nervous with dissolve
@@ -166,7 +166,7 @@ label FailedRescueScene:
                 linear 0.3 ypos 1.0 
         with Pause(0.6)
         window auto show
-        $ quick_menu = True
+
 
         cam "They left in a big pack all of a sudden. Don’t know where they ran off to, but figured this was my only chance to get you out of here."
 
@@ -181,7 +181,7 @@ label FailedRescueScene:
         show cam friendly at pacing
         cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
         
-        $ quick_menu = False
+
         window auto hide
         show cam friendly at stop_pacing
         pause(2)
@@ -194,13 +194,13 @@ label FailedRescueScene:
                 linear 0.3 ypos 1.0 
         with Pause(0.6)
         window auto show
-        $ quick_menu = True
+
 
         cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
 
         "A shiver goes down your spine, and your breathing sounds... different. You get a {b}{color=#1C4587}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
 
-        $ quick_menu = False
+
         window auto hide
 
         camera:
@@ -219,7 +219,7 @@ label GoWithCam:
         $ ash_approval -= 1
 
         window auto show
-        $ quick_menu = True
+
 
         "You try to ignore that, in the back of your head, you hunger more for the plate of raw meat from earlier than a bowl of soup. You’d give anything to feel normal. Your tiny, dingy apartment doesn’t sound so bad right now."
 
@@ -233,7 +233,7 @@ label UrgeCamLeave:
         $ ash_approval +=1
 
         window auto show
-        $ quick_menu = True
+
 
         you "Cameron… It’s not that easy. "
 
@@ -406,7 +406,7 @@ label CamCaught:
         # Image Captive Cabin Room (angled, zoomed in on ceiling)
         scene bg room ceiling with dissolve
         # VSFX Blur (as if falling asleep)
-        $ quick_menu = False
+
         window auto hide
         camera:
                 subpixel True 
@@ -417,7 +417,7 @@ label CamCaught:
         camera:
                 blur 0.0 
         window auto show
-        $ quick_menu = True
+
 
         "You lie down without thinking, your hands curling into fists and tears welling in your eyes. You fight to stay conscious, but it’s no use."
 

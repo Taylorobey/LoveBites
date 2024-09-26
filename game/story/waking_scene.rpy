@@ -1,7 +1,7 @@
 label WakingScene:
         $ save_name = "Careful What You Wish For"
 
-        $ quick_menu = False
+
         window auto hide
 
         scene bg color black with dissolve
@@ -10,17 +10,17 @@ label WakingScene:
         call WakeUpSequence1
         
         window auto show
-        $ quick_menu = True
+
         "The cool evening breeze is the first thing you sense, then the chirping of crickets outside."
-        $ quick_menu = False
+
         window auto hide
 
         call WakeUpSequence2
 
         window auto show
-        $ quick_menu = True
+
         "Your eyes are welcomed by the interior of a log cabin. It almost feels like a peaceful evening at camp, that is if it weren't for…"
-        $ quick_menu = False
+
         window auto hide
 
         #VFX red flash (on the edges)
@@ -30,9 +30,9 @@ label WakingScene:
         stop soundb fadeout 0.5
 
         window auto show
-        $ quick_menu = True
+
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
-        $ quick_menu = False
+
         window auto hide
         
         #image captive cabin room (full view)
@@ -40,34 +40,34 @@ label WakingScene:
         stop sound fadeout 1.0
 
         window auto show
-        $ quick_menu = True
+
         "You take a glance at your immediate surroundings. The room is mostly bare. Some fake-looking flowers decorate the minimal furnishings."
-        $ quick_menu = False
+
         window auto hide
 
 
         menu:
                 "You regret what you wished for.":
                         $ humanity += 1
-                        $ quick_menu = True
+
                         "Flirting with disaster finally caught up with you. What the hell were you thinking? You vow that if you ever escape this place, you're going to have a serious think about your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
-                        $ quick_menu = True
+
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right?"
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
 
-        $ quick_menu = False
+
         window auto hide
         #VSFX ashina slides in from the right
         #image ashina neutral
         show ash neutral with MoveTransition(1.0, enter=offscreenright)
 
         window auto show
-        $ quick_menu = True
+
         ash "I see you're finally awake. Tell me, how was your slumber?"
         you "Who... who are you? Did you bring me here?"
-        $ quick_menu = False
+
         window auto hide
 
 
@@ -78,16 +78,16 @@ label WakingScene:
         with Pause(1.00)
 
         window auto show
-        $ quick_menu = True
+
         ash "That's not what I asked you."
         
         #VSFX ashina steps back
-        $ quick_menu = False
+
         window auto hide
         show ash annoyed at step_away
         with Pause(1.00)
         window auto show
-        $ quick_menu = True
+
 
         ash "I'll ask again, how was your slumber?"
         you "Oh, well... Fine, I guess, all things considered."
@@ -97,33 +97,33 @@ label WakingScene:
         ash "Good, good."
         ash "Now, sit up properly. I've prepared a meal for you."
 
-        $ quick_menu = False
+
         window auto hide
         #SFX stomach growl
         play sound growl volume 0.5
         with Pause(2.0)
         stop sound fadeout 1.0
         window auto show
-        $ quick_menu = True
+
         
         "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
 
-        $ quick_menu = False
+
         window auto hide
         hide ash friendly 
         with easeoutright
         window auto show
-        $ quick_menu = True
+
 
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
 
-        $ quick_menu = False
+
         window auto hide
         stop music fadeout 1.0
         show ash sadistic 
         with easeinright
         window auto show
-        $ quick_menu = True
+
 
         ash "Here. Eat to your heart's content."
         
@@ -139,12 +139,12 @@ label WakingScene:
         ash "Are you really so sure? Doesn't your hunger just feel..."
 
         #VSFX ashina close up
-        $ quick_menu = False
+
         window auto hide
         show ash neutral at step_closer_center
         with Pause(1.0)
         window auto show
-        $ quick_menu = True
+
 
         ash "Unbearable?"
         "You take another look at the plate. You hate to admit it, but your stomach betrays you. You don't just {i}want{/i} to eat it..."
@@ -152,7 +152,7 @@ label WakingScene:
         #vsfx red flash on edges like a blooming pain
         #vsfx centered text, dim surroundings
         #text "YOU NEED TO EAT THE RAW MEAT."
-        $ quick_menu = False
+
         window auto hide
         play sound heart loop
         image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext", font="CabinSketch-Bold.ttf")
@@ -175,7 +175,7 @@ label WakingScene:
 
         show ash sad with dissolve
         window auto show
-        $ quick_menu = True
+
 
         ash "Ah, so you finally understand the gravity of the situation."
 
@@ -214,7 +214,7 @@ label WakingScene:
                         
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
         
-        $ quick_menu = False
+
         window auto hide
         ## slow this down?
         hide ash with easeoutright
@@ -223,20 +223,20 @@ label WakingScene:
         camera:
                 linear 1.0 blur 20.0
         window auto show
-        $ quick_menu = True
+
 
         "Seemingly satisfied with the interaction, Ashina exits the room. You notice that despite a full day’s rest, you’re struggling to keep your eyes open."
         
-        $ quick_menu = False
+
         window auto hide
         #VSFX return to normal
         camera:
                 linear 1.0 blur 0.0
         window auto show
-        $ quick_menu = True
+
 
         "You force your eyes to focus. On the far wall, there is a window. A possible escape route?"
-        $ quick_menu = False
+
         window auto hide
 
         #I set these to jump to labels, that way if we have nested menus, the indents don't get out of hand.
@@ -252,17 +252,17 @@ label ExamineWindow:
         play sound walk
         
         #slow zoom into window
-        $ quick_menu = False
+
         window auto hide
         show bg room mc at walk_to_window
         with Pause(1.0)
         window auto show
-        $ quick_menu = True
+
         stop sound
         "You approach the window, and a low rumbling shakes the floor."
         
         window auto hide
-        $ quick_menu = False
+
         #sfx dogs barking
         play sound walk
         play sound barking volume 0.25
@@ -271,32 +271,32 @@ label ExamineWindow:
         show bg room mc at close_to_window
         with Pause(1.0)
         window auto show
-        $ quick_menu = True
+
 
         "You inch ever closer, and you hear dogs begin to growl and bark wildly."
 
-        $ quick_menu = False
+
         window auto hide
         #image window no dogs
         show bg window with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "You finally reach the window and take a peek outside..."
         stop sound fadeout 1.0
         stop music fadeout 1.0
         
-        $ quick_menu = False
+
         window auto hide
         #image window with dogs
         show bg window eyes with dissolve
         with Pause(3.0)
         window auto show
-        $ quick_menu = True
+
         
         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
 
-        $ quick_menu = False
+
         window auto hide
 
         play music connection_music volume 0.25
@@ -311,25 +311,25 @@ label ExamineWindow:
         #started with a plain white filter then transitioned color
         
         window auto show
-        $ quick_menu = True
+
 
         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}{color=#1C4587}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
         
         
         if meat_eaten == True:
                 window auto show
-                $ quick_menu = True
+
                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
         else:
                 menu:
                         "Go to bed.":
                                 window auto show
-                                $ quick_menu = True
+
                                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
                         "Toss the meat to the dogs.":
                                 $ dog_approval += 1
                                 window auto show
-                                $ quick_menu = True
+
                                 "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
                                 
                                 "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
@@ -348,11 +348,11 @@ label HeadtoBed:
         stop crickets fadeout 2.5
 
         window auto show
-        $ quick_menu = True
+
 
         "A wave of exhaustion nearly buckles your knees. You stumble back towards the bed, barely feeling the soft caress of the pillow before everything goes dark."
         
-        $ quick_menu = False
+
         window auto hide
         #VSFX black screen
         scene bg color black with dissolve

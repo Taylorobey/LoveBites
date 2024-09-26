@@ -1,7 +1,7 @@
 label ICanSeeTheStarsScene:
     $ save_name = "I Can See The Stars"
 
-    $ quick_menu = False
+
     window auto hide
     
     #Flags: Key information to defeating Ashina, or betraying Akari and preparing Ashina for the confrontation, or neither. Increased Humanity or Corruption.
@@ -15,7 +15,7 @@ label ICanSeeTheStarsScene:
         subpixel True pos(0.3,0.03) zoom 1.5 
 
     window auto show
-    $ quick_menu = True
+
 
     "The door to your room opens, with Ashina's stance taking up the whole frame."
 
@@ -28,7 +28,7 @@ label ICanSeeTheStarsScene:
     if ash_approval >= 0:
         "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice"
 
-        $ quick_menu = False
+
         window auto hide
 
         play sound walk loop
@@ -90,7 +90,7 @@ label ICanSeeTheStarsScene:
 
         stop sound
         window auto show
-        $ quick_menu = True
+
 
         "You follow Ashina down the stairs, through the hearth, and out to the forest’s edge. The chilly air caresses your skin, and you instinctively relax."
 
@@ -106,7 +106,7 @@ label ICanSeeTheStarsScene:
 
         "Ashina grabs your wrist, and you can only resign yourself to being dragged along. "
 
-        $ quick_menu = False
+
         window auto hide
 
         play sound walk loop
@@ -168,7 +168,7 @@ label ICanSeeTheStarsScene:
 
         stop sound
         window auto show
-        $ quick_menu = True
+
 
         "She leads you down the stairs, through the hearth, and outside. The bitter chill of the late night air stings your skin."
     
@@ -186,7 +186,7 @@ label ICanSeeTheStarsScene:
 
         hide dog with dissolve
 
-        $ quick_menu = False
+
         window auto hide
 
         menu:
@@ -200,7 +200,7 @@ label ICanSeeTheStarsScene:
                 show happy dog with dissolve
 
                 window auto show
-                $ quick_menu = True
+
                 "You decide to lean down and pet them. Their tongues loll out happily as they jostle one another for your affections. You catch Ashina smiling fondly in the corner of your eye."
 
                 #VSFX Dog (fade out)
@@ -213,7 +213,7 @@ label ICanSeeTheStarsScene:
                 #VSFX Dog (fade out)
                 hide dog with dissolve
                 window auto show
-                $ quick_menu = True
+
                 "You avert your eyes from the dogs and they soon lose interest. You catch Ashina staring cooly at you, her expression unreadable."
 
                 #Image Ashina Neutral
@@ -239,7 +239,7 @@ label ICanSeeTheStarsScene:
 
     ash "Tell me, what do you think?"
 
-    $ quick_menu = False
+
     window auto hide
     #VSFX Ashina (fade out)
     hide ash neutral with dissolve
@@ -259,13 +259,13 @@ label ICanSeeTheStarsScene:
         pos (0, -1080)
 
     window auto show
-    $ quick_menu = True
+
 
     "You turn your gaze to the sky above. You don’t remember the last time you were far enough from the city to be able to see the stars. They twinkle brightly, stretching endlessly across the horizon."
 
     "You think the view is…"
 
-    $ quick_menu = False
+
     window auto hide
 
     menu:
@@ -273,7 +273,7 @@ label ICanSeeTheStarsScene:
         "Breathtaking.":
             $ humanity += 1
             you "..."
-            $ quick_menu = False
+
             window auto hide
             centered "Looking at the brilliant ocean of stars above makes you realize something."
 
@@ -301,7 +301,7 @@ label ICanSeeTheStarsScene:
         "Depressing.":
             $ corruption += 1
             you "..."
-            $ quick_menu = False
+
             window auto hide
             centered "Looking at the vast, dotted void above fills you with a profound emptiness."
 
@@ -338,7 +338,7 @@ label ICanSeeTheStarsScene:
 
     ash "What is it?"
 
-    $ quick_menu = False
+
     window auto hide
 
     label starsdemochoice:
@@ -350,7 +350,7 @@ label ICanSeeTheStarsScene:
                 $ ash_approval += 1
                 $ aka_lock = True
                 window auto show
-                $ quick_menu = True
+
                 you "I need to tell you something. Someone is after you. The other night-"
 
                 #Image Ashina Friendly
@@ -426,7 +426,7 @@ label ICanSeeTheStarsScene:
     #Music Starry Sky (fade out)
     #Image Sky (fade back to no color, then scene fade to black)
 
-    $ quick_menu = False
+
     window auto hide
     with Pause(1.5)
     

@@ -2,7 +2,7 @@ label SpeakNoEvilSceneP3:
         $ save_name = "See No Evil"
         
         #Choices Converge here
-        $ quick_menu = False
+
         window auto hide
         show bg color black with Dissolve(3.0)
         
@@ -31,7 +31,7 @@ label SpeakNoEvilSceneP3:
                 ash "I take it you two had a pleasant reunion. How lovely."
 
                 #VSFX Ashina (closer to Cameron)
-                $ quick_menu = False
+
                 window auto hide
                 show ash neutral:
                         subpixel True 
@@ -43,14 +43,14 @@ label SpeakNoEvilSceneP3:
                 #Image Cameron Nervous
                 show cam nervous with dissolve
                 window auto show
-                $ quick_menu = True
+
 
                 "Ashina turns her attention towards Cameron."
 
                 ash "If you agree to live by my rules, speak them in your own words. I need to make sure you understand what I expect of you."
 
                 #VSFX Cameron (move away from Ashina and closer to you)
-                $ quick_menu = False
+
                 window auto hide
                 show cam nervous:
                         subpixel True 
@@ -67,7 +67,7 @@ label SpeakNoEvilSceneP3:
                 show cam nervous:
                         pos (-0.07, 0.03) zoom 1.75 
                 window auto show
-                $ quick_menu = True
+
 
                 "Cameron shrinks away from Ashina, moving closer to you."
 
@@ -76,7 +76,7 @@ label SpeakNoEvilSceneP3:
 
                 cam "Right, um… I can leave, but only if I promise not to talk about anything that happened here. I can't tell anyone about you, or werewolves, or the cabin. Nada, nothing."
 
-                $ quick_menu = False
+
                 window auto hide
                 #Image Ashina Friendly
                 show ash friendly with dissolve
@@ -90,12 +90,12 @@ label SpeakNoEvilSceneP3:
                 show ash friendly:
                         xpos 0.4 
                 window auto show
-                $ quick_menu = True
+
 
                 ash "Yes, you understand well. Act as though this never even happened."
 
                 #VSFX Ashina (closer to you, opposite side of Cameron)
-                $ quick_menu = False
+
                 window auto hide
                 show ash friendly:
                         subpixel True 
@@ -105,11 +105,11 @@ label SpeakNoEvilSceneP3:
                 show ash friendly:
                         pos (0.51, -0.03) zoom 2.0 
                 window auto show
-                $ quick_menu = True
+
 
                 ash "Hm, color me impressed. I didn't think you could convince them so well, pup."
 
-                $ quick_menu = False
+
                 window auto hide
                 #VSFX Ashina (further away again)
                 show ash friendly:
@@ -124,11 +124,11 @@ label SpeakNoEvilSceneP3:
                 show ash thoughtful with dissolve:
                         xpos 0.35
                 window auto show
-                $ quick_menu = True
+
 
                 ash "I'm satisfied. Come along with me, human. I shall escort you back to civilization."
 
-                $ quick_menu = False
+
                 window auto hide
                 #SFX Walking
                 #Image Cabin Door Open
@@ -146,7 +146,7 @@ label SpeakNoEvilSceneP3:
 
                 ash "As for you, girl, I have something to show you when I return. Be ready."
 
-                $ quick_menu = False
+
                 window auto hide
                 #VSFX Ashina (fade out and towards the door)
                 hide ash neutral with dissolve
@@ -155,12 +155,12 @@ label SpeakNoEvilSceneP3:
                 show bg door closed with Dissolve(1.5):
                         subpixel True pos (0.0, 0.0) zoom 1.0 
                 window auto show
-                $ quick_menu = True
+
 
                 "With that, Ashina shuts the cabin door, and you are left to your own devices."
 
                 "You're uncertain of your future here, but you can at least rest easy now knowing that Cameron is safe."
-                $ quick_menu = False
+
                 window auto hide
 
                 stop music fadeout 1.5
@@ -194,7 +194,7 @@ label SpeakNoEvilSceneP3:
                 "You find yourself in front of Ashina, your stomach hollow with dread."
 
                 #VSFX Ashina (closer)
-                $ quick_menu = False
+
                 window auto hide
                 show ash neutral:
                         subpixel True 
@@ -204,7 +204,7 @@ label SpeakNoEvilSceneP3:
                 show ash neutral:
                         pos (0.3, 0.06) zoom 2.0 
                 window auto show
-                $ quick_menu = True
+
 
                 ash "Hm? Where is the human?"
 
@@ -212,7 +212,7 @@ label SpeakNoEvilSceneP3:
 
                 #VSFX Ashina (perspective angled as if you’re on the ground below her, or just fade her out if that looks too awkward)
                 #SFX Impact
-                $ quick_menu = False
+
                 window auto hide
                 play sound run
                 camera:
@@ -226,7 +226,7 @@ label SpeakNoEvilSceneP3:
                 stop sound
                 show ash concerned with dissolve
                 window auto show
-                $ quick_menu = True
+
 
                 "You drop to your knees. The stress of the past couple days finally catches up to you. You gasp for air as your chest heaves with sobs. You feel Ashina’s hand on your head, patting you."
 
@@ -246,7 +246,7 @@ label SpeakNoEvilSceneP3:
                 ash "Go to your room. It'll be easier for you that way."
 
                 play sound fast_walk
-                $ quick_menu = False
+
                 window auto hide
                 #VSFX Zoom/Movement (as if standing)
                 camera:
@@ -257,7 +257,7 @@ label SpeakNoEvilSceneP3:
                 camera:
                         ypos 0
                 window auto show
-                $ quick_menu = True
+
                 stop sound
 
                 "You shakily rise to your feet, but hesitate. You don’t have to just let this happen. You could…"
@@ -279,7 +279,7 @@ label SpeakNoEvilSceneP3:
 
                 ash "Please, I'm trying to extend a kindness towards you. This isn't something you will want to witness. Go."
 
-                $ quick_menu = False
+
                 window auto hide
 
                 #VSFX Ashina (fade out)
@@ -293,7 +293,7 @@ label SpeakNoEvilSceneP3:
                         zoom 1.0 xalign(0.5) yalign(0.01)
                         linear 3.00 zoom 2.0 xalign(0.5) yalign(0.01)
                 window auto show
-                $ quick_menu = True
+
 
                 "Your legs trudge up the stairs as if weighed down by a thick mud. You can't even stand to look at Ashina right now. You don't want to do this. Everything within you screams for you to rush to your friend’s aid."
 
@@ -309,7 +309,7 @@ label SpeakNoEvilSceneP3:
 
                 "But, there's no choice. You’d just be getting yourself killed, too, and what good would that do? They made their decision, and you can’t help but understand Ashina’s position. If only you could’ve just made them agree… but you can’t control other people."
 
-                $ quick_menu = False
+
                 window auto hide
                 show bg door open:
                         zoom 2.0 yalign(0.5)
@@ -320,7 +320,7 @@ label SpeakNoEvilSceneP3:
                         subpixel True xpos 0.5 zoom 1.0
 
                 window auto show
-                $ quick_menu = True
+
 
                 "You stumble into your room. You autopilot yourself into bed. Maybe if you go to sleep now, you can convince yourself that tonight was just a bad nightmare. Push this all deep down, where all the things you can’t deal with go."
 
@@ -374,7 +374,7 @@ label SpeakNoEvilSceneP3:
 
                 "You don't know if you can live with yourself after this. Even if you do, it doesn’t feel like there’s enough left of you for it to even matter."
 
-                $ quick_menu = False
+
                 window auto hide
                 image badend = Text("{outlinecolor=#000}{color=#b70000}B A D  E N D{/color}{/outlinecolor}", font="FrederickatheGreat-Regular.ttf", size=200)
                 

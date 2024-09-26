@@ -1,6 +1,6 @@
 label SpeakNoEvilSceneP1:
     $ save_name = "Speak No Evil"
-    $ quick_menu = False
+
     window auto hide
     
     #This scene triggers if you do not have -2 Approval with Ashina
@@ -17,7 +17,7 @@ label SpeakNoEvilSceneP1:
     play sound knocking volume 1.5
 
     window auto show
-    $ quick_menu = True
+
     "You are woken up by a loud rapping at the door."
 
     call WakeUpSequence2
@@ -31,18 +31,18 @@ label SpeakNoEvilSceneP1:
     show ash caring with easeinright
 
     window auto show
-    $ quick_menu = True
+
 
     ash "Did you have a restful slumber?"
 
-    $ quick_menu = False
+
     window auto hide
 
     #Image Ashina Neutral
     show ash neutral with dissolve
 
     window auto show
-    $ quick_menu = True
+
 
     "Ashina stands tall above your bed. There's a kindness in her eyes, which fades away quickly when she realizes you're staring."
 
@@ -54,7 +54,7 @@ label SpeakNoEvilSceneP1:
 
     "She walks back out into the hall, gesturing for you to follow. You rise from the bed, and do so."
 
-    $ quick_menu = False
+
     window auto hide
     stop crickets fadeout 2.0
     play sound walk loop
@@ -79,9 +79,9 @@ label SpeakNoEvilSceneP1:
     
     stop sound
     window auto show
-    $ quick_menu = True
+
     ash "But, it got me thinking. Perhaps it wasn’t that you were recklessly thinking of introducing lycanthropy to the masses. Perhaps you had a more altruistic motive."
-    $ quick_menu = False
+
     window auto hide
     
     play sound walk loop
@@ -108,7 +108,7 @@ label SpeakNoEvilSceneP1:
     show ash annoyed with dissolve
 
     window auto show
-    $ quick_menu = True
+
 
     "Once you read the bottom of the stairs and step into the hearth, Ashina turns and steps close to you. Her eyes burn into you with a lingering question."
 
@@ -136,7 +136,7 @@ label SpeakNoEvilSceneP1:
 
     you "I'll do anything to see them again!"
 
-    $ quick_menu = False
+
     window auto hide
     #VSFX Ashina Friendly
     show ash sadistic with dissolve
@@ -150,7 +150,7 @@ label SpeakNoEvilSceneP1:
     show ash sadistic:
         pos (0.5, 2.0) zoom 2.0 
     window auto show
-    $ quick_menu = True
+
 
     ash "Oh? Anything? Good. Listen carefully to my words, girl."
 
@@ -159,7 +159,7 @@ label SpeakNoEvilSceneP1:
 
     if ash_approval >= 3:
         #nodding motion
-        $ quick_menu = False
+
         window auto hide
         show ash friendly:
             subpixel True 
@@ -171,7 +171,7 @@ label SpeakNoEvilSceneP1:
         show ash friendly:
             ypos 2.0 
         window auto show
-        $ quick_menu = True
+
 
         ash "You have been quite obedient. It seems like you have a good head on those pretty little shoulders, as you clearly grasp the reality of your situation."
 
@@ -268,7 +268,7 @@ label SpeakNoEvilSceneP1:
     show ash neutral:
         pos (0.5, 1.0) zoom 1.0 
     window auto show
-    $ quick_menu = True
+
 
     ash "Now, go to them. Descend from the hearth, and you shall find them in the basement. I will be waiting at the top of the stairs."
 
@@ -279,7 +279,7 @@ label SpeakNoEvilSceneP1:
 
     ash "Go. Before I change my mind. Surely, you can convince them of something so simple."
 
-    $ quick_menu = False
+
     window auto hide
     #VSFX Ashina (fade out)
     hide ash annoyed with dissolve
@@ -293,10 +293,10 @@ label SpeakNoEvilSceneP1:
     with Pause(1.0)
     stop sound
     window auto show
-    $ quick_menu = True
+
     "She gives you a light push towards the stairs, and you can tell that the conversation is over. Your heart beats in anticipation as you descend."
 
-    $ quick_menu = False
+
     window auto hide
     play sound walk loop
     # Image Downstairs
@@ -309,7 +309,7 @@ label SpeakNoEvilSceneP1:
 
 
     window auto show
-    $ quick_menu = True
+
 
     you "That's easy for her to say… She doesn't know how stubborn Cameron can be."
 

@@ -2,7 +2,7 @@ label DreamScene:
         #stop audio from previous scene
         stop sound
 
-        $ quick_menu = False
+
         window auto hide
 
         scene bg color black with dissolve
@@ -23,11 +23,11 @@ label DreamScene:
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-        $ quick_menu = False
+
         window auto hide
         show neighbor with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "A shadow crosses into your field of vision. You look up through bleary eyes to see your neighbor, crouched down with one hand extended towards you, palm side up."
 
@@ -53,24 +53,24 @@ label DreamScene:
 
         neighbor "We have the biggest collection of movies at home! You can pick your favorite!"
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
         "But, of course, good things don't last forever."
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
         show neighbor with dissolve
         window auto show
-        $ quick_menu = True
+
 
         you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
 
@@ -100,12 +100,12 @@ label DreamScene:
 
         you "I {color=#ff0000}{b}hate{/color}{/b} you! I {color=#ff0000}{b}hate{/color}{/b} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/color}{/b} your baby! I never want to see you again!"
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "You run out of the house, never stopping to look back." 
 
@@ -117,13 +117,13 @@ label DreamScene:
 
         "The lunch bell rings, jolting you out of your seat."
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
         show teacher with dissolve
         window auto show
-        $ quick_menu = True
+
 
         teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
 
@@ -171,12 +171,12 @@ label DreamScene:
 
         "Your teacher gives you a big smile."
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Shadowy Figure 2 fade out
         hide teacher with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "From then on, that was your lunch routine. Your teacher never asked any too-hard questions, and you two would just chat about the simple things." 
 
@@ -190,7 +190,7 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
-        $ quick_menu = False
+
         window auto hide
         menu:
                 #Humanity choice
@@ -201,7 +201,7 @@ label DreamScene:
                                 #linear 3.0 matrixcolor TintMatrix("#b29231")
                                 #is this a good yellow?
                         window auto show
-                        $ quick_menu = True
+
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
                         #was a little too long for the dialogue box so i split it up
@@ -215,14 +215,14 @@ label DreamScene:
                                 #linear 3.0 matrixcolor TintMatrix("#1C4587")
                         #should we use straight blue instead
                         window auto show
-                        $ quick_menu = True
+
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/color}{/b} be like them."
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
         stop music fadeout (2.5)
         
-        $ quick_menu = False
+
         window auto hide
         
         with Pause(3.0)

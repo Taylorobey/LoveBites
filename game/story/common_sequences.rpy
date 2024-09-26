@@ -29,7 +29,7 @@ label WakeUpSequence2:
     return
 
 label AshinaShiftFromWolf:
-        $ quick_menu = False
+
         window auto hide
         hide wolf neutral with dissolve
         #show shifting ashina
@@ -46,7 +46,7 @@ label AshinaShiftFromWolf:
         with Pause(0.4)
         show ash neutral with dissolve
         window auto show
-        $ quick_menu = True
+
 # common vfx that don't involve characters
 # VFX red flash (on the edges)
 label PainFlash:

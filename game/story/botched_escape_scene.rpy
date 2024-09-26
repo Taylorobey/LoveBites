@@ -4,14 +4,13 @@ label BotchedEscapeScene:
         ###I don't think we should rely on this, also need the fireplace from prev scene
         ###Once you settle on a solution you are satisfied with, I can at least 
         #incorporate the part that hides the quick menu in the transforms if needed
-        $ quick_menu = False
         window auto hide
 
         #Image Cabin Hearth
         scene bg hearth
 
         window auto show
-        $ quick_menu = True
+
 
         "You're left with your own thoughts as Ashina departs upstairs. You begin to wander the cabin aimlessly."
 
@@ -24,7 +23,6 @@ label BotchedEscapeScene:
 
         "You realize the front door is open."
 
-        $ quick_menu = False
         window auto hide
 
         menu:
@@ -65,7 +63,7 @@ label BotchedEscapeScene:
         # SFX Walking (stop)
         stop sound
         window auto show
-        $ quick_menu = True
+
 
         # Image Akari Bow Drawn (close)
         show aki bow drawn angry with dissolve
@@ -94,7 +92,7 @@ label BotchedEscapeScene:
 
         "You can't just let it end here. Not now."
 
-        $ quick_menu = False
+
         window auto hide
 
         menu:
@@ -110,11 +108,11 @@ label BotchedEscapeScene:
 
 label PleadCase:
         window auto show
-        $ quick_menu = True
+
 
         you "No, wait, please! I never asked to be a monster!"
 
-        $ quick_menu = False
+
         window auto hide
         # VSFX Akari nod
         show aki bow drawn with dissolve
@@ -124,7 +122,7 @@ label PleadCase:
         show aki bow drawn:
                 ypos 1.43 
         window auto show
-        $ quick_menu = True
+
 
         "The hooded woman looks surprised at your outburst. Her stance doesn't waver, but she nods slowly at you to continue."
 
@@ -146,13 +144,13 @@ label PleadCase:
 
         you "I don’t know, they were gone when I stepped outside. They must have run off somewhere, maybe-"
 
-        $ quick_menu = False
+
         window auto hide
         show aki bow nocked side at stop_shortpacing
         with Pause(1.0)
         show aki bow nocked with dissolve
         window auto show
-        $ quick_menu = True
+
 
         aki "The large one, the wolf-beast. That is their master, is it not?"
 
@@ -171,13 +169,13 @@ label PleadCase:
         "The woman turns her bow and arrow away from you, continuing to scan the surroundings."
 
         # VSFX Akari (move horizontally across the screen, as if looking around, other direction)
-        $ quick_menu = False
+
         window auto hide
         show aki thoughtful at shortpacing
         with Pause(4.0)
         show aki thoughtful at stop_shortpacing
         window auto show
-        $ quick_menu = True
+
         
         aki "Everything about this spells out a trap. I need to get out of here."
 
@@ -209,7 +207,7 @@ label CallOut:
         with Pause(0.40)
         
         window auto show
-        $ quick_menu = True
+
 
         "You desperately call out for Ashina and the hooded woman jumps slightly. She looks at you with a confused expression and lowers her bow."
 
@@ -223,7 +221,7 @@ label CallOut:
 
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
         
-        $ quick_menu = False
+
         window auto hide
         show aki bow nocked side at stop_shortpacing
         with Pause(1.0)
@@ -233,11 +231,11 @@ label CallOut:
         #change name to show Akari after reveal
         $ aki.name = "Akari"
         window auto show
-        $ quick_menu = True
+
 
         aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
 
-        $ quick_menu = False
+
         window auto hide
         #Image Akari Bow Nocked
         show aki bow nocked with dissolve
@@ -247,7 +245,7 @@ label CallOut:
         #VSFX Akari (moves away and fades out)
         hide aki bow nocked with dissolve
         window auto show
-        $ quick_menu = True
+
 
         "There’s a sudden burst of movement and a fierce growling quickly approaching from behind you. Akari’s eyes go wide, and she quickly backs into the foliage, disappearing in the blink of an eye."
 
@@ -298,7 +296,7 @@ label BotchedConverge1:
 
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         
-        $ quick_menu = False
+
         window auto hide
         show ash annoyed:
                 xpos 0.34
@@ -309,7 +307,7 @@ label BotchedConverge1:
         # VSFX Ashina (closer)
         show ash angry hybrid at step_close_center_fast
         window auto show
-        $ quick_menu = True
+
 
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
         pause (0.5)
@@ -317,7 +315,7 @@ label BotchedConverge1:
 
         ash "I will not tolerate your behavior. Get back inside. Now."
 
-        $ quick_menu = False
+
         window auto hide
 
         menu:
@@ -332,7 +330,7 @@ label BotchedConverge1:
                                                      
 label ResistAshina:
         window auto show
-        $ quick_menu = True
+
         
         you "This isn’t about you! I wasn't doing anything wrong!"
 
@@ -359,7 +357,7 @@ label ResistAshina:
 
         "Ashina grabs your wrist and drags you struggling across the yard. As she does so, you notice a pair of dark eyes watching from the treeline."
 
-        $ quick_menu = False
+
         window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
@@ -378,7 +376,7 @@ label ResistAshina:
         stop crickets fadeout 2.0
         play soundb fireplace volume 0.3 loop fadein 2.0
         window auto show
-        $ quick_menu = True
+
 
         "Ashina tosses you into the cabin, slams the front door shut, and snarls at you."
 
@@ -393,11 +391,11 @@ label GoWillingly:
                 subpixel True xzoom 1.0 yzoom 7.82
         
         window auto show
-        $ quick_menu = True
+
 
         "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you."
 
-        $ quick_menu = False
+
         window auto hide
         play sound walk loop
         with Pause(1.0)
@@ -423,11 +421,11 @@ label GoWillingly:
                 ypos 1.43 zoom 1.36
 
         window auto show
-        $ quick_menu = True
+
         "Once inside, she approaches you with a fierce expression."
 
         # VSFX as if  falling backwards onto the ground and looking up at Ashina
-        $ quick_menu = False
+
         window auto hide
         play sound run
         camera:
@@ -441,7 +439,7 @@ label GoWillingly:
         stop sound
         show ash concerned with dissolve
         window auto show
-        $ quick_menu = True     
+
         # Image Ashina Concerned
         show ash concerned with dissolve
 
@@ -462,15 +460,15 @@ label BotchedConverge2:
                 # Image Ashina Thoughtful
                 show ash annoyed with dissolve
                 with Pause(0.5)
-                $ quick_menu = False
+
                 # VSFX Ashina (as if pacing in frustration)
                 show ash annoyed at shortpacingreverse
-                $ quick_menu = True
+
 
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
 
                 show ash annoyed at stop_pacing
-                $ quick_menu = False
+
                 window auto hide
                 show ash annoyed:
                         pos (0.34, 1.43) yrotate 0.0
@@ -479,12 +477,12 @@ label BotchedConverge2:
                 show ash sad with dissolve:
                         pos (0.34, 1.43)
                 window auto show
-                $ quick_menu = True
+
 
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."
 
                 #VSFX Ashina (closer)
-                $ quick_menu = False
+
                 window auto hide
                 show ash sad:
                         subpixel True 
@@ -494,13 +492,13 @@ label BotchedConverge2:
                 show ash sad:
                         pos (0.5, 2.0) zoom 2.0 
                 window auto show
-                $ quick_menu = True
+
 
                 "She offers you a hand, and you hesitantly take it. She helps you up. You feel like a feather in her strong grasp, lifted with ease."
 
                 #VSFX Zoom (as if being helped back onto your feet)
                 play sound fast_walk
-                $ quick_menu = False
+
                 window auto hide
                 #VSFX Zoom/Movement (as if standing)
                 camera:
@@ -511,14 +509,14 @@ label BotchedConverge2:
                 camera:
                         ypos 0
                 window auto show
-                $ quick_menu = True
+
                 stop sound
                 show ash caring with dissolve
 
                 ash "Perhaps you were feeling cooped up, and wanted to explore. I can’t blame you for that. However, you must restrain yourself."
 
                 #VSFX Ashina (further)
-                $ quick_menu = False
+
                 window auto hide
                 show ash caring:
                         subpixel True 
@@ -528,7 +526,7 @@ label BotchedConverge2:
                 show ash caring:
                         pos (0.5, 1.3) zoom 1.33 
                 window auto show
-                $ quick_menu = True
+
 
                 "Her grip on your hand lingers a moment longer, squeezing before pulling away."
 
@@ -564,7 +562,7 @@ label BotchedConverge2:
                 stop sound
 
                 "When you find yourself lying in bed, you’re cradling your hand over your chest. You can still feel the warmth from when Ashina held it."
-                $ quick_menu = False
+
                 window auto hide
 
                 # VSFX Black
@@ -592,7 +590,7 @@ label BotchedConverge2:
 
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 
-                $ quick_menu = False
+
                 window auto hide
                 #VSFX Zoom (as if walking through the hearth)
                 #SFX Walking
@@ -617,10 +615,10 @@ label BotchedConverge2:
 
 
                 window auto show
-                $ quick_menu = True
+
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."
-                $ quick_menu = False
+
                 window auto hide
                 
                 # VSFX Black
