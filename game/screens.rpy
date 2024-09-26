@@ -163,6 +163,18 @@ style namebox:
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
+style ash_namebox is namebox
+style ash_namebox:
+    background Frame("gui/namebox_ashina.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+
+style akari_namebox is namebox
+style akari_namebox:
+    background Frame("gui/namebox_akari.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+
+style cameron_namebox is namebox
+style cameron_namebox:
+    background Frame("gui/namebox_cameron.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+
 style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign

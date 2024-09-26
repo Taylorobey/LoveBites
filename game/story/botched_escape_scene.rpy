@@ -186,7 +186,7 @@ label PleadCase:
         "She turns her dark gaze back to you."
         
         #change name to show Akari after reveal
-        $ aki = Character("Akari", color = "#871c1c")
+        $ aki.name = "Akari"
 
         aki "Name's Akari. We have a common enemy. I will let you go, for now. Help me, and I will help you in turn."
 
@@ -231,7 +231,7 @@ label CallOut:
         show aki thoughtful look with dissolve
 
         #change name to show Akari after reveal
-        $ aki = Character("Akari")
+        $ aki.name = "Akari"
         window auto show
         $ quick_menu = True
 

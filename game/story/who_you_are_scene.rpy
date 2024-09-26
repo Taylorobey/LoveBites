@@ -141,7 +141,7 @@ label WhoYouAreScene:
         "There’s a glitter of amusement in her eyes, her lips twitching at a smirk."
 
         # Change name to show ashina now that it's been revealed
-        $ ash  = Character("Ashina", color="#1C4587")
+        $ ash.name = "Ashina";
 
         ash "Ashina. Now, best you listen, unless you’d rather I pay your friend a visit."
 
