@@ -27,6 +27,5 @@ define audio.gore                   = "SFX/Gore.mp3"
 #placeholders until audio effects are available
 
 
-#so that VA isn't too loud
-init python:
-    renpy.voice.set_volume(0.7)
+#so that VA isn't too loud (only works on your first start, delete persistent)
+define config.default_voice_volume = 0.9
