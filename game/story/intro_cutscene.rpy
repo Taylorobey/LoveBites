@@ -54,7 +54,7 @@ label IntroductoryCutscene:
 
         $ quick_menu = False
         window auto hide
-        with Pause(25)
+        with Pause(0.5)
         camera:
                 zoom 2.12
                          
@@ -77,7 +77,7 @@ label IntroductoryCutscene:
         $ quick_menu = False
         window auto hide
 
-        with Pause(25)
+        with Pause(0.5)
         camera:
                 offset (5643.0, 1107.0) zoom 3.94
 
@@ -102,7 +102,7 @@ label IntroductoryCutscene:
         $ quick_menu = False
         window auto hide
 
-        with Pause(30)
+        with Pause(0.5)
         camera:
                 offset (0.0,0.0) zoom 1.72
                 xanchor 0 xoffset 1377.0 
@@ -131,7 +131,7 @@ label IntroductoryCutscene:
         
         $ quick_menu = False
         window auto hide
-        with Pause(25)
+        with Pause(0.5)
         camera:
                 offset (3987.0, 2043.0) zoom 4.09 
         window auto show
@@ -180,7 +180,7 @@ label IntroductoryCutscene:
 
         $ quick_menu = False
         window auto hide
-        with Pause(10)
+        with Pause(0.5)
         camera:
                 offset (3204.0, 2124.0) zoom 4.89 
 
