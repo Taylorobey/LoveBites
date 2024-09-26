@@ -1,0 +1,22 @@
+TODO:
+Transforms
+    botched escape scene
+    failed rescue scene
+        ashina and cameron movement near end
+    i can see the stars scene
+    letters scene
+    speak no evil p1
+    speak no evil p2
+    speak no evil p3
+    who you are scene
+UI Sounds
+UI Cursor
+Bug Testing
+Fix Ashina Pacing Transform
+    done? needs tested
+Goodbyes Music
+Main Menu Music
+Aki Transitions between sprites possibly shift her too much?
+    may need to add a position change to base images
+
+BUGS:

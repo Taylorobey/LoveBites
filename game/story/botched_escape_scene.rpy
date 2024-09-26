@@ -2,6 +2,8 @@ label BotchedEscapeScene:
         #stop audio from previous scene
         #stop sound
         ###I don't think we should rely on this, also need the fireplace from prev scene
+        ###Once you settle on a solution you are satisfied with, I can at least 
+        #incorporate the part that hides the quick menu in the transforms if needed
         $ quick_menu = False
         window auto hide
 
@@ -42,7 +44,6 @@ label BotchedEscapeScene:
         show bg forest edge with dissolve:
                 subpixel True xzoom 1.0 yzoom 7.82 
 
-
         # Music Eerie Outdoors
         play music eerie_outdoors_music volume 1.5
 
@@ -63,6 +64,9 @@ label BotchedEscapeScene:
 
         # SFX Walking (stop)
         stop sound
+        window auto show
+        $ quick_menu = True
+
         # Image Akari Bow Drawn (close)
         show aki bow drawn angry with dissolve
 
@@ -77,24 +81,14 @@ label BotchedEscapeScene:
         you "Monster…? Uh, I think this is a misunderstanding, maybe we could just-"
 
         # VSFX Akari (closer)
-        show aki bow drawn angry:
-                subpixel True 
-                ypos 1.0 zoom 1.0 
-                linear 0.19 ypos 1.13 zoom 1.12 
-        with Pause(0.29)
-        show aki bow drawn angry:
-                ypos 1.13 zoom 1.12
+        show aki bow drawn angry at threat_step
+        with Pause(0.3)
 
         aki "Stop. You will not fool me. I know you."
 
         # VSFX Akari (closer)
-        show aki bow drawn angry:
-                subpixel True 
-                ypos 1.13 zoom 1.12 
-                linear 0.2 ypos 1.43 zoom 1.36 
+        show aki bow drawn angry at threat_step_2
         with Pause(0.3)
-        show aki bow drawn angry:
-                ypos 1.43 zoom 1.36 
 
         aki "I will have no mercy on you. Your death shall be painful, I will make sure of it. You will suffer for every life you have stolen, and I will have my revenge. You chose the wrong night to leave your little fortress, and now, you will finally pay."
 
@@ -125,12 +119,7 @@ label PleadCase:
         # VSFX Akari nod
         show aki bow drawn with dissolve
         with Pause(1.0)
-        show aki bow drawn:
-                subpixel True 
-                ypos 1.43 
-                linear 0.15 ypos 1.45 
-                linear 0.10 ypos 1.4 
-                linear 0.05 ypos 1.43 
+        show aki bow drawn at jump_in_place
         with Pause(0.40)
         show aki bow drawn:
                 ypos 1.43 
@@ -142,13 +131,8 @@ label PleadCase:
         you "Where do I begin…? I was out late. A bunch of dogs, hundreds of them, cornered me into an alley. Then, a huge wolf-beast attacked me, dragged me here, and turned me into…"
 
         # VSFX Akari (further)
-        show aki bow drawn:
-                subpixel True 
-                ypos 1.43 zoom 1.36
-                linear 0.2 ypos 1.13 zoom 1.12
+        show aki bow drawn at step_away_fast
         with Pause(0.3)
-        show aki bow drawn:
-                ypos 1.13 zoom 1.12
 
         aki "The smaller dogs you mentioned. Where are they now?"
 
@@ -221,15 +205,8 @@ label PleadCase:
 
 label CallOut:
         # VSFX Akari (as if jumping slightly in place)
-        show aki bow drawn:
-                subpixel True 
-                ypos 1.43 
-                linear 0.15 ypos 1.45 
-                linear 0.10 ypos 1.4 
-                linear 0.05 ypos 1.43 
+        show aki bow drawn at jump_in_place
         with Pause(0.40)
-        show aki bow drawn:
-                ypos 1.43 
         
         window auto show
         $ quick_menu = True
@@ -283,25 +260,8 @@ label CallOut:
         "The same beastly wolf that attacked you in the alley lunges forward at the treeline, then stops short, giving up the chase."
 
         ## VSFX Ashina (fading in and out between images like a pokemon evolution until settling into the latter image)
-        # Image Ashina Neutral
-        $ quick_menu = False
-        window auto hide
-        hide wolf neutral with dissolve
-        #show shifting ashina
-        show wolf neutral with dissolve:
-                subpixel True
-                pos (0.4, 0.2)
-                xzoom 1.09 yzoom 1.5
-        with Pause(0.2)
-        hide wolf neutral with dissolve
-        with Pause(0.2)
-        show ash angry hybrid with dissolve
-        with Pause(0.4)
-        show ash thoughtful with dissolve
-        with Pause(0.4)
-        show ash neutral with dissolve
-        window auto show
-        $ quick_menu = True
+        #made this a sequence as she will presumably have multiple times she can shift
+        call AshinaShiftFromWolf
 
         "You watch as, before your eyes, the wolf begins to change. You hear the sharp cracking of bone and the mushy contorting of flesh. You want to look away, but you can’t. Soon enough, Ashina stands before you."
 
@@ -315,46 +275,21 @@ label BotchedConverge1:
         ash "I seem to recall telling you to stay inside, did I not, pup?"
 
         # VSFX Ashina (closer)
-        show ash annoyed:
-                subpixel True
-                linear 0.2 ypos 1.43 zoom 1.36 
+        show ash annoyed at step_close_short
         with Pause(0.3)
-        show ash annoyed:
-                ypos 1.43 zoom 1.36
 
         "You turn to face Ashina as she steps closer, looming over you. You reflexively swallow."
 
         you "You… did."
 
         # VSFX Ashina (moving to the right)
-        show ash annoyed:
-                subpixel True 
-                parallel:
-                        xpos 0.5 
-                        linear 0.30 xpos 0.66
-                        linear 0.10 xpos 0.66
-                        linear 0.17 xpos 0.66
-                        linear 0.30 xpos 0.66
-                        linear 0.20 xpos 0.34
-                        linear 0.10 xpos 0.34
-                        linear 0.15 xpos 0.34
-                        linear 0.10 xpos 0.34
-                parallel:
-                        yrotate 0.0 
-                        linear 0.30 yrotate 0.0 
-                        linear 0.10 yrotate 0.0 
-                        linear 0.17 yrotate 180.0
-                        linear 0.30 yrotate 180.0 
-                        linear 0.20 yrotate 180.0 
-                        linear 0.10 yrotate 180.0 
-                        linear 0.15 yrotate 0.0 
-                        linear 0.10 yrotate 0.0
+        show ash annoyed at annoyed_pace
         with Pause(1.0)
 
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
         # VSFX Ashina (shake)
-        show ash annoyed:
+        show ash annoyed at normal_shake:
                 subpixel True 
                 xpos 0.34 
                 linear 0.15 xpos 0.36 
@@ -372,16 +307,12 @@ label BotchedConverge1:
         with Pause(0.5)
         # Image Ashina Hybrid Angry
         # VSFX Ashina (closer)
-        show ash angry hybrid:
-                subpixel True
-                linear 0.2 pos (0.5,2.0) zoom 2.0
+        show ash angry hybrid at step_close_center_fast
         window auto show
         $ quick_menu = True
 
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
-        show ash angry hybrid:
-                pos (0.5,2.0) zoom 2.0
-        with Pause (0.5)
+        pause (0.5)
         show ash annoyed with dissolve
 
         ash "I will not tolerate your behavior. Get back inside. Now."
@@ -405,15 +336,11 @@ label ResistAshina:
         
         you "This isn’t about you! I wasn't doing anything wrong!"
 
-        show ash annoyed:
-                subpixel True
-                linear 0.2 pos (0.5,1.55) zoom 1.66
+        show ash annoyed at step_away_half
 
         you "You think you can just turn me into some monster, ruin my life and act like I'm supposed to be grateful towards you? No! I've had enough!"
 
-        show ash annoyed:
-                pos (0.5,1.55) zoom 1.66
-        with Pause(0.1)
+        pause(0.1)
         #VSFX Ashina (fade out)
         hide ash annoyed with dissolve
 
@@ -532,39 +459,17 @@ label BotchedConverge2:
 
         if ash_approval >= 3:
                 
-                $ quick_menu = False
-                window auto hide
                 # Image Ashina Thoughtful
                 show ash annoyed with dissolve
                 with Pause(0.5)
+                $ quick_menu = False
                 # VSFX Ashina (as if pacing in frustration)
-                show ash annoyed:
-                        subpixel True 
-                        parallel:
-                                xpos 0.5 
-                                linear 0.30 xpos 0.66
-                                linear 0.10 xpos 0.66
-                                linear 0.17 xpos 0.66
-                                linear 0.30 xpos 0.66
-                                linear 0.20 xpos 0.34
-                                linear 0.10 xpos 0.34
-                                linear 0.15 xpos 0.34
-                                linear 0.10 xpos 0.34
-                        parallel:
-                                yrotate 0.0 
-                                linear 0.30 yrotate 0.0 
-                                linear 0.10 yrotate 0.0 
-                                linear 0.17 yrotate 180.0
-                                linear 0.30 yrotate 180.0 
-                                linear 0.20 yrotate 180.0 
-                                linear 0.10 yrotate 180.0 
-                                linear 0.15 yrotate 0.0 
-                                linear 0.10 yrotate 0.0
-                window auto show
+                show ash annoyed at shortpacingreverse
                 $ quick_menu = True
 
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
 
+                show ash annoyed at stop_pacing
                 $ quick_menu = False
                 window auto hide
                 show ash annoyed:
