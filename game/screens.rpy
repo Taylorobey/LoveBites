@@ -373,7 +373,7 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action [SetVariable("keyboard", False), SetVariable("mouse", True), SetVariable("gamepad", True), ShowMenu("help")]
+            textbutton _("Help") action [SetVariable("keyboard", False), SetVariable("mouse", True), SetVariable("gamepad", True), SelectedIf(ShowMenu("help"))]
 
         if renpy.variant("pc"):
 
@@ -390,7 +390,6 @@ style navigation_button_text:
     properties gui.text_properties("navigation_button")
     font "Pangolin-Regular.ttf"
     size 35
-
 
 
 ## Main Menu screen ############################################################
