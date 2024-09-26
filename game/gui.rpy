@@ -14,6 +14,9 @@ init python:
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
 
+define config.mouse = { }
+define config.mouse['default'] = [ ( "gui/cursor.png", 0, 0) ]
+
 
 ################################################################################
 ## GUI Configuration Variables
