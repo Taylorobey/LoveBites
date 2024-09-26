@@ -25,3 +25,8 @@ define audio.knocking               = "SFX/Knock (Captive Room).mp3"
 define audio.mournfulhowls          = "SFX/Mournful_Howls.flac"
 define audio.gore                   = "SFX/Gore.mp3"
 #placeholders until audio effects are available
+
+
+#so that VA isn't too loud
+init python:
+    renpy.voice.set_volume(0.7)
