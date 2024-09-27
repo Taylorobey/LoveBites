@@ -157,7 +157,8 @@ label SpeakNoEvilSceneP1:
     #for testing
     #define ash_approval = 3
 
-    if ash_approval >= 3:
+    if ash_approval >= -2:
+        #temporary logic change for the demo to make sure other paths don't trigger
         #nodding motion
 
         window auto hide

@@ -113,7 +113,8 @@ label SpeakNoEvilSceneP2:
         #define cam_approval = 3
 
 
-        if ash_approval >= 3:
+        if ash_approval >= -2:
+                #temporary logic change for the demo to make sure other paths don't trigger
 
                 you "She agreed to let you go, on one condition."
 
