@@ -383,6 +383,7 @@ label SpeakNoEvilSceneP3:
                 show badend with Dissolve(1.0):
                         subpixel True pos (0.16, 0.39)
                 with Pause(5.0)
+                hide badend with dissolve
 
                 jump CreditsScene
 
