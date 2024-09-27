@@ -433,17 +433,25 @@ label ICanSeeTheStarsScene:
     show thanks with Dissolve(2.0):
         subpixel True pos (0.16, -0.58) 
 
-    with Pause(6.0)
+    with Pause(3.0)
+    hide thanks with dissolve
 
+    $ credits_speed = 25 #scrolling speed in seconds
+    pause(0.5)
+    show cred at Move((0.5, 3.1), (0.5, -1.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
+    pause(credits_speed)
+
+    hide sky_color with dissolve
     hide starryeffect onlayer screens with dissolve
-    show bg color black with Dissolve(2.0)
+    show bg color black with dissolve:
+        ypos 0
     stop music fadeout 2.0
     stop sound fadeout 2.0
     stop soundb fadeout 2.0
     stop crickets fadeout 2.0
     with Pause(2.5)
 
-    jump CreditsScene
+    return
 
 label demoroute:
     narrator "Sorry, this option isn't available in the demo."

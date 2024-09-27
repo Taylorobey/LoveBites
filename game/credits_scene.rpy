@@ -1,7 +1,7 @@
 label CreditsScene:
     $ credits_speed = 25 #scrolling speed in seconds
-    scene black #replace this with a fancy background
-    with dissolve
+    #scene bg color black #replace this with a fancy background
+    #with dissolve
     pause(0.5)
     show theend:
         yanchor 0.5 ypos 0.5
