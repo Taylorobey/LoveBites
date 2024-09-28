@@ -1,7 +1,6 @@
 label ICanSeeTheStarsScene:
     $ save_name = "I Can See The Stars"
 
-
     window auto hide
     
     #Flags: Key information to defeating Ashina, or betraying Akari and preparing Ashina for the confrontation, or neither. Increased Humanity or Corruption.
@@ -16,7 +15,6 @@ label ICanSeeTheStarsScene:
 
     window auto show
 
-
     "The door to your room opens, with Ashina's stance taking up the whole frame."
 
     show ash thoughtful with dissolve
@@ -27,7 +25,6 @@ label ICanSeeTheStarsScene:
 
     if ash_approval >= 0:
         "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice"
-
 
         window auto hide
 
@@ -106,7 +103,6 @@ label ICanSeeTheStarsScene:
 
         "Ashina grabs your wrist, and you can only resign yourself to being dragged along. "
 
-
         window auto hide
 
         play sound walk loop
@@ -169,13 +165,12 @@ label ICanSeeTheStarsScene:
         stop sound
         window auto show
 
-
         "She leads you down the stairs, through the hearth, and outside. The bitter chill of the late night air stings your skin."
     
     "The dogs outside the cabin are docile for once. Some are asleep together in a cuddle pile, while others play-fight with another, letting out happy little growls and barks."
     
     #for testing
-    define dog_approval = 1
+    #define dog_approval = 1
 
     if dog_approval > 0:
         
@@ -186,7 +181,6 @@ label ICanSeeTheStarsScene:
 
         hide dog with dissolve
 
-
         window auto hide
 
         menu:
@@ -195,6 +189,7 @@ label ICanSeeTheStarsScene:
                 #Increases Ashina’s Approval
                 #Increases Dogs’ Approval
                 $ ash_approval += 1
+                $ dog_approval += 1
 
                 #Image Happy Dog
                 show happy dog with dissolve
@@ -239,7 +234,6 @@ label ICanSeeTheStarsScene:
 
     ash "Tell me, what do you think?"
 
-
     window auto hide
     #VSFX Ashina (fade out)
     hide ash neutral with dissolve
@@ -260,11 +254,9 @@ label ICanSeeTheStarsScene:
 
     window auto show
 
-
     "You turn your gaze to the sky above. You don’t remember the last time you were far enough from the city to be able to see the stars. They twinkle brightly, stretching endlessly across the horizon."
 
     "You think the view is…"
-
 
     window auto hide
 
@@ -337,7 +329,6 @@ label ICanSeeTheStarsScene:
     #Image Ashina Neutral
 
     ash "What is it?"
-
 
     window auto hide
 
@@ -425,7 +416,6 @@ label ICanSeeTheStarsScene:
 
     #Music Starry Sky (fade out)
     #Image Sky (fade back to no color, then scene fade to black)
-
 
     window auto hide
     with Pause(1.5)

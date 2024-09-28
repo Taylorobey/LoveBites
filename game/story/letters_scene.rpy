@@ -1,14 +1,12 @@
 label LettersScene:
     $ save_name = "A Letter"
 
-
     window auto hide
     
     scene bg color black
     with Pause(0.5)
     #Image Captive Cabin Room (angled towards ceiling)
     #Music Cabin
-
 
     "You beeline towards the bed once you enter your room. As soon as your head hits the pillow, you already start to drift off…"
 
@@ -34,7 +32,6 @@ label LettersScene:
     with Pause(1.0)
     stop sound
     window auto show
-
 
     "The dogs yap and jump up at the window as if something’s there. You open the window and lean out, looking around. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
 
@@ -90,7 +87,6 @@ label LettersScene:
 
     window auto show
 
-    
     you "...Akari."
 
     "You turn the letter in your hands. With Akari's help, you have a way to actually, finally escape this cabin once and for all… if you want to."

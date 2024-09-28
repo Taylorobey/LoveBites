@@ -15,6 +15,7 @@ Goodbyes Music
 Main Menu Music
 Aki Transitions between sprites possibly shift her too much?
     may need to add a position change to base images
+Make common transitions for moving between rooms
 
 BUGS:
 Botched Escape Scene Line 581:
