@@ -119,7 +119,7 @@ transform annoyed_pace:
             linear 0.15 yrotate 0.0 
             linear 0.10 yrotate 0.0
     
-#transform for nervous shaking
+#transforms for shaking
 transform nervous_shake:
     subpixel True 
     xpos 0.5 

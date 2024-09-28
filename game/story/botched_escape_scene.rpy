@@ -377,7 +377,6 @@ label ResistAshina:
         play soundb fireplace volume 0.3 loop fadein 2.0
         window auto show
 
-
         "Ashina tosses you into the cabin, slams the front door shut, and snarls at you."
 
         ash "I've given you a chance at a new life! And this is the thanks I get?!"
@@ -392,9 +391,7 @@ label GoWillingly:
         
         window auto show
 
-
         "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you."
-
 
         window auto hide
         play sound walk loop
@@ -413,12 +410,8 @@ label GoWillingly:
 
         show ash angry hybrid with dissolve
         with Pause(0.5)
-        show ash angry hybrid:
-                subpixel True
-                linear 0.2 ypos 1.43 zoom 1.36 
+        show ash angry hybrid at step_close_short
         with Pause(0.3)
-        show ash angry hybrid:
-                ypos 1.43 zoom 1.36
 
         window auto show
 
@@ -478,21 +471,12 @@ label BotchedConverge2:
                         pos (0.34, 1.43)
                 window auto show
 
-
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."
 
                 #VSFX Ashina (closer)
 
-                window auto hide
-                show ash sad:
-                        subpixel True 
-                        pos (0.34, 1.43) zoom 1.36 
-                        linear 0.50 pos (0.5, 2.0) zoom 2.0 
+                show ash sad at step_close_center_fast
                 with Pause(0.60)
-                show ash sad:
-                        pos (0.5, 2.0) zoom 2.0 
-                window auto show
-
 
                 "She offers you a hand, and you hesitantly take it. She helps you up. You feel like a feather in her strong grasp, lifted with ease."
 
@@ -517,16 +501,8 @@ label BotchedConverge2:
 
                 #VSFX Ashina (further)
 
-                window auto hide
-                show ash caring:
-                        subpixel True 
-                        pos (0.5, 2.0) zoom 2.0 
-                        linear 0.20 pos (0.5, 1.3) zoom 1.33 
+                show ash caring at threat_step_2
                 with Pause(0.30)
-                show ash caring:
-                        pos (0.5, 1.3) zoom 1.33 
-                window auto show
-
 
                 "Her grip on your hand lingers a moment longer, squeezing before pulling away."
 
@@ -590,7 +566,6 @@ label BotchedConverge2:
 
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 
-
                 window auto hide
                 #VSFX Zoom (as if walking through the hearth)
                 #SFX Walking
@@ -613,9 +588,7 @@ label BotchedConverge2:
                 camera:
                         subpixel True pos (0, 0) 
 
-
                 window auto show
-
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."
 
