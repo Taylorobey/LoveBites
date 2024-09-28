@@ -92,7 +92,29 @@ define gui.title_text_size = 150
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+#define gui.main_menu_background = "gui/main_menu.png"
+#define gui.game_menu_background = "gui/game_menu.png"
+
+label splashscreen:
+    show bg color black
+    pause 0.5
+    play music main_menu_music
+    show spook logo with Dissolve(1.0):
+        pos (0.03, 0.2) 
+    pause 2
+    hide spook logo with Dissolve(0.5)
+    pause 0.5
+    show menu no logo with Dissolve(1.0)
+    pause 1
+    show main menu with Dissolve(1.0)
+    pause 1
+    return
+
+image mainmenubackground:
+    "gui/main_menu.png" with dissolve
+
+
+define gui.main_menu_background = "mainmenubackground"
 define gui.game_menu_background = "gui/game_menu.png"
 
 

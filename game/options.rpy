@@ -75,6 +75,7 @@ define config.main_menu_music = "MUS/Main_Menu.mp3"
 
 define config.enter_transition = dissolve
 define config.exit_transition = dissolve
+define config.end_splash_transition = Dissolve(2.0)
 
 
 ## Between screens of the game menu.
