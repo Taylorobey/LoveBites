@@ -67,7 +67,7 @@ label LettersScene:
 
     centered "In the meantime, you must gather intel for me. Find out any weaknesses your mistress has, and how those dogs outside the cabin can be dealt with. Earn the beast's trust, so that we may exploit it."
 
-    if aka_approval > 1:
+    if aka_approval < 1:
         centered "Your behavior the night we met was less than satisfactory. I hope for your sake it was a ruse, or a moment of weakness. Make no mistake: Your captor is a murderer, and she will make one of you as well."
 
         centered "This is your one, and only, chance. Prove your allegiance to humanity, or share your mistress’s fate."
