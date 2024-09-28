@@ -4,6 +4,7 @@ define audio.capture_music          = "MUS/Capture_You_Feel_Their_Breath.mp3"
 define audio.cabin_music            = "MUS/Cabin.mp3"
 define audio.dream_music            = "MUS/Dream.mp3"
 define audio.starry_music           = "MUS/Starry_Night.mp3"
+define audio.main_menu_music        = "MUS/Main_Menu.mp3"
 #placeholders until music is available
 define audio.eerie_outdoors_music   = "MUS/Temp_Eerie.mp3"
 define audio.connection_music       = "MUS/Connection.wav"
