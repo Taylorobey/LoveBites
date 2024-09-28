@@ -1,11 +1,11 @@
 ﻿# Declare characters used by this game.
-define aki              = Character("???", color="#871c1c", namebox_style="akari_namebox")
+define aki              = Character("???", color="#982313")
 #can we call her aki instead
 #should probably do the same as ashina and set name to ???, but with red color
-define ash              = Character("???", color="#1C4587", namebox_style="ash_namebox")
+define ash              = Character("???", color="#1e22ae")
 #yes, that's the same shade of blue as everything else.
 #changed name to "???" and i think we'll just $ it to ashina when mc learns her name
-define cam              = Character("Cameron", color="#d3c71e", namebox_style="cameron_namebox")
+define cam              = Character("Cameron", color="#e7ab19")
 define you              = Character("You", color="#a3a3a3")
 define neighbor         = Character("Neighbor", color="#411c87")
 define teacher          = Character("Teacher", color="#411c87")
