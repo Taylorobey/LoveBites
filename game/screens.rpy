@@ -35,6 +35,12 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
+    hover_sound "audio/UI/hover.mp3"
+    activate_sound "audio/UI/click.mp3"
+
+style image_button:
+    hover_sound "audio/UI/hover.mp3"
+    activate_sound "audio/UI/click.mp3"
 
 style button_text is gui_text:
     properties gui.text_properties("button")
@@ -254,6 +260,8 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    hover_sound "audio/UI/hover.mp3"
+    activate_sound "audio/UI/click.mp3"
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
