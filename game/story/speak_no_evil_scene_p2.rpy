@@ -1,19 +1,15 @@
 label SpeakNoEvilSceneP2:
         $ save_name = "Hear No Evil"
 
-
         window auto hide
         
         #Image Cabin Door Closed
         show bg door closed:
                 subpixel True pos (0.5, -0.48) zoom 1.8
 
-        
         window auto show
 
-
         "You reach the basement and are hit with an earthy chill. You unlock the door with the key Ashina gave you, and step inside."
-
 
         window auto hide
         #Image Cabin Door Open
@@ -30,60 +26,27 @@ label SpeakNoEvilSceneP2:
 
         window auto show
 
-
         "You find Cameron huddled in a corner of the room. They shift, acknowledging your presence, but don’t turn around."
 
-
-        window auto hide
-        show cam frustrated:
-                subpixel True 
-                xpos 0.58 
-                linear 0.15 xpos 0.57 
-                linear 0.15 xpos 0.59 
-                linear 0.15 xpos 0.58 
+        show cam frustrated at cam_ground_shake
         with Pause(0.55)
-        show cam frustrated:
-                xpos 0.58 
-        window auto show
-
 
         cam "I told you before, I won't eat. Not until you let me see her."
 
         you "Cam! It's me!"
-
-
-        window auto hide
+ 
         #Image Cameron Friendly
         show cam friendly with dissolve
         with Pause(0.2)
-        show cam friendly:
-                subpixel True
-                ypos -0.01 
-                linear 0.15 ypos -0.04 
-                linear 0.15 ypos 0.01 
-                linear 0.15 ypos -0.01
+        show cam friendly at cam_surprise_jump
         with Pause(0.55)
-        show cam friendly:
-                pos (0.58, -0.01) 
-        window auto show
-
 
         cam "¡Dios mío!"
 
-
-        window auto hide
         #VSFX Cameron (moves closer, then fades out)
-        show cam friendly:
-                subpixel True pos (0.58, -0.01) zoom 0.75
-                linear 1.0 pos (0.25, -0.04) zoom 2.5
-        with Pause(1.1)
-        show cam friendly:
-                subpixel True
-                pos (0.25,-0.04) zoom 2.5
-        with Pause (0.1)
+        show cam friendly at hug
+        with Pause(1.2)
         hide cam friendly with dissolve
-        window auto show
-
 
         "Cameron pulls you in for a big hug. Tears stream down their face as they squeeze you tight."
 
@@ -111,7 +74,6 @@ label SpeakNoEvilSceneP2:
         #define corruption = 2
         #define humanity = 2
         #define cam_approval = 3
-
 
         if ash_approval >= -2:
                 #temporary logic change for the demo to make sure other paths don't trigger
@@ -153,7 +115,6 @@ label SpeakNoEvilSceneP2:
                 cam "How do you expect me to just leave you here?!"
 
                 you "Cameron…"
-
 
                 window auto hide
 
@@ -442,7 +403,6 @@ label HelpCameronEscape:
 
 label CorruptedChoice:
         window auto show
-
         
         "You give Cameron a flat, tired look."
 
@@ -467,8 +427,6 @@ label CorruptedChoice:
                 "You can’t help a tinge of sadness at seeing your old friend in such a state, but you know this is for their own good. You swallow reflexively, realizing your mouth is pooling with drool, and turn away."
 
                 #VSFX Screen (tint fades)
-
-
 
         else:
                 #Image Cameron Neutral

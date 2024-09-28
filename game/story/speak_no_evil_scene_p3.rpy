@@ -33,17 +33,11 @@ label SpeakNoEvilSceneP3:
                 #VSFX Ashina (closer to Cameron)
 
                 window auto hide
-                show ash neutral:
-                        subpixel True 
-                        pos (0.36, 0.0) zoom 1.0 
-                        linear 0.60 pos (0.24, 0.0) zoom 1.3 
+                show ash neutral at ash_closer_to_cam
                 with Pause(0.70)
-                show ash neutral:
-                        pos (0.24, 0.0) zoom 1.3
+
                 #Image Cameron Nervous
                 show cam nervous with dissolve
-                window auto show
-
 
                 "Ashina turns her attention towards Cameron."
 
@@ -51,22 +45,8 @@ label SpeakNoEvilSceneP3:
 
                 #VSFX Cameron (move away from Ashina and closer to you)
 
-                window auto hide
-                show cam nervous:
-                        subpixel True 
-                        parallel:
-                                xpos 0.0 
-                                ease_bounce 0.20 xpos -0.07 
-                        parallel:
-                                ypos 0.0 
-                                ease 0.20 ypos 0.03 
-                        parallel:
-                                zoom 1.5 
-                                ease_back 0.20 zoom 1.75 
+                show cam nervous at cam_further_from_ash
                 with Pause(0.30)
-                show cam nervous:
-                        pos (-0.07, 0.03) zoom 1.75 
-                window auto show
 
 
                 "Cameron shrinks away from Ashina, moving closer to you."
@@ -76,58 +56,30 @@ label SpeakNoEvilSceneP3:
 
                 cam "Right, um… I can leave, but only if I promise not to talk about anything that happened here. I can't tell anyone about you, or werewolves, or the cabin. Nada, nothing."
 
-
-                window auto hide
                 #Image Ashina Friendly
                 show ash friendly with dissolve
                 with Pause(0.2)
                 #VSFX Ashina (moves back to give Cameron space)
-                show ash friendly:
-                        subpixel True 
-                        xpos 0.24 
-                        linear 0.30 xpos 0.4 
+                show ash friendly at ash_steps_away
                 with Pause(0.40)
-                show ash friendly:
-                        xpos 0.4 
-                window auto show
-
 
                 ash "Yes, you understand well. Act as though this never even happened."
 
                 #VSFX Ashina (closer to you, opposite side of Cameron)
 
-                window auto hide
-                show ash friendly:
-                        subpixel True 
-                        pos (0.4, 0.0) zoom 1.3 
-                        linear 0.60 pos (0.51, -0.03) zoom 2.0 
+                show ash friendly at torso_close_right
                 with Pause(0.70)
-                show ash friendly:
-                        pos (0.51, -0.03) zoom 2.0 
-                window auto show
-
 
                 ash "Hm, color me impressed. I didn't think you could convince them so well, pup."
 
-
-                window auto hide
                 #VSFX Ashina (further away again)
-                show ash friendly:
-                        subpixel True 
-                        pos (0.51, -0.03) zoom 2.0 
-                        linear 0.60 pos (0.4, 0.0) zoom 1.3 
-                with Pause(0.70)
-                show ash friendly:
-                        pos (0.4, 0.0) zoom 1.3 
-                with Pause(1.0)
+                show ash friendly at ash_steps_away2
+                with Pause(1.70)
                 #Image Ashina Thoughtful
                 show ash thoughtful with dissolve:
                         xpos 0.35
-                window auto show
-
 
                 ash "I'm satisfied. Come along with me, human. I shall escort you back to civilization."
-
 
                 window auto hide
                 #SFX Walking
@@ -146,7 +98,6 @@ label SpeakNoEvilSceneP3:
 
                 ash "As for you, girl, I have something to show you when I return. Be ready."
 
-
                 window auto hide
                 #VSFX Ashina (fade out and towards the door)
                 hide ash neutral with dissolve
@@ -155,7 +106,6 @@ label SpeakNoEvilSceneP3:
                 show bg door closed with Dissolve(1.5):
                         subpixel True pos (0.0, 0.0) zoom 1.0 
                 window auto show
-
 
                 "With that, Ashina shuts the cabin door, and you are left to your own devices."
 
@@ -194,17 +144,8 @@ label SpeakNoEvilSceneP3:
                 "You find yourself in front of Ashina, your stomach hollow with dread."
 
                 #VSFX Ashina (closer)
-
-                window auto hide
-                show ash neutral:
-                        subpixel True 
-                        pos (0.4, 0.0) zoom 1.0 
-                        linear 0.45 pos (0.3, 0.06) zoom 2.0 
+                show ash neutral at ash_closer_to_you
                 with Pause(0.55)
-                show ash neutral:
-                        pos (0.3, 0.06) zoom 2.0 
-                window auto show
-
 
                 ash "Hm? Where is the human?"
 
@@ -226,7 +167,6 @@ label SpeakNoEvilSceneP3:
                 stop sound
                 show ash concerned with dissolve
                 window auto show
-
 
                 "You drop to your knees. The stress of the past couple days finally catches up to you. You gasp for air as your chest heaves with sobs. You feel Ashina’s hand on your head, patting you."
 
@@ -262,15 +202,8 @@ label SpeakNoEvilSceneP3:
 
                 "You shakily rise to your feet, but hesitate. You don’t have to just let this happen. You could…"
                 
-                show ash annoyed:
-                        subpixel True 
-                        xpos 0.3 
-                        ease 0.15 xpos 0.32 
-                        ease 0.15 xpos 0.28 
-                        ease 0.15 xpos 0.3 
+                show ash annoyed at annoyed_shake 
                 with Pause(0.55)
-                show ash annoyed:
-                        xpos 0.3 
 
                 ash "I know what you're thinking. But, it's much too late to try and save them, pet. They've made their choice."
 
@@ -278,7 +211,6 @@ label SpeakNoEvilSceneP3:
                 show ash sad with dissolve
 
                 ash "Please, I'm trying to extend a kindness towards you. This isn't something you will want to witness. Go."
-
 
                 window auto hide
 
@@ -294,13 +226,11 @@ label SpeakNoEvilSceneP3:
                         linear 3.00 zoom 2.0 xalign(0.5) yalign(0.01)
                 window auto show
 
-
                 "Your legs trudge up the stairs as if weighed down by a thick mud. You can't even stand to look at Ashina right now. You don't want to do this. Everything within you screams for you to rush to your friend’s aid."
 
                 show bg upstairs:
                         zoom 2.0 xalign(0.5) yalign(0.01)
                 
-
                 # Image Cabin Door Open
                 show bg door open with dissolve:
                         subpixel True
@@ -308,7 +238,6 @@ label SpeakNoEvilSceneP3:
                         linear 3.00 zoom 2.0 yalign(0.5)
 
                 "But, there's no choice. You’d just be getting yourself killed, too, and what good would that do? They made their decision, and you can’t help but understand Ashina’s position. If only you could’ve just made them agree… but you can’t control other people."
-
 
                 window auto hide
                 show bg door open:
@@ -320,7 +249,6 @@ label SpeakNoEvilSceneP3:
                         subpixel True xpos 0.5 zoom 1.0
 
                 window auto show
-
 
                 "You stumble into your room. You autopilot yourself into bed. Maybe if you go to sleep now, you can convince yourself that tonight was just a bad nightmare. Push this all deep down, where all the things you can’t deal with go."
 
@@ -373,7 +301,6 @@ label SpeakNoEvilSceneP3:
                 "Ashina dealt the killing blow, but you are the reason Cameron was here in the first place. You were a fool to think that flirting with danger would solve your problems for you. Leaving it all up to forces outside of yourself, taking no responsibility… just like your parents."
 
                 "You don't know if you can live with yourself after this. Even if you do, it doesn’t feel like there’s enough left of you for it to even matter."
-
 
                 window auto hide
                 image badend = Text("{outlinecolor=#000}{color=#b70000}B A D  E N D{/color}{/outlinecolor}", font="FrederickatheGreat-Regular.ttf", size=200)

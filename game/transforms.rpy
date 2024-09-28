@@ -51,6 +51,8 @@ transform back_to_bg:
     linear 1.00 zoom 1.0 xpan 0.0 ypan 0.0
 
 # Torso left/center/right
+transform torso_close_right:
+    linear 0.60 pos (0.51, -0.03) zoom 2.0 
 
 # Bust left/center/right
 transform start_bust:
@@ -134,12 +136,69 @@ transform normal_shake:
     xpos 0.34 
     linear 0.15 xpos 0.36 
     linear 0.20 xpos 0.32 
-    linear 0.15 xpos 0.34 
+    linear 0.15 xpos 0.34
 
-#transform for jumping in place
+transform annoyed_shake:
+    subpixel True 
+    ease 0.15 xpos 0.32 
+    ease 0.15 xpos 0.28 
+    ease 0.15 xpos 0.3 
+
+transform cam_ground_shake:
+    subpixel True 
+    linear 0.15 xpos 0.57 
+    linear 0.15 xpos 0.59 
+    linear 0.15 xpos 0.58 
+
+#transforms for jumping in place
 transform jump_in_place:
     subpixel True 
     linear 0.15 ypos 1.45 
     linear 0.10 ypos 1.4 
     linear 0.05 ypos 1.43 
-    
+
+transform cam_surprise_jump:
+    subpixel True
+    linear 0.15 ypos -0.04 
+    linear 0.15 ypos 0.01 
+    linear 0.15 ypos -0.01
+
+#transform for nodding motion
+transform nod:
+    subpixel True 
+    linear 0.15 ypos 2.03 
+    linear 0.15 ypos 1.97 
+    linear 0.15 ypos 2.0 
+
+#transform for cameron hugging the player
+transform hug:
+    linear 1.0 pos (0.25, -0.04) zoom 2.5
+
+#transforms for speak no evil p3
+transform ash_closer_to_cam:
+    subpixel True 
+    linear 0.60 pos (0.24, 0.0) zoom 1.3
+
+transform ash_closer_to_you:
+    subpixel True 
+    linear 0.45 pos (0.3, 0.06) zoom 2.0 
+
+transform cam_further_from_ash:
+    subpixel True 
+    parallel:
+            xpos 0.0 
+            ease_bounce 0.20 xpos -0.07 
+    parallel:
+            ypos 0.0 
+            ease 0.20 ypos 0.03 
+    parallel:
+            zoom 1.5 
+            ease_back 0.20 zoom 1.75 
+
+transform ash_steps_away:
+    subpixel True 
+    linear 0.30 xpos 0.4
+
+transform ash_steps_away2:
+    subpixel True 
+    linear 0.60 pos (0.4, 0.0) zoom 1.3

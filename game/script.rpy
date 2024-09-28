@@ -82,7 +82,7 @@ label start:
         perspective True
 
     #temporary jump for testing
-    #jump BotchedConverge1
+    #jump SpeakNoEvilSceneP3
     jump IntroductoryCutscene
     
     # This ends the game.
