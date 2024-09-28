@@ -43,55 +43,43 @@ label IntroductoryCutscene:
         play sound walk loop
         
         #VSFX Slow Zoom on Image
-        camera:
-                subpixel True 
-                zoom 1.0 
-                linear 25 zoom 2.12 
+        show bg intersection:
+                subpixel True
+                offset (0.0, 0.0) zoom 1.0
+                linear 20 offset (1116.0, 891.0) zoom 2.21
+        #does the zoom look good? changed this to be the bg zooming and not camera so we don't have problems with getting the camera back to 1.0 whilst dissolving in the next background
 
         narrator "You don’t want to think about that right now. It’s a wonder how the more exhausted your body is from work, the more active your mind gets."
 
         narrator "And you are exhausted. That’s the perk of working the graveyard shift- it’s the only way to get your body to pass out nearly the moment you hit the bed."
-
-
-        window auto hide
-        with Pause(0.5)
-        camera:
-                zoom 2.12
                          
         #VSFX Crossfade Image
         #Image Street with one dog
         scene bg street dog with dissolve
   
         #VSFX Slow Zoom on Image
-        camera:
+        show bg street dog:
                 subpixel True 
                 offset (0.0, 0.0) zoom 1.0 
-                linear 25 offset (5643.0, 1107.0) zoom 3.94 
-        window auto show
+                linear 25 offset (-1773.0, 1881.0) zoom 4.0
+        #same thing here
 
 
         narrator "You’ve always had trouble sleeping, even though it’s been three years since you moved out of that house."
 
         narrator "You thought getting out would be the hardest part. Turns out freedom can be pretty suffocating."
 
-
-        window auto hide
-
-        with Pause(0.5)
-        camera:
-                offset (5643.0, 1107.0) zoom 3.94
-
         #VSFX Crossfade Image
         #Image Street with three dogs
-        scene bg street dogs with dissolve 
+        scene bg street dogs with dissolve:
+                offset (0.0,0.0) zoom 1.72 
+                xanchor 0 xoffset absolute(0.0) 
         
         #VSFX Slow Zoom on Image
         ###How much zoom?
-        camera:
+        show bg street dogs:
                 subpixel True 
-                offset (0.0,0.0) zoom 1.72 
-                xanchor 0 xoffset absolute(0.0) 
-                linear 30 xanchor 0 xoffset 1377.0 
+                linear 30 xanchor 0 xoffset -1377.0 
         window auto show
 
 
@@ -99,26 +87,15 @@ label IntroductoryCutscene:
 
         narrator "At least it would be something different, something new. Sometimes you feel as though you've been living the exact same day for these past three years. Go to work, pass out, repeat…"
 
-
-        window auto hide
-
-        with Pause(0.5)
-        camera:
-                offset (0.0,0.0) zoom 1.72
-                xanchor 0 xoffset 1377.0 
-
         #VSFX Crossfade Image
         #Image Street with more dogs
         scene bg street many with dissolve
 
         #VSFX Medium Zoom on Image
-        camera:
+        show bg street many:
                 subpixel True 
-                offset (absolute(0.0), 0.0) zoom 1.0 
-                linear 25 offset (3987.0, 2043.0) zoom 4.09 
-
-        window auto show
-
+                offset (0, 0) zoom 1
+                linear 25 offset (-1000, 1079.0) zoom 4.0
 
         narrator "It was easier when you had something to fight against, someone to prove wrong. Now, you’re left alone with yourself, and you don’t like what you see."
 
@@ -128,14 +105,6 @@ label IntroductoryCutscene:
         play soundb heart loop
         
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
-        
-
-        window auto hide
-        with Pause(0.5)
-        camera:
-                offset (3987.0, 2043.0) zoom 4.09 
-        window auto show
-
 
         #SFX Growling
         play sound growl
