@@ -90,36 +90,37 @@ transform shortpacing:
 transform shortpacingreverse:
     subpixel True
     xpos 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
-    linear 1.0 xpos 0.7 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)      
-    linear 0.0 xpos 0.7 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+    linear 0.5 xpos 0.7 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)      
+    linear 0.0 xpos 0.7 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
     pause(0.25)
-    linear 1.5 xpos 0.3 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
-    linear 0.0 xpos 0.3 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+    linear 1.0 xpos 0.3 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+    linear 0.0 xpos 0.3 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
     pause(0.25)
-    linear 1.0 xpos 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+    linear 0.5 xpos 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
     repeat
 
 transform stop_shortpacing:
     linear 0.6 xpos 0.5
-    linear 0.0 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+    linear 0.0 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)
 
-transform annoyed_pace:
-    subpixel True 
-    parallel:
-            xpos 0.5 
-            linear 0.30 xpos 0.66
-            linear 0.57 xpos 0.66
-            linear 0.20 xpos 0.34
-            linear 0.35 xpos 0.34
+#this pace is bad, causes a bug
+#transform annoyed_pace:
+    #subpixel True 
+    #parallel:
+            #xpos 0.5 
+            #linear 0.30 xpos 0.66
+            #linear 0.57 xpos 0.66
+            #linear 0.20 xpos 0.34
+            #linear 0.35 xpos 0.34
 
-    parallel:
-            yrotate 0.0 
-            linear 0.30 yrotate 0.0 
-            linear 0.10 yrotate 0.0 
-            linear 0.17 yrotate 180.0
-            linear 0.60 yrotate 180.0 
-            linear 0.15 yrotate 0.0 
-            linear 0.10 yrotate 0.0
+    #parallel:
+            #yrotate 0.0 
+            #linear 0.30 yrotate 0.0 
+            #linear 0.10 yrotate 0.0 
+            #linear 0.17 yrotate 180.0
+            #linear 0.60 yrotate 180.0 
+            #linear 0.15 yrotate 0.0 
+            #linear 0.10 yrotate 0.0
     
 #transforms for shaking
 transform nervous_shake:
@@ -155,7 +156,8 @@ transform jump_in_place:
     subpixel True 
     linear 0.15 ypos 1.45 
     linear 0.10 ypos 1.4 
-    linear 0.05 ypos 1.43 
+    linear 0.05 ypos 1.43
+    linear 0.05 ypos 1.45
 
 transform cam_surprise_jump:
     subpixel True

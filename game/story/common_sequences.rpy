@@ -29,16 +29,15 @@ label WakeUpSequence2:
     return
 
 label AshinaShiftFromWolf:
-
         window auto hide
         hide wolf neutral with dissolve
         #show shifting ashina
-        show wolf neutral with dissolve:
-                subpixel True
-                pos (0.4, 0.2)
-                xzoom 1.09 yzoom 1.5
-        with Pause(0.2)
-        hide wolf neutral with dissolve
+        #show wolf neutral with dissolve:
+                #subpixel True
+                #pos (0.4, 0.2)
+                #xzoom 1.09 yzoom 1.5
+        #with Pause(0.2)
+        #hide wolf neutral with dissolve
         with Pause(0.2)
         show ash angry hybrid with dissolve
         with Pause(0.4)
@@ -46,9 +45,11 @@ label AshinaShiftFromWolf:
         with Pause(0.4)
         show ash neutral with dissolve
         window auto show
+        return
 
 # common vfx that don't involve characters
 # VFX red flash (on the edges)
+
 label PainFlash:
     window auto hide
     show pain:

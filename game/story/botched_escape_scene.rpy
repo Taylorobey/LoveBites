@@ -117,8 +117,12 @@ label PleadCase:
         # VSFX Akari nod
         show aki bow drawn with dissolve
         with Pause(1.0)
-        show aki bow drawn at jump_in_place
-        with Pause(0.40)
+        show aki bow drawn:
+                subpixel True
+                linear 0.3 ypos 1.45
+                linear 0.25 ypos 1.4 
+                linear 0.2 ypos 1.43 
+        with Pause(0.80)
         show aki bow drawn:
                 ypos 1.43 
         window auto show
@@ -249,11 +253,13 @@ label CallOut:
 
         "There’s a sudden burst of movement and a fierce growling quickly approaching from behind you. Akari’s eyes go wide, and she quickly backs into the foliage, disappearing in the blink of an eye."
 
+        window auto hide
         #Image Wolf Ashina Snarling
         show wolf snarl with dissolve
         stop soundb fadeout 0.5
         #Image Wolf Ashina Docile
         show wolf neutral with dissolve
+        window auto show
 
         "The same beastly wolf that attacked you in the alley lunges forward at the treeline, then stops short, giving up the chase."
 
@@ -281,8 +287,10 @@ label BotchedConverge1:
         you "You… did."
 
         # VSFX Ashina (moving to the right)
-        show ash annoyed at annoyed_pace
-        with Pause(1.0)
+        show ash annoyed at shortpacingreverse
+        with Pause(2.0)
+        show ash annoyed:
+                linear 0.3 xpos 0.34
 
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
@@ -338,17 +346,19 @@ label ResistAshina:
 
         you "You think you can just turn me into some monster, ruin my life and act like I'm supposed to be grateful towards you? No! I've had enough!"
 
+        window auto hide
         pause(0.1)
         #VSFX Ashina (fade out)
         hide ash annoyed with dissolve
-
-        "You turn away from Ashina and intend to put some space between you."
-
+        pause(0.2)
         #Image Cabin Exterior POV Approaching
         show bg forest edge with dissolve:
                 subpixel True xzoom 1.0 yzoom 7.82
         #SFX Walking
         play sound walk loop
+        window auto show
+
+        "You turn away from Ashina and intend to put some space between you."
 
         ash "You will not walk away from me!"
 
@@ -366,7 +376,7 @@ label ResistAshina:
 
         #Image Hearth
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 zoom 0.7
+                subpixel True xpos 0.52 ypos 1.10 zoom 0.7
 
         #Image Ashina Hybrid Angry
         show ash angry hybrid with dissolve
@@ -375,6 +385,17 @@ label ResistAshina:
         stop music fadeout 2.0
         stop crickets fadeout 2.0
         play soundb fireplace volume 0.3 loop fadein 2.0
+
+        play sound run
+        camera:
+                subpixel True 
+                ypos 0 
+                ease_elastic 0.30 ypos 90 
+        with Pause(0.40)
+        camera:
+                ypos 90
+        with Pause(0.2) 
+        stop sound
         window auto show
 
         "Ashina tosses you into the cabin, slams the front door shut, and snarls at you."
@@ -400,7 +421,7 @@ label GoWillingly:
                 subpixel True xzoom 1.0 yzoom 1.0
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 zoom 0.72 
+                subpixel True xpos 0.52 ypos 1.10 zoom 0.72 
 
         #Fireplace
         stop sound
@@ -457,7 +478,6 @@ label BotchedConverge2:
                 # VSFX Ashina (as if pacing in frustration)
                 show ash annoyed at shortpacingreverse
 
-
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
 
                 show ash annoyed at stop_pacing
@@ -474,7 +494,6 @@ label BotchedConverge2:
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."
 
                 #VSFX Ashina (closer)
-
                 show ash sad at step_close_center_fast
                 with Pause(0.60)
 
@@ -528,6 +547,9 @@ label BotchedConverge2:
                 with Pause(1.5)
                 show bg upstairs:
                         zoom 2.0 xalign(0.5) yalign(0.01)
+                
+                camera:
+                        ypos 0
 
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
@@ -578,6 +600,9 @@ label BotchedConverge2:
                 with Pause(1.5)
                 show bg upstairs:
                         zoom 2.0 xalign(0.5) yalign(0.01)
+                with Pause(0.5)
+                camera:
+                        ypos 0
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
                         subpixel True xpos 0.5 zoom 1.0 
