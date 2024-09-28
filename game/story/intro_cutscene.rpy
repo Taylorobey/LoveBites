@@ -7,24 +7,28 @@ label IntroductoryCutscene:
         #Image Street Intersection
         scene bg intersection
         
+        #VSFX Fog (ongoing)
         show fog onlayer screens:
                 alpha 0.75
 
+        show bg intersection:
+                subpixel True 
+                ypos 1.15 zoom 1.15 
+                linear 0.15 ypos 1.0 zoom 1.1 
+                linear 0.15 ypos 1.0 zoom 1.0 
+
         #VSFX White Flash
         #SFX Car Speeding By
+        #Music Introduction
         play music intro_music loop volume 0.5
         play sound car
+        play soundb heart volume 1.5 fadein 0.5
         hide placeholder with flash
-        
-        #VSFX Fog (ongoing)
-        ### need assets for fog?
-        
-        #Music Introduction
-
-        $ renpy.pause(.2)
-
+        show bg intersection:
+                ypos 1.0 zoom 1.0
+        stop soundb
+        pause 0.1
         window auto show
-
 
         narrator "A car speeds through the intersection and your heart nearly leaps out of your chest."
 
@@ -47,7 +51,6 @@ label IntroductoryCutscene:
                 subpixel True
                 offset (0.0, 0.0) zoom 1.0
                 linear 20 offset (1116.0, 891.0) zoom 2.21
-        #does the zoom look good? changed this to be the bg zooming and not camera so we don't have problems with getting the camera back to 1.0 whilst dissolving in the next background
 
         narrator "You don’t want to think about that right now. It’s a wonder how the more exhausted your body is from work, the more active your mind gets."
 
@@ -55,15 +58,11 @@ label IntroductoryCutscene:
                          
         #VSFX Crossfade Image
         #Image Street with one dog
-        scene bg street dog with dissolve
-  
         #VSFX Slow Zoom on Image
-        show bg street dog:
+        show bg street dog with dissolve:
                 subpixel True 
                 offset (0.0, 0.0) zoom 1.0 
-                linear 25 offset (-1773.0, 1881.0) zoom 4.0
-        #same thing here
-
+                linear 25 offset (-2880.0, 1881.0) zoom 4.0
 
         narrator "You’ve always had trouble sleeping, even though it’s been three years since you moved out of that house."
 
@@ -71,17 +70,11 @@ label IntroductoryCutscene:
 
         #VSFX Crossfade Image
         #Image Street with three dogs
-        scene bg street dogs with dissolve:
-                offset (0.0,0.0) zoom 1.72 
-                xanchor 0 xoffset absolute(0.0) 
-        
         #VSFX Slow Zoom on Image
-        ###How much zoom?
-        show bg street dogs:
-                subpixel True 
-                linear 30 xanchor 0 xoffset -1377.0 
+        show bg street dogs with dissolve:
+                offset (684.0, 504.0)  zoom 1.72
+                linear 30 xoffset -685
         window auto show
-
 
         narrator "You know it’s dangerous to walk home alone before sunrise. Maybe part of you wants something to happen to you."
 
@@ -89,10 +82,8 @@ label IntroductoryCutscene:
 
         #VSFX Crossfade Image
         #Image Street with more dogs
-        scene bg street many with dissolve
-
         #VSFX Medium Zoom on Image
-        show bg street many:
+        show bg street many with dissolve:
                 subpixel True 
                 offset (0, 0) zoom 1
                 linear 25 offset (-1000, 1079.0) zoom 4.0
@@ -128,10 +119,10 @@ label IntroductoryCutscene:
         scene bg street full with dissolve 
 
         #VSFX Fast Zoom on Image
-        camera:
+        show bg street full:
                 subpixel True 
                 offset (absolute(0.0), absolute(0.0)) zoom 1.0 
-                linear 10 offset (3204.0, 2124.0) zoom 4.89 
+                linear 10 offset (756, 2124.0) zoom 4.89 
 
         window auto show
 
@@ -150,15 +141,11 @@ label IntroductoryCutscene:
 
         window auto hide
         with Pause(0.5)
-        camera:
-                offset (3204.0, 2124.0) zoom 4.89 
 
         #Image Dead-End Alley
         scene bg alley with dissolve:
-                subpixel True zoom 0.5 
+                subpixel True zoom 0.5
 
-        camera:
-                offset (0,0) zoom 1.0        
         #Image Wolf
         show wolf neutral with dissolve:
                 subpixel True offset (794.0, 297.0)
@@ -210,7 +197,7 @@ label IntroductoryCutscene:
         #Image Game Title Screen
         show logo:
                 xalign 0.5
-                yalign 0.5
+                yalign 0.35
         
         #SFX Howl
         play sound howl volume 0.5
