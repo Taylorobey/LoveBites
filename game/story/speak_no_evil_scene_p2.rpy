@@ -123,14 +123,14 @@ label SpeakNoEvilSceneP2:
                 if humanity >= 3:
                         menu:
                                 #if Humanity is 3, this is the only option, and it auto-succeeds
-                                "{color=#ffff00}{b}It’s okay. You can go.{/color}{/b}":
+                                "{color=#ffff00}{b}It’s okay. You can go.{/b}{/color}":
                                         $ humanity_chance = True
                                         jump HumanityChoice
 
                 elif corruption >= 3:
                         menu:
                                 #if Corruption is 3, this is the only option, and it auto-succeeds
-                                "{color=#1C4587}{b}I don’t want you here.{/color}{/b}":
+                                "{color=#1C4587}{b}I don’t want you here.{/b}{/color}":
                                         $ corrupted_chance = True
                                         jump CorruptedChoice
 
@@ -179,7 +179,7 @@ label SpeakNoEvilSceneP2:
 
                                 #Humanity % Choice
                                 #if Humanity is 1 or 2
-                                "{color=#ffff00}{b}It’s okay. You can go.{/color}{/b}":
+                                "{color=#ffff00}{b}It’s okay. You can go.{/b}{/color}":
                                         $ rand_chance = renpy.random.randint(0,100)
                                         $ compare_chance = humanity * 33
                                         if rand_chance <= compare_chance:
@@ -188,7 +188,7 @@ label SpeakNoEvilSceneP2:
 
                                 #Corruption % Choice
                                 #if Corruption is 1 or 2
-                                "{color=#1C4587}{b}I don’t want you here.{/color}{/b}":
+                                "{color=#1C4587}{b}I don’t want you here.{/b}{/color}":
                                         $ rand_chance = renpy.random.randint(0,100)
                                         $ compare_chance = corruption * 33
                                         if rand_chance <= compare_chance:

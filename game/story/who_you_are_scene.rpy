@@ -26,7 +26,7 @@ label WhoYouAreScene:
         with Pause(0.7)
         stop soundb fadeout 0.5
 
-        "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing {b}{color=#1C4587}outside{/b}{/color} of the door to your room."
+        "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing {color=#1C4587}{b}outside{/b}{/color} of the door to your room."
 
         stop soundb fadeout 0.5
 
@@ -252,7 +252,7 @@ label WhoYouAreScene:
                 subpixel True 
                 pos (0, 0) zoom 1.0 blur 0.0
 
-        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {b}{color=#1C4587}depths{/b}{/color}, if you wanted to. You don’t. You definitely don’t."
+        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {color=#1C4587}{b}depths{/b}{/color}, if you wanted to. You don’t. You definitely don’t."
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
 
@@ -417,7 +417,7 @@ label AppreciationResponse:
 
         ash "Still… that doesn’t mean you cannot feel angry about it. The anger pushes us forward. That is its own kind of strength."
 
-        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {b}{color=#1C4587}sorrow{/b}{/color} that ebbs and flows into a {b}{color=#1C4587}calm{/b}{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
+        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {color=#1C4587}{b}sorrow{/b}{/color} that ebbs and flows into a {color=#1C4587}{b}calm{/b}{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
 
         window auto hide
         pause 1.5

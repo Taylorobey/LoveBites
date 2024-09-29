@@ -102,7 +102,7 @@ label DreamScene:
 
         you "Why did you have to have that stupid baby?!"
 
-        you "I {color=#ff0000}{b}hate{/color}{/b} you! I {color=#ff0000}{b}hate{/color}{/b} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/color}{/b} your baby! I never want to see you again!"
+        you "I {color=#ff0000}{b}hate{/b}{/color} you! I {color=#ff0000}{b}hate{/b}{/color} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/b}{/color} your baby! I never want to see you again!"
 
 
         window auto hide
@@ -212,7 +212,7 @@ label DreamScene:
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
                         #was a little too long for the dialogue box so i split it up
-                        "They gave you something irreplaceable: {color=#ffff00}{b}Hope{/color}{/b}. For every person that walked out of your life, somebody else walked into it. It taught you that no matter how hard things seem now, there’s always a chance at happiness on the other side."
+                        "They gave you something irreplaceable: {color=#ffff00}{b}Hope{/b}{/color}. For every person that walked out of your life, somebody else walked into it. It taught you that no matter how hard things seem now, there’s always a chance at happiness on the other side."
                         
                 #Corruption choice
                 "People are selfish.":
@@ -225,7 +225,7 @@ label DreamScene:
                         window auto show
 
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
-                        "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/color}{/b} be like them."
+                        "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/b}{/color} be like them."
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
         stop music fadeout (2.5)

@@ -202,7 +202,7 @@ label SpeakNoEvilSceneP1:
         play crickets mournfulhowls volume 0.2 fadein 3.0 loop
         play music connection_music volume 0.4 fadein 1.5
 
-        "There’s a haunted look in her eyes. A {b}{color=#1C4587}memory{/b}{/color} tugs at the edge of your consciousness. Crackling fire and {b}{color=#1C4587}mournful{/b}{/color} howls. Bottomless agony, threatening to pull you {b}{color=#1C4587}under{/b}{/color}."
+        "There’s a haunted look in her eyes. A {color=#1C4587}{b}memory{/b}{/color} tugs at the edge of your consciousness. Crackling fire and {color=#1C4587}{b}mournful{/b}{/color} howls. Bottomless agony, threatening to pull you {color=#1C4587}{b}under{/b}{/color}."
 
         show ash sad with dissolve
 
