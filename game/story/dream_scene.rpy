@@ -25,7 +25,9 @@ label DreamScene:
         # Image Shadowy Figure 1
 
         window auto hide
-        show neighbor with dissolve
+        show neighbor onlayer screens with dissolve:
+                alpha 0.8
+                pos (0.35,-0.2)
         window auto show
 
 
@@ -56,7 +58,7 @@ label DreamScene:
 
         window auto hide
         # VSFX Shadowy Figure 1 fade out
-        hide neighbor with dissolve
+        hide neighbor onlayer screens with dissolve
         window auto show
 
 
@@ -68,7 +70,9 @@ label DreamScene:
         window auto hide
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
-        show neighbor with dissolve
+        show neighbor onlayer screens with dissolve:
+                alpha 0.8
+                pos (0.4,-0.2) zoom 1.3
         window auto show
 
 
@@ -103,7 +107,7 @@ label DreamScene:
 
         window auto hide
         # VSFX Shadowy Figure 1 fade out
-        hide neighbor with dissolve
+        hide neighbor onlayer screens with dissolve
         window auto show
 
 
@@ -121,7 +125,9 @@ label DreamScene:
         window auto hide
         # VSFX Shadowy Figure 2 fade in
         # Image Shadowy Figure 2
-        show teacher with dissolve
+        show teacher onlayer screens with dissolve:
+                alpha 0.8
+                pos (0.35,-0.1)
         window auto show
 
 
@@ -174,7 +180,7 @@ label DreamScene:
 
         window auto hide
         # VSFX Shadowy Figure 2 fade out
-        hide teacher with dissolve
+        hide teacher onlayer screens with dissolve
         window auto show
 
 
@@ -195,6 +201,7 @@ label DreamScene:
         menu:
                 #Humanity choice
                 "People are complicated.":
+                        pause 0.3
                 # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
@@ -209,6 +216,7 @@ label DreamScene:
                         
                 #Corruption choice
                 "People are selfish.":
+                        pause 0.3
                         # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
