@@ -107,7 +107,7 @@ label IntroductoryCutscene:
         
         #VSFX Slow Typing, use cps tag
 
-        narrator "{cps=5}YOU FEEL THEIR BREATH ON YOUR HEELS.{/cps}"
+        narrator "{cps=4.5}YOU FEEL THEIR BREATH ON YOUR HEELS.{/cps}"
         camera:
                 offset (0,0) zoom 1.0
 
