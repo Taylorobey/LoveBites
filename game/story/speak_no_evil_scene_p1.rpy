@@ -1,6 +1,6 @@
 label SpeakNoEvilSceneP1:
     $ save_name = "Speak No Evil"
-    $ ash.name = "Ashina"
+
     window auto hide
     
     #This scene triggers if you do not have -2 Approval with Ashina

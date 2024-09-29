@@ -192,7 +192,7 @@ label PleadCase:
         "She turns her dark gaze back to you."
         
         #change name to show Akari after reveal
-        $ aki.name = "Akari"
+        $ aki_name = "Akari"
 
         aki "Name's Akari. We have a common enemy. I will let you go, for now. Help me, and I will help you in turn."
 
@@ -238,7 +238,7 @@ label CallOut:
         show aki thoughtful look with dissolve
 
         #change name to show Akari after reveal
-        $ aki.name = "Akari"
+        $ aki_name = "Akari"
 
 
         aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
@@ -278,7 +278,6 @@ label CallOut:
 label BotchedConverge1:
         # Choices Converge Here
 
-        $ ash.name = "Ashina"
 
         show ash annoyed with dissolve
 
@@ -486,11 +485,11 @@ label BotchedConverge2:
 
                 window auto hide
                 show ash annoyed:
-                        linear 0.5 pos (0.34, 1.45)
+                        linear 0.5 xpos 0.34
                 with Pause(0.5)
                 # Image Ashina sad
                 show ash sad with dissolve:
-                        pos (0.34, 1.45)
+                        xpos 0.34
                 window auto show
 
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."

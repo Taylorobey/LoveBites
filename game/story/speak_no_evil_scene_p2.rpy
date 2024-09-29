@@ -280,7 +280,8 @@ label CareAboutAshina:
         you "And, it’s not like I was living a happy life either. I’ve been wanting to escape for a long time. This isn’t what I thought would happen, but trust me when I say it’s what I want."
         
         if cam_approval >= 0:
-                play music goodbyes_music volume 0.7 fadein 2.0
+                stop music fadeout 1.0
+                play music goodbyes_music volume 0.7 fadein 2.5
                 
                 #Image Cameron Thoughtful
                 show cam thoughtful with dissolve
@@ -325,7 +326,8 @@ label ShellKillYou:
 
         if cam_approval >= 0:
                 #Music Goodbyes
-                play music goodbyes_music volume 0.7 fadein 2.0
+                stop music fadeout 1.0
+                play music goodbyes_music volume 0.7 fadein 2.5
                 #Image Cameron Scared
                 show cam scared with dissolve
                 with Pause(0.2)
@@ -476,7 +478,8 @@ label HumanityChoice:
 
                 #VSFX Screen (tints yellow)
                 #Music Goodbyes
-                play music goodbyes_music volume 0.7 fadein 2.0
+                stop music fadeout 1.0
+                play music goodbyes_music volume 0.7 fadein 2.5
                 #Image Cameron Neutral
                 
                 show cam neutral with dissolve

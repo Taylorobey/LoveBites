@@ -1,7 +1,6 @@
 label WakingScene:
         $ save_name = "Careful What You Wish For"
 
-
         window auto hide
 
         scene bg color black with dissolve
@@ -204,7 +203,7 @@ label WakingScene:
         
         menu:
                 #corruption choice
-                "Eat Ashina's meal.":
+                "Eat the meal.":
                         $ corruption += 1
                         $ ash_approval += 1
                         $ meat_eaten = True
@@ -365,7 +364,12 @@ label ExamineWindow:
         jump HeadtoBed
 
 label HeadtoBed:
-        pause 0.3
+        #pause 0.3
+        #otherwise the tint stays if you click too fast or use skip function
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
+
+        pause 1.0
         #choices converge here
 
         stop music fadeout 1.0

@@ -1,14 +1,12 @@
 ﻿# Declare characters used by this game.
-define aki              = Character("???", color="#982313")
-#can we call her aki instead
-#should probably do the same as ashina and set name to ???, but with red color
-define ash              = Character("???", color="#1e22ae")
-#yes, that's the same shade of blue as everything else.
-#changed name to "???" and i think we'll just $ it to ashina when mc learns her name
-define cam              = Character("Cameron", color="#e7ab19")
-define you              = Character("You", color="#a3a3a3")
-define neighbor         = Character("Neighbor", color="#411c87")
-define teacher          = Character("Teacher", color="#411c87")
+define aki = DynamicCharacter("aki_name", color="#982313", who_outlines=[(3, "#e7d4d2", absolute(0), absolute(0))])
+
+define ash = DynamicCharacter("ash_name", color="#1e22ae", who_outlines=[(3, "#d5d6eb", absolute(0), absolute(0))])
+
+define cam              = Character("Cameron", color="#e7ab19", who_outlines=[(1, "#493505", absolute(0), absolute(0))])
+define you              = Character("You", color="#cecece", who_outlines=[(1, "#292929", absolute(0), absolute(0))])
+define neighbor         = Character("Neighbor", color="#444444", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))])
+define teacher          = Character("Teacher", color="#292929", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))])
 
 # Declare other variables to track for this game.
 define humanity         = 0
@@ -83,6 +81,10 @@ label start:
     #this is needed for zooms to work properly
     camera:
         perspective True
+
+    #name defines
+    $ aki_name = "???"
+    $ ash_name = "???"
 
     #temporary jump for testing
     #jump BotchedEscapeScene

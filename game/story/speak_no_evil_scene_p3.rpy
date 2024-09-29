@@ -1,6 +1,5 @@
 label SpeakNoEvilSceneP3:
         $ save_name = "See No Evil"
-        $ ash.name = "Ashina"
         
         #Choices Converge here
 
