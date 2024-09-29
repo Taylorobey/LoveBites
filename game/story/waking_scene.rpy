@@ -49,12 +49,12 @@ label WakingScene:
         menu:
                 "You regret what you wished for.":
                         $ humanity += 1
-                        pause 0.2
+                        pause 0.3
 
                         "Flirting with disaster finally caught up with you. What the hell were you thinking? You vow that if you ever escape this place, you're going to have a serious think about your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
-                        pause 0.2
+                        pause 0.3
 
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right?"
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
@@ -208,7 +208,7 @@ label WakingScene:
                         $ corruption += 1
                         $ ash_approval += 1
                         $ meat_eaten = True
-                        pause 0.2
+                        pause 0.3
                         "The meat is… surprisingly palatable. It has a deep, tender richness. You barely restrain yourself from stuffing your face ravenously. The clawing hunger soon subsides."
                         "You realize the woman has been watching you."
 
@@ -219,7 +219,7 @@ label WakingScene:
                 #humanity choice
                 "Abstain from eating.":
                         $ humanity += 1
-                        pause 0.2
+                        pause 0.3
                         "You turn away from the plate on the side table. Ashina sighs."
 
                         show ash neutral with dissolve
@@ -251,8 +251,6 @@ label WakingScene:
 
         window auto hide
 
-        #I set these to jump to labels, that way if we have nested menus, the indents don't get out of hand.
-        #also, it looks neater for longer sections.
         menu:
                 "Examine the window.":
                         jump ExamineWindow
@@ -260,7 +258,7 @@ label WakingScene:
                         jump HeadtoBed
 
 label ExamineWindow:
-        pause 0.2
+        pause 0.3
         
         #sfx walking
         play sound walk
@@ -322,6 +320,11 @@ label ExamineWindow:
         
         
         if meat_eaten == True:
+                #otherwise the tint stays if you click too fast or use skip function
+                camera:
+                        linear 1.0 matrixcolor TintMatrix("#fff")
+                pause 1.0
+                
                 window auto show
 
                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
@@ -330,7 +333,11 @@ label ExamineWindow:
         else:
                 menu:
                         "Go to bed.":
-                                pause 0.2
+                                pause 0.3
+                                #otherwise the tint stays if you click too fast or use skip function
+                                camera:
+                                        linear 1.0 matrixcolor TintMatrix("#fff")
+                                pause 1.0
                                 window auto show
 
                                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
@@ -339,7 +346,7 @@ label ExamineWindow:
 
                         "Toss the meat to the dogs.":
                                 $ dog_approval += 1
-                                pause 0.2
+                                pause 0.3
                                 window auto show
 
                                 "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
@@ -348,15 +355,16 @@ label ExamineWindow:
 
                                 window auto hide
 
-        pause(0.5)
-        #otherwise the tint stays if you click too fast or use skip function
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
+                                #otherwise the tint stays if you click too fast or use skip function
+                                camera:
+                                        linear 1.0 matrixcolor TintMatrix("#fff")
+
+                                pause 1.0
 
         jump HeadtoBed
 
 label HeadtoBed:
-        pause 0.2
+        pause 0.3
         #choices converge here
 
         stop music fadeout 1.0
@@ -372,9 +380,6 @@ label HeadtoBed:
         #VSFX black screen
         scene bg color black with dissolve
         with Pause(2.0)
-        pause(0.5)
-        #otherwise the tint stays if you click too fast or use skip function
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
+
         #Move to failed rescue scene
         jump FailedRescueScene

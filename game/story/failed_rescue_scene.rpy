@@ -17,36 +17,46 @@ label FailedRescueScene:
         window auto show
 
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
-        #window auto hide
+        window auto hide
 
-        # Image Captive Cabin Room (full view) 
-        scene bg room mc with dissolve
+        # Image Captive Cabin Room (full view)
+        show bg room mc with dissolve:
+                subpixel True 
+                pos (0.62, 1.2) zoom 1.25 
+                linear 0.91 pos (0.38, 1.2) zoom 1.25 
+                linear 0.34 pos (0.5, 1.0) zoom 1.1
+        with Pause(1)
+        show bg room mc:
+                pos (0.5, 1.0) zoom 1.1
 
         # VSFX Slow Pan or Back And Forth Pan (as if looking around the room, whichever looks more natural, before settling on the window)
-        #camera:
-                #subpixel True 
-                #parallel:
-                        #pos (0, 0) 
-                        #linear 0.77 pos (-9, -153) 
-                        #linear 0.33 pos (-9, -153) 
-                        #linear 1.43 pos (-594, -195) 
-                        #linear 0.32 pos (-594, -195) 
-                        #linear 0.48 pos (0, 0) 
-                #parallel:
-                        #zoom 1.0 
-                        #linear 0.78 zoom 1.25 
-                        #linear 0.34 zoom 1.25 
-                        #linear 1.41 zoom 1.31 
-                        #linear 0.32 zoom 1.31 
-                        #linear 0.48 zoom 1.0 
-        #with Pause(3.43)
-        #camera:
-                #pos (0, 0) zoom 1.0 
-        #window auto show
+        
+        window auto show
 
         "Your eyes search the room for the noise and you notice a struggling figure wedged into the window. Somehow, even without getting a clear view, you know who it is."
 
+        window auto hide
+        camera:
+                subpixel True 
+                ypos 0 
+                linear 0.15 ypos -90
+                linear 0.15 ypos 0 
+        with Pause(0.40)
+        camera:
+                ypos 0 
+        window auto show
+
         you "Cameron?!"
+
+        window auto hide
+        show bg room mc:
+                subpixel True 
+                zoom 1.1 
+                linear 0.30 zoom 1.0 
+        with Pause(0.40)
+        show bg room mc:
+                zoom 1.0 
+        window auto show
 
         "You quickly realize you should be quiet if you don’t want to draw any unwanted attention, so you lower your voice to a hushed tone."
 
@@ -54,12 +64,12 @@ label FailedRescueScene:
 
         cam "What does it look like? I’m here to break you out! That is, if I could squeeze through this pinche window!"
 
+        window auto hide
         # SFX Walking
         play soundb walk noloop
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
-
-        window auto hide
+        pause 0.2
         show bg room mc at walk_to_window
         with Pause(1.0)
         window auto show
@@ -131,16 +141,16 @@ label FailedRescueScene:
         show cam nervous
         with Pause(0.5)
 
-        show cam friendly with dissolve
+        show cam neutral with dissolve
         with Pause(0.5)
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
-        show cam friendly at pacing
+        show cam neutral at pacing
         window auto show
 
 
         cam "I thought about going to the police, but no way they’d believe me. I went to work and tried to forget about it, but I couldn’t. So, here I am."
 
-        show cam friendly at stop_pacing
+        show cam neutral at stop_pacing
 
         "There’s a long pause before you respond, not really sure how to take in all of that information."
 
@@ -174,6 +184,12 @@ label FailedRescueScene:
 
         # Image Cameron Friendly
         show cam friendly with dissolve
+        show cam friendly:
+                subpixel True 
+                linear 0.15 ypos 0.95
+                linear 0.10 ypos 1.0
+                linear 0.05 ypos 1.03
+                linear 0.05 ypos 1.0
 
         cam "I know, believe me. My heart was pounding the whole way here!"
 
@@ -218,6 +234,8 @@ label GoWithCam:
         $ cam_approval += 1
         $ ash_approval -= 1
 
+        pause 0.3
+
         window auto show
 
 
@@ -225,12 +243,16 @@ label GoWithCam:
 
         you "Yeah, let’s get out of here."
 
+        window auto hide
+
         jump CamCaught
 
 label UrgeCamLeave:
 
         #Ashina Approval Choice:
         $ ash_approval +=1
+
+        pause 0.3
 
         window auto show
 
@@ -274,10 +296,12 @@ label UrgeCamLeave:
 
         cam "I’ll get help, and I’ll come back. Just hang tight, okay?"
 
+        window auto hide
+
         jump CamCaught
 
 label CamCaught:
-
+        pause 0.3
         # Image Cabin Door Closed
         scene bg door closed with dissolve
 
@@ -286,6 +310,9 @@ label CamCaught:
                 xalign 0.6 zoom 1.5 
 
         stop music fadeout 2.0
+
+        window auto show
+
         "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
 
         # SFX Creak
@@ -377,6 +404,7 @@ label CamCaught:
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
+        window auto hide
         stop music fadeout 2.0
 
         # VSFX Ashina and Cameron quickly Fade Out
@@ -391,6 +419,7 @@ label CamCaught:
 
         # Music Cabin
         play music cabin_music volume 0.3 fadein 2.0
+        window auto show
 
         "Before you even have a chance to protest, your captor shuts the door. Your legs shake, threatening to give out, and you stumble back towards the bed."
 
@@ -400,12 +429,6 @@ label CamCaught:
         "You have to be careful. Before, everything you did only affected you. Frankly, those stakes weren’t very high. You’ve felt like your life is worth very little for a while now."
 
         "But now, everything you do has Cameron’s very life on the line. Everything counts now, and you\’ll do anything in your power to keep them safe."
-
-        "Somehow, another wave of exhaustion hits you. Perhaps it’s sleep debt catching up to you."
-
-        # Image Captive Cabin Room (angled, zoomed in on ceiling)
-        scene bg room ceiling with dissolve
-        # VSFX Blur (as if falling asleep)
 
         window auto hide
         camera:
@@ -418,10 +441,32 @@ label CamCaught:
                 blur 0.0 
         window auto show
 
+        "Somehow, another wave of exhaustion hits you. Perhaps it’s sleep debt catching up to you."
+
+        play sound fast_walk
+        pause 0.1
+        # Image Captive Cabin Room (angled, zoomed in on ceiling)
+        scene bg room ceiling with dissolve
+        stop sound
+        # VSFX Blur (as if falling asleep)
+
+        window auto hide
+        camera:
+                subpixel True 
+                linear 1.00 blur 5.0 
+                linear 1.00 blur 20.0 
+                linear 1.00 blur 0.0
+        with Pause(3)
+        camera:
+                blur 0.0
+        window auto show
+
 
         "You lie down without thinking, your hands curling into fists and tears welling in your eyes. You fight to stay conscious, but it’s no use."
 
         stop crickets fadeout 2.5
+        show bg color black onlayer screens with dissolve:
+                alpha 0.5
 
         "…Just before you drift off, you notice your nails feel unusually sharp."
 
@@ -429,6 +474,7 @@ label CamCaught:
 
         # Image Black Screen
         scene bg color black with dissolve
+        hide bg color black onlayer screens
         with Pause(2.0)
 
         #this scene breaks the dreamscene, but dreamscene plays fine if you jump straight to it

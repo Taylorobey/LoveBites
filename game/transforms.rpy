@@ -72,7 +72,7 @@ transform pacing:
     repeat
 
 transform stop_pacing:
-    linear 1.5 xpos 0.5
+    linear 1.0 xpos 0.5
     linear 0.0 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
 
 transform shortpacing:
@@ -154,7 +154,7 @@ transform cam_ground_shake:
 #transforms for jumping in place
 transform jump_in_place:
     subpixel True 
-    linear 0.15 ypos 1.45 
+    linear 0.15 ypos 1.45
     linear 0.10 ypos 1.4 
     linear 0.05 ypos 1.43
     linear 0.05 ypos 1.45
