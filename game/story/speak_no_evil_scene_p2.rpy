@@ -2,6 +2,8 @@ label SpeakNoEvilSceneP2:
         $ save_name = "Hear No Evil"
 
         window auto hide
+        pause 0.5
+        play music eerie_outdoors_music
         
         #Image Cabin Door Closed
         show bg door closed:
@@ -197,6 +199,7 @@ label SpeakNoEvilSceneP2:
                 hide placeholder
 
 label DieIfTell:
+        pause 0.3
         window auto show
 
         you "Ashina won't be the only one affected if you tell people about this."
@@ -210,7 +213,7 @@ label DieIfTell:
 
         if cam_approval >= 0:
                 #Music Goodbyes
-                play music goodbyes_music volume 0.3
+                play music goodbyes_music volume 0.7 fadein 2.0
                 #Image Cameron Frustrated
                 show cam frustrated with dissolve
                 with Pause(1.0)
@@ -255,6 +258,7 @@ label DieIfTell:
                 jump ChoicetoRescue
 
 label CareAboutAshina:
+        pause 0.3
         window auto show
 
         you "Ashina isn’t all bad, Cam. I don’t want anything to happen to her. I… I care about her. She isn’t keeping me here, I want to stay."
@@ -276,7 +280,7 @@ label CareAboutAshina:
         you "And, it’s not like I was living a happy life either. I’ve been wanting to escape for a long time. This isn’t what I thought would happen, but trust me when I say it’s what I want."
         
         if cam_approval >= 0:
-                play music goodbyes_music volume 0.3
+                play music goodbyes_music volume 0.7 fadein 2.0
                 
                 #Image Cameron Thoughtful
                 show cam thoughtful with dissolve
@@ -314,13 +318,14 @@ label CareAboutAshina:
                 jump ChoicetoRescue
 
 label ShellKillYou:
+        pause 0.3
         window auto show
 
         you "This is serious, Cam. If you don’t agree to this, if she even suspects that you aren’t one hundred percent on board, she’s going to kill you. I know you. You’re not cut out for this."
 
         if cam_approval >= 0:
                 #Music Goodbyes
-                play music goodbyes_music volume 0.3
+                play music goodbyes_music volume 0.7 fadein 2.0
                 #Image Cameron Scared
                 show cam scared with dissolve
                 with Pause(0.2)
@@ -375,6 +380,7 @@ label ChoicetoRescue:
         menu:
                 #Narrative Choice
                 "Return to Ashina.":
+                        pause 0.3
                         #VSFX Cameron (fade out)
                         #SFX Walking
                         #Image Cabin Door Open
@@ -396,12 +402,14 @@ label ChoicetoRescue:
                         jump HelpCameronEscape
 
 label HelpCameronEscape:
+        pause 0.3
         window auto show
 
         narrator "Sorry, this option isn't available in the demo."
         jump ChoicetoRescue
 
 label CorruptedChoice:
+        pause 0.3
         window auto show
         
         "You give Cameron a flat, tired look."
@@ -454,6 +462,7 @@ label CorruptedChoice:
         jump SpeakNoEvilSceneP3
 
 label HumanityChoice:
+        pause 0.3
         window auto show
 
         "Your gaze softens, and you reach forward, taking Cameron’s hand."
@@ -467,7 +476,7 @@ label HumanityChoice:
 
                 #VSFX Screen (tints yellow)
                 #Music Goodbyes
-                play music goodbyes_music volume 0.3
+                play music goodbyes_music volume 0.7 fadein 2.0
                 #Image Cameron Neutral
                 
                 show cam neutral with dissolve
