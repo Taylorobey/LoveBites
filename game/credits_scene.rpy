@@ -9,15 +9,15 @@ label CreditsScene:
     #with dissolve
     #with Pause(2.0)
     #hide theend with dissolve
-    play music cabin_music volume 0.3 fadein 1.0
+    play music main_menu volume 0.6 fadein 1.0
     show thanks:
         yanchor 0.5 ypos 0.5
         xanchor 0.5 xpos 0.5
     with dissolve
     with Pause(2)
     hide thanks with dissolve
-    show cred at Move((0.5, 3.5), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
+    show cred at Move((0.5, 3.9), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
     pause(credits_speed)
-    stop music fadeout 1.0
-    pause (1.0)
+    stop music fadeout 2.0
+    pause (2.3)
     return
