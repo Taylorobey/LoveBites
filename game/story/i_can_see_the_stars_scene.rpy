@@ -278,27 +278,71 @@ label ICanSeeTheStarsScene:
             you "..."
 
             window auto hide
-            centered "Looking at the brilliant ocean of stars above makes you realize something."
+            image stars 1 = Text("Looking at the brilliant ocean of stars above makes you realize something.", style = "skytext")
+            show stars 1 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "All this time, you've felt trapped and hopeless." 
+            image stars 2 = Text("All this time, you've felt trapped and hopeless.", style = "skytext")
+            show stars 2 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "You've felt as though your life were meaningless."
+            image stars 3 = Text("You've felt as though your life were meaningless.", style = "skytext")
+            show stars 3 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "You’ve felt as though things would never get better, no matter what you did."
+            image stars 4 = Text("You’ve felt as though things would never get better, no matter what you did.", style = "skytext")
+            show stars 4 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "Every day was a steady current, threatening to drag you under."
+            image stars 5 = Text("Every day was a steady current, threatening to drag you under.", style = "skytext")
+            show stars 5 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "In all your turmoil, you forgot something."
+            image stars 6 = Text("In all your turmoil, you forgot something.", style = "skytext")
+            show stars 6 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "Something everyone knows when they’re young and ends up forgetting."
+            image stars 7 = Text("Something everyone knows when they’re young and ends up forgetting.", style = "skytext")
+            show stars 7 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "There is so much beauty to be found in the world around you."
+            image stars 8 = Text("There is so much beauty to be found in the world around you.", style = "skytext")
+            show stars 8 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "Even in the bleakest life, if you simply stop and look, you can find hope. Wonder. Happiness. A reason to keep on living."
+            image stars 9 = Text("Even in the bleakest life, if you simply stop and look, you can find hope. Wonder. Happiness. A reason to keep on living.", style = "skytext")
+            show stars 9 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
-            centered "The thought brings tears to your eyes, emotions welling up within you." 
+            image stars 10 = Text("The thought brings tears to your eyes, emotions welling up within you.", style = "skytext")
+            show stars 10 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5) 
 
-            centered "How lucky you are, right here, right now, to be alive."
+            image stars 11 = Text("How lucky you are, right here, right now, to be alive.", style = "skytext")
+            show stars 11 with dissolve
+            pause(10.0)
+            hide stars with dissolve
+            pause(0.5)
 
         #Corruption Choice
         "Depressing.":
@@ -307,38 +351,94 @@ label ICanSeeTheStarsScene:
             you "..."
 
             window auto hide
-            centered "Looking at the vast, dotted void above fills you with a profound emptiness."
+            image skies 1 = Text("Looking at the vast, dotted void above fills you with a profound emptiness.", style = "skytext")
+            show skies 1 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "The view reminds you of how small you are in the grand scheme of the universe."
+            image skies 2 = Text("The view reminds you of how small you are in the grand scheme of the universe.", style = "skytext")
+            show skies 2 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "How meaningless you are to those celestial bodies in the sky." 
+            image skies 3 = Text("How meaningless you are to those celestial bodies in the sky.", style = "skytext")
+            show skies 3 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5) 
 
-            centered "How you yearn to be as free, as grand, as beautiful as they are." 
+            image skies 4 = Text("How you yearn to be as free, as grand, as beautiful as they are.", style = "skytext")
+            show skies 4 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5) 
 
-            centered "Try as you may, these things will always be out of your reach."
+            image skies 5 = Text("Try as you may, these things will always be out of your reach.", style = "skytext")
+            show skies 5 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "Your life is insignificant."
+            image skies 6 = Text("Your life is insignificant.", style = "skytext")
+            show skies 6 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "You are insignificant."
+            image skies 7 = Text("You are insignificant.", style = "skytext")
+            show skies 7 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "But, that's a comfort in and of itself." 
+            image skies 8 = Text("But, that's a comfort in and of itself.", style = "skytext")
+            show skies 8 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5) 
 
-            centered "Nothing really matters, so you can do whatever you want with your life."
+            image skies 9 = Text("Nothing really matters, so you can do whatever you want with your life.", style = "skytext")
+            show skies 9 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "Everything. Anything. Nothing at all. It's all the same in the end."
+            image skies 10 = Text("Everything. Anything. Nothing at all. It's all the same in the end.", style = "skytext")
+            show skies 10 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "You take in a deep breath, releasing the negative energy within you."
+            image skies 11 = Text("You take in a deep breath, releasing the negative energy within you.", style = "skytext")
+            show skies 11 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
 
-            centered "How strangely comforting it is, accepting your place within the universe."
+            image skies 12 = Text("How strangely comforting it is, accepting your place within the universe.", style = "skytext")
+            show skies 12 with dissolve
+            pause(10.0)
+            hide skies with dissolve
+            pause(0.5)
     
     #VSFX Pan (pan down to show the treeline)
     #Image Ashina Thoughtful (fade in)
+    hide starryeffect onlayer screens with dissolve
+    camera:
+        subpixel True
+        pos (0, -1080) 
+        linear 4.5 pos (0, 0)
+    show ash thoughtful
+    pause(4.5)
 
     ash "Speechless, are you? I can't say I blame you."
 
     you "Ashina…"
 
     #Image Ashina Neutral
+    show ash neutral with dissolve
 
     ash "What is it?"
 
@@ -357,26 +457,31 @@ label ICanSeeTheStarsScene:
                 you "I need to tell you something. Someone is after you. The other night-"
 
                 #Image Ashina Friendly
+                show ash friendly with dissolve
 
                 ash "What, that little miscreant in the woods? I’ve been giving her the run around for years, don’t you fret your little head about it."
 
                 #Image Ashina Concerned
+                show ash friendly with dissolve
 
                 "Ashina waves a hand dismissively, but you catch her arm and look at her meaningfully. It gives her pause enough for you to carry on."
 
                 you "The other night, when… I went outside against your wishes…"
 
                 #Image Ashina Neutral
+                show ash neutral with dissolve
 
                 you "I met a huntress armed with a bow and arrow, who I now know is named Akari. She shot a note up to my window earlier tonight, asking to meet in two days’ time, and told me she intends to kill you, Ashina. Soon."
 
                 #Image Ashina Thoughtful
+                show ash thoughtful with dissolve
 
                 ash "Hm, I'd like to see her try. She's delusional if she thinks she can take me down. I will devise a way to deal with her, don’t you worry. I have no need- hm."
                 
                 "Ashina pauses, as if reconsidering her words. The arrogant atmosphere around her melts away, and she visibly softens. She takes a breath before meeting your gaze."
 
                 #Image Ashina Caring
+                show ash caring with dissolve
 
                 ash "Forgive me. I… appreciate you telling me this. I am glad I arrived that night before the huntress could do you any harm. My heart could not bear to lose yet another… of my kin."
 
@@ -385,10 +490,12 @@ label ICanSeeTheStarsScene:
                 you "What should I do about the meeting then? Akari will be expecting me."
 
                 #Image Ashina Thoughtful
+                show ash thoughtful with dissolve
 
                 ash "Hm… Meet with her. Best she doesn’t know that anything is amiss. Learn her plan, and then we can prepare accordingly."
 
                 #Image Ashina Neutral
+                show ash neutral with dissolve
 
                 ash "You shouldn't be in any danger if she has no reason to believe you'll betray her. However… If something happens, call out to me, and I will come to your aid."
             #Akari Route Choice
@@ -400,6 +507,11 @@ label ICanSeeTheStarsScene:
 
     #VSFX Ashina (fade out)
     #VSFX Pan (pan back up to the sky)
+    camera:
+        subpixel True
+        pos (0, 0) 
+        linear 4.5 pos (0, -1080)
+    pause(4.5)
 
     if ash_approval >= 3:
         "Ashina moves closer to you, her hand slowly hooking around your upper arm. There’s a pause, then her head comes to rest on your shoulder, just as cautious as her hand."

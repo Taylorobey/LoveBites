@@ -41,6 +41,9 @@ style bigtext:
     yalign 0.5
     outlines [(5, "#b70000", 0, 0)]
     italic True
+style skytext:
+    yalign -0.55
+    xalign 0.5
 
 ## Define transforms for use in scripts
 # pacing
@@ -64,7 +67,7 @@ init python:
 
 #Rolling credits
 init python:
-    credits = ('Project Lead', 'BizzyBee'), ('Artists', 'SabiSabi\nShapeshift Stitch\nrobyn'),  ('Programmers', 'Taylorobey\nDot\nBizzyBee\nHilarionDev'), ('GUI', 'Chiara'), ('Writing', 'starsapphire\nBizzyBee'), ('Music', 'Annish\nBizzyBee'), ('Voice Acting', 'MariaCorcobadoVA as The Narrator\nsamgrace as Ashina\nLauren Pak as Akari\nTwigs24 as Cameron'), ('UI Sound', 'Annish'), ('Supplementary Music and SFX', 'Freesound.org\nPublic Domain')
+    credits = ('Project Lead', 'BizzyBee'), ('Artists', 'SabiSabi\nShapeshift Stitch\nrobyn'),  ('Programmers', 'Taylorobey\ndot\nBizzyBee\nHilarionDev'), ('GUI', 'Chiara'), ('Writing', 'starsapphire\nBizzyBee'), ('Music', 'Annish\nBizzyBee'), ('Voice Acting', 'MariaCorcobadoVA as The Narrator\nsamgrace as Ashina\nLauren Pak as Akari\nTwigs24 as Cameron'), ('UI Sound', 'Annish'), ('Supplementary Music and SFX', 'Freesound.org\nPublic Domain')
     credits_s = "{size=150}Credits\n"
     c1 = ''
     for c in credits:
