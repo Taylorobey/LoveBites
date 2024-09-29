@@ -1,23 +1,24 @@
 label BotchedEscapeScene:
-        #stop audio from previous scene
-        #stop sound
-        ###I don't think we should rely on this, also need the fireplace from prev scene
-        ###Once you settle on a solution you are satisfied with, I can at least 
-        #incorporate the part that hides the quick menu in the transforms if needed
+        
         window auto hide
 
         #Image Cabin Hearth
-        scene bg hearth
+        show bg hearth:
+                subpixel True
+                zoom 1.05 pos(1.44, -0.33)
+                linear 10.0 xpos -0.15
 
         window auto show
-
+        play sound walk loop
 
         "You're left with your own thoughts as Ashina departs upstairs. You begin to wander the cabin aimlessly."
 
+        stop sound
         # SFX Crickets
         play crickets crickets fadein 0.5 loop
         # Image Cabin Door Open
-        show bg door open with dissolve
+        show bg door open with dissolve:
+                pos (0.5,0.0)
         #SFX Fireplace (fade out)
         stop soundb fadeout 2.0
 
@@ -28,11 +29,13 @@ label BotchedEscapeScene:
         menu:
                 # Narrative Choice
                 "Try to escape.":
+                        pause 0.3
                         "Ashina should be asleep by now. This is your chance to escape and bring back help for Cameron."
 
                 #Narrative Choice
                 "Get some fresh air.":
-                                "It would be nice to get some fresh air. You've been stuck inside for a couple days now, and you can’t help feeling a bit claustrophobic."
+                        pause 0.3
+                        "It would be nice to get some fresh air. You've been stuck inside for a couple days now, and you can’t help feeling a bit claustrophobic."
 
         #choices converge here
 
@@ -40,7 +43,7 @@ label BotchedEscapeScene:
 
         # Image Cabin Exterior Leaving POV No Dogs
         show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82 
+                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
 
         # Music Eerie Outdoors
         play music eerie_outdoors_music volume 1.5
@@ -56,7 +59,7 @@ label BotchedEscapeScene:
         # SFX Walking
         # Image Forest Edge
         show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0
+                subpixel True xzoom 1.0 yzoom 1.0 ypos -1.07
 
         "You continue on, making it to the edge of the forest. You can hear your heart pounding in your chest. Were you really able to just… walk out of here?"
 
@@ -107,6 +110,7 @@ label BotchedEscapeScene:
                         jump CallOut
 
 label PleadCase:
+        pause 0.3
         window auto show
 
 
@@ -206,6 +210,7 @@ label PleadCase:
         jump BotchedConverge1
 
 label CallOut:
+        pause 0.3
         # VSFX Akari (as if jumping slightly in place)
         show aki bow drawn at jump_in_place
         with Pause(0.40)
@@ -220,21 +225,20 @@ label CallOut:
 
         aki "Who are you yelling for? You should be the only one here."
 
+        window auto hide
         # VSFX Akari (move slightly back and forth horizontally, a small look around)
         show aki bow nocked side at shortpacing
+        pause 3.0
+        show aki bow nocked side at stop_shortpacing
+        window auto show
 
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
         
-
-        window auto hide
-        show aki bow nocked side at stop_shortpacing
-        with Pause(1.0)
         # Image Akari Thoughtful
         show aki thoughtful look with dissolve
 
         #change name to show Akari after reveal
         $ aki.name = "Akari"
-        window auto show
 
 
         aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
@@ -274,6 +278,8 @@ label CallOut:
 label BotchedConverge1:
         # Choices Converge Here
 
+        $ ash.name = "Ashina"
+
         show ash annoyed with dissolve
 
         ash "I seem to recall telling you to stay inside, did I not, pup?"
@@ -286,11 +292,13 @@ label BotchedConverge1:
 
         you "You… did."
 
+        window auto hide
         # VSFX Ashina (moving to the right)
         show ash annoyed at shortpacingreverse
         with Pause(2.0)
         show ash annoyed:
-                linear 0.3 xpos 0.34
+                linear 0.2 xpos 0.34
+        window auto show
 
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
@@ -305,7 +313,6 @@ label BotchedConverge1:
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         
 
-        window auto hide
         show ash annoyed:
                 xpos 0.34
         with Pause(0.5) 
@@ -314,7 +321,6 @@ label BotchedConverge1:
         # Image Ashina Hybrid Angry
         # VSFX Ashina (closer)
         show ash angry hybrid at step_close_center_fast
-        window auto show
 
 
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
@@ -337,6 +343,7 @@ label BotchedConverge1:
                         jump GoWillingly  
                                                      
 label ResistAshina:
+        pause 0.3
         window auto show
 
         
@@ -353,7 +360,7 @@ label ResistAshina:
         pause(0.2)
         #Image Cabin Exterior POV Approaching
         show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82
+                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
         #SFX Walking
         play sound walk loop
         window auto show
@@ -371,12 +378,12 @@ label ResistAshina:
         window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0
+                subpixel True xzoom 1.0 yzoom 1.0 pos (0.5,0.0)
         with Pause(1.0)
 
         #Image Hearth
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos 1.10 zoom 0.7
+                subpixel True xpos 0.52 ypos -0.1 zoom 0.7
 
         #Image Ashina Hybrid Angry
         show ash angry hybrid with dissolve
@@ -389,7 +396,7 @@ label ResistAshina:
         play sound run
         camera:
                 subpixel True 
-                ypos 0 
+                ypos -0.1
                 ease_elastic 0.30 ypos 90 
         with Pause(0.40)
         camera:
@@ -405,10 +412,10 @@ label ResistAshina:
         jump BotchedConverge2
 
 label GoWillingly:
-        pause 0.5
+        pause 0.6
         hide ash annoyed with dissolve
         show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82
+                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
         
         window auto show
 
@@ -418,10 +425,10 @@ label GoWillingly:
         play sound walk loop
         with Pause(1.0)
         show bg door open with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0
+                subpixel True xzoom 1.0 yzoom 1.0 pos (0.5,0.0)
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos 1.10 zoom 0.72 
+                subpixel True xpos 0.52 ypos -0.1 zoom 0.72 
 
         #Fireplace
         stop sound
@@ -444,7 +451,7 @@ label GoWillingly:
         play sound run
         camera:
                 subpixel True 
-                ypos 0 
+                ypos -0.1
                 ease_elastic 0.30 ypos 90 
         with Pause(0.40)
         camera:
@@ -453,9 +460,6 @@ label GoWillingly:
         stop sound
         show ash concerned with dissolve
         window auto show
-
-        # Image Ashina Concerned
-        show ash concerned with dissolve
 
         "You stumble as your foot catches the edge of the walkway, causing you to topple over. Ashina regards you hesitantly."
 
@@ -480,15 +484,13 @@ label BotchedConverge2:
 
                 "Ashina starts pacing as you look up at her from the ground, stunned. After a few moments, she stops and looks down at you with a softer expression."
 
-                show ash annoyed at stop_pacing
-
                 window auto hide
                 show ash annoyed:
-                        pos (0.34, 1.43) yrotate 0.0
+                        linear 0.5 pos (0.34, 1.45)
                 with Pause(0.5)
                 # Image Ashina sad
                 show ash sad with dissolve:
-                        pos (0.34, 1.43)
+                        pos (0.34, 1.45)
                 window auto show
 
                 ash "Forgive me. You have been… mostly cooperative, I must admit, and you do not deserve my harshness. I understand that you would feel defensive, with how I approached you."
@@ -536,10 +538,14 @@ label BotchedConverge2:
                 #SFX Walking
                 play sound walk loop
                 show bg upstairs with dissolve:
-                        subpixel True xpos 0.5 zoom 1.0
+                        subpixel True xpos 0.5 ypos 0 zoom 1.0
+                stop sound
 
                 "You feel her gaze on your back as you cross the hearth and head upstairs."
 
+                window auto hide
+                play sound walk loop
+                stop soundb fadeout 1.0
                 show bg upstairs with dissolve:
                         subpixel True
                         zoom 1.0 xalign(0.5) yalign(0.01)
@@ -550,6 +556,7 @@ label BotchedConverge2:
                 
                 camera:
                         ypos 0
+                stop sound
 
                 # Image Captive Cabin Room (angled, zoomed in on ceiling)
                 show bg room ceiling with dissolve:
@@ -557,7 +564,7 @@ label BotchedConverge2:
 
                 # VSFX Blur
 
-                stop sound
+                window auto show
 
                 "When you find yourself lying in bed, you’re cradling your hand over your chest. You can still feel the warmth from when Ashina held it."
 
@@ -589,10 +596,8 @@ label BotchedConverge2:
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 
                 window auto hide
-                #VSFX Zoom (as if walking through the hearth)
-                #SFX Walking
                 play sound walk loop
-
+                stop soundb fadeout 1.0
                 show bg upstairs with dissolve:
                         subpixel True
                         zoom 1.0 xalign(0.5) yalign(0.01)
@@ -600,19 +605,16 @@ label BotchedConverge2:
                 with Pause(1.5)
                 show bg upstairs:
                         zoom 2.0 xalign(0.5) yalign(0.01)
-                with Pause(0.5)
-                camera:
-                        ypos 0
-                # Image Captive Cabin Room (angled, zoomed in on ceiling)
-                show bg room ceiling with dissolve:
-                        subpixel True xpos 0.5 zoom 1.0 
-                # VSFX Blur
-
-                stop sound
                 
                 camera:
-                        subpixel True pos (0, 0) 
+                        ypos 0
+                
+                stop sound
 
+                # Image Captive Cabin Room (angled, zoomed in on ceiling)
+                show bg room ceiling with dissolve:
+                        subpixel True xpos 0.5 zoom 1.0
+                
                 window auto show
 
                 "When you find yourself lying in bed, you struggle to drift off, haunted by memories and the look of concern on your captor’s face."

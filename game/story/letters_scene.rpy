@@ -29,7 +29,7 @@ label LettersScene:
     play soundb barking volume 0.3 fadein 2.0 loop
     play sound walk loop
     show bg room mc at walk_to_window
-    with Pause(1.0)
+    with Pause(1.2)
     stop sound
     window auto show
 

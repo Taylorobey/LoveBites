@@ -1,6 +1,6 @@
 label SpeakNoEvilSceneP1:
     $ save_name = "Speak No Evil"
-
+    $ ash.name = "Ashina"
     window auto hide
     
     #This scene triggers if you do not have -2 Approval with Ashina
@@ -100,8 +100,10 @@ label SpeakNoEvilSceneP1:
         pos(0.52,-0.2)
 
     stop sound fadeout 1.0
-    #Image Ashina Neutral (closer)
+    
     show ash annoyed with dissolve
+    pause 0.5
+    show ash annoyed at step_close_center_fast
 
     window auto show
 
@@ -118,7 +120,7 @@ label SpeakNoEvilSceneP1:
     ash "You were trying to get help for your friend, weren't you? You must be worried about them."
 
     #VSFX Ashina (further)
-    show ash caring with dissolve
+    show ash caring at step_away
 
     ash "I'm not so cruel as to keep you two apart. I'll allow you a single visit."
 
@@ -131,11 +133,13 @@ label SpeakNoEvilSceneP1:
 
     you "I'll do anything to see them again!"
 
+    window auto hide
     #VSFX Ashina Friendly
     show ash sadistic with dissolve
     with Pause(1.0)
     #VSFX Ashina (closer)
     show ash sadistic at step_close_center_fast
+    window auto show
 
     ash "Oh? Anything? Good. Listen carefully to my words, girl."
 

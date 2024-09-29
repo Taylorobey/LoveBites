@@ -1,5 +1,6 @@
 label SpeakNoEvilSceneP3:
         $ save_name = "See No Evil"
+        $ ash.name = "Ashina"
         
         #Choices Converge here
 
@@ -72,12 +73,14 @@ label SpeakNoEvilSceneP3:
 
                 ash "Hm, color me impressed. I didn't think you could convince them so well, pup."
 
+                window auto hide
                 #VSFX Ashina (further away again)
                 show ash friendly at ash_steps_away2
                 with Pause(1.70)
                 #Image Ashina Thoughtful
                 show ash thoughtful with dissolve:
                         xpos 0.35
+                window auto show
 
                 ash "I'm satisfied. Come along with me, human. I shall escort you back to civilization."
 
