@@ -5,7 +5,7 @@ label WhoYouAreScene:
         #stop audio from previous scene
         stop sound
 
-        call WakeUpSequence1
+        call WakeUpSequence1 from _call_WakeUpSequence1_4
 
         hide bg onlayer screens with Dissolve(2.0)
 
@@ -15,13 +15,13 @@ label WhoYouAreScene:
 
         window auto hide
 
-        call WakeUpSequence2
+        call WakeUpSequence2 from _call_WakeUpSequence2_4
 
         window auto show
 
         "You feel rested. No aches, no pains, a pleasant warmth radiating from within you. You can’t remember the last time you felt this good. But, there’s something else, too."
 
-        call PainFlash
+        call PainFlash from _call_PainFlash_1
         play soundb heart
         with Pause(0.7)
         stop soundb fadeout 0.5
