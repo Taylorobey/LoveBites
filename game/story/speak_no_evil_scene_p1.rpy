@@ -150,8 +150,15 @@ label SpeakNoEvilSceneP1:
         #temporary logic change for the demo to make sure other paths don't trigger
         #nodding motion
 
+        show ash friendly:
+            pos (0.5, 2.0) zoom 2.0
+        pause 0.2
         show ash friendly at nod
         with Pause(0.55)
+        show ash friendly:
+            pos (0.5, 2.0) zoom 2.0
+        pause 0.2
+        #otherwise she flies off to hell while skipping
 
         ash "You have been quite obedient. It seems like you have a good head on those pretty little shoulders, as you clearly grasp the reality of your situation."
 
