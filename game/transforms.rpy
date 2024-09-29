@@ -39,16 +39,19 @@ transform step_away_fast:
 # walk to window in main cabin
 transform walk_to_window:
     subpixel True 
-    zoom 1.0 xpan 0.0 ypan 0.0 
-    linear 1.00 zoom 4.0 xpan 3.0 ypan -125.0
+    yoffset 0.0 zoom 1.0 
+    linear 1.00 yoffset 1521.0 zoom 4.0
+#with offset instead of pan the transform doesn't have a weird u curve down
 
 # closer to window
 transform close_to_window:
-    linear 1.00 zoom 5.0 xpan 3.0 ypan -135.0
+    linear 1.00 yoffset 2097.0 zoom 5.0
+#since the previous transform was changed and (the old version of) this one was relative to the previous transform it wouldn't work, so i changed this one too
 
 # coming back to normal bg view
 transform back_to_bg:
-    linear 1.00 zoom 1.0 xpan 0.0 ypan 0.0
+    linear 1.00 zoom 1.0 yoffset 0.0
+#i think this one was consequentially broken too, fixed it though
 
 # Torso left/center/right
 transform torso_close_right:
