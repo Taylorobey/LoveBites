@@ -6,7 +6,7 @@ label WakingScene:
         scene bg color black with dissolve
         with Pause(0.5)
 
-        call WakeUpSequence1
+        call WakeUpSequence1 from _call_WakeUpSequence1_3
         
         window auto show
 
@@ -14,7 +14,7 @@ label WakingScene:
 
         window auto hide
 
-        call WakeUpSequence2
+        call WakeUpSequence2 from _call_WakeUpSequence2_3
 
         window auto show
 
@@ -23,7 +23,7 @@ label WakingScene:
         window auto hide
 
         #VFX red flash (on the edges)
-        call PainFlash
+        call PainFlash from _call_PainFlash
         play soundb heart
         with Pause(0.7)
         stop soundb fadeout 0.5
