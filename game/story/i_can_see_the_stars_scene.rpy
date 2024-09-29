@@ -1,5 +1,6 @@
 label ICanSeeTheStarsScene:
     $ save_name = "I Can See The Stars"
+    $ ash.name = "Ashina"
 
     window auto hide
     
@@ -21,10 +22,12 @@ label ICanSeeTheStarsScene:
 
     ash "Are you ready as I asked, pup? You could stand to go outside for a spell, and I’d much rather you do so with supervision this time."
 
+    window auto hide
     hide ash thoughtful with dissolve
 
     if ash_approval >= 0:
-        "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice"
+        window auto show
+        "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice."
 
         window auto hide
 
@@ -173,15 +176,15 @@ label ICanSeeTheStarsScene:
     #define dog_approval = 1
 
     if dog_approval > 0:
-        
+        window auto hide
         #Image Friendly Dog
         show dog with dissolve
+        window auto show
 
         "A few of the dogs approach you happily, tails wagging. They seem friendly."
-
-        hide dog with dissolve
-
+        
         window auto hide
+        hide dog with dissolve
 
         menu:
             #Ashina/Dogs Approval Choice
@@ -190,6 +193,7 @@ label ICanSeeTheStarsScene:
                 #Increases Dogs’ Approval
                 $ ash_approval += 1
                 $ dog_approval += 1
+                pause 0.3
 
                 #Image Happy Dog
                 show happy dog with dissolve
@@ -197,20 +201,24 @@ label ICanSeeTheStarsScene:
                 window auto show
 
                 "You decide to lean down and pet them. Their tongues loll out happily as they jostle one another for your affections. You catch Ashina smiling fondly in the corner of your eye."
-
+                
+                window auto hide
                 #VSFX Dog (fade out)
                 hide happy dog with dissolve
                 #Image Ashina Caring
                 #VSFX Ashina (fade out)
+                
 
             #Neutral Choice
             "Ignore the dogs.":
+                pause 0.3
                 #VSFX Dog (fade out)
                 hide dog with dissolve
                 window auto show
 
                 "You avert your eyes from the dogs and they soon lose interest. You catch Ashina staring cooly at you, her expression unreadable."
 
+                window auto hide
                 #Image Ashina Neutral
                 #VSFX Ashina (fade out)
     
@@ -221,6 +229,7 @@ label ICanSeeTheStarsScene:
     #Image Ashina Thoughtful
     show ash thoughtful with easeinright
 
+    window auto show
     ash "It's a beautiful night out, isn't it?"
 
     #Image Ashina Caring
@@ -241,14 +250,15 @@ label ICanSeeTheStarsScene:
     #Image Sky Color
     #Music Starry Sky
     stop crickets fadeout 1.5
-    play music starry_music volume 0.5 fadein 5.0
     camera:
         subpixel True
         pos (0, 0) 
         linear 4.5 pos (0, -1080) 
+    play music starry_music volume 0.5 fadein 5.0
     show sky_color with Dissolve(4.0)
+    with Pause(1.0)
     show starryeffect onlayer screens with Dissolve(4.0)
-    with Pause(4.5)
+    with Pause(4.0)
     camera:
         pos (0, -1080)
 
@@ -263,6 +273,7 @@ label ICanSeeTheStarsScene:
     menu:
         #Humanity Choice
         "Breathtaking.":
+            pause 0.3
             $ humanity += 1
             you "..."
 
@@ -291,6 +302,7 @@ label ICanSeeTheStarsScene:
 
         #Corruption Choice
         "Depressing.":
+            pause 0.3
             $ corruption += 1
             you "..."
 
@@ -434,7 +446,7 @@ label ICanSeeTheStarsScene:
     hide sky_color with dissolve
     hide starryeffect onlayer screens with dissolve
     show bg color black with dissolve:
-        ypos 0
+        pos (0.5,-0.5)
     stop music fadeout 2.0
     stop sound fadeout 2.0
     stop soundb fadeout 2.0
