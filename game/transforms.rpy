@@ -18,7 +18,7 @@ transform step_close_center_fast:
 transform step_closer:
     linear 1.00 ypos 3.8 zoom 4.0
 transform step_closer_center:
-    linear 1.00 xpos 0.45 ypos 3.8 zoom 4.0
+    linear 1.00 pos(0,0) zoom 4.0
 
 # stepping closer threateningly
 transform threat_step:
@@ -32,7 +32,7 @@ transform step_away_half:
 
 # step back away
 transform step_away:
-    linear 1.00 ypos 1.0 zoom 1.0
+    linear 0.5 ypos 1.0 zoom 1.0
 transform step_away_fast:
     linear 0.4 ypos 1.0 zoom 1.0
 

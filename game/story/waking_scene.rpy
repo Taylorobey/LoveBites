@@ -49,10 +49,12 @@ label WakingScene:
         menu:
                 "You regret what you wished for.":
                         $ humanity += 1
+                        pause 0.2
 
                         "Flirting with disaster finally caught up with you. What the hell were you thinking? You vow that if you ever escape this place, you're going to have a serious think about your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
+                        pause 0.2
 
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right?"
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
@@ -61,7 +63,7 @@ label WakingScene:
         window auto hide
         #VSFX ashina slides in from the right
         #image ashina neutral
-        show ash neutral with MoveTransition(1.0, enter=offscreenright)
+        show ash neutral with MoveTransition(1.3, enter=offscreenright)
 
         window auto show
 
@@ -100,8 +102,8 @@ label WakingScene:
 
         window auto hide
         #SFX stomach growl
-        play sound growl volume 0.5
-        with Pause(2.0)
+        play sound growl
+        with Pause(1.5)
         stop sound fadeout 1.0
         window auto show
 
@@ -110,8 +112,10 @@ label WakingScene:
 
 
         window auto hide
-        hide ash friendly 
-        with easeoutright
+        show ash friendly:
+                linear 1 xpos 1.2
+        with Pause(1)
+        hide ash friendly
         window auto show
 
 
@@ -120,19 +124,25 @@ label WakingScene:
 
         window auto hide
         stop music fadeout 1.0
-        show ash sadistic 
-        with easeinright
+        show ash sadistic:
+                subpixel True pos (0.97, 1) zoom 1.88
+                linear 0.5 xpos 0.53 
+        with Pause(0.6)
+        show ash sadistic:
+                pos (0.53, 1) 
         window auto show
 
 
         ash "Here. Eat to your heart's content."
-        
+
         #music unsettling
         play music eerie_outdoors_music volume 1.5 fadein 0.5
         stop sound
+        window auto show
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
-        you "You can't be serious…There's no way I can eat that!"
+
+        you "You can't be serious… There's no way I can eat that!"
 
         show ash neutral with dissolve
 
@@ -198,6 +208,7 @@ label WakingScene:
                         $ corruption += 1
                         $ ash_approval += 1
                         $ meat_eaten = True
+                        pause 0.2
                         "The meat is… surprisingly palatable. It has a deep, tender richness. You barely restrain yourself from stuffing your face ravenously. The clawing hunger soon subsides."
                         "You realize the woman has been watching you."
 
@@ -208,6 +219,7 @@ label WakingScene:
                 #humanity choice
                 "Abstain from eating.":
                         $ humanity += 1
+                        pause 0.2
                         "You turn away from the plate on the side table. Ashina sighs."
 
                         show ash neutral with dissolve
@@ -248,6 +260,8 @@ label WakingScene:
                         jump HeadtoBed
 
 label ExamineWindow:
+        pause 0.2
+        
         #sfx walking
         play sound walk
         
@@ -296,9 +310,6 @@ label ExamineWindow:
         
         "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
 
-
-        window auto hide
-
         play music connection_music volume 0.25
 
         #VSFX Slight Blue Tint (slow fade in)
@@ -306,12 +317,6 @@ label ExamineWindow:
                 #matrixcolor TintMatrix("#1C4587")
                 matrixcolor TintMatrix("#fff")
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
-        #not sure if this is too blue.
-        #i don't know how to make this fade in
-        #started with a plain white filter then transitioned color
-        
-        window auto show
-
 
         "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {b}{color=#1C4587}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
         
@@ -320,19 +325,28 @@ label ExamineWindow:
                 window auto show
 
                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
+
+                window auto hide
         else:
                 menu:
                         "Go to bed.":
+                                pause 0.2
                                 window auto show
 
                                 "You push away the sensation, quickly shut the window, and decide you'll deal with {i}that{/i} later."
+
+                                window auto hide
+
                         "Toss the meat to the dogs.":
                                 $ dog_approval += 1
+                                pause 0.2
                                 window auto show
 
                                 "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
                                 
                                 "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
+
+                                window auto hide
 
         pause(0.5)
         #otherwise the tint stays if you click too fast or use skip function
@@ -342,6 +356,7 @@ label ExamineWindow:
         jump HeadtoBed
 
 label HeadtoBed:
+        pause 0.2
         #choices converge here
 
         stop music fadeout 1.0
