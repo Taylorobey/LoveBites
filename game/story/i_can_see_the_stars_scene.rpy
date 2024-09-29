@@ -195,6 +195,7 @@ label ICanSeeTheStarsScene:
                 pause 0.3
 
                 #Image Happy Dog
+                play sound bark volume 2.0
                 show happy dog with dissolve
 
                 window auto show
