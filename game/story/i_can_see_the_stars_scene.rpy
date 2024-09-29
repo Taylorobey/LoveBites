@@ -24,7 +24,7 @@ label ICanSeeTheStarsScene:
     hide ash thoughtful with dissolve
 
     if ash_approval >= 0:
-        "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice"
+        "You aren’t about to look a gift horse… well, wolf in the mouth. Some fresh air does sound nice."
 
         window auto hide
 

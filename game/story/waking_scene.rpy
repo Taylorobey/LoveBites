@@ -290,7 +290,8 @@ label ExamineWindow:
 
         window auto hide
         #image window no dogs
-        show bg window with dissolve
+        show bg window with dissolve:
+                subpixel True yoffset 0.0 zoom 2.5 
         window auto show
 
 
