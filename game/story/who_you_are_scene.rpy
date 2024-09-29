@@ -26,7 +26,7 @@ label WhoYouAreScene:
         with Pause(0.7)
         stop soundb fadeout 0.5
 
-        "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing outside of the door to your room."
+        "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing {b}{color=#1C4587}outside{/b}{/color} of the door to your room."
 
         stop soundb fadeout 0.5
 
@@ -38,7 +38,7 @@ label WhoYouAreScene:
         window auto hide
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
-        show ash neutral with MoveTransition(1.0, enter=offscreenright)
+        show ash neutral with easeinright
         window auto show
 
         ash "Come. It’s time we had a talk."
@@ -167,7 +167,7 @@ label WhoYouAreScene:
                 alpha 0.0
                 linear 0.5 alpha 1.0 
                 linear 1.0 alpha 0.5
-                linear 2.0 alpha 0.0
+                linear 0.5 alpha 0.0
                 repeat
         play sound heart loop
 
@@ -188,10 +188,11 @@ label WhoYouAreScene:
         window auto hide
         camera:
                 subpixel True 
-                linear 0.15 xpos 1000 
                 linear 0.15 xpos 900 
-                linear 0.15 xpos 1000 
-                linear 0.15 xpos 900
+                linear 0.15 xpos 600
+                linear 0.15 xpos 900 
+                linear 0.15 xpos 600
+                linear 0.15 xpos 700
         window auto show
 
         you "What did you do to me…? I don't feel normal. Every little thing feels…"
@@ -206,11 +207,10 @@ label WhoYouAreScene:
 
         ash "Overwhelming? Powerful? Perhaps even… Feral?"
 
-        # VSFX Blur (as if lightheaded)
-        #camera:
-                #subpixel True 
-                #linear 1.00 blur 5.0 
-                #linear 1.00 blur 15.0 
+        #VSFX Blur (as if lightheaded)
+        camera:
+                subpixel True 
+                linear 1.5 blur 5.0 
         ### for some reason the bg image crops during this?
 
         you "Yes… And more. Make… Make it stop."
@@ -239,7 +239,7 @@ label WhoYouAreScene:
         # VSFX Effects gradually fade
         camera:
                 subpixel True 
-                linear 3.00 blur 0.0
+                linear 1.0 blur 0.0
         show bg color red onlayer screens:
                 subpixel True
                 linear 3.0 alpha 0.0
@@ -250,9 +250,9 @@ label WhoYouAreScene:
         stop music fadeout 3.0
         camera:
                 subpixel True 
-                pos (0, 0) zoom 1.0
+                pos (0, 0) zoom 1.0 blur 0.0
+
         "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {b}{color=#1C4587}depths{/b}{/color}, if you wanted to. You don’t. You definitely don’t."
-        #need blue on "depths"
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
 
@@ -307,12 +307,16 @@ label WhoYouAreScene:
         ash "We have heightened strength, senses, and connection with one another and canines. As the full moon approaches, we become closer to our beast, our wolf, and can change our skin with more ease."
 
         window auto hide
-        with Pause(2.0)
+        with Pause(1.0)
         show ash neutral:
-                pos (-0.36, 0.03)
+                linear 0.5 pos (-0.36, 0.03)
         window auto show
 
         "Her hand runs along the back of your seat, nearly brushing your skin. It sends a shiver down your spine."
+
+        window auto hide
+        pause 0.5
+        window auto show
 
         show ash neutral:
                 subpixel True ypos 0.03 
@@ -321,30 +325,28 @@ label WhoYouAreScene:
 
         ash "You will need to be trained to handle your beast, lest you be driven mad with hunger and rage. And trust me, pup, you do not want that to happen."
 
-        window auto hide
         # Image Ashina Neutral
         # VSFX Ashina (move in from the left, as if coming around from behind the MC’s seat)
-        with Pause(1.0)
+        with Pause(0.5)
         show ash neutral:
-                pos (0.42, 0.03) 
-        window auto show
+                linear 0.5 pos (0.42, 0.03)
 
         "She gives you a very serious, knowing look. Then, her features contort as you’ve seen once before."
 
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
         show ash thoughtful with dissolve:
-                pos(0.33,0.08)
+                pos(0.45,0.03)
         with Pause(0.2)
         show ash angry hybrid with dissolve:
-                pos(0.33,0.08)
+                pos(0.35,0.03)
 
         ash "We are carnivores. We crave raw meat like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
                 subpixel True 
-                pos(0.33,0.08) zoom 1.8 
+                pos(0.35,0.03) zoom 1.8 
                 linear 0.30 xpos 0.03 zoom 3.36
         with Pause(0.40)
         show ash angry hybrid:
@@ -415,11 +417,14 @@ label AppreciationResponse:
 
         ash "Still… that doesn’t mean you cannot feel angry about it. The anger pushes us forward. That is its own kind of strength."
 
-        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense sorrow that ebbs and flows into a calm. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
+        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {b}{color=#1C4587}sorrow{/b}{/color} that ebbs and flows into a {b}{color=#1C4587}calm{/b}{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
 
+        window auto hide
+        pause 1.5
         show ash neutral:
                 subpixel True
                 linear 1.0 pos(0.42,0.03) zoom 1.8
+        window auto show
 
         ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
 
