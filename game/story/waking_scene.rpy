@@ -74,7 +74,7 @@ label WakingScene:
 
         #VSFX ashina steps closer
         show ash annoyed with dissolve
-        with Pause(0.5)
+        with Pause(0.2)
         show ash annoyed at step_close
         with Pause(1.00)
 
@@ -83,7 +83,6 @@ label WakingScene:
         ash "That's not what I asked you."
         
         #VSFX ashina steps back
-
         window auto hide
         show ash annoyed at step_away
         with Pause(1.00)
@@ -134,12 +133,18 @@ label WakingScene:
 
         ash "Here. Eat to your heart's content."
 
+        hide ash sadistic with dissolve
+        scene bg meat plate with dissolve
         #music unsettling
         play music eerie_outdoors_music volume 1.5 fadein 0.5
         stop sound
         window auto show
 
         "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
+
+        scene bg room mc with dissolve
+        show ash sadistic with dissolve:
+                pos (0.53, 1) 
 
         you "You can't be serious… There's no way I can eat that!"
 
@@ -148,7 +153,6 @@ label WakingScene:
         ash "Are you really so sure? Doesn't your hunger just feel..."
 
         #VSFX ashina close up
-
         window auto hide
         show ash neutral at step_closer_center
         with Pause(1.0)
@@ -156,6 +160,9 @@ label WakingScene:
 
 
         ash "Unbearable?"
+
+        hide ash neutral with dissolve
+        scene bg meat plate with dissolve
         "You take another look at the plate. You hate to admit it, but your stomach betrays you. You don't just {i}want{/i} to eat it..."
 
         #vsfx red flash on edges like a blooming pain
@@ -182,6 +189,7 @@ label WakingScene:
         stop sound fadeout 0.5
         stop music fadeout 1.0
 
+        scene bg mc room with dissolve
         show ash sad with dissolve
         window auto show
 
@@ -200,6 +208,9 @@ label WakingScene:
 
         ash "Do not question me, simply do as I tell you. Eat."
 
+        hide ash annoyed with dissolve
+        scene bg meat plate with dissolve
+
         
         menu:
                 #corruption choice
@@ -211,6 +222,7 @@ label WakingScene:
                         "The meat is… surprisingly palatable. It has a deep, tender richness. You barely restrain yourself from stuffing your face ravenously. The clawing hunger soon subsides."
                         "You realize the woman has been watching you."
 
+                        scene bg room mc with dissolve
                         #image ashina friendly
                         show ash friendly with dissolve
                         ash "Good girl. Now, get some rest."
@@ -221,6 +233,7 @@ label WakingScene:
                         pause 0.3
                         "You turn away from the plate on the side table. Ashina sighs."
 
+                        scene bg room mc with dissolve
                         show ash neutral with dissolve
                         
                         ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."

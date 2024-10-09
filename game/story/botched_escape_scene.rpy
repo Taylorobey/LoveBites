@@ -42,29 +42,44 @@ label BotchedEscapeScene:
         "You lean out of the open door as quietly as possible to find…"
 
         # Image Cabin Exterior Leaving POV No Dogs
-        show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
+        scene bg cabin ext no dogs with dissolve
 
         # Music Eerie Outdoors
         play music eerie_outdoors_music volume 1.5
 
         you "…Nothing?"
 
+        window auto hide
         # SFX Walking
         play sound walk loop
         # VSFX Cabin Ext.(zoom, as if walking)
+        show bg cabin ext no dogs:
+                subpixel True 
+                ypos 1.0 zoom 1.0 
+                linear 1.50 ypos 1.8 zoom 2.0 
+        with Pause(1.50)
+        show bg cabin ext no dogs:
+                ypos 1.8 zoom 2.0 
+        pause 0.1
+        stop sound
+        window auto show
 
         "You take a few cautious steps outside, thinking your eyes must be playing tricks on you. Where did all the dogs go? Was this another lucky break, like when Cameron snuck in?"
 
+        play sound walk loop
         # SFX Walking
-        # Image Forest Edge
-        show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0 ypos -1.07
+        show bg cabin ext no dogs:
+                ypos 1.8 zoom 2.0
+                linear 4.0 ypos 2.5 zoom 3.0
 
         "You continue on, making it to the edge of the forest. You can hear your heart pounding in your chest. Were you really able to just… walk out of here?"
 
+
         # SFX Walking (stop)
         stop sound
+        # Image Forest Edge
+        show bg forest edge with dissolve:
+                subpixel True zoom 1.0 ypos 1.0
         window auto show
 
 
@@ -358,8 +373,8 @@ label ResistAshina:
         hide ash annoyed with dissolve
         pause(0.2)
         #Image Cabin Exterior POV Approaching
-        show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
+        show bg cabin ext no dogs with dissolve:
+                subpixel True ypos 2.5 zoom 3.0
         #SFX Walking
         play sound walk loop
         window auto show
@@ -377,12 +392,11 @@ label ResistAshina:
         window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0 pos (0.5,0.0)
+                subpixel True pos (0.5,1.0) zoom 1.0
         with Pause(1.0)
-
         #Image Hearth
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos -0.1 zoom 0.7
+                subpixel True xpos 0.52 ypos 1.1 zoom 0.72
 
         #Image Ashina Hybrid Angry
         show ash angry hybrid with dissolve
@@ -413,8 +427,8 @@ label ResistAshina:
 label GoWillingly:
         pause 0.6
         hide ash annoyed with dissolve
-        show bg forest edge with dissolve:
-                subpixel True xzoom 1.0 yzoom 7.82 ypos -15.25
+        show bg cabin ext no dogs with dissolve:
+                subpixel True ypos 2.5 zoom 3.0
         
         window auto show
 
@@ -424,10 +438,10 @@ label GoWillingly:
         play sound walk loop
         with Pause(1.0)
         show bg door open with dissolve:
-                subpixel True xzoom 1.0 yzoom 1.0 pos (0.5,0.0)
+                subpixel True pos (0.5,1.0) zoom 1.0
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos -0.1 zoom 0.72 
+                subpixel True xpos 0.52 ypos 1.1 zoom 0.72
 
         #Fireplace
         stop sound

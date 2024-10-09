@@ -33,9 +33,13 @@ label LettersScene:
     stop sound
     window auto show
 
-    "The dogs yap and jump up at the window as if something’s there. You open the window and lean out, looking around. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
+    "The dogs yap and jump up at the window as if something’s there."
 
-    "Your thoughts immediately turn towards that mysterious hooded woman, with her bow and arrow."
+    show bg room mc open window with dissolve
+    
+    "You open the window and lean out, looking around. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
+
+    "Your thoughts immediately turn towards that mysterious hooded woman in the woods."
 
     you "Could it be…?"
 
@@ -48,14 +52,15 @@ label LettersScene:
 
     #Image Letter (centered in front of the captive cabin room bg)
     #VSFX Text (on screen in more of a letter format rather than in dialogue box)
-
-
     window auto hide
+    show bg room mc with dissolve
+    pause 0.5
 
     show bg color black onlayer screens:
                 alpha 0.0
                 zoom 2.5
                 linear 1.0 alpha 0.8
+    pause 1.2
 
     centered "To my unlikely ally…"
 

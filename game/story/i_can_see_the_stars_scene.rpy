@@ -32,6 +32,7 @@ label ICanSeeTheStarsScene:
 
         play sound walk loop
         ## VSFX zooming and fading in and out of images as if walking through the cabin
+        stop crickets fadeout 1.0
 
         # Image Cabin Door Open
         show bg door open with dissolve:
@@ -79,17 +80,11 @@ label ICanSeeTheStarsScene:
         show bg door open:
             zoom 2.0 yalign(0.5)
 
-        play crickets crickets volume 1.5 fadein 1.5
+        play crickets crickets volume 1.5 fadein 0.5
 
-        show bg forest edge with dissolve:
-            subpixel True 
-            pos (0.5, 0.0)
-            xzoom 1.0 yzoom 1.0
-            zoom 1.0
-
+        show bg cabin ext no dogs with dissolve
         stop sound
         window auto show
-
 
         "You follow Ashina down the stairs, through the hearth, and out to the forest’s edge. The chilly air caresses your skin, and you instinctively relax."
 
@@ -108,6 +103,7 @@ label ICanSeeTheStarsScene:
         window auto hide
 
         play sound walk loop
+        stop crickets fadeout 1.0
         ## VSFX zooming and fading in and out of images as if walking through the cabin
 
         # Image Cabin Door Open
@@ -156,13 +152,9 @@ label ICanSeeTheStarsScene:
         show bg door open:
             zoom 2.0 yalign(0.5)
 
-        play crickets crickets volume 1.5 fadein 1.5
+        play crickets crickets volume 1.5 fadein 0.5
 
-        show bg forest edge with dissolve:
-            subpixel True 
-            pos (0.5, 0.0)
-            xzoom 1.0 yzoom 1.0
-            zoom 1.0
+        show bg cabin ext no dogs with dissolve
 
         stop sound
         window auto show
@@ -177,13 +169,13 @@ label ICanSeeTheStarsScene:
     if dog_approval > 0:
         window auto hide
         #Image Friendly Dog
-        show dog with dissolve
+        show dog with dissolve:
+            subpixel True pos (0.35, 0.5) zoom 0.55
         window auto show
 
         "A few of the dogs approach you happily, tails wagging. They seem friendly."
         
         window auto hide
-        hide dog with dissolve
 
         menu:
             #Ashina/Dogs Approval Choice
@@ -194,10 +186,12 @@ label ICanSeeTheStarsScene:
                 $ dog_approval += 1
                 pause 0.3
 
+                hide dog with dissolve
+                pause 0.1
                 #Image Happy Dog
                 play sound bark volume 2.0
                 show happy dog with dissolve
-
+                pause 1.0
                 window auto show
 
                 "You decide to lean down and pet them. Their tongues loll out happily as they jostle one another for your affections. You catch Ashina smiling fondly in the corner of your eye."
@@ -224,7 +218,11 @@ label ICanSeeTheStarsScene:
     
     #SFX Walking
     #Image Forest Edge (bottom half of black and white sky image)
-    #"Ashina leads you further from the cabin, up to the forest’s edge."
+    show bg forest edge with dissolve:
+        subpixel True 
+        pos (0.5, 0.0) zoom 1.0
+    
+    "Ashina leads you further from the cabin, up to the forest’s edge."
 
     #Image Ashina Thoughtful
     show ash thoughtful with easeinright

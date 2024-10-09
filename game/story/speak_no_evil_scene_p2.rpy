@@ -20,18 +20,19 @@ label SpeakNoEvilSceneP2:
 
         #Image Basement Room    
         show bg basement with dissolve:
-                subpixel True zoom 1.5
-        
+                subpixel True ypos 0.01 zoom 1.0
+
         #Image Cameron Frustrated
         show cam frustrated with dissolve:
-                subpixel True pos (0.58, -0.01) zoom 0.75 yrotate 180.0 
+                subpixel True pos (0.64, 0.18) zoom 0.66 yrotate 180.0
 
         window auto show
 
         "You find Cameron huddled in a corner of the room. They shift, acknowledging your presence, but don’t turn around."
 
-        show cam frustrated at cam_ground_shake
-        with Pause(0.55)
+        #show cam frustrated at cam_ground_shake
+        #with Pause(0.55)
+        #broken
 
         cam "I told you before, I won't eat. Not until you let me see her."
 
@@ -40,8 +41,9 @@ label SpeakNoEvilSceneP2:
         #Image Cameron Friendly
         show cam friendly with dissolve
         with Pause(0.2)
-        show cam friendly at cam_surprise_jump
-        with Pause(0.55)
+        #show cam friendly at cam_surprise_jump
+        #with Pause(0.55)
+        #broken
 
         cam "¡Dios mío!"
 

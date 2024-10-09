@@ -8,6 +8,9 @@ image bg alley              = "bg/alley.png"
 
 image bg room ceiling       = "bg/cabin_ceiling.png"
 image bg room mc            = "bg/captive_room.png"
+image bg room mc open window:
+    "bg/captive_room_open_window.png"
+    subpixel True zoom 0.5
 image bg door closed        = "bg/cabin_door_closed.png"
 image bg door open          = "bg/cabin_door_open.png"
 image bg downstairs         = "bg/downstairs.png"
@@ -15,14 +18,20 @@ image bg upstairs           = "bg/upstairs.png"
 image bg wall               = "bg/cabin_wall.png"
 image bg hallway            = "bg/hallway.png"
 image bg hearth             = "bg/hearth.png"
-image bg cabin exterior     = "temp/mc_room.jpg"
+image bg cabin ext no dogs  = "bg/cabin_exterior_nodogs.png"
+image bg cabin ext dogs     = "bg/cabin_exterior_nodogs.png" #temp
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky.png"
 image bg sky color          = "bg/sky_color.png"
-image bg basement           = "bg/captive_room.png"
+image bg basement:
+    "bg/basement.png"
+    subpixel True zoom 0.5
 image bg window:
     "bg/window.png"
     subpixel True zoom 0.4
+image bg meat plate:
+    "bg/meat_plate.png"
+    subpixel True zoom 0.5
 
 image bg window eyes:
     "bg/eyes/EYES_01.png" with dissolve

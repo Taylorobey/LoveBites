@@ -20,13 +20,13 @@ label FailedRescueScene:
         window auto hide
 
         # Image Captive Cabin Room (full view)
-        show bg room mc with dissolve:
+        show bg room mc open window with dissolve:
                 subpixel True 
                 pos (0.62, 1.2) zoom 1.25 
                 linear 0.91 pos (0.38, 1.2) zoom 1.25 
                 linear 0.34 pos (0.5, 1.0) zoom 1.1
         with Pause(1)
-        show bg room mc:
+        show bg room mc open window:
                 pos (0.5, 1.0) zoom 1.1
 
         # VSFX Slow Pan or Back And Forth Pan (as if looking around the room, whichever looks more natural, before settling on the window)
@@ -49,12 +49,12 @@ label FailedRescueScene:
         you "Cameron?!"
 
         window auto hide
-        show bg room mc:
+        show bg room mc open window:
                 subpixel True 
                 zoom 1.1 
                 linear 0.30 zoom 1.0 
         with Pause(0.40)
-        show bg room mc:
+        show bg room mc open window:
                 zoom 1.0 
         window auto show
 
@@ -70,7 +70,7 @@ label FailedRescueScene:
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
         pause 0.2
-        show bg room mc at walk_to_window
+        show bg room mc open window at walk_to_window
         with Pause(1.0)
         window auto show
 
@@ -96,6 +96,8 @@ label FailedRescueScene:
 
 
         window auto hide
+        show bg room mc with dissolve
+        pause 0.5
         # VSFX Fade out Cameron
         hide cam neutral with dissolve
         
