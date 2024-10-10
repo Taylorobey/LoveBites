@@ -231,7 +231,7 @@ label WakingScene:
                 "Abstain from eating.":
                         $ humanity += 1
                         pause 0.3
-                        "You turn away from the plate on the side table. Ashina sighs."
+                        "You turn away from the plate on the side table. The woman sighs."
 
                         scene bg room mc with dissolve
                         show ash neutral with dissolve
@@ -249,7 +249,7 @@ label WakingScene:
         window auto show
 
 
-        "Seemingly satisfied with the interaction, Ashina exits the room. You notice that despite a full day’s rest, you’re struggling to keep your eyes open."
+        "Seemingly satisfied with the interaction, your captor exits the room. You notice that despite a full day’s rest, you’re struggling to keep your eyes open."
         
 
         window auto hide
