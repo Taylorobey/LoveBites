@@ -120,6 +120,8 @@ screen say(who, what):
     style_prefix "say"
 
     use quick_menu
+    use auto_indicator
+
     window:
         id "window"
 
@@ -289,6 +291,8 @@ screen quick_menu():
         imagebutton:
             idle "gui/button/auto_button_idle.png"
             hover "gui/button/auto_button_hover.png"
+            selected "gui/button/auto_button_hover.png"
+            selected_hover "gui/button/auto_button_hover.png"
             action Preference("auto-forward", "toggle")
             xpos 1490
             ypos 716
@@ -1523,6 +1527,64 @@ style skip_triangle:
     ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
     ## glyph in it.
     font "DejaVuSans.ttf"
+
+
+
+## Auto indicator screen #######################################################
+##
+
+screen auto_indicator():
+
+    zorder 100
+    style_prefix "auto"
+
+    if _preferences.afm_enable:
+
+        frame:
+
+            hbox:
+                xpos 10
+                spacing 9
+
+                text _("Auto")
+
+                text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle" ypos 8
+                text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle" ypos 8
+                text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle" ypos 8
+
+
+## This transform is used to blink the arrows one after another.
+transform delayed_blink(delay, cycle):
+    alpha .5
+
+    pause delay
+
+    block:
+        linear .2 alpha 1.0
+        pause .2
+        linear .2 alpha 0.5
+        pause (cycle - .4)
+        repeat
+
+
+style auto_frame is empty
+style auto_text is gui_text
+style auto_triangle is auto_text
+
+style auto_frame:
+    ypos gui.skip_ypos
+    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
+    padding gui.skip_frame_borders.padding
+
+style auto:
+    size gui.notify_text_size
+
+style auto_triangle:
+    ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
+    ## glyph in it.
+    font "DejaVuSans.ttf"
+
+
 
 
 ## Notify screen ###############################################################
