@@ -19,7 +19,13 @@ image bg wall               = "bg/cabin_wall.png"
 image bg hallway            = "bg/hallway.png"
 image bg hearth             = "bg/hearth.png"
 image bg cabin ext no dogs  = "bg/cabin_exterior_nodogs.png"
-image bg cabin ext dogs     = "bg/cabin_exterior_nodogs.png" #temp
+image bg cabin ext dogs:
+    "bg/eyes/yardeyes1.png" with dissolve
+    1.7
+    "bg/eyes/yardeyes2.png" with dissolve
+    1.7
+    repeat
+
 image bg cabin approach     = "temp/mc_room.jpg"
 image bg forest edge        = "bg/sky.png"
 image bg sky color          = "bg/sky_color.png"
@@ -67,6 +73,81 @@ image bg ripple one:
     "bg/ripples/RPL_0110.png"
     0.1
     "bg/ripples/RPL_0111.png"
+    0.1
+    repeat
+
+image bg ripple two:
+    "bg/ripples/RPL_0201.png"
+    0.1 #this part defines how long to wait before next frame
+    "bg/ripples/RPL_0202.png"
+    0.1
+    "bg/ripples/RPL_0203.png"
+    0.1
+    "bg/ripples/RPL_0204.png"
+    0.1
+    "bg/ripples/RPL_0205.png"
+    0.1
+    "bg/ripples/RPL_0206.png"
+    0.1
+    "bg/ripples/RPL_0207.png"
+    0.1
+    "bg/ripples/RPL_0208.png"
+    0.1
+    "bg/ripples/RPL_0209.png"
+    0.1
+    "bg/ripples/RPL_0210.png"
+    0.1
+    "bg/ripples/RPL_0211.png"
+    0.1
+    repeat
+
+image bg ripple three:
+    "bg/ripples/RPL_0301.png"
+    0.1 #this part defines how long to wait before next frame
+    "bg/ripples/RPL_0302.png"
+    0.1
+    "bg/ripples/RPL_0303.png"
+    0.1
+    "bg/ripples/RPL_0304.png"
+    0.1
+    "bg/ripples/RPL_0305.png"
+    0.1
+    "bg/ripples/RPL_0306.png"
+    0.1
+    "bg/ripples/RPL_0307.png"
+    0.1
+    "bg/ripples/RPL_0308.png"
+    0.1
+    "bg/ripples/RPL_0309.png"
+    0.1
+    "bg/ripples/RPL_0310.png"
+    0.1
+    "bg/ripples/RPL_0311.png"
+    0.1
+    repeat
+
+image bg ripple four:
+    "bg/ripples/RPL_0401.png"
+    0.1 #this part defines how long to wait before next frame
+    "bg/ripples/RPL_0402.png"
+    0.1
+    "bg/ripples/RPL_0403.png"
+    0.1
+    "bg/ripples/RPL_0404.png"
+    0.1
+    "bg/ripples/RPL_0405.png"
+    0.1
+    "bg/ripples/RPL_0406.png"
+    0.1
+    "bg/ripples/RPL_0407.png"
+    0.1
+    "bg/ripples/RPL_0408.png"
+    0.1
+    "bg/ripples/RPL_0409.png"
+    0.1
+    "bg/ripples/RPL_0410.png"
+    0.1
+    "bg/ripples/RPL_0411.png"
     0.1
     repeat
 
