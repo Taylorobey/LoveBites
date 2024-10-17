@@ -87,7 +87,7 @@ label start:
     $ ash_name = "???"
 
     #temporary jump for testing
-    #jump WhoYouAreScene
+    jump ICanSeeTheStarsScene
     jump IntroductoryCutscene
     
     # This ends the game.

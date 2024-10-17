@@ -286,6 +286,7 @@ image cam thoughtful:
     "chars/cameron/cameron_neutral.png"
     subpixel True zoom 0.33
 
+#shadows
 image neighbor:
     "chars/shadows/neighbor/NEI_01.png"
     subpixel True zoom 0.6

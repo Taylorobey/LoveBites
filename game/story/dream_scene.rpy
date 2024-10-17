@@ -2,7 +2,6 @@ label DreamScene:
         #stop audio from previous scene
         stop sound
 
-
         window auto hide
 
         scene bg color black with dissolve
@@ -11,7 +10,6 @@ label DreamScene:
 
         show bg ripple one onlayer screens with Dissolve(3.0):
                 subpixel True xzoom 1.59 zoom 0.52
-
 
         "Your consciousness bubbles to the surface as sunlight heats your skin nearly to the point of burning. You squint down at your tiny hands, wet with tears."
 
@@ -64,8 +62,11 @@ label DreamScene:
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
+        #dramatic pause
+        with Pause(0.3)
+        show bg ripple two onlayer screens with Dissolve(2.0):
+                subpixel True xzoom 1.59 zoom 0.52
         "But, of course, good things don't last forever."
-
 
         window auto hide
         # VSFX Shadowy Figure 1 fade in
@@ -117,6 +118,8 @@ label DreamScene:
 
         "You've always wished you could go back, to tell them what they meant to you. To thank them for what they did for you, for being a safe harbor in the never-ending storm of your life. But, life doesn't give second chances."
 
+        show bg ripple three onlayer screens with Dissolve(2.0):
+                subpixel True xzoom 1.59 zoom 0.52
         "Soon, the scene is washed away, and the play begins anew. You're in a classroom and the teacher is giving yet another droning lesson. You're older now, just having started 9th grade."
 
         "The lunch bell rings, jolting you out of your seat."
@@ -201,6 +204,8 @@ label DreamScene:
         menu:
                 #Humanity choice
                 "People are complicated.":
+                        show bg ripple one onlayer screens with Dissolve(2.0):
+                                subpixel True xzoom 1.59 zoom 0.52
                         pause 0.3
                 # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
                         #camera:
@@ -208,7 +213,7 @@ label DreamScene:
                                 #linear 3.0 matrixcolor TintMatrix("#b29231")
                                 #is this a good yellow?
                         window auto show
-
+                        
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
                         #was a little too long for the dialogue box so i split it up
@@ -216,6 +221,8 @@ label DreamScene:
                         
                 #Corruption choice
                 "People are selfish.":
+                        show bg ripple four onlayer screens with Dissolve(2.0):
+                                subpixel True xzoom 1.59 zoom 0.52
                         pause 0.3
                         # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
                         #camera:
@@ -229,9 +236,8 @@ label DreamScene:
         camera:
                 linear 1.0 matrixcolor TintMatrix("#fff")
         stop music fadeout (2.5)
-        
 
         window auto hide
-        
+        hide bg ripples onlayer screens with Dissolve(2.0)
         with Pause(3.0)
         jump WhoYouAreScene

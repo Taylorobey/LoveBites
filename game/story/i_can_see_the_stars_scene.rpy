@@ -82,7 +82,7 @@ label ICanSeeTheStarsScene:
 
         play crickets crickets volume 1.5 fadein 0.5
 
-        show bg cabin ext no dogs with dissolve
+        show bg cabin ext dogs with dissolve
         stop sound
         window auto show
 
@@ -154,7 +154,7 @@ label ICanSeeTheStarsScene:
 
         play crickets crickets volume 1.5 fadein 0.5
 
-        show bg cabin ext no dogs with dissolve
+        show bg cabin ext dogs with dissolve
 
         stop sound
         window auto show
