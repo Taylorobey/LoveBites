@@ -214,6 +214,27 @@ label DreamScene:
                                 #is this a good yellow?
                         window auto show
                         
+                        show shadowsb onlayer screens at shadowfade:
+                                subpixel True pos (-0.03, -63)
+                        pause(0.3)
+                        show shadowsc onlayer screens at shadowfade:
+                                subpixel True pos (0.37, 58)
+                        pause(0.3)
+                        show shadowsd onlayer screens at shadowfade:
+                                subpixel True pos (0.63, -234) 
+                        pause(0.3)
+                        show shadowsf onlayer screens at shadowfade:
+                                subpixel True pos (0.03, -135) 
+                        pause(0.3)
+                        show shadowsh onlayer screens at shadowfade:
+                                subpixel True pos (0.21, -185) 
+                        pause(0.3)
+                        show shadowsi onlayer screens at shadowfade:
+                                subpixel True pos (0.51, -189) 
+                        show shadowse onlayer screens at shadowfade:
+                                subpixel True pos (0.79, 27) 
+                        pause(0.3)
+
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
                         #was a little too long for the dialogue box so i split it up
@@ -230,6 +251,27 @@ label DreamScene:
                                 #linear 3.0 matrixcolor TintMatrix("#1C4587")
                         #should we use straight blue instead
                         window auto show
+
+                        show shadowsb onlayer screens at corruptfade:
+                                subpixel True pos (-0.03, -63)
+                        pause(0.3)
+                        show shadowsc onlayer screens at corruptfade:
+                                subpixel True pos (0.37, 58)
+                        pause(0.3)
+                        show shadowsd onlayer screens at corruptfade:
+                                subpixel True pos (0.63, -234) 
+                        pause(0.3)
+                        show shadowsf onlayer screens at corruptfade:
+                                subpixel True pos (0.03, -135) 
+                        pause(0.3)
+                        show shadowsh onlayer screens at corruptfade:
+                                subpixel True pos (0.21, -185) 
+                        pause(0.3)
+                        show shadowsi onlayer screens at corruptfade:
+                                subpixel True pos (0.51, -189) 
+                        show shadowse onlayer screens at corruptfade:
+                                subpixel True pos (0.79, 27) 
+                        pause(0.3)
 
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/b}{/color} be like them."

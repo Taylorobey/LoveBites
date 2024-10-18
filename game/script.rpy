@@ -43,16 +43,6 @@ style skytext:
     yalign -0.55
     xalign 0.5
 
-## Define transforms for use in scripts
-# pacing
-# blur
-
-## Define some positions/zooms that are commonly used
-# Torso left/center/right
-# Bust left/center/right
-# Lower Right
-# Close to Player left/center/right
-
 #Supplementary audio channels
 #Extra SFX
 init python:
@@ -75,6 +65,10 @@ init python:
         c1=c[0]
     credits_s += "\n{size=40}Engine\n{size=60}Ren'py\n8.3.0" #Don't forget to set this to your Ren'py version
 
+#for Random Numbers that change with each animation
+init python:
+    import random
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
@@ -87,7 +81,7 @@ label start:
     $ ash_name = "???"
 
     #temporary jump for testing
-    jump ICanSeeTheStarsScene
+    jump DreamScene
     jump IntroductoryCutscene
     
     # This ends the game.

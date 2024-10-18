@@ -327,6 +327,146 @@ image teacher:
     subpixel True zoom 0.6
     0.2
     repeat
+image shadowsb:
+    "chars/shadows/B/IMG_0413.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/B/IMG_0414.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/B/IMG_0415.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/B/IMG_0416.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/B/IMG_0417.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/B/IMG_0418.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowsc:
+    "chars/shadows/C/IMG_0419.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/C/IMG_0420.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/C/IMG_0421.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/C/IMG_0422.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/C/IMG_0423.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/C/IMG_0424.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowsd:
+    "chars/shadows/D/IMG_0425.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/D/IMG_0426.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/D/IMG_0427.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/D/IMG_0428.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/D/IMG_0429.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/D/IMG_0430.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowse:
+    "chars/shadows/E/IMG_0431.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/E/IMG_0432.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/E/IMG_0433.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/E/IMG_0434.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/E/IMG_0435.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/E/IMG_0436.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowsf:
+    "chars/shadows/F/IMG_0437.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/F/IMG_0438.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/F/IMG_0439.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/F/IMG_0440.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/F/IMG_0441.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/F/IMG_0442.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowsh:
+    "chars/shadows/H/IMG_0449.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/H/IMG_0450.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/H/IMG_0451.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/H/IMG_0452.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/H/IMG_0453.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/H/IMG_0454.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
+image shadowsi:
+    "chars/shadows/I/IMG_0455.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/I/IMG_0456.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/I/IMG_0457.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/I/IMG_0458.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/I/IMG_0459.png"
+    subpixel True zoom 0.6
+    0.2
+    "chars/shadows/I/IMG_0460.png"
+    subpixel True zoom 0.6
+    0.2
+    repeat
 
 image dog                   = "chars/dogs/dog.png"
 image happy dog             = "chars/dogs/dog_happy.png"
@@ -340,3 +480,4 @@ image thanks = Text("Thanks for playing the demo!", font="FrederickatheGreat-Reg
 image spook logo            = "gui/Spooktober_Logo.png"
 image menu no logo          = "gui/main_menu_nologo.png"
 image main menu             = "gui/main_menu.png"
+
