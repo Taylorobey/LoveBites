@@ -7,7 +7,7 @@ label SpeakNoEvilSceneP2:
         
         #Image Cabin Door Closed
         show bg door closed:
-                subpixel True pos (0.5, -0.48) zoom 1.8
+                subpixel True pos (-0.4, -0.48) zoom 1.8
 
         window auto show
 
@@ -16,11 +16,15 @@ label SpeakNoEvilSceneP2:
         window auto hide
         #Image Cabin Door Open
         show bg door open with dissolve:
-                subpixel True pos (0.5, -0.48) zoom 1.8
+                subpixel True pos (-0.4, -0.48) zoom 1.8
+
+        #for some reason when i change the pos of the earlier bg's the later ones are broken too
+        #i suppose this might be because all of them share the name "bg" in front
+        #is this bad?
 
         #Image Basement Room    
         show bg basement with dissolve:
-                subpixel True ypos 0.01 zoom 1.0
+                subpixel True pos (0, 0.01) zoom 1.0
 
         #Image Cameron Frustrated
         show cam frustrated with dissolve:
