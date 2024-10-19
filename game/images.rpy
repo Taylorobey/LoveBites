@@ -164,13 +164,13 @@ image starryeffect:
     repeat
 
 image fog:
-    "bg/fog/fog_01.png" with Dissolve(2.0)
+    "bg/fog/fog1.png" with Dissolve(2.0)
     2
-    "bg/fog/fog_02.png" with Dissolve(2.0)
+    "bg/fog/fog2.png" with Dissolve(2.0)
     2
-    "bg/fog/fog_03.png" with Dissolve(2.0)
+    "bg/fog/fog3.png" with Dissolve(2.0)
     2
-    "bg/fog/fog_04.png" with Dissolve(2.0)
+    "bg/fog/fog4.png" with Dissolve(2.0)
     2
     repeat
 
