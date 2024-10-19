@@ -174,6 +174,17 @@ image fog:
     2
     repeat
 
+image fire:
+    "bg/fire/fire1.png" with Dissolve(0.25)
+    0.25
+    "bg/fire/fire2.png" with Dissolve(0.25)
+    0.25
+    "bg/fire/fire3.png" with Dissolve(0.25)
+    0.25
+    "bg/fire/fire4.png" with Dissolve(0.25)
+    0.25
+    repeat
+
 # Declare color backgrounds for effect use
 image bg color black        = "bg/color_black.bmp"
 image bg color red          = "bg/color_red.jpg"
