@@ -95,6 +95,8 @@ label WhoYouAreScene:
                 subpixel True
                 zoom 0.7
                 pos(0.52,-0.2)
+        show flame with dissolve:
+                subpixel True pos (-72, 0.45) zoom 0.65 
 
         window auto show
 
@@ -136,6 +138,7 @@ label WhoYouAreScene:
         window auto hide
 
         hide ash friendly with dissolve
+        hide flame with dissolve
 
         # VSFX Ashina (move lower and to the right corner, torso-up, as if viewing her across a table)
         show bg hearth with dissolve:
@@ -147,6 +150,10 @@ label WhoYouAreScene:
         show bg hearth:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
+                
+        show flame with dissolve:
+                pos (0.59, 0.63) zoom 1.05
+        #can't get this to match up juuust right
 
         show ash friendly with dissolve:
                 pos(0.63,0.12) zoom 1.83
@@ -160,6 +167,7 @@ label WhoYouAreScene:
 
         # VSFX Ashina (fade out)
         hide ash friendly with dissolve
+        hide flame with dissolve
 
         # VSFX Red Flash (on the screen edges like a blooming pain)
         show pain onlayer screens:
@@ -184,6 +192,8 @@ label WhoYouAreScene:
         show bg hearth with dissolve:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
+        show flame with dissolve:
+                pos (0.59, 0.63) zoom 1.05
         window auto hide
         camera:
                 subpixel True 
@@ -193,6 +203,7 @@ label WhoYouAreScene:
                 linear 0.15 xpos -100
                 linear 0.15 xpos 0
         window auto show
+
 
         you "What did you do to me…? I don't feel normal. Every little thing feels…"
 

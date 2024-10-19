@@ -3,10 +3,10 @@ label BotchedEscapeScene:
         window auto hide
 
         #Image Cabin Hearth
-        show bg hearth:
+
+        camera:
                 subpixel True
-                zoom 1.05 pos(1.44, -0.33)
-                linear 10.0 xpos -0.15
+                linear 10.00 xpos -3000
 
         window auto show
         play sound walk loop
@@ -17,6 +17,9 @@ label BotchedEscapeScene:
         # SFX Crickets
         play crickets crickets fadein 0.5 loop
         # Image Cabin Door Open
+        hide flame
+        camera:
+                xpos 0
         show bg door open with dissolve:
                 pos (0.5,0.0)
         #SFX Fireplace (fade out)

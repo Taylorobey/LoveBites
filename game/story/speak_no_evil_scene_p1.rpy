@@ -94,6 +94,9 @@ label SpeakNoEvilSceneP1:
         zoom 2.0 xalign(0.5) yalign(0.01)
 
     # Image Cabin Hearth
+    show flame:
+        subpixel True pos (-72, 0.45) zoom 0.65 
+
     show bg hearth with dissolve:
         subpixel True
         zoom 0.7
@@ -265,8 +268,7 @@ label SpeakNoEvilSceneP1:
     window auto hide
     #VSFX Ashina (fade out)
     hide ash annoyed with dissolve
-    hide fire with dissolve
-    #not the best way to hide it
+    hide flame with dissolve
 
     #SFX Walking
     play sound walk loop

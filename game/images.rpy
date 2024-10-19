@@ -185,6 +185,17 @@ image fire:
     0.25
     repeat
 
+image flame:
+    "bg/living room flame/flame1.png" with Dissolve(0.2)
+    0.2
+    "bg/living room flame/flame2.png" with Dissolve(0.2)
+    0.2
+    "bg/living room flame/flame3.png" with Dissolve(0.2)
+    0.2
+    "bg/living room flame/flame4.png" with Dissolve(0.2)
+    0.2
+    repeat
+
 # Declare color backgrounds for effect use
 image bg color black        = "bg/color_black.bmp"
 image bg color red          = "bg/color_red.jpg"
