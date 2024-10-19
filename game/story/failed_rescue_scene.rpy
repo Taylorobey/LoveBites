@@ -305,7 +305,9 @@ label UrgeCamLeave:
 label CamCaught:
         pause 0.3
         # Image Cabin Door Closed
-        scene bg door closed with dissolve
+        scene bg door closed with dissolve:
+                zoom 1.2
+                pos (-180, -80)
 
         # Image Cameron Neutral
         show cam neutral onlayer screens with dissolve:
@@ -351,8 +353,17 @@ label CamCaught:
         show ash angry hybrid with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 50 
+                linear 0.1 xpos -50
+                linear 0.1 xpos 50 
+                linear 0.1 xpos -50
+                linear 0.1 xpos 0
+
         window auto show
-        
+
         "The woman’s features suddenly become beastly, claws curling out from her fingernails and fur sprouting through her skin."
 
         # Image Cameron Scared

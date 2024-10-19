@@ -172,7 +172,7 @@ label WhoYouAreScene:
         play sound heart loop
 
         # VSFX Zoom (as if looking down, at the table)
-        show bg meat board:
+        show bg meat board with dissolve:
                 xpos 0.5
                 ypos 0.0
 
@@ -181,7 +181,7 @@ label WhoYouAreScene:
         ## VSFX Screen Shake (like a shiver)
         camera:
                 pos (0, 0)
-        show bg hearth:
+        show bg hearth with dissolve:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
         window auto hide
@@ -332,6 +332,8 @@ label WhoYouAreScene:
 
         "She gives you a very serious, knowing look. Then, her features contort as you’ve seen once before."
 
+        window auto hide
+
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
         show ash thoughtful with dissolve:
@@ -339,6 +341,17 @@ label WhoYouAreScene:
         with Pause(0.2)
         show ash angry hybrid with dissolve:
                 pos(0.35,0.03)
+
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 50 
+                linear 0.1 xpos -50
+                linear 0.1 xpos 50 
+                linear 0.1 xpos -50
+                linear 0.1 xpos 0
+
+        window auto show
 
         ash "We are carnivores. We crave raw meat like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
@@ -350,6 +363,18 @@ label WhoYouAreScene:
         with Pause(0.40)
         show ash angry hybrid:
                 xpos 0.03 zoom 3.36 
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.05 xpos 10 
+                linear 0.05 xpos -10
+                linear 0.05 xpos 10 
+                linear 0.05 xpos -10
+                linear 0.05 xpos 10 
+                linear 0.05 xpos -10
+                linear 0.05 xpos 10 
+                linear 0.05 xpos -10
+                linear 0.05 xpos 0
 
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
