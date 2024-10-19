@@ -172,27 +172,26 @@ label WhoYouAreScene:
         play sound heart loop
 
         # VSFX Zoom (as if looking down, at the table)
-        window auto hide
-        camera:
-                subpixel True 
-                pos (0, 0) zoom 1.0 
-                linear 1.0 pos (729, 828) zoom 1.63 
-        with Pause(1.1)
-        camera:
-                pos (729, 828) zoom 1.63 
-        window auto show
+        show bg meat board:
+                xpos 0.5
+                ypos 0.0
 
         "You avert your gaze to the raw meat on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
 
         ## VSFX Screen Shake (like a shiver)
+        camera:
+                pos (0, 0)
+        show bg hearth:
+                subpixel True
+                zoom 1.05 pos(1.44, -0.33)
         window auto hide
         camera:
                 subpixel True 
-                linear 0.15 xpos 900 
-                linear 0.15 xpos 600
-                linear 0.15 xpos 900 
-                linear 0.15 xpos 600
-                linear 0.15 xpos 700
+                linear 0.15 xpos 100 
+                linear 0.15 xpos -100
+                linear 0.15 xpos 100 
+                linear 0.15 xpos -100
+                linear 0.15 xpos 0
         window auto show
 
         you "What did you do to me…? I don't feel normal. Every little thing feels…"

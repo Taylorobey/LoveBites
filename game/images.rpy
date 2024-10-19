@@ -38,6 +38,9 @@ image bg window:
 image bg meat plate:
     "bg/meat_plate.png"
     subpixel True zoom 0.5
+image bg meat board:
+    "bg/meatboard.png"
+    subpixel True zoom 0.5
 
 image bg window eyes:
     "bg/eyes/EYES_01.png" with dissolve
