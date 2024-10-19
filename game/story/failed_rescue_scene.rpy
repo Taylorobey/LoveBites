@@ -317,6 +317,8 @@ label CamCaught:
 
         "Cameron’s hand reaches for the doorknob. When they open the door, your stomach drops."
 
+        window auto hide
+
         # SFX Creak
         play sound creak volume 0.5
 
@@ -336,7 +338,11 @@ label CamCaught:
         # Music Capture
         play music capture_music volume 0.3 loop
 
+        window auto show
+
         ash "My my, what do we have here?"
+
+        window auto hide
 
         # VSFX Crossfade Ashina Friendly into
         # Image Ashina Angry Hybrid
@@ -345,6 +351,8 @@ label CamCaught:
         show ash angry hybrid with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
+        window auto show
+        
         "The woman’s features suddenly become beastly, claws curling out from her fingernails and fur sprouting through her skin."
 
         # Image Cameron Scared
