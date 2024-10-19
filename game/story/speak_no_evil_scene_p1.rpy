@@ -93,9 +93,6 @@ label SpeakNoEvilSceneP1:
     show bg downstairs:
         zoom 2.0 xalign(0.5) yalign(0.01)
 
-    show fire:
-        subpixel True pos (-0.1, 0.43) zoom 0.15
-
     # Image Cabin Hearth
     show bg hearth with dissolve:
         subpixel True
@@ -204,6 +201,8 @@ label SpeakNoEvilSceneP1:
         play sound fireplace volume 2.5 fadein 3.0 loop
         play crickets mournfulhowls volume 0.2 fadein 3.0 loop
         play music connection_music volume 0.4 fadein 1.5
+        show fire with dissolve:
+            alpha 0.5
 
         "There’s a haunted look in her eyes. A {color=#1C4587}{b}memory{/b}{/color} tugs at the edge of your consciousness. Crackling fire and {color=#1C4587}{b}mournful{/b}{/color} howls. Bottomless agony, threatening to pull you {color=#1C4587}{b}under{/b}{/color}."
 
@@ -220,6 +219,7 @@ label SpeakNoEvilSceneP1:
         stop sound fadeout 3.0
         stop crickets fadeout 3.0
         stop music fadeout 2.5
+        hide fire with dissolve
 
         "Just like that, the feelings fade, leaving you a bit disoriented."
 
