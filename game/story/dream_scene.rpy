@@ -280,6 +280,13 @@ label DreamScene:
         stop music fadeout (2.5)
 
         window auto hide
+        hide shadowsb onlayer screens with dissolve
+        hide shadowsc onlayer screens with dissolve
+        hide shadowsd onlayer screens with dissolve
+        hide shadowsf onlayer screens with dissolve
+        hide shadowsh onlayer screens with dissolve
+        hide shadowsi onlayer screens with dissolve
+        hide shadowse onlayer screens with dissolve
         hide bg ripples onlayer screens with Dissolve(2.0)
         with Pause(3.0)
         jump WhoYouAreScene
