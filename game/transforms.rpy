@@ -210,8 +210,8 @@ transform ash_steps_away2:
 
 transform shadowfade:
     alpha 0.0
-    linear random.uniform(1.1, 1.4) alpha 1.0
-    linear random.uniform(1.1, 1.4) alpha 0.0  
+    linear random.uniform(1.5, 2.0) alpha 1.0
+    linear random.uniform(1.5, 2.0)  alpha 0.0  
     repeat
 
 transform corruptfade:
@@ -224,6 +224,6 @@ transform corruptfade:
             repeat
     parallel:
             alpha 0.0
-            linear random.uniform(0.8, 1.5) alpha 1.0
-            linear random.uniform(0.8, 1.5) alpha 0.0  
+            linear random.uniform(1.3, 2.3) alpha 1.0
+            linear random.uniform(1.3, 2.3)  alpha 0.0  
             repeat

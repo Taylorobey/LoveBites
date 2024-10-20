@@ -199,7 +199,27 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
-
+        show shadowsb onlayer screens at shadowfade:
+                subpixel True pos (-0.03, -63)
+        pause(0.3)
+        show shadowsc onlayer screens at shadowfade:
+                subpixel True pos (0.37, 58)
+        pause(0.3)
+        show shadowsd onlayer screens at shadowfade:
+                subpixel True pos (0.63, -234) 
+        pause(0.3)
+        show shadowsf onlayer screens at shadowfade:
+                subpixel True pos (0.03, -135) 
+        pause(0.3)
+        show shadowsh onlayer screens at shadowfade:
+                subpixel True pos (0.21, -185) 
+        pause(0.3)
+        show shadowsi onlayer screens at shadowfade:
+                subpixel True pos (0.51, -189) 
+        show shadowse onlayer screens at shadowfade:
+                subpixel True pos (0.79, 27) 
+        pause(0.3)
+        
         window auto hide
         menu:
                 #Humanity choice
@@ -213,27 +233,6 @@ label DreamScene:
                                 #linear 3.0 matrixcolor TintMatrix("#b29231")
                                 #is this a good yellow?
                         window auto show
-                        
-                        show shadowsb onlayer screens at shadowfade:
-                                subpixel True pos (-0.03, -63)
-                        pause(0.3)
-                        show shadowsc onlayer screens at shadowfade:
-                                subpixel True pos (0.37, 58)
-                        pause(0.3)
-                        show shadowsd onlayer screens at shadowfade:
-                                subpixel True pos (0.63, -234) 
-                        pause(0.3)
-                        show shadowsf onlayer screens at shadowfade:
-                                subpixel True pos (0.03, -135) 
-                        pause(0.3)
-                        show shadowsh onlayer screens at shadowfade:
-                                subpixel True pos (0.21, -185) 
-                        pause(0.3)
-                        show shadowsi onlayer screens at shadowfade:
-                                subpixel True pos (0.51, -189) 
-                        show shadowse onlayer screens at shadowfade:
-                                subpixel True pos (0.79, 27) 
-                        pause(0.3)
 
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
                         "After all, lately all you do is try to survive. Sometimes, that’s all people can do."
