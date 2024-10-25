@@ -30,9 +30,8 @@ label SpeakNoEvilSceneP2:
 
         "You find Cameron huddled in a corner of the room. They shift, acknowledging your presence, but don’t turn around."
 
-        #show cam frustrated at cam_ground_shake
-        #with Pause(0.55)
-        #broken
+        show cam frustrated at cam_ground_shake
+        with Pause(0.55)
 
         cam "I told you before, I won't eat. Not until you let me see her."
 
@@ -41,9 +40,8 @@ label SpeakNoEvilSceneP2:
         #Image Cameron Friendly
         show cam friendly with dissolve
         with Pause(0.2)
-        #show cam friendly at cam_surprise_jump
-        #with Pause(0.55)
-        #broken
+        show cam friendly at cam_surprise_jump
+        with Pause(0.55)
 
         cam "¡Dios mío!"
 

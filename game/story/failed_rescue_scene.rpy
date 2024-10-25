@@ -22,10 +22,13 @@ label FailedRescueScene:
         # Image Captive Cabin Room (full view)
         show bg room mc open window with dissolve:
                 subpixel True 
-                pos (0.62, 1.2) zoom 1.25 
-                linear 0.91 pos (0.38, 1.2) zoom 1.25 
-                linear 0.34 pos (0.5, 1.0) zoom 1.1
-        with Pause(1)
+                pos (0.5, 1.0) zoom 1.1
+                linear 1.0 pos (0.62, 1.2) zoom 1.25
+                pause 0.5  
+                linear 2.0 pos (0.38, 1.2) zoom 1.25
+                pause 0.5 
+                linear 0.5 pos (0.5, 1.0) zoom 1.1
+        pause 5.0
         show bg room mc open window:
                 pos (0.5, 1.0) zoom 1.1
 

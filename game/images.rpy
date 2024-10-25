@@ -11,6 +11,9 @@ image bg room mc            = "bg/captive_room.png"
 image bg room mc open window:
     "bg/captive_room_open_window.png"
     subpixel True zoom 0.5
+image bg room mc cam :
+    "bg/captive_room_cameron.png"
+    subpixel True zoom 0.5
 image bg door closed        = "bg/cabin_door_closed.png"
 image bg door open          = "bg/cabin_door_open.png"
 image bg downstairs         = "bg/downstairs.png"

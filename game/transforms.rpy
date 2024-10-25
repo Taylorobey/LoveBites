@@ -150,9 +150,9 @@ transform annoyed_shake:
 
 transform cam_ground_shake:
     subpixel True 
-    linear 0.15 xpos 0.57 
-    linear 0.15 xpos 0.59 
-    linear 0.15 xpos 0.58 
+    linear 0.15 xpos 0.63 
+    linear 0.15 xpos 0.65 
+    linear 0.15 xpos 0.63 
 
 #transforms for jumping in place
 transform jump_in_place:
@@ -164,9 +164,9 @@ transform jump_in_place:
 
 transform cam_surprise_jump:
     subpixel True
-    linear 0.15 ypos -0.04 
-    linear 0.15 ypos 0.01 
-    linear 0.15 ypos -0.01
+    linear 0.15 ypos 0.18
+    linear 0.15 ypos 0.15
+    linear 0.15 ypos 0.18
 
 #transform for nodding motion
 transform nod:
