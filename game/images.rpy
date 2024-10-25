@@ -197,7 +197,7 @@ image flame:
     repeat
 
 # Declare color backgrounds for effect use
-image bg color black        = "bg/color_black.bmp"
+image bg color black        = "bg/color_black.jpg"
 image bg color red          = "bg/color_red.jpg"
 
 # Declare character images

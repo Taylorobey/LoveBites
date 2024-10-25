@@ -459,31 +459,34 @@ label ICanSeeTheStarsScene:
     
     you "..."
 
-    window auto hide
-    with Pause(1.5)
-    
-    show thanks with Dissolve(2.0):
-        subpixel True pos (0.16, -0.58) 
+#window auto hide
+#with Pause(1.5)
+#
+#show thanks with Dissolve(2.0):
+    #subpixel True pos (0.16, -0.58) 
 
-    with Pause(3.0)
-    hide thanks with dissolve
+#with Pause(3.0)
+#hide thanks with dissolve
 
-    $ credits_speed = 25 #scrolling speed in seconds
-    pause(0.5)
-    show cred at Move((0.5, 3.1), (0.5, -1.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
-    pause(credits_speed)
+#$ credits_speed = 25 #scrolling speed in seconds
+#pause(0.5)
+#show cred at Move((0.5, 3.1), (0.5, -1.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
+#pause(credits_speed)
 
-    hide sky_color with dissolve
-    hide starryeffect onlayer screens with dissolve
-    show bg color black with dissolve:
-        pos (0.5,-0.5)
-    stop music fadeout 2.0
-    stop sound fadeout 2.0
-    stop soundb fadeout 2.0
-    stop crickets fadeout 2.0
-    with Pause(2.5)
+hide sky_color with dissolve
+hide starryeffect onlayer screens with dissolve
+show bg color black with dissolve
+camera:
+    pos (0, 0)
+#camera reset
+stop music fadeout 2.0
+stop sound fadeout 2.0
+stop soundb fadeout 2.0
+stop crickets fadeout 2.0
+with Pause(2.5)
+jump ConfrontationPlanningScene
 
-    return
+#return
 
 label demoroute:
     narrator "Sorry, this option isn't available in the demo."
