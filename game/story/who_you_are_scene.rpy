@@ -347,20 +347,7 @@ label WhoYouAreScene:
 
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
-        show ash thoughtful with dissolve:
-                pos(0.45,0.03)
-        with Pause(0.2)
-        show ash angry hybrid with dissolve:
-                pos(0.35,0.03)
-
-        # player shakes, scared
-        camera:
-                subpixel True 
-                linear 0.1 xpos 50 
-                linear 0.1 xpos -50
-                linear 0.1 xpos 50 
-                linear 0.1 xpos -50
-                linear 0.1 xpos 0
+        call AshinaScaryShift
 
         window auto show
 
@@ -386,7 +373,7 @@ label WhoYouAreScene:
                 linear 0.05 xpos 10 
                 linear 0.05 xpos -10
                 linear 0.05 xpos 0
-
+        with Pause(0.1)
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
         show ash thoughtful with dissolve:

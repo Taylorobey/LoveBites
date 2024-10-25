@@ -47,6 +47,22 @@ label AshinaShiftFromWolf:
         window auto show
         return
 
+label AshinaScaryShift:
+        show ash thoughtful with dissolve
+        with Pause(0.15)
+        show ash angry hybrid:
+                subpixel True xalign 0.4 zoom 1.5
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 0
+        with dissolve
+        return
+
 # common vfx that don't involve characters
 # VFX red flash (on the edges)
 

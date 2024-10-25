@@ -20,7 +20,7 @@ label FailedRescueScene:
         window auto hide
 
         # Image Captive Cabin Room (full view)
-        show bg room mc open window with dissolve:
+        show bg room mc cam with dissolve:
                 subpixel True 
                 pos (0.5, 1.0) zoom 1.1
                 linear 1.0 pos (0.62, 1.2) zoom 1.25
@@ -29,7 +29,7 @@ label FailedRescueScene:
                 pause 0.5 
                 linear 0.5 pos (0.5, 1.0) zoom 1.1
         pause 5.0
-        show bg room mc open window:
+        show bg room mc cam:
                 pos (0.5, 1.0) zoom 1.1
 
         # VSFX Slow Pan or Back And Forth Pan (as if looking around the room, whichever looks more natural, before settling on the window)
@@ -52,12 +52,12 @@ label FailedRescueScene:
         you "Cameron?!"
 
         window auto hide
-        show bg room mc open window:
+        show bg room mc cam:
                 subpixel True 
                 zoom 1.1 
                 linear 0.30 zoom 1.0 
         with Pause(0.40)
-        show bg room mc open window:
+        show bg room mc cam:
                 zoom 1.0 
         window auto show
 
@@ -73,7 +73,7 @@ label FailedRescueScene:
         # VSFX Zoom (as if walking towards the window)
         # made the pov closer to the camera
         pause 0.2
-        show bg room mc open window at walk_to_window
+        show bg room mc cam at walk_to_window
         with Pause(1.0)
         window auto show
 
@@ -313,7 +313,7 @@ label CamCaught:
                 pos (-180, -80)
 
         # Image Cameron Neutral
-        show cam neutral onlayer screens with dissolve:
+        show cam neutral zorder 99 with dissolve:
                 xalign 0.6 zoom 1.5 
 
         stop music fadeout 2.0
@@ -338,7 +338,7 @@ label CamCaught:
         show ash friendly with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
-        show cam scared onlayer screens with dissolve
+        show cam scared with dissolve
 
         # Music Capture
         play music capture_music volume 0.3 loop
@@ -351,19 +351,7 @@ label CamCaught:
 
         # VSFX Crossfade Ashina Friendly into
         # Image Ashina Angry Hybrid
-        show ash thoughtful with dissolve
-        with Pause(0.2)
-        show ash angry hybrid with dissolve:
-                subpixel True xalign 0.4 zoom 1.5
-
-        # player shakes, scared
-        camera:
-                subpixel True 
-                linear 0.1 xpos 50 
-                linear 0.1 xpos -50
-                linear 0.1 xpos 50 
-                linear 0.1 xpos -50
-                linear 0.1 xpos 0
+        call AshinaScaryShift
 
         window auto show
 
@@ -371,7 +359,7 @@ label CamCaught:
 
         # Image Cameron Scared
         # again xalign is playing opposites i don't know whyyy aaaaaa
-        show cam scared onlayer screens with dissolve:
+        show cam scared with dissolve:
                 xalign 0.6 zoom 1.5 
 
         "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."
@@ -379,20 +367,22 @@ label CamCaught:
         "She meets your gaze as she taunts you."
 
         # VSFX Ashina and Cameron (closer)
-        show ash angry hybrid with moveinleft:
+        show ash angry hybrid:
                 xalign 0.5
-        show cam scared onlayer screens with moveinleft:
-                xalign 0.7
+        show cam scared:
+                xalign 0.65
+        with moveinleft
 
         ash "A friend of yours, I take it?"
 
         "Cameron, in contrast to their big talk beforehand, is now frozen with fear in your captor’s grasp."
 
         # VSFX Ashina and Cameron (further away)
-        show ash angry hybrid with moveinleft:
+        show ash angry hybrid:
                 xalign 0.7
-        show cam scared onlayer screens with moveinleft:
-                xalign 0.9
+        show cam scared:
+                xalign 0.78
+        with moveinleft
 
         ash "At least this human knows their place. Had they dared to put up a fight, I would have killed them where they stood. "
 
@@ -401,18 +391,21 @@ label CamCaught:
         you "Let them go! Please…"
 
         # VSFX Ashina and Cameron (closer)
-        show ash angry hybrid with moveinleft:
+        show ash angry hybrid:
                 xalign 0.5
-        show cam scared onlayer screens with moveinleft:
-                xalign 0.7
+        show cam scared:
+                xalign 0.65
+        with moveinleft
+
 
         ash "You do not give the orders around here. Besides, that is something I simply cannot do." 
 
         # VSFX Ashina and Cameron (further away)
-        show ash angry hybrid with moveinleft:
+        show ash angry hybrid:
                 xalign 0.7
-        show cam scared onlayer screens with moveinleft:
-                xalign 0.9
+        show cam scared:
+                xalign 0.78
+        with moveinleft
 
         ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
 
@@ -421,10 +414,11 @@ label CamCaught:
         ash "Perhaps, if you are a good girl, I’ll have mercy on your little friend here."
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
-        show ash angry hybrid with dissolve:
+        show ash angry hybrid:
                 subpixel True xpos 0.55 ypos 45 zoom 1.1
-        show cam scared onlayer screens with dissolve:
-                subpixel True xpos 0.7 ypos 45 zoom 1.1
+        show cam scared:
+                subpixel True xpos 0.61 ypos 45 zoom 1.1
+        with dissolve
 
         ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
 
@@ -432,8 +426,9 @@ label CamCaught:
         stop music fadeout 2.0
 
         # VSFX Ashina and Cameron quickly Fade Out
-        hide ash angry hybrid with dissolve
-        hide cam scared onlayer screens with dissolve
+        hide ash angry hybrid
+        hide cam scared 
+        with dissolve
 
         # SFX Creak
         play sound creak volume 0.5
