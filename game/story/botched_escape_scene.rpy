@@ -4,10 +4,6 @@ label BotchedEscapeScene:
 
         #Image Cabin Hearth
 
-        camera:
-                subpixel True
-                linear 10.00 xpos -3000
-
         window auto show
         play sound walk loop
 
@@ -82,7 +78,7 @@ label BotchedEscapeScene:
         stop sound
         # Image Forest Edge
         show bg forest edge with dissolve:
-                subpixel True zoom 1.0 ypos 1.0
+                subpixel True zoom 1.05 ypos 1.0
         window auto show
 
 
@@ -330,11 +326,8 @@ label BotchedConverge1:
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         
 
-        show ash annoyed:
-                xpos 0.34
-        with Pause(0.5) 
-        show ash angry hybrid with dissolve
-        with Pause(0.5)
+        call AshinaScaryFastShift
+        pause(0.5)
         # Image Ashina Hybrid Angry
         # VSFX Ashina (closer)
         show ash angry hybrid at step_close_center_fast

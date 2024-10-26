@@ -50,8 +50,20 @@ label AshinaShiftFromWolf:
 label AshinaScaryShift:
         show ash thoughtful with dissolve
         with Pause(0.15)
-        show ash angry hybrid:
-                subpixel True xalign 0.4 zoom 1.5
+        show ash angry hybrid
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 0
+        with dissolve
+        return
+
+label AshinaScaryFastShift:
+        show ash angry hybrid
         # player shakes, scared
         camera:
                 subpixel True 

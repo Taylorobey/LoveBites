@@ -300,7 +300,9 @@ label WhoYouAreScene:
         window auto hide
         # Image Ashina Neutral
         # VSFX Ashina (move back to fullbody, center)
-        show ash neutral with dissolve
+        show ash neutral:
+                matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+        with dissolve
         with Pause(0.5)
         show ash neutral:
                 linear 1.0 pos(0.42,0.03) zoom 1.8

@@ -1,6 +1,7 @@
 label DreamScene:
         #stop audio from previous scene
         stop sound
+        $ save_name = "Dreams of Memories"
 
         window auto hide
 
@@ -199,26 +200,27 @@ label DreamScene:
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
 
-        show shadowsb onlayer screens at shadowfade:
+        show shadowsb at shadowfade:
                 subpixel True pos (-0.03, -63)
-        pause(0.3)
+        with Pause(1.5)
         show shadowsc onlayer screens at shadowfade:
                 subpixel True pos (0.37, 58)
-        pause(0.3)
-        show shadowsd onlayer screens at shadowfade:
+        with Pause(1.5)
+        show shadowsd at shadowfade:
                 subpixel True pos (0.63, -234) 
-        pause(0.3)
+        with Pause(1.5)
         show shadowsf onlayer screens at shadowfade:
                 subpixel True pos (0.03, -135) 
-        pause(0.3)
-        show shadowsh onlayer screens at shadowfade:
+        with Pause(1.5)
+        show shadowsh at shadowfade:
                 subpixel True pos (0.21, -185) 
-        pause(0.3)
+        with Pause(1.5)
         show shadowsi onlayer screens at shadowfade:
                 subpixel True pos (0.51, -189) 
-        show shadowse onlayer screens at shadowfade:
+        with Pause(1.5)
+        show shadowse at shadowfade:
                 subpixel True pos (0.79, 27) 
-        pause(0.3)
+        with Pause(1.5)
         
         window auto hide
         menu:
@@ -243,7 +245,7 @@ label DreamScene:
                 "People are selfish.":
                         show bg ripple four onlayer screens with Dissolve(2.0):
                                 subpixel True xzoom 1.59 zoom 0.52
-                        pause 0.3
+                        with Pause(0.5)
                         # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
@@ -251,26 +253,27 @@ label DreamScene:
                         #should we use straight blue instead
                         window auto show
 
-                        show shadowsb onlayer screens at corruptfade:
+                        show shadowsb at corruptfade:
                                 subpixel True pos (-0.03, -63)
-                        pause(0.3)
+                        with Pause(0.5)
                         show shadowsc onlayer screens at corruptfade:
                                 subpixel True pos (0.37, 58)
-                        pause(0.3)
-                        show shadowsd onlayer screens at corruptfade:
+                        with Pause(0.5)
+                        show shadowsd at corruptfade:
                                 subpixel True pos (0.63, -234) 
-                        pause(0.3)
+                        with Pause(0.5)
                         show shadowsf onlayer screens at corruptfade:
                                 subpixel True pos (0.03, -135) 
-                        pause(0.3)
-                        show shadowsh onlayer screens at corruptfade:
+                        with Pause(0.5)
+                        show shadowsh at corruptfade:
                                 subpixel True pos (0.21, -185) 
-                        pause(0.3)
+                        with Pause(0.5)
                         show shadowsi onlayer screens at corruptfade:
                                 subpixel True pos (0.51, -189) 
-                        show shadowse onlayer screens at corruptfade:
+                        with Pause(0.5)
+                        show shadowse at corruptfade:
                                 subpixel True pos (0.79, 27) 
-                        pause(0.3)
+                        with Pause(0.5)
 
                         "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/b}{/color} be like them."

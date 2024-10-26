@@ -87,6 +87,7 @@ label FailedRescueScene:
         # Image Cameron Neutral
         # VSFX Cameron (close, from upper torso to head, similar to the view you would get pulling them out of the window)
         show cam neutral at start_bust 
+        show bg room mc
         with dissolve
 
         # SFX Creak
@@ -99,7 +100,6 @@ label FailedRescueScene:
 
 
         window auto hide
-        show bg room mc with dissolve
         pause 0.5
         # VSFX Fade out Cameron
         hide cam neutral with dissolve
