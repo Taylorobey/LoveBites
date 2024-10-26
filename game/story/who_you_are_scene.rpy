@@ -95,7 +95,7 @@ label WhoYouAreScene:
                 subpixel True
                 zoom 0.7
                 pos(0.52,-0.2)
-        show flame with dissolve:
+        show flame zorder 99 with dissolve:
                 subpixel True pos (-72, 0.45) zoom 0.65 
 
         window auto show
