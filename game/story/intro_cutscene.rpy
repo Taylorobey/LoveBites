@@ -115,26 +115,16 @@ label IntroductoryCutscene:
 
 
         window auto hide
-        #Image Street full of dogs
-        scene bg street full with dissolve 
-
-        #VSFX Fast Zoom on Image
-        show bg street full:
-                subpixel True 
-                offset (absolute(0.0), absolute(0.0)) zoom 1.0 
-                linear 10 offset (756, 2124.0) zoom 4.89 
-
-        window auto show
-
-        
         #Music Capture
         play music capture_music volume 0.3
-        
         #SFX Running
         play sound run loop
-        
         #SFX Barking
-        play crickets barking volume 0.5
+        play crickets barking volume 0.4
+        #Image Street full of dogs
+        scene bg street full with dissolve
+        pause 0.1
+        show streetrun
 
         narrator "They’re everywhere. In front of you. Behind you. Your body is suddenly alert and flooding with warmth. Your pulse is racing. You spot a side alley and turn without thinking."
 

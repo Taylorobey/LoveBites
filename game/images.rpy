@@ -499,6 +499,21 @@ image shadowsi:
 image dog                   = "chars/dogs/dog.png"
 image happy dog             = "chars/dogs/dog_happy.png"
 
+image streetrun:
+    "bg/street_full_dogs.png"
+    subpixel True 
+    offset (absolute(0.0), absolute(0.0)) zoom 1.0 
+    linear 4 offset (600, 1725.0) zoom 4
+    "bg/street_many_dogs.png"
+    subpixel True 
+    offset (0,0) zoom 1
+    linear 6 offset (-900, 1000.0) zoom 3.5
+    offset (-1000, 1080.0) zoom 4.0
+    "bg/street_two_dogs.png"
+    subpixel True
+    offset (684.0, 504.0)  zoom 1.72
+    linear 3.5 xoffset -275
+
 # Declare other images
 image logo                  = "logo.png"
 image pain                  = "red_edges.png"
