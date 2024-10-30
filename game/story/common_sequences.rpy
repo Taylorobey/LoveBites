@@ -87,3 +87,62 @@ label PainFlash:
                 linear 1.0 alpha 0.5
                 linear 2.0 alpha 0.0
     return
+
+label GoToHearth:
+        window auto hide
+        # SFX Walking
+        play sound walk loop
+        # Image Cabin Door Open
+        show bg door open with dissolve:
+                subpixel True
+                zoom 1.0
+                linear 2.00 zoom 2.0 yalign(0.5)
+        with Pause(1.5)
+        show bg door open:
+                zoom 2.0 yalign(0.5)
+        # Image Cabin Hall
+        stop crickets fadeout 1.0
+        show bg hallway with dissolve:
+                subpixel True 
+                zoom 0.53
+                linear 2.00 zoom 1.0 xalign(0.8) yalign(0.3)
+        with Pause(1.5)
+        show bg hallway:
+                zoom 1.0 xalign(0.8) yalign(0.3)
+        stop music fadeout 4.0
+        play soundb fireplace volume 0.3 loop fadein 2.0
+        # Image Downstairs
+        show bg downstairs with dissolve:
+                subpixel True
+                zoom 1.0 xalign(0.5) yalign(0.01)
+                linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+        with Pause(1.5)
+        show bg downstairs:
+                zoom 2.0 xalign(0.5) yalign(0.01)
+        return
+
+label GoDownstairs:
+        window auto hide
+        play sound walk loop
+        show bg downstairs with dissolve:
+                subpixel True
+                zoom 1.0 xalign(0.5) yalign(0.01)
+                linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+        with Pause(1.5)
+        show bg downstairs:
+                zoom 2.0 xalign(0.5) yalign(0.01)
+        stop sound fadeout 1.0
+        return
+
+label GoUpstairs:
+        window auto hide
+        play sound walk loop
+        show bg upstairs with dissolve:
+                subpixel True
+                zoom 1.0 xalign(0.5) yalign(0.01)
+                linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
+        with Pause(1.5)
+        show bg upstairs:
+                zoom 2.0 xalign(0.5) yalign(0.01)
+        stop sound fadeout 1.0
+        return

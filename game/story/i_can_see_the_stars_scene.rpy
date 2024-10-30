@@ -30,38 +30,7 @@ label ICanSeeTheStarsScene:
 
         window auto hide
 
-        play sound walk loop
-        ## VSFX zooming and fading in and out of images as if walking through the cabin
-        stop crickets fadeout 1.0
-
-        # Image Cabin Door Open
-        show bg door open with dissolve:
-            subpixel True
-            zoom 1.0
-            linear 2.00 zoom 2.0 yalign(0.5)
-        with Pause(1.5)
-        show bg door open:
-            zoom 2.0 yalign(0.5)
-
-        # Image Cabin Hall
-        show bg hallway with dissolve:
-            subpixel True 
-            zoom 0.53
-            linear 2.00 zoom 1.0 xalign(0.8) yalign(0.3)
-        with Pause(1.5)
-        show bg hallway:
-            zoom 1.0 xalign(0.8) yalign(0.3)
-        
-        stop music fadeout 4.0
-
-        # Image Downstairs
-        show bg downstairs with dissolve:
-            subpixel True
-            zoom 1.0 xalign(0.5) yalign(0.01)
-            linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
-        with Pause(1.5)
-        show bg downstairs:
-            zoom 2.0 xalign(0.5) yalign(0.01)
+        call GoToHearth
 
         # Image Cabin Hearth
         show bg hearth with dissolve:

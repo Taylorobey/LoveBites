@@ -608,16 +608,8 @@ label BotchedConverge2:
 
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 
-                window auto hide
-                play sound walk loop
                 stop soundb fadeout 1.0
-                show bg upstairs with dissolve:
-                        subpixel True
-                        zoom 1.0 xalign(0.5) yalign(0.01)
-                        linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
-                with Pause(1.5)
-                show bg upstairs:
-                        zoom 2.0 xalign(0.5) yalign(0.01)
+                call GoUpstairs
                 
                 camera:
                         ypos 0

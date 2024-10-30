@@ -31,14 +31,7 @@ label ConfrontationPlanningScene:
     
     "Done with your musings, you rise from the bed. Downstairs, Ashina likely awaits, and you intend to speak with her before heading out. You've learned the hard way that careless departures can be costly. Now, each step is deliberate, weighed against the potential consequences."
 
-    #SFX Walking
-    play sound walk
-    #Image Cabin Hall
-    scene bg hallway with dissolve
-    pause(1.0)
-    #Image Stairs Down
-    scene bg downstairs with dissolve
-    pause(1.0)
+    call GoToHearth
 
     #Image Hearth
     stop sound fadeout 1.0
@@ -51,9 +44,6 @@ label ConfrontationPlanningScene:
     #Image Ashina Neutral
     show ash neutral with dissolve:
         pos(0.11, 0.16) zoom 1.5
-
-    #SFX Fireplace
-    play sound fireplace volume 0.3 loop fadein 1.0
 
     "You find Ashina in the hearth, seated in one of the chairs, her gaze lost in the flickering flames. Her body subtly shifts when you approach, acknowledging your presence without looking at you."
 
@@ -176,7 +166,8 @@ label ConfrontationPlanningScene:
     #SFX Walking
     play sound walking
     #Music Eerie Outdoors
-    play music eerie_outdoors_music
+    play music eerie_outdoors_music fadein 1.0
+    play crickets crickets fadein 1.0 loop
     #Image Cabin Ext. Leaving
     scene bg cabin ext dogs with dissolve
     pause(1.0)
