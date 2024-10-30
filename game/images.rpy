@@ -23,10 +23,10 @@ image bg hallway            = "bg/hallway.png"
 image bg hearth             = "bg/hearth.png"
 image bg cabin ext no dogs  = "bg/cabin_exterior_nodogs.png"
 image bg cabin ext dogs:
-    "bg/eyes/yardeyes1.png" with dissolve
-    1.7
-    "bg/eyes/yardeyes2.png" with dissolve
-    1.7
+    "bg/eyes/yardeyes1.png" with Dissolve(2.5)
+    3
+    "bg/eyes/yardeyes2.png" with Dissolve(2.5)
+    3
     repeat
 
 image bg cabin approach     = "temp/mc_room.jpg"
