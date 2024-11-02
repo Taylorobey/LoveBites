@@ -551,7 +551,7 @@ label BotchedConverge2:
                 #SFX Walking
                 play sound walk loop
                 show bg upstairs with dissolve:
-                        subpixel True xpos 0.5 ypos 0 zoom 1.0
+                        subpixel True zoom 1.0 xalign(0.5) yalign(0.01)
                 stop sound
 
                 "You feel her gaze on your back as you cross the hearth and head upstairs."
@@ -559,11 +559,11 @@ label BotchedConverge2:
                 window auto hide
                 play sound walk loop
                 stop soundb fadeout 1.0
-                show bg upstairs with dissolve:
+                show bg upstairs:
                         subpixel True
                         zoom 1.0 xalign(0.5) yalign(0.01)
                         linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
-                with Pause(1.5)
+                with Pause(2.0)
                 show bg upstairs:
                         zoom 2.0 xalign(0.5) yalign(0.01)
                 
