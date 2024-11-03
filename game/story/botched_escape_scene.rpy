@@ -1,5 +1,5 @@
 label BotchedEscapeScene:
-        
+        $ save_name = "The Great Outdoors"
         window auto hide
 
         #Image Cabin Hearth
@@ -320,12 +320,7 @@ label BotchedConverge1:
         ash "Did you really think I would let you just walk out of here? You silly, naive little thing. You must take me for a fool."
 
         # VSFX Ashina (shake)
-        show ash annoyed at normal_shake:
-                subpixel True 
-                xpos 0.34 
-                linear 0.15 xpos 0.36 
-                linear 0.20 xpos 0.32 
-                linear 0.15 xpos 0.34 
+        show ash annoyed at normal_shake
 
         ash "This was a test, and you, my dear, have failed. I can see you are not yet ready for the privilege of independence."
         

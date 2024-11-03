@@ -1,8 +1,6 @@
 ## Define transforms for use in scripts
-# pacing
-# blur
 
-## Define some positions/zooms that are commonly used
+### Define some positions/zooms that are commonly used
 
 # short step toward player
 transform step_close_short:
@@ -61,7 +59,7 @@ transform torso_close_right:
 transform start_bust:
     zoom 3.4 xpos 0.10 ypos -0.30
 
-#transform for pacing characters
+###Define some transforms for pacing characters
 transform pacing:
     subpixel True
     xpos 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
@@ -125,48 +123,54 @@ transform stop_shortpacing:
             #linear 0.15 yrotate 0.0 
             #linear 0.10 yrotate 0.0
     
-#transforms for shaking
+#switched from xpos to xoffset to make these more generally useful
+#note: offset of +/- 10 is (very) roughly equal to a change in position of 0.01
+
+###Define some transforms for shaking
 transform nervous_shake:
     subpixel True 
-    xpos 0.5 
-    linear 0.15 xpos 0.49 
-    linear 0.15 xpos 0.51 
-    linear 0.15 xpos 0.49 
-    linear 0.15 xpos 0.5 
+    linear 0.15 xoffset -10
+    linear 0.15 xoffset +10  
+    linear 0.15 xoffset -10 
+    linear 0.15 xoffset +10
+    linear 0.15 xoffset 0 
     pause(0.70)
 
 transform normal_shake:
-    subpixel True 
-    xpos 0.34 
-    linear 0.15 xpos 0.36 
-    linear 0.20 xpos 0.32 
-    linear 0.15 xpos 0.34
+    subpixel True
+    linear 0.15 xoffset 20
+    linear 0.20 xoffset -20 
+    linear 0.15 xoffset 20
+    linear 0.15 xoffset 0
 
 transform annoyed_shake:
     subpixel True 
-    ease 0.15 xpos 0.32 
-    ease 0.15 xpos 0.28 
-    ease 0.15 xpos 0.3 
+    linear 0.15 xoffset 30
+    linear 0.15 xoffset -30 
+    linear 0.15 xoffset 30
+    linear 0.15 xoffset 0
 
 transform cam_ground_shake:
     subpixel True 
-    linear 0.15 xpos 0.63 
-    linear 0.15 xpos 0.65 
-    linear 0.15 xpos 0.63 
+    linear 0.15 xoffset -15
+    linear 0.15 xoffset +15  
+    linear 0.15 xoffset -15 
+    linear 0.15 xoffset 0 
 
-#transforms for jumping in place
+###Define some transforms for jumping in place
 transform jump_in_place:
     subpixel True 
-    linear 0.15 ypos 1.45
-    linear 0.10 ypos 1.4 
-    linear 0.05 ypos 1.43
-    linear 0.05 ypos 1.45
+    linear 0.15 yoffset 0
+    linear 0.10 yoffset -50
+    linear 0.05 yoffset -25
+    linear 0.05 yoffset 0
 
 transform cam_surprise_jump:
     subpixel True
-    linear 0.15 ypos 0.18
-    linear 0.15 ypos 0.15
-    linear 0.15 ypos 0.18
+    linear 0.15 yoffset 0
+    linear 0.15 yoffset -30
+    linear 0.15 yoffset 0
+
 
 #transform for nodding motion
 transform nod:
@@ -208,6 +212,7 @@ transform ash_steps_away2:
     subpixel True 
     linear 0.60 pos (0.4, 0.0) zoom 1.3
 
+#transforms for shadows to fade in and out in dream scene
 transform shadowfade:
     alpha 0.0
     linear random.uniform(1.5, 2.0) alpha 1.0
