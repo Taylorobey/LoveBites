@@ -84,11 +84,12 @@ label WhoYouAreScene:
         window auto hide
         show ash neutral at center:
                 subpixel True
-                linear 1.0 pos(0.55,1.75) zoom 1.83
+                linear 1.0 pos(0.55,1.67) zoom 1.73
         with Pause(1.0)
         show ash neutral:
-                pos(0.55,1.75) zoom 1.83
+                pos(0.55,1.67) zoom 1.73
         window auto show
+
         "Suddenly feeling bold, you meet her gaze instead, your hands balling into fists."
 
         you "This is ridiculous. What do you want with me? I don’t even know who you are."
@@ -269,7 +270,7 @@ label WhoYouAreScene:
         # Image Ashina Neutral
         # VSFX Ashina (move back to fullbody, center)
         show ash neutral:
-                matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+                linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
         with dissolve
         with Pause(0.5)
         show ash neutral:
@@ -281,7 +282,7 @@ label WhoYouAreScene:
         # VSFX Ashina (move from center to left)   
         show ash neutral:
                 subpixel True ypos 0.03 
-                xpos 0.42 
+                xpos 0.43 
                 linear 3.0 xpos -0.36
 
         ash "We have heightened strength, senses, and connection with one another and canines. As the full moon approaches, we become closer to our beast, our wolf, and can change our skin with more ease."
@@ -289,7 +290,7 @@ label WhoYouAreScene:
         window auto hide
         with Pause(1.0)
         show ash neutral:
-                linear 0.5 pos (-0.36, 0.03)
+                linear 0.5 pos (-0.4, 0.03)
         window auto show
 
         "Her hand runs along the back of your seat, nearly brushing your skin. It sends a shiver down your spine."
@@ -315,6 +316,7 @@ label WhoYouAreScene:
 
         window auto hide
 
+        ###FIX: Ashina teleports(?) at start of this
         # Image Ashina Hybrid Angry
         # VSFX Ashina (move center)
         call AshinaScaryShift
@@ -326,7 +328,7 @@ label WhoYouAreScene:
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
                 subpixel True 
-                pos(0.35,0.03) zoom 1.8 
+
                 linear 0.30 xpos 0.03 zoom 3.36
         with Pause(0.40)
         show ash angry hybrid:
@@ -347,6 +349,7 @@ label WhoYouAreScene:
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
         show ash thoughtful with dissolve:
+                xoffset -100
                 xpos 0.2
 
         ash "And this is why we cannot be around people. The sight of us losing control for even a moment, or worse, the mistakes we make under the wolf’s influence, will be punished with death or torture."
@@ -355,7 +358,7 @@ label WhoYouAreScene:
         # Image Ashina Hybrid Thoughtful
         show ash thoughtful:
                 subpixel True
-                linear 0.30 xpos 0.42 zoom 1.8
+                linear 0.30 xoffset 0 xpos 0.42 zoom 1.8
  
         ash "There is ugliness in what we are, but there is beauty, too. You will know it when you feel the wind flowing through your fur, and find you are a part of something so much greater than yourself."
 
@@ -405,7 +408,7 @@ label AppreciationResponse:
 
         # VSFX Ashina (back in the bottom right torso-up-view)
         show ash neutral:
-                linear 1.0 pos(0.5,0.22) zoom 1.8
+                linear 1.0 pos(0.54,0.23) zoom 1.8
 
         ash "Still… that doesn’t mean you cannot feel angry about it. The anger pushes us forward. That is its own kind of strength."
 
@@ -419,7 +422,9 @@ label AppreciationResponse:
         window auto show
 
         ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
-
+        show ash neutral:
+                linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+        pause 0.5
         # VSFX Ashina (fade out)
         hide ash neutral with easeoutright
 

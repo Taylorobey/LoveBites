@@ -48,9 +48,28 @@ label AshinaShiftFromWolf:
         return
 
 label AshinaScaryShift:
-        show ash thoughtful with dissolve
+        show ash thoughtful_reverse with dissolve
         with Pause(0.15)
-        show ash angry hybrid
+        show ash angry hybrid:
+                xoffset -305
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 0
+        with dissolve
+        return
+
+label AshinaScaryShiftReverse:
+        show ash thoughtful:
+                xoffset 110
+        with dissolve
+        with Pause(0.15)
+        show ash angry hybrid:
+                xoffset 0
         # player shakes, scared
         camera:
                 subpixel True 

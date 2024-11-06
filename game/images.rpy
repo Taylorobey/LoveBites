@@ -225,6 +225,9 @@ image ash sadistic:
 image ash thoughtful:
     "chars/ashina/ashina_thoughtful.png"
     subpixel True zoom 0.33
+image ash thoughtful_reverse:
+    "chars/ashina/ashina_thoughtful.png"
+    subpixel True xoffset -80 zoom 0.33
 image ash caring:
     "chars/ashina/ashina_caring.png"
     subpixel True zoom 0.33

@@ -351,7 +351,7 @@ label CamCaught:
 
         # VSFX Crossfade Ashina Friendly into
         # Image Ashina Angry Hybrid
-        call AshinaScaryShift
+        call AshinaScaryShiftReverse
 
         window auto show
 
