@@ -243,12 +243,14 @@ image ash angry hybrid:
 image ash annoyed:
     "chars/ashina/ashina_annoyed.png"
     subpixel True zoom 0.33
-#temps
+image ash hybrid arms down:
+    "chars/ashina/ashina_hybridarmsdown.png"
+    subpixel True zoom 0.37
 image ash fighting:
-    "chars/ashina/ashina_neutral.png"
+    "chars/ashina/ashina_hybridclaw.png"
     subpixel True zoom 0.33 
 image ash hurt:
-    "chars/ashina/ashina_neutral.png"
+    "chars/ashina/ashina_hybridarrow.png"
     subpixel True zoom 0.33 
 
 #Akari
@@ -283,15 +285,22 @@ image aki determined:
     "chars/akari/akari_determined.png"
     subpixel True zoom 0.33 
 #temps
+image aki fighting blur:
+    "chars/akari/akari_knifeslashblur.png"
+    subpixel True zoom 0.33
 image aki fighting:
-    "chars/akari/akari_arrowready.png"
-    subpixel True zoom 0.33 
-image aki dodging:
-    "chars/akari/akari_bow.png"
-    subpixel True zoom 0.33 
+    "chars/akari/akari_knifeslash.png"
+    subpixel True zoom 0.33
+image aki fighting blood:
+    "chars/akari/akari_knifeslashblood.png"
+    subpixel True zoom 0.33
+image aki knife:
+    "chars/akari/akari_knifeready.png"
+    subpixel True zoom 0.33
 image aki hurt:
-    "chars/akari/akari_neutral.png"
-    subpixel True zoom 0.33 
+    "chars/akari/akari_wounded.png"
+    subpixel True zoom 0.33
+
 
 #Cameron
 image cam neutral:
