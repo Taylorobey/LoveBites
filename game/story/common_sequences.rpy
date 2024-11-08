@@ -41,15 +41,27 @@ label AshinaShiftFromWolf:
         with Pause(0.2)
         show ash angry hybrid with dissolve
         with Pause(0.4)
-        show ash thoughtful with dissolve
+        show ash hybrid arms down with dissolve
         with Pause(0.4)
-        show ash neutral with dissolve
+        show ash thoughtful:
+                xoffset 40
+        with dissolve
+        with Pause(0.4)
+        show ash neutral:
+                xoffset 0
+        with dissolve
         window auto show
         return
 
 label AshinaScaryShift:
-        show ash thoughtful_reverse with dissolve
-        with Pause(0.15)
+        show ash thoughtful_reverse:
+                xoffset -265
+        with dissolve
+        with Pause(0.05)
+        show ash hybrid arms down:
+                xoffset -305
+        with dissolve
+        with Pause(0.05)
         show ash angry hybrid:
                 xoffset -305
         # player shakes, scared
@@ -65,9 +77,13 @@ label AshinaScaryShift:
 
 label AshinaScaryShiftReverse:
         show ash thoughtful:
-                xoffset 110
+                xoffset 40
         with dissolve
         with Pause(0.15)
+        show ash hybrid arms down:
+                xoffset 0
+        with dissolve
+        with Pause(0.05)
         show ash angry hybrid:
                 xoffset 0
         # player shakes, scared
