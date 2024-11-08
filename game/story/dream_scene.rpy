@@ -11,7 +11,9 @@ label DreamScene:
 
         show bg ripple one onlayer screens with Dissolve(3.0):
                 subpixel True xzoom 1.59 zoom 0.52
+        pause 1.0
 
+        window auto show
         "Your consciousness bubbles to the surface as sunlight heats your skin nearly to the point of burning. You squint down at your tiny hands, wet with tears."
 
         you "{i}This dream again… Why? Why now?{/i}"
@@ -63,10 +65,16 @@ label DreamScene:
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
+        window auto hide
         #dramatic pause
-        with Pause(0.3)
+        with Pause(1.0)
+        hide bg ripple one onlayer screens with Dissolve(2.0)
+        pause 0.25
         show bg ripple two onlayer screens with Dissolve(2.0):
                 subpixel True xzoom 1.59 zoom 0.52
+        pause 0.5
+        window auto show
+
         "But, of course, good things don't last forever."
 
         window auto hide
@@ -119,8 +127,15 @@ label DreamScene:
 
         "You've always wished you could go back, to tell them what they meant to you. To thank them for what they did for you, for being a safe harbor in the never-ending storm of your life. But, life doesn't give second chances."
 
+        window auto hide
+        pause 1.0
+        hide bg ripple two onlayer screens with Dissolve(2.0)
+        pause 0.25
         show bg ripple three onlayer screens with Dissolve(2.0):
                 subpixel True xzoom 1.59 zoom 0.52
+        pause 0.5
+        window auto show
+
         "Soon, the scene is washed away, and the play begins anew. You're in a classroom and the teacher is giving yet another droning lesson. You're older now, just having started 9th grade."
 
         "The lunch bell rings, jolting you out of your seat."
@@ -198,37 +213,40 @@ label DreamScene:
 
         ## VSFX Shadow Figures 1, 2, 3, 4, etc fade in and out
 
-        "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
-
+        window auto hide
+        hide bg ripple three onlayer screens with Dissolve(2.0)
+        pause 1.0
         show shadowsb at shadowfade:
                 subpixel True pos (-0.03, -63)
-        with Pause(1.5)
+        with Pause(1.0)
         show shadowsc onlayer screens at shadowfade:
                 subpixel True pos (0.37, 58)
-        with Pause(1.5)
+        with Pause(0.9)
         show shadowsd at shadowfade:
                 subpixel True pos (0.63, -234) 
-        with Pause(1.5)
+        with Pause(0.8)
         show shadowsf onlayer screens at shadowfade:
                 subpixel True pos (0.03, -135) 
-        with Pause(1.5)
+        with Pause(0.7)
         show shadowsh at shadowfade:
                 subpixel True pos (0.21, -185) 
-        with Pause(1.5)
+        with Pause(0.6)
         show shadowsi onlayer screens at shadowfade:
                 subpixel True pos (0.51, -189) 
-        with Pause(1.5)
+        with Pause(0.5)
         show shadowse at shadowfade:
                 subpixel True pos (0.79, 27) 
-        with Pause(1.5)
+        with Pause(0.5)
+        window auto show
+
+        "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
+
         
         window auto hide
+        
         menu:
                 #Humanity choice
                 "People are complicated.":
-                        show bg ripple one onlayer screens with Dissolve(2.0):
-                                subpixel True xzoom 1.59 zoom 0.52
-                        pause 0.3
                 # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
@@ -243,9 +261,6 @@ label DreamScene:
                         
                 #Corruption choice
                 "People are selfish.":
-                        show bg ripple four onlayer screens with Dissolve(2.0):
-                                subpixel True xzoom 1.59 zoom 0.52
-                        with Pause(0.5)
                         # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
@@ -289,6 +304,5 @@ label DreamScene:
         hide shadowsh onlayer screens with dissolve
         hide shadowsi onlayer screens with dissolve
         hide shadowse onlayer screens with dissolve
-        hide bg ripples onlayer screens with Dissolve(2.0)
-        with Pause(3.0)
+        with Pause(1.0)
         jump WhoYouAreScene
