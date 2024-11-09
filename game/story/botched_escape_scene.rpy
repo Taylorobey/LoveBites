@@ -16,7 +16,7 @@ label BotchedEscapeScene:
         # SFX Crickets
         play crickets crickets fadein 0.5 loop
         # Image Cabin Door Open
-        hide flame
+        #hide flame
         show bg door open:
                 pos (0.5,0.0)
         camera:

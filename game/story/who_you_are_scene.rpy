@@ -62,8 +62,8 @@ label WhoYouAreScene:
                 subpixel True
                 zoom 0.7
                 pos(0.52,-0.2)
-        show flame zorder 99 with dissolve:
-                subpixel True pos (-72, 0.45) zoom 0.65 
+        #show flame zorder 99 with dissolve:
+        #        subpixel True pos (-72, 0.45) zoom 0.65 
 
         window auto show
 
@@ -107,7 +107,7 @@ label WhoYouAreScene:
         window auto hide
 
         hide ash friendly with dissolve
-        hide flame with dissolve
+        #hide flame with dissolve
 
         # VSFX Ashina (move lower and to the right corner, torso-up, as if viewing her across a table)
         show bg hearth with dissolve:
@@ -120,8 +120,8 @@ label WhoYouAreScene:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
                 
-        show flame zorder 99 with dissolve:
-                pos (0.59, 0.63) zoom 1.05 xoffset 7
+        #show flame zorder 99 with dissolve:
+        #        pos (0.59, 0.63) zoom 1.05 xoffset 7
         #can't get this to match up juuust right
         #I think I fixed this
 
@@ -160,8 +160,8 @@ label WhoYouAreScene:
         show bg hearth with dissolve:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
-        show flame with dissolve:
-                pos (0.59, 0.63) zoom 1.05
+        #show flame with dissolve:
+        #        pos (0.59, 0.63) zoom 1.05
         call Shake
         window auto show
 

@@ -39,8 +39,8 @@ label ConfrontationPlanningScene:
         subpixel True
         zoom 0.7
         pos(0.52,-0.2)
-    show flame zorder 99 with dissolve:
-                subpixel True pos (-72, 0.45) zoom 0.65 
+    #show flame zorder 99 with dissolve:
+    #            subpixel True pos (-72, 0.45) zoom 0.65 
 
     #Image Ashina Neutral
     show ash neutral with dissolve:
@@ -406,8 +406,8 @@ label ConfrontationPlanningScene:
     stop sound fadeout 1.0
     scene bg hearth with dissolve:
         subpixel True pos (-0.07, -0.35) zoom 1.05
-    show flame zorder 99 with dissolve:
-        pos (0.59, 0.63) zoom 1.05 xoffset -4
+    #show flame zorder 99 with dissolve:
+    #    pos (0.59, 0.63) zoom 1.05 xoffset -4
     #Music Eerier Outdoors (fade out)
     stop music fadeout 1.0
     #Music Cabin (fade in)
