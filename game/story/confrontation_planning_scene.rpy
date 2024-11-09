@@ -17,11 +17,11 @@ label ConfrontationPlanningScene:
 
     "You awake hours before dawn, on the day of your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
-    if corruption > 2:
-        "Perhaps being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you into {color=#1C4587}{b}nothingness{/b}{/color}. The freedom to choose and act had lost its luster; It didn’t hold a candle to the crushing weight of reality."
-
     if humanity > 2:
         "Then again, best not to look upon the past with rose-tinted glasses. You know it’s dangerous to mistake routine for satisfaction. After all, that is in part what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You try to learn from them. You keep moving forward."
+
+    if corruption > 2:
+        "Perhaps being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you into {color=#1C4587}{b}nothingness{/b}{/color}. The freedom to choose and act had lost its luster; It didn’t hold a candle to the crushing weight of reality."
 
     #Both of these could appear
 
