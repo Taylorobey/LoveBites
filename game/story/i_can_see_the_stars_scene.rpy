@@ -71,38 +71,7 @@ label ICanSeeTheStarsScene:
 
         window auto hide
 
-        play sound walk loop
-        stop crickets fadeout 1.0
-        ## VSFX zooming and fading in and out of images as if walking through the cabin
-
-        # Image Cabin Door Open
-        show bg door open with dissolve:
-            subpixel True
-            zoom 1.0
-            linear 2.00 zoom 2.0 yalign(0.5)
-        with Pause(1.5)
-        show bg door open:
-            zoom 2.0 yalign(0.5)
-
-        # Image Cabin Hall
-        show bg hallway with dissolve:
-            subpixel True 
-            zoom 0.53
-            linear 2.00 zoom 1.0 xalign(0.8) yalign(0.3)
-        with Pause(1.5)
-        show bg hallway:
-            zoom 1.0 xalign(0.8) yalign(0.3)
-        
-        stop music fadeout 4.0
-
-        # Image Downstairs
-        show bg downstairs with dissolve:
-            subpixel True
-            zoom 1.0 xalign(0.5) yalign(0.01)
-            linear 2.00 zoom 2.0 xalign(0.5) yalign(0.01)
-        with Pause(1.5)
-        show bg downstairs:
-            zoom 2.0 xalign(0.5) yalign(0.01)
+        call GoToHearth
 
         # Image Cabin Hearth
         show bg hearth with dissolve:
@@ -387,8 +356,69 @@ label ICanSeeTheStarsScene:
                 window auto hide
                 hide ash neutral with Dissolve(1.0)
             #Akari Route Choice
-            "Option not available. (demo)":
-                jump demoroute
+            "I have a concern about our weaknesses.":
+
+                $ aka_lock = False
+
+                you "I think I've been a Lycan for long enough to learn our vulnerabilities. The weaknesses that can leave us exposed."
+
+                show ash annoyed with dissolve
+                
+                "Ashina's expression shifts, her eyes locking onto yours with newfound seriousness."
+                
+                you "You’ve seemed worried about outsiders, people who would mean us harm. I need to know how to protect myself, just in case."
+
+                show ash sadistic with dissolve
+                
+                "Ashina waves a hand dismissively."
+                
+                ash "I will keep you safe. There is no need to burden you with that information."
+                
+                you "I don’t mean any disrespect, but… well, what if I'm alone, and you can't help me? Besides… We should watch each other’s backs, right? After all, we only have each other now."
+
+                show ash caring with dissolve
+                
+                "Ashina’s expression softens, a glimpse of vulnerability in her eyes, and something more. Hope, perhaps. It makes your stomach churn."
+
+                show ash thoughtful with dissolve
+                
+                ash "...You make a fair point. We are one and the same. I must be able to trust you with this. We must stand united, for this world will snuff us out any chance that it gets."
+
+                show ash neutral with dissolve
+                
+                ash "Let me ask you this then. What do you think our weakness is?"
+                
+                "You pause, considering the question. When you were first turned, you were sore and exhausted. The next night you awoke, you felt incredibly powerful. Then…"
+                
+                you "Well, I might just be imagining it, but…"
+                
+                you "I think… I feel weaker than I did last night. Has something changed?"
+
+                show ash friendly with dissolve
+                
+                ash "Very intuitive, pup. You are correct."
+
+                show ash thoughtful with dissolve
+                
+                ash "As I insinuated the other night, us Lycans are strongest during the full moon. Conversely, the new moon is when we are at our most vulnerable. We are nearing that phase, which is why you feel the way you do."
+
+                show ash sad with dissolve
+                
+                ash "We will neither have access to our supernatural healing abilities, nor to our full wolf forms. I urge you to stay inside for those three days. It will not be safe for you out here."
+                
+                "You know that if you’re going to help Akari, you’ll have to go out on the night of the new moon. But… it’s not like Ashina needs to know that."
+                
+                you "I’ll stay inside, I promise."
+
+                show ash caring with dissolve
+                
+                "Ashina’s expression relaxes, her relief evident."
+                
+                ash "Good. I do not wish for any harm to come to you."
+
+                window auto hide
+
+
             #Neutral/Cameron Route Choice
             "Option not available. (demo)":
                 jump demoroute
@@ -402,6 +432,8 @@ label ICanSeeTheStarsScene:
     pause(4.0)
     show starryeffect onlayer screens with Dissolve(4.0)
     with Pause(1.0)
+    hide ash caring
+    with Pause(0.1)
 
     if ash_approval >= 3:
         "Ashina moves closer to you, her hand slowly hooking around your upper arm. There’s a pause, then her head comes to rest on your shoulder, just as cautious as her hand."
@@ -453,6 +485,7 @@ stop sound fadeout 2.0
 stop soundb fadeout 2.0
 stop crickets fadeout 2.0
 with Pause(2.5)
+
 jump ConfrontationPlanningScene
 
 #return
