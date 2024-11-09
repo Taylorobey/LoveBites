@@ -174,6 +174,8 @@ label ConfrontationPlanningScene:
     #Image Sky (bottom half)
     show bg forest edge:
         subpixel True pos (1.37, 2.2) zoom 2.74
+    show fog onlayer screens:
+        alpha 0.75
     stop sound
 
     "You depart the cabin and make your way to the forest’s edge. After standing there for a few minutes, you begin to wonder if Akari is even going to show up. Then, you hear her voice from somewhere within the shadows."
@@ -391,6 +393,7 @@ label ConfrontationPlanningScene:
 
     #SFX Walking
     play sound walk loop
+    hide fog onlayer screens with dissolve
     #Image Cabin Etx. Returning (With Dogs)
     #Image Cabin Door Open
     scene bg door open with dissolve
