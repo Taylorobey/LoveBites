@@ -125,20 +125,19 @@ label WhoYouAreScene:
         #can't get this to match up juuust right
 
         show ash friendly with dissolve:
-                pos(0.63,0.12) zoom 1.83
-
+                pos(0.63,0.12) zoom 1.83 yrotate -180.0 
         window auto show
+
         "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of raw meat sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
 
         "The woman reaches forward and delicately plucks a slice of raw meat, before lowering it to her lips. She chews it as if it were soft as butter, her eyes burning into you with an intensity." 
+        
         window auto hide
-        play music eerie_outdoors_music volume 1.5
-
         # VSFX Ashina (fade out)
-        hide ash friendly with dissolve
-        hide flame with dissolve
-
+        show bg meat board onlayer screens with dissolve:
+                pos (0,0)
         # VSFX Red Flash (on the screen edges like a blooming pain)
+        hide ash friendly
         show pain onlayer screens:
                 subpixel True
                 alpha 0.0
@@ -147,30 +146,22 @@ label WhoYouAreScene:
                 linear 0.5 alpha 0.0
                 repeat
         play sound heart loop
-
+        play music eerie_outdoors_music volume 1.5
         # VSFX Zoom (as if looking down, at the table)
-        show bg meat board with dissolve:
-                xpos 0.5
-                ypos 0.0
 
         "You avert your gaze to the raw meat on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
 
+        window auto hide
         ## VSFX Screen Shake (like a shiver)
         camera:
                 pos (0, 0)
+        hide bg meat board onlayer screens with dissolve
         show bg hearth with dissolve:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
         show flame with dissolve:
                 pos (0.59, 0.63) zoom 1.05
-        window auto hide
-        camera:
-                subpixel True 
-                linear 0.15 xpos 100 
-                linear 0.15 xpos -100
-                linear 0.15 xpos 100 
-                linear 0.15 xpos -100
-                linear 0.15 xpos 0
+        call Shake
         window auto show
 
 
@@ -212,7 +203,7 @@ label WhoYouAreScene:
                 linear 2.0 pos (0, 0) zoom 1.0
         with Pause(2.0)
         show ash caring with dissolve:
-                pos(0.5,0.22) zoom 1.8
+                pos(0.5,0.22) zoom 1.8 yrotate -180.0 
         window auto show
 
         # VSFX Effects gradually fade
@@ -270,7 +261,7 @@ label WhoYouAreScene:
         # Image Ashina Neutral
         # VSFX Ashina (move back to fullbody, center)
         show ash neutral:
-                linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 180.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+                linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
         with dissolve
         with Pause(0.5)
         show ash neutral:
@@ -377,8 +368,7 @@ label WhoYouAreScene:
                                 $ ash_approval += 1
                                 jump AppreciationResponse
                         #Ashina Disapproval Choice
-                        "Option Unavailable (Demo)":
-                                # "Respond with disgust. ":
+                        "Respond with disgust.":
                                 $ ash_approval -= 1
                                 jump DisgustResponse
 
@@ -397,12 +387,16 @@ label AppreciationResponse:
         ash "The world can be cruel. No matter how clear your vision for the future, reality wears you down over time."
 
         # Image Ashina Thoughtful
-        show ash thoughtful with dissolve
+        show ash thoughtful:
+                xoffset -20
+        with dissolve
 
         ash "There used to be more of us, you know. Now I fear we may be the last. I, too, once had dreams. Those dreams died with my kin."
 
         # Image Ashina Neutral
-        show ash neutral with dissolve
+        show ash neutral:
+                xoffset 0
+        with dissolve
 
         ash "But there is a strength that comes with acceptance. Change what you can, and accept what you cannot, I believe the saying goes."
 
@@ -422,20 +416,92 @@ label AppreciationResponse:
         window auto show
 
         ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
+
         show ash neutral:
                 linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
         pause 0.5
         # VSFX Ashina (fade out)
-        hide ash neutral with easeoutright
+        hide ash neutral with dissolve
 
         "With that, she leaves, taking the calm with her."
 
         jump BotchedEscapeScene
 
 label DisgustResponse:
-        # "You glare."
-        # you "I didn’t ask for this. I don’t want to be a monster. You want me to play nice? Forget it."
-        # you "The only reason I’m even listening to you right now is because if I don’t, you’ll hurt Cameron. We don’t need to pretend this is anything it isn’t."
-        # TBA
-        narrator "Sorry, this option isn't available in the demo."
-        jump WHOdemochoice
+
+        "You glare at Ashina with every ounce of vitriol you can muster."
+
+        you "I didn’t ask for this. I don’t want to be a monster."
+
+        call Shake
+
+        you "The only reason I’m even listening to you right now is because if I don’t, you’ll hurt Cameron. We don’t need to pretend this is anything it isn’t."
+
+        show ash annoyed with dissolve
+
+        "Ashina’s gaze grows especially cold."
+
+        window auto hide
+        show ash annoyed:
+                subpixel True 
+                zoom 1.8 
+                linear 0.60 zoom 2.5 
+        with Pause(0.70)
+        show ash annoyed:
+                zoom 2.5
+        window auto show
+
+        ash "You foolish, ungrateful girl. The longer you resist, the more you prolong your own suffering. Don’t you see? Have you any sense in that little head of yours, pup?"
+
+        call PainShake
+        play crickets heart
+        with Pause(0.7)
+        stop crickets fadeout 0.5
+
+        "Your blood boils, your skin buzzes, and your claws dig into your seat."
+
+        window auto hide
+        show ash annoyed:
+                subpixel True 
+                zoom 2.5
+                linear 0.60 zoom 1.8
+        with Pause(0.70)
+        show ash annoyed:
+                zoom 1.8
+        window auto show
+
+        you "You are absolutely delusional."
+
+        window auto hide
+        show ash annoyed:
+                subpixel True 
+                pos (0.42, 0.03) xzoom 1.0 zoom 1.8 
+                linear 0.45 pos (0.41, -0.01) xzoom 1.02 zoom 1.85 
+                linear 0.55 pos (0.42, 0.03) xzoom 1.0 zoom 1.8 
+        with Pause(1.10)
+        show ash annoyed:
+                pos (0.42, 0.03) xzoom 1.0 zoom 1.8
+        with Pause(0.5)
+        show ash neutral with dissolve
+        window auto show
+
+        "Ashina takes a deep breath, clearly struggling to keep her own composure."
+
+        show ash thoughtful:
+                xoffset -160
+        with dissolve
+
+        ash "I see that you need more time to accept your new life."
+
+        show ash neutral:
+                xoffset 0
+        with dissolve
+
+        ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
+
+        hide ash neutral with dissolve
+
+        "With that, she leaves, soothing your rage for now."
+
+        jump BotchedEscapeScene
+

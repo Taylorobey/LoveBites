@@ -113,6 +113,36 @@ label AshinaScaryFastShift:
 # common vfx that don't involve characters
 # VFX red flash (on the edges)
 
+label Shake:
+        camera:
+                subpixel True 
+                linear 0.1 xpos 15
+                linear 0.1 xpos -15
+                linear 0.1 xpos 15
+                linear 0.1 xpos -15
+                linear 0.1 xpos 0
+        with dissolve
+        return
+
+label PainShake:
+        window auto hide
+        camera:
+                subpixel True 
+                linear 0.1 xpos 15
+                linear 0.1 xpos -15
+                linear 0.1 xpos 15
+                linear 0.1 xpos -15
+                linear 0.1 xpos 0
+        
+        show pain onlayer screens:
+                subpixel True
+                alpha 0.0
+                linear 0.5 alpha 1.0 
+                linear 1.0 alpha 0.5
+                linear 2.0 alpha 0.0
+        
+
+
 label PainFlash:
     window auto hide
     show pain:
