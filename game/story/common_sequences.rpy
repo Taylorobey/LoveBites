@@ -55,7 +55,7 @@ label AshinaShiftFromWolf:
 
 label AshinaScaryShift:
         show ash thoughtful_reverse:
-                xoffset -265
+                xoffset 40
         with dissolve
         with Pause(0.05)
         show ash hybrid arms down:
