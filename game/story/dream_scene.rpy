@@ -247,6 +247,7 @@ label DreamScene:
         menu:
                 #Humanity choice
                 "People are complicated.":
+                        $ Humanity +=1
                 # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
@@ -261,6 +262,7 @@ label DreamScene:
                         
                 #Corruption choice
                 "People are selfish.":
+                        $ Corruption += 1
                         # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
                         #camera:
                                 #matrixcolor TintMatrix("#fff")
