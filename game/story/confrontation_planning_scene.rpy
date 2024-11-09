@@ -1,4 +1,5 @@
 label ConfrontationPlanningScene:
+    $ save_name = "Calm Before the Storm"
 
     #testing defines
     #define corruption = 3
@@ -13,7 +14,6 @@ label ConfrontationPlanningScene:
     call WakeUpSequence2
     #Music Cabin
     play music cabin_music volume 0.3
-
 
     "You awake hours before dawn, on the day of your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
@@ -36,10 +36,11 @@ label ConfrontationPlanningScene:
     #Image Hearth
     stop sound fadeout 1.0
     show bg hearth with dissolve:
-        subpixel True pos (1.44, 1.66) zoom 1.05
-    show flame with dissolve:
-        pos (0.59, 0.63) zoom 1.05
-        #can't get this to match up juuust right
+        subpixel True
+        zoom 0.7
+        pos(0.52,-0.2)
+    show flame zorder 99 with dissolve:
+                subpixel True pos (-72, 0.45) zoom 0.65 
 
     #Image Ashina Neutral
     show ash neutral with dissolve:
@@ -174,6 +175,7 @@ label ConfrontationPlanningScene:
     #Image Sky (bottom half)
     show bg forest edge:
         subpixel True pos (1.37, 2.2) zoom 2.74
+    with dissolve
     show fog onlayer screens:
         alpha 0.75
     stop sound
@@ -247,10 +249,10 @@ label ConfrontationPlanningScene:
         aki "Seriously?"
 
         #VSFX Akari (as if pacing)
-        show aki at pacing
+        show aki at pacing_reverse
         #i think she's facing the wrong way, not sure why
-        pause(2.0)
-        show aki at stop_pacing
+        pause(3.5)
+        show aki at stop_pacing_left
 
         "Akari paces back and forth, looking thoroughly frustrated."
 
@@ -404,8 +406,8 @@ label ConfrontationPlanningScene:
     stop sound fadeout 1.0
     scene bg hearth with dissolve:
         subpixel True pos (-0.07, -0.35) zoom 1.05
-    show flame with dissolve:
-        pos (0.59, 0.63) zoom 1.05
+    show flame zorder 99 with dissolve:
+        pos (0.59, 0.63) zoom 1.05 xoffset -4
     #Music Eerier Outdoors (fade out)
     stop music fadeout 1.0
     #Music Cabin (fade in)

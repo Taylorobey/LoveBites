@@ -120,9 +120,10 @@ label WhoYouAreScene:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
                 
-        show flame with dissolve:
-                pos (0.59, 0.63) zoom 1.05
+        show flame zorder 99 with dissolve:
+                pos (0.59, 0.63) zoom 1.05 xoffset 7
         #can't get this to match up juuust right
+        #I think I fixed this
 
         show ash friendly with dissolve:
                 pos(0.63,0.12) zoom 1.83 yrotate -180.0 
