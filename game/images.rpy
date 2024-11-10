@@ -29,7 +29,14 @@ image bg cabin ext dogs:
     3
     repeat
 
-image bg cabin approach     = "temp/mc_room.jpg"
+image bg cabin approach     = "bg/approach.png"
+image bg cabin approach dogs = "bg/approach_dogs.png"
+image cabin smoke:
+    "bg/smoke/smoke1.png" with Dissolve(1.0)
+    1
+    "bg/smoke/smoke2.png" with Dissolve(1.0)
+    1
+    repeat
 image bg forest edge        = "bg/sky.png"
 image bg sky color          = "bg/sky_color.png"
 image bg basement:
@@ -283,8 +290,7 @@ image aki caring:
     subpixel True zoom 0.33
 image aki determined:
     "chars/akari/akari_determined.png"
-    subpixel True zoom 0.33 
-#temps
+    subpixel True zoom 0.33
 image aki fighting blur:
     "chars/akari/akari_knifeslashblur.png"
     subpixel True zoom 0.33
@@ -533,6 +539,7 @@ image cred = Text(credits_s, font="FrederickatheGreat-Regular.ttf", text_align=0
 image theend = Text("{size=150}THE END", font="FrederickatheGreat-Regular.ttf", text_align=0.5)
 image thanks = Text("Thanks for playing the demo!", font="FrederickatheGreat-Regular.ttf", size=100)
 image spook logo            = "gui/Spooktober_Logo.png"
+image md logo               = "gui/MDLogo.png"
 image menu no logo          = "gui/main_menu_nologo.png"
 image main menu             = "gui/main_menu.png"
 

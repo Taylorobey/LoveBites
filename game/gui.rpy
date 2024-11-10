@@ -101,8 +101,13 @@ label splashscreen:
     play music main_menu_music
     show spook logo with Dissolve(1.0):
         pos (0.03, 0.2) 
-    pause 2
+    pause 2.0
     hide spook logo with Dissolve(0.5)
+    pause 0.5
+    show md logo with Dissolve(1.0):
+        subpixel True pos (0.01, 0.25) zoom 0.82 
+    pause 2.0
+    hide md logo with Dissolve(0.5)
     pause 0.5
     show menu no logo with Dissolve(1.0)
     pause 1

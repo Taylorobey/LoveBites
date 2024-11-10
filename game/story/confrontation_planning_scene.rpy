@@ -12,8 +12,6 @@ label ConfrontationPlanningScene:
     scene bg room ceiling with dissolve
     #VSFX Blur
     call WakeUpSequence2
-    #Music Cabin
-    play music cabin_music volume 0.3
 
     "You awake hours before dawn, on the day of your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
@@ -26,8 +24,10 @@ label ConfrontationPlanningScene:
     #Both of these could appear
 
     #VSFX Room (full view, getting up)
+    play sound walking loop
     scene bg room mc with dissolve
-    pause(1.0)
+    pause(0.8)
+    stop sound
     
     "Done with your musings, you rise from the bed. Downstairs, Ashina likely awaits, and you intend to speak with her before heading out. You've learned the hard way that careless departures can be costly. Now, each step is deliberate, weighed against the potential consequences."
 
@@ -145,6 +145,8 @@ label ConfrontationPlanningScene:
 
         ash "Yes, I believe you understand. Go now, and know I will never be too far for you to reach."
 
+        hide ash caring with dissolve
+
     if dog_approval < 2:
 
         "Ashina doesn’t answer immediately, instead closing her eyes and taking long, deep breaths."
@@ -161,24 +163,22 @@ label ConfrontationPlanningScene:
 
         ash "We have many abilities that you will come to understand, with time. Go now, and know I will never be too far for you to reach."
 
+        hide ash neutral with dissolve
 
-    #SFX Fireplace (fade out)
-    stop sound fadeout 1.0
-    #SFX Walking
-    play sound walking
-    #Music Eerie Outdoors
-    play music eerie_outdoors_music fadein 1.0
-    play crickets crickets fadein 1.0 loop
-    #Image Cabin Ext. Leaving
-    scene bg cabin ext dogs with dissolve
+
+    call GoOutsideDogs
     pause(1.0)
     #Image Sky (bottom half)
+    play sound walking loop
     show bg forest edge:
         subpixel True pos (1.37, 2.2) zoom 2.74
     with dissolve
     show fog onlayer screens:
         alpha 0.75
+    with dissolve
     stop sound
+    pause 0.2
+    window auto show
 
     "You depart the cabin and make your way to the forest’s edge. After standing there for a few minutes, you begin to wonder if Akari is even going to show up. Then, you hear her voice from somewhere within the shadows."
 
@@ -199,6 +199,8 @@ label ConfrontationPlanningScene:
             subpixel True ypos 2.2 zoom 2.74 
             xpos 1.37 
             linear 40 xpos -0.37
+        
+        play sound walking loop
 
         "You begin to walk alongside the forest, buying a small amount of time to think. In your peripheral, Akari follows along, watching expectantly. You consider making something up, but then decide that the best lie is the truth."
 
@@ -209,6 +211,8 @@ label ConfrontationPlanningScene:
             subpixel True ypos 2.2 zoom 2.74 
             xpos 1.37 
             linear 40 xpos -0.37
+        
+        play sound walking loop
 
         "Akari nods and recedes into the undergrowth, just barely staying in your line of sight. You begin to walk parallel to the forest’s edge, doing your best to appear as if taking a leisurely stroll. You keep the movement of your lips subtle enough that you hope Ashina can’t tell you’re talking from a distance."
 
@@ -238,6 +242,7 @@ label ConfrontationPlanningScene:
         
         show bg forest edge:
             xpos -0.37
+        stop sound
         
         "You stop walking, then you let out what you hope to be a believably disappointed sigh."
 
@@ -300,18 +305,24 @@ label ConfrontationPlanningScene:
 
         you "I’m sorry, I don’t mean to be presumptuous, I just… I know what it’s like to be hurt by someone. To have all this anger bottled up inside, from how helpless they made you feel."
 
-        show aki bow nocked side with dissolve
+        show aki thoughtful with dissolve
 
         "She looks away, silent."
 
         if aka_approval > 0:
 
+            stop sound
+            play music goodbyes_music volume 0.5 fadein 2.5
             show bg forest edge:
                 xpos -0.37
 
             "Just when you almost think the conversation is over, she halts and speaks up, her voice softer than you’ve ever heard it."
 
+            show aki thoughtful look with dissolve
+
             aki "I had a twin brother… Akio."
+
+            hide aki thoughtful with dissolve
 
             "You can tell this is hard for her. Pretending it’s just for the sake of looking natural, you settle down, sitting with your back against a tree and facing the cabin. You hear Akari sit behind you, nearby."
 
@@ -343,25 +354,42 @@ label ConfrontationPlanningScene:
 
             you "I am so sorry, Akari. You shouldn’t have had to see that."
 
+            show aki thoughtful with dissolve
+
             "You turn to look at Akari. She’s looking away, her gaze distant."
+
+            show aki determined with dissolve
 
             aki "Akio deserved better."
 
             you "So did you."
 
+            show aki thoughtful look with dissolve
+
             "Her eyes flick over to you nervously before staring, realizing that you’re looking at her. A few moments pass before her hand slips away, and she rises to her feet."
+
+            show aki neutral with dissolve
+            stop music fadeout 2.5
 
             aki "Leave, before Ashina suspects."
 
             "You want to argue, but Akari is right. You can’t risk Ashina getting suspicious."
 
             you "Can we see each other again? Before the new moon?"
+            
+            show aki thoughtful look with dissolve
 
             "There’s a clear hesitation in Akari’s eyes. She shakes her head."
 
+            show aki thoughtful with dissolve
+
             aki "Too dangerous. Foolish."
 
+            show aki determined with dissolve
+
             "She gives you a very serious look."
+
+            show aki determined at jump_in_place
 
             aki "... do not take any risks. I am often in these woods, and if I see you out, you will regret it."
 
@@ -369,18 +397,37 @@ label ConfrontationPlanningScene:
 
             you "See you soon then, Akari."
 
+            show aki angry with dissolve
+
             "Akari gets a flustered, frustrated look about her as you turn away."
 
+            show aki angry at jump_in_place
+
             aki "You- Stay inside! I mean it!"
+
+            window auto hide
+            play sound walking loop
+            hide aki angry with dissolve
+            hide fog onlayer screens with dissolve
+            show bg cabin approach dogs:
+                subpixel True pos (0.5, 1.0) zoom 1.0
+            with dissolve
+            show cabin smoke with dissolve
+            pause 0.4
+            stop sound
 
             "You step away from the forest’s edge, a small smile playing on your lips. Pausing after a few paces, you take a breath and compose yourself."
 
         else:
+            show aki neutral with dissolve
+            
             aki "Leave, before Ashina suspects."
 
             "You want to argue, but Akari is right. You can’t risk Ashina getting suspicious."
 
             you "Can we see each other again? Before the new moon?"
+
+            show aki determined with dissolve
 
             aki "No. Too dangerous."
 
@@ -388,38 +435,57 @@ label ConfrontationPlanningScene:
 
             you "Okay. I understand."
 
+            window auto hide
+            play sound walking loop
+            hide aki determined with dissolve
+            hide fog onlayer screens with dissolve
+            show bg cabin approach dogs:
+                subpixel True pos (0.5, 1.0) zoom 1.0
+            with dissolve
+            show cabin smoke onlayer screens with dissolve
+            pause 0.4
+            stop sound
+            window auto show
+
             "You step away from the forest’s edge with a tinge of disappointment."
 
 
     #Paths converge
-
+    window auto hide
     #SFX Walking
-    play sound walk loop
+    play sound walking loop
     hide fog onlayer screens with dissolve
     #Image Cabin Etx. Returning (With Dogs)
     #Image Cabin Door Open
     scene bg door open with dissolve
+    pause 0.5
+    stop sound
 
     "You walk back to the cabin like you mean business, just in case someone is watching you."
 
     #Image Hearth
-    stop sound fadeout 1.0
+    play sound walking loop
+    stop crickets fadeout 1.0
     scene bg hearth with dissolve:
-        subpixel True pos (-0.07, -0.35) zoom 1.05
-    #show flame zorder 99 with dissolve:
-    #    pos (0.59, 0.63) zoom 1.05 xoffset -4
-    #Music Eerier Outdoors (fade out)
+        subpixel True
+        zoom 0.7
+        pos(-1.0,-0.2)
+
     stop music fadeout 1.0
     #Music Cabin (fade in)
-    play music cabin_music volume 0.3 fadein 1.0
     #SFX Fireplace (fade in)
     play soundb fireplace volume 0.3 loop
+    pause 0.2
+    stop sound
+
+    show ash concerned:
+        subpixel True pos(0.15,0) zoom 2.0
+    call Jump
 
     "Once inside, you’re startled by Ashina rushing up to you. She briefly looks you over before speaking."
 
     #Image Ashina Neutral
-    show ash neutral with dissolve:
-        pos (0.35, 0.05) zoom 1.5
+    show ash neutral with dissolve
 
     ash "Well? How did it go?"
 
@@ -477,10 +543,20 @@ label ConfrontationPlanningScene:
         #VSFX Blue (slowly tint)
         #Image Ashina Concerned (close up)
         show ash concerned with dissolve
+        camera:
+                #matrixcolor TintMatrix("#1C4587")
+                matrixcolor TintMatrix("#fff")
+                linear 3.0 matrixcolor TintMatrix("#1C4587")
+        play music connection_music volume 0.4 fadein 1.5
 
         "A wave of guilt and self-disgust hurls you forward. Deep, endless regret compresses your throat, causing you to cough and sputter. You barely feel Ashina catch your arms to keep you upright."
 
         #VSFX Blue (tint back to normal)
+        pause(0.5)
+        #otherwise the tint stays if you click too fast or use skip function
+        camera:
+                linear 1.0 matrixcolor TintMatrix("#fff")
+        stop music fadeout 2.5
 
         "When the feeling passes, you find yourself amazed that Ashina could carry such overwhelming emotion and yet, still stand tall, still look so composed."
 
@@ -529,16 +605,32 @@ label ConfrontationPlanningScene:
 
         #VSFX Screen Shake
         #Image Ashina Angry Hybrid (closer)
-        show ash angry hybrid with dissolve
+        show ash angry hybrid:
+            subpixel True pos(0,0) zoom 2.0
+        # player shakes, scared
+        camera:
+                subpixel True 
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 5 
+                linear 0.1 xpos -5
+                linear 0.1 xpos 0
+        with dissolve
 
         ash "I don't. Want. To talk about it! What about that don't you understand?!"
             
         "Ashina's chest heaves as she attempts to calm herself."
 
         #Image Ashina Sad (further again)
-        show ash concerned with dissolve
+        show ash concerned:
+            subpixel True pos(0.15,0) zoom 2.0
+        with dissolve
 
         ash "I apologize… I didn't mean to lash out like that. I need to be alone."
+
+        show ash concerned:
+            yrotate -180
+        with dissolve
 
         "Ashina turns to leave, but not without a final word."
 
@@ -556,5 +648,12 @@ label ConfrontationPlanningScene:
         #Image Stairs Up
 
         "Left with your own churning thoughts and feelings, you make your way to bed."
+
+    window auto hide
+    scene bg color black with dissolve
+    stop soundb fadeout 1.0
+
+    pause 2.0
+    jump CreditsScene
 
     return

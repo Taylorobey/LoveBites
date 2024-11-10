@@ -55,7 +55,7 @@ init python:
 
 #Rolling credits
 init python:
-    credits = ('Project Lead', 'BizzyBee'), ('Artists', 'SabiSabi\nShapeshift Stitch\nrobyn'),  ('Programmers', 'Taylorobey\ndot\nBizzyBee\nHilarionDev'), ('GUI', 'Chiara'), ('Writing', 'starsapphire\nBizzyBee'), ('Music', 'Annish\nBizzyBee'), ('Voice Acting', 'MariaCorcobadoVA as The Narrator\nsamgrace as Ashina\nLauren Pak as Akari\nTwigs24 as Cameron'), ('UI Sound', 'Annish'), ('Supplementary Music and SFX', 'Freesound.org\nPublic Domain')
+    credits = ('Project Lead', 'BizzyBee'), ('Artists', 'SabiSabi\nShapeshift Stitch'),  ('Programmers', 'Taylorobey\ndot\nBizzyBee'), ('GUI', 'Chiara'), ('Writing', 'starsapphire\nBizzyBee'), ('Music', 'Annish\nBizzyBee'), ('Voice Acting', 'MariaCorcobadoVA as The Narrator\nsamgrace as Ashina\nLauren Pak as Akari\nTwigs24 as Cameron'), ('UI Sound', 'Annish'), ('Supplementary Music and SFX', 'Freesound.org\nPublic Domain')
     credits_s = "{size=150}Credits\n"
     c1 = ''
     for c in credits:

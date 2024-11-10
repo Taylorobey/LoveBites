@@ -124,6 +124,15 @@ label Shake:
         with dissolve
         return
 
+label Jump:
+        camera:
+                subpixel True 
+                linear 0.1 ypos 15
+                linear 0.1 ypos -15
+                linear 0.1 ypos 0
+        with dissolve
+        return
+
 label PainShake:
         window auto hide
         camera:
@@ -210,4 +219,39 @@ label GoUpstairs:
         show bg upstairs:
                 zoom 2.0 xalign(0.5) yalign(0.01)
         stop sound fadeout 1.0
+        return
+
+label GoOutsideDogs:
+        window auto hide
+        play sound walking loop
+        show bg door open with dissolve:
+            subpixel True
+            zoom 1.0 pos(0.5,0)
+            linear 2.00 zoom 2.0 yalign(0.5)
+        with Pause(1.5)
+        stop soundb fadeout 1.0
+        show bg door open:
+            zoom 2.0 yalign(0.5)
+        play crickets crickets fadein 0.5
+        scene bg cabin ext dogs with dissolve
+        pause 1.0
+        stop sound
+        return
+
+label GoOutsideNoDogs:
+        window auto hide
+        stop soundb fadeout 2.0
+        play sound walking loop
+        show bg door open with dissolve:
+            subpixel True
+            zoom 1.0 pos(0.5,0)
+            linear 2.00 zoom 2.0 yalign(0.5)
+        with Pause(1.5)
+        stop soundb fadeout 1.0
+        show bg door open:
+            zoom 2.0 yalign(0.5)
+        play crickets crickets fadein 0.5
+        scene bg cabin ext no dogs with dissolve
+        pause 1.0
+        stop sound
         return
