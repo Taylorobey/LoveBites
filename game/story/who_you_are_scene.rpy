@@ -69,7 +69,7 @@ label WhoYouAreScene:
 
         stop sound fadeout 1.0
 
-        "The woman leads you out of your room, down the stairs, and into a spacious hearth. The area is well adorned, equipped with ornate furnishings and a large fireplace to keep the place warm, and to cook with you suppose. Not that she used it."
+        "The woman leads you out of your room, down the stairs, and into a spacious hearth. The area is well adorned, equipped with ornate furnishings and a large fireplace to keep the place warm, and to cook with, you suppose. Not that she used it for that, clearly."
 
         # VSFX Ashina (fade in)
         # Image Ashina Neutral

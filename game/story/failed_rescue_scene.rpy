@@ -118,7 +118,7 @@ label FailedRescueScene:
 
         show cam friendly at pacing
 
-        cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge lobo dragging you out into the woods."
+        cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge wolf dragging you out into the woods!"
         # VSFX Cameron (Slowly moving across the screen, as if pacing)     
 
         cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin." 
@@ -217,7 +217,7 @@ label FailedRescueScene:
         window auto show
 
 
-        cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. "
+        cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole. Your favorite!"
 
         "A shiver goes down your spine, and your breathing sounds... different. You get a {color=#1C4587}{b}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
 
@@ -271,7 +271,7 @@ label UrgeCamLeave:
 
         you "Sure, we could physically escape…"
 
-        you "But, something’s obviously after me. What’s to stop them from dragging me back here again? "
+        you "But, something... no, {i}someone{/i} is obviously after me. What’s to stop them from dragging me back here again? "
 
         # Image Cameron Friendly
         show cam friendly with dissolve

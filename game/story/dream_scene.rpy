@@ -239,7 +239,7 @@ label DreamScene:
         with Pause(0.5)
         window auto show
 
-        "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a lesson."
+        "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a valuable lesson."
 
         
         window auto hide

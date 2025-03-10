@@ -55,7 +55,7 @@ label ICanSeeTheStarsScene:
         stop sound
         window auto show
 
-        "You follow Ashina down the stairs, through the hearth, and out to the forest’s edge. The chilly air caresses your skin, and you instinctively relax."
+        "You follow Ashina down the stairs, through the hearth, and out towards the forest’s edge. The chilly air caresses your skin, and you instinctively relax."
 
     else:
         you "I don't want to go outside. I've been through enough already tonight, I'm so tired…"

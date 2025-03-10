@@ -326,7 +326,7 @@ label ConfrontationPlanningScene:
 
             "You can tell this is hard for her. Pretending it’s just for the sake of looking natural, you settle down, sitting with your back against a tree and facing the cabin. You hear Akari sit behind you, nearby."
 
-            aki "He was such a bright, cheerful boy. I complained, but he always found a way to make me smile. We were inseparable."
+            aki "He was such a bright, cheerful boy. Sure, we bickered, as siblings do, but he always found a way to make me smile. We were inseparable."
 
             "She pauses. You can imagine her bittersweet expression, searching for words. You let her take all the time that she needs."
 
