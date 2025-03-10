@@ -22,7 +22,7 @@ transform step_closer_center:
 transform threat_step:
     linear 0.25 ypos 1.15 zoom 1.15
 transform threat_step_2:
-    linear 0.25 ypos 1.45 zoom 1.4
+    linear 0.25 ypos 1.4 zoom 1.4
 
 # step away slightly
 transform step_away_half:

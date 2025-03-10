@@ -109,7 +109,17 @@ label BotchedEscapeScene:
         show aki bow drawn angry at threat_step_2
         with Pause(0.3)
 
-        aki "I will have no mercy on you. Your death shall be painful, I will make sure of it. You will suffer for every life you have stolen, and I will have my revenge. You chose the wrong night to leave your little fortress, and now, you will finally pay."
+        aki "I will have no mercy on you."
+
+        show aki bow drawn angry:
+                linear 0.25 ypos 1.75 zoom 1.75
+        
+        aki "Your death shall be painful, I will make sure of it."
+
+        show aki bow drawn angry:
+                linear 0.25 ypos 2.05 zoom 2.1
+        
+        aki "You will suffer for every life you have stolen, and I will have my revenge. You chose the wrong night to leave your little fortress, and now, you will finally pay."
 
         "You can't just let it end here. Not now."
 
