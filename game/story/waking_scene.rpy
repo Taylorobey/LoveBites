@@ -95,6 +95,14 @@ label WakingScene:
         #image ashina friendly
         show ash friendly with dissolve
         ash "Good, good."
+
+        show ash friendly:
+                subpixel True 
+                ypos 1.0 
+                linear 0.3 ypos 1.02
+                linear 0.3 ypos 1.0 
+        with Pause(0.6)
+
         ash "Now, sit up properly. I've prepared a meal for you."
 
 
@@ -133,9 +141,8 @@ label WakingScene:
 
         ash "Here. Eat to your heart's content."
 
-        hide ash sadistic with dissolve
         scene bg meat plate with dissolve
-        #music unsettling
+        hide ash sadistic
         play music eerie_outdoors_music volume 1.5 fadein 0.5
         stop sound
         window auto show
@@ -144,7 +151,7 @@ label WakingScene:
 
         scene bg room mc with dissolve
         show ash sadistic with dissolve:
-                pos (0.53, 1) 
+                pos (0.53, 1)  zoom 1.88
 
         you "You can't be serious… There's no way I can eat that!"
 
@@ -161,8 +168,8 @@ label WakingScene:
 
         ash "Unbearable?"
 
-        hide ash neutral with dissolve
         scene bg meat plate with dissolve
+        hide ash neutral
         "You take another look at the plate. You hate to admit it, but your stomach betrays you. You don't just {i}want{/i} to eat it..."
 
         #vsfx red flash on edges like a blooming pain
