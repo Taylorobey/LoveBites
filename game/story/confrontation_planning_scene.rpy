@@ -654,6 +654,7 @@ label ConfrontationPlanningScene:
     stop soundb fadeout 1.0
 
     pause 2.0
-    jump CreditsScene
+    # jump CreditsScene
+    jump ConfrontationScene
 
     return
