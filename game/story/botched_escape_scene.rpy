@@ -2,10 +2,17 @@ label BotchedEscapeScene:
         $ save_name = "The Great Outdoors"
         window auto hide
 
+        show bg hearth:
+                subpixel True
+                zoom 1.05 pos(1.44, -0.33)
+        
         #Image Cabin Hearth
         camera:
                 subpixel True
-                linear 10.00 xpos 3000
+                linear 10.00 xpos -3000
+
+
+        pause 1.5
 
         window auto show
         play sound walk loop
@@ -148,15 +155,9 @@ label PleadCase:
         window auto hide
         # VSFX Akari nod
         show aki bow drawn with dissolve
-        with Pause(1.0)
-        show aki bow drawn:
-                subpixel True
-                linear 0.3 ypos 1.45
-                linear 0.25 ypos 1.4 
-                linear 0.2 ypos 1.43 
-        with Pause(0.80)
-        show aki bow drawn:
-                ypos 1.43 
+        show aki bow drawn at jump_in_place
+        with Pause(0.40)
+        show aki bow drawn
         window auto show
 
 
@@ -365,7 +366,7 @@ label ResistAshina:
         pause 0.3
         window auto show
 
-        
+        call Shake
         you "This isn’t about you! I wasn't doing anything wrong!"
 
         show ash annoyed at step_away_half
@@ -373,80 +374,157 @@ label ResistAshina:
         you "You think you can just turn me into some monster, ruin my life and act like I'm supposed to be grateful towards you? No! I've had enough!"
 
         window auto hide
-        pause(0.1)
         #VSFX Ashina (fade out)
-        hide ash annoyed with dissolve
-        pause(0.2)
+        camera:
+                subpixel True
+                linear 0.15 blur 6.5
+        pause(0.15)
+        hide ash annoyed with Dissolve(0.02)
         #Image Cabin Exterior POV Approaching
-        show bg cabin ext no dogs with dissolve:
+        show bg cabin ext no dogs with Dissolve(0.15):
                 subpixel True ypos 2.5 zoom 3.0
+        camera:
+                subpixel True
+                linear 0.15 blur 0.0
         #SFX Walking
-        play sound walk loop
+        play sound fast_walk loop
+
         window auto show
-
+        #VSFX Cabin Ext.(zoom, as if walking)
+        show bg cabin ext no dogs:
+                subpixel True 
+                linear 3.0 ypos 5.0 zoom 6.0
         "You turn away from Ashina and intend to put some space between you."
-
-        ash "You will not walk away from me!"
-
-        stop sound
-        #VSFX Zoom (as if being dragged to the door)
-
-        "Ashina grabs your wrist and drags you struggling across the yard. As she does so, you notice a pair of dark eyes watching from the treeline."
-
-
         window auto hide
-        #Image Cabin Door Open
-        show bg door open with dissolve:
-                subpixel True pos (0.5,1.0) zoom 1.0
-        with Pause(1.0)
-        #Image Hearth
-        show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos 1.1 zoom 0.72
+        show bg cabin ext no dogs:
+                subpixel True pos (0.5, 5.0) zoom 6.0
+        
+
+        call FastShake
+        stop sound
+        ash "You will not walk away from me!"
+        window auto hide
+
+        play sound walk loop
+        play soundb run loop
+        camera:
+                subpixel True
+                linear 0.4 blur 8.5
+        show bg cabin ext no dogs with Dissolve(0.15)
+        show bg cabin ext no dogs:
+                subpixel True
+                ypos 5.60
+        with Dissolve(0.15)
+        show bg forest edge:
+                ypos 4.60
+        with Dissolve(0.15)
+        camera:
+                subpixel True
+                parallel:
+                        linear 0.25 blur 0.0
+                parallel:
+                        linear 0.05 xpos 15
+                        linear 0.05 xpos -15
+                        linear 0.05 xpos 15
+                        linear 0.05 xpos -15
+                        linear 0.05 xpos 0
+        with Dissolve(0.25)
+        pause(0.25)
+        stop soundb
+        stop sound
+
+        window auto show
+        #VSFX Zoom (as if being dragged to the door)
+        show bg forest edge:
+                subpixel True 
+                linear 5.0 ypos 10.0
+        "Ashina grabs your wrist and drags you struggling across the yard. As she does so, you notice a pair of dark eyes watching from the treeline."
+        window auto hide
+        show bg forest edge:
+                ypos 10.0 
+        with dissolve
+        pause(0.25)
+
+        
 
         #Image Ashina Hybrid Angry
-        show ash angry hybrid with dissolve
+        #show ash angry hybrid with dissolve
 
+        
         #Fireplace
-        stop music fadeout 2.0
-        stop crickets fadeout 2.0
-        play soundb fireplace volume 0.3 loop fadein 2.0
+        stop music fadeout 1.0
+        stop crickets fadeout 1.0
+        play soundb fireplace volume 0.3 loop fadein 1.0
 
-        play sound run
+        play sound run loop
+        play soundc walk loop
+        # FALL DOWN
         camera:
-                subpixel True 
-                ypos -0.1
-                ease_elastic 0.30 ypos 90 
-        with Pause(0.40)
-        camera:
-                ypos 90
-        with Pause(0.2) 
+                subpixel True
+                linear 0.25 blur 8.0
+        #Image Hearth
+        show bg hearth with Dissolve(0.10):
+                subpixel True xpos 0 ypos 1.25 zoom 0.72
+        show bg hearth:
+                subpixel True pos (-0.5, 1.6) zoom 1.25 
+        with Dissolve(0.05)
+        show bg hearth:
+                subpixel True pos (-0.70,1.25) zoom 1.5
+        with Dissolve(0.05)
+        call FastShake
         stop sound
+        stop soundc
+        pause(0.25)
+        camera:
+                subpixel True
+                linear 0.1 blur 0.0
+        pause(0.25)
         window auto show
 
         "Ashina tosses you into the cabin, slams the front door shut, and snarls at you."
 
         ash "I've given you a chance at a new life! And this is the thanks I get?!"
 
+        window auto hide
+        show bg hearth with dissolve:
+                subpixel True xpos 0 ypos 1.25 zoom 0.72
+
         jump BotchedConverge2
 
 label GoWillingly:
         pause 0.6
-        hide ash annoyed with dissolve
-        show bg cabin ext no dogs with dissolve:
-                subpixel True ypos 2.5 zoom 3.0
-        
-        window auto show
-
-        "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you."
-
         window auto hide
+        #VSFX Ashina (fade out)
+        camera:
+                subpixel True
+                linear 0.15 blur 6.5
+        pause(0.15)
+        hide ash annoyed with Dissolve(0.02)
+        #Image Cabin Exterior POV Approaching
+        show bg cabin ext no dogs with Dissolve(0.15):
+                subpixel True ypos 2.5 zoom 3.0
+        camera:
+                subpixel True
+                linear 0.15 blur 0.0
+        #SFX Walking
         play sound walk loop
+
+        window auto show
+        #VSFX Cabin Ext.(zoom, as if walking)
+        show bg cabin ext no dogs:
+                subpixel True 
+                linear 3.0 ypos 5.0 zoom 6.0
+        "You avert your eyes from Ashina’s intense gaze, and walk back to the cabin. You hear Ashina’s footsteps behind you."
+        window auto hide
+        show bg cabin ext no dogs:
+                subpixel True pos (0.5, 5.0) zoom 6.0
+        with dissolve
         with Pause(1.0)
         show bg door open with dissolve:
                 subpixel True pos (0.5,1.0) zoom 1.0
         with Pause(1.0)
         show bg hearth with dissolve:
-                subpixel True xpos 0.52 ypos 1.1 zoom 0.72
+                subpixel True xpos 0 ypos 1.25 zoom 0.72
 
         #Fireplace
         stop sound
@@ -470,10 +548,10 @@ label GoWillingly:
         camera:
                 subpixel True 
                 ypos -0.1
-                ease_elastic 0.30 ypos 90 
+                ease_elastic 0.30 ypos -200 
         with Pause(0.40)
         camera:
-                ypos 90
+                ypos -200
         with Pause(0.2) 
         stop sound
         show ash concerned with dissolve
@@ -597,10 +675,14 @@ label BotchedConverge2:
 
         elif ash_approval >= -2:
 
+                window auto hide
+                camera:
+                        ypos 0
+                with dissolve
                 #Image Ashina 
                 show ash thoughtful with dissolve
                 #VSFX Ashina (closer)
-
+                call FastShake
                 "Ashina raises a hand as if she might hit you, and you reflexively flinch. She stops, a clear hesitation in her eyes."
 
                 # Image Ashina Concerned
@@ -608,8 +690,12 @@ label BotchedConverge2:
 
                 ash "...Go to your room."
 
+                window auto hide
                 #VSFX Ashina (fade out)
                 hide ash concerned with dissolve
+                show bg hearth with dissolve:
+                        subpixel True xpos 0.6
+                window auto show
 
                 "She looks away. You figure you shouldn’t give her time to rethink that decision, and hurry up the stairs."
 

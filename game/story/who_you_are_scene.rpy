@@ -123,7 +123,6 @@ label WhoYouAreScene:
         #show flame zorder 99 with dissolve:
         #        pos (0.59, 0.63) zoom 1.05 xoffset 7
         #can't get this to match up juuust right
-        #I think I fixed this
 
         show ash friendly with dissolve:
                 pos(0.63,0.12) zoom 1.83 yrotate -180.0 
@@ -429,7 +428,7 @@ label AppreciationResponse:
         jump BotchedEscapeScene
 
 label DisgustResponse:
-
+        # THIS SCENE CREATES A VISUAL BUG WHERE THE CAMERA MOVES IN THE OPPOSITE DIRECTION AFTERWARDS
         "You glare at Ashina with every ounce of vitriol you can muster."
 
         you "I didn’t ask for this. I don’t want to be a monster."

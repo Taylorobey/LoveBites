@@ -124,6 +124,17 @@ label Shake:
         with dissolve
         return
 
+label FastShake:
+        camera:
+                subpixel True 
+                linear 0.05 xpos 15
+                linear 0.05 xpos -15
+                linear 0.05 xpos 15
+                linear 0.05 xpos -15
+                linear 0.05 xpos 0
+        with dissolve
+        return
+
 label Jump:
         camera:
                 subpixel True 
@@ -149,6 +160,7 @@ label PainShake:
                 linear 0.5 alpha 1.0 
                 linear 1.0 alpha 0.5
                 linear 2.0 alpha 0.0
+        return
         
 
 

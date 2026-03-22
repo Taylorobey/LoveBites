@@ -161,10 +161,10 @@ label SpeakNoEvilSceneP3:
                 camera:
                         subpixel True 
                         ypos 0 
-                        ease_elastic 0.30 ypos 90 
+                        ease_elastic 0.30 ypos -200
                 with Pause(0.40)
                 camera:
-                        ypos 90
+                        ypos -200
                 with Pause(0.2) 
                 stop sound
                 show ash concerned with dissolve

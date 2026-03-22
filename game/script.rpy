@@ -47,6 +47,7 @@ style skytext:
 #Extra SFX
 init python:
     renpy.music.register_channel('soundb', "sound")
+    renpy.music.register_channel('soundc', "sound")
     renpy.music.register_channel('crickets', "sound")
 
 #For automatic VO rendering
@@ -63,7 +64,7 @@ init python:
             credits_s += "\n{size=40}" + c[0] + "\n"
         credits_s += "{size=60}" + c[1] + "\n"
         c1=c[0]
-    credits_s += "\n{size=40}Engine\n{size=60}Ren'py\n8.3.0" #Don't forget to set this to your Ren'py version
+    credits_s += "\n{size=40}Engine\n{size=60}Ren'py\n8.5.3" #Don't forget to set this to your Ren'py version
 
 #for Random Numbers that change with each animation
 init python:
