@@ -30,7 +30,7 @@ label WakingScene:
 
         window auto show
 
-        "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that…thing, yesterday. You hesitate to call it a wolf."
+        "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that… wolf, yesterday."
 
         window auto hide
         
@@ -40,7 +40,7 @@ label WakingScene:
 
         window auto show
 
-        "You take a glance at your immediate surroundings. The room is mostly bare. Some fake-looking flowers decorate the minimal furnishings."
+        "You glance at your immediate surroundings. The room is mostly bare. Some fake-looking flowers decorate the minimal furnishings."
 
         window auto hide
 
@@ -50,12 +50,12 @@ label WakingScene:
                         $ humanity += 1
                         pause 0.3
 
-                        "Flirting with disaster finally caught up with you. What the hell were you thinking? You vow that if you ever escape this place, you're going to have a serious think about your life choices."
+                        "Flirting with disaster finally caught up with you. What in the world were you thinking? You vow that if you ever get out of this mess, you're going to have a serious think about your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
                         pause 0.3
 
-                        "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right?"
+                        "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night and now you’ve gotten what you wanted, right? A new disaster to fight yourself out of."
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
 
 
@@ -67,7 +67,7 @@ label WakingScene:
         window auto show
 
         ash "I see you're finally awake. Tell me, how was your slumber?"
-        you "Who... who are you? Did you bring me here?"
+        you "Um, who are you? Where am I?"
 
         window auto hide
 
@@ -80,7 +80,7 @@ label WakingScene:
 
         window auto show
 
-        ash "That's not what I asked you."
+        ash "I asked you a question. I expect an answer."
         
         #VSFX ashina steps back
         window auto hide
@@ -89,8 +89,8 @@ label WakingScene:
         window auto show
 
 
-        ash "I'll ask again, how was your slumber?"
-        you "Oh, well... Fine, I guess, all things considered."
+        ash "I will ask once more, <i>how</i> was your slumber?"
+        you "Uh, well... Fine, I guess, all things considered."
 
         #image ashina friendly
         show ash friendly with dissolve
@@ -103,7 +103,7 @@ label WakingScene:
                 linear 0.3 ypos 1.0 
         with Pause(0.6)
 
-        ash "Now, sit up properly. I've prepared a meal for you."
+        ash "Now, sit up properly. I have generously prepared a meal for you."
 
 
         window auto hide
@@ -114,7 +114,7 @@ label WakingScene:
         window auto show
 
         
-        "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something in your stomach {i}now{/i}."
+        "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something to eat {i}now{/i}."
 
 
         window auto hide
@@ -122,8 +122,8 @@ label WakingScene:
                 linear 1 xpos 1.2
         with Pause(1)
         hide ash friendly
+        #vsfx sit up?
         window auto show
-
 
         "You sit up. The woman reaches into the hallway, then sets a plate on the side table next to the bed."
 
@@ -139,7 +139,7 @@ label WakingScene:
         window auto show
 
 
-        ash "Here. Eat to your heart's content."
+        ash "Here you go. Feast to your heart's content."
 
         scene bg meat plate with dissolve
         hide ash sadistic
@@ -147,7 +147,7 @@ label WakingScene:
         stop sound
         window auto show
 
-        "On the plate is a pile of raw meat. Blood pools at the bottom of the chunks, and the stench of death reeks in the air."
+        "On the plate is a pile of raw meat. Blood coagulates at the bottom of the chunks, and the stench of death reeks in the air."
 
         scene bg room mc with dissolve
         show ash sadistic with dissolve:
@@ -157,7 +157,7 @@ label WakingScene:
 
         show ash neutral with dissolve
 
-        ash "Are you really so sure? Doesn't your hunger just feel..."
+        ash "Are you really so sure? Does your hunger not just feel so..."
 
         #VSFX ashina close up
         window auto hide
@@ -170,7 +170,7 @@ label WakingScene:
 
         scene bg meat plate with dissolve
         hide ash neutral
-        "You take another look at the plate. You hate to admit it, but your stomach betrays you. You don't just {i}want{/i} to eat it..."
+        "You take another look at the plate. You hate to admit it, but your hunger betrays you. You don't just {i}want{/i} to eat it..."
 
         #vsfx red flash on edges like a blooming pain
         #vsfx centered text, dim surroundings
@@ -201,19 +201,17 @@ label WakingScene:
         window auto show
 
 
-        ash "Ah, so you finally understand the gravity of the situation."
+        ash "Ah, poor thing. You seem to you finally understand the severity of your predicament."
 
         show ash neutral with dissolve
 
-        ash "You must eat this meal, or the beast will take you."
+        ash "You must consume this meal, lest the beast consume you."
 
-        you "The beast? What does that mean?"
-
-        you "Did you do something to me?"
+        you "The... beast? What... what did you do to me? What's going on?"
 
         show ash annoyed with dissolve
 
-        ash "Do not question me, simply do as I tell you. Eat."
+        ash "I have had enough of your questions, girl. Are you going to eat, or not?"
 
         hide ash annoyed with dissolve
         scene bg meat plate with dissolve
@@ -226,24 +224,25 @@ label WakingScene:
                         $ ash_approval += 1
                         $ meat_eaten = True
                         pause 0.3
-                        "The meat is… surprisingly palatable. It has a deep, tender richness. You barely restrain yourself from stuffing your face ravenously. The clawing hunger soon subsides."
-                        "You realize the woman has been watching you."
+                        "The meat is… surprisingly palatable. It has a deep, tender richness to it. You barely restrain yourself from stuffing your face ravenously. It briefly occurs you that it should be more difficult to chew and swallow, but you can't bother to care. The clawing hunger soon subsides."
+
+                        "You realize the woman has been watching you with an intense expression throughout."
 
                         scene bg room mc with dissolve
                         #image ashina friendly
                         show ash friendly with dissolve
-                        ash "Good girl. Now, get some rest."
+                        ash "Good girl. Now, rest."
 
                 #humanity choice
                 "Abstain from eating.":
                         $ humanity += 1
                         pause 0.3
-                        "You turn away from the plate on the side table. The woman sighs."
+                        "You turn away from the plate on the side table. The woman sighs theatrically."
 
                         scene bg room mc with dissolve
                         show ash neutral with dissolve
                         
-                        ash "You will need to eat eventually, girl, but I suppose I can allow you some time to adjust. Now, get some rest."
+                        ash "You will need to nourish yourself eventually, girl, but I suppose I can allow you <i>some<i> time to adjust. Now, rest."
         
 
         window auto hide
@@ -256,7 +255,7 @@ label WakingScene:
         window auto show
 
 
-        "Seemingly satisfied with the interaction, your captor exits the room. You notice that despite a full day’s rest, you’re struggling to keep your eyes open."
+        "Seemingly satisfied with the interaction, your captor exits the room. You notice that despite what you assume to be a full day’s rest, you’re struggling to keep your eyes open."
         
 
         window auto hide
@@ -266,7 +265,7 @@ label WakingScene:
         window auto show
 
 
-        "You force your eyes to focus. On the far wall, there is a window. A possible escape route?"
+        "You force your eyes to focus. On the far wall, an open window stares down the foot of the bed. A possible escape route?"
 
         window auto hide
 
@@ -304,7 +303,7 @@ label ExamineWindow:
         window auto show
 
 
-        "You inch ever closer, and you hear dogs begin to growl and bark wildly."
+        "You inch ever closer, and hear dogs growling and barking wildly."
 
 
         window auto hide
@@ -314,7 +313,7 @@ label ExamineWindow:
         window auto show
 
 
-        "You finally reach the window and take a peek outside..."
+        "You finally reach the window and peer outside..."
         stop sound fadeout 1.0
         stop music fadeout 1.0
         
@@ -326,7 +325,7 @@ label ExamineWindow:
         window auto show
 
         
-        "Countless dogs stare from the abyss into your eyes. However, unlike the commotion before, they are completely silent. Their gaze is unwavering and they stand unnaturally still."
+        "Countless dogs stare from the abyss into your eyes. Unlike the former commotion, they are suddenly, completely silent. Their gazes unwavering, dark forms shifting restlessly in the night."
 
         play music connection_music volume 0.25
 
@@ -336,7 +335,7 @@ label ExamineWindow:
                 matrixcolor TintMatrix("#fff")
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
 
-        "A strange sensation rises within you. You feel... a connection. No, a web of connections. Recognition. You are a {color=#1C4587}{b}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
+        "A strange sensation rises within you. You feel... a connection. No, a labyrinth of connections. Then... Recognition. You are a {color=#1C4587}{b}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
         
         
         if meat_eaten == True:
@@ -369,9 +368,9 @@ label ExamineWindow:
                                 pause 0.3
                                 window auto show
 
-                                "You walk back to the bedside table and retrieve the plate of raw meat, before heaving the plate to toss the meat out the window."
+                                "You return to the bedside table, retrieve the plate of raw meat, and heavethe meat out of the window."
                                 
-                                "The dogs rush towards the meat, tails wagging. You don’t know why, but you smile."
+                                "The dogs rush towards your offered meal, tails wagging. You can't help but smile."
 
                                 window auto hide
 
@@ -394,6 +393,8 @@ label HeadtoBed:
 
         stop music fadeout 1.0
         stop crickets fadeout 2.5
+
+        #vsfx buckling knees?
 
         window auto show
 
