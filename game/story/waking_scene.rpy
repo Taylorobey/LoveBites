@@ -6,7 +6,8 @@ label WakingScene:
         scene bg color black with dissolve
         with Pause(0.5)
 
-        call WakeUpSequence1 from _call_WakeUpSequence1_3
+        #call WakeUpSequence1 from _call_WakeUpSequence1_3
+        call AsleepSequence
         
         window auto show
 
@@ -14,7 +15,8 @@ label WakingScene:
 
         window auto hide
 
-        call WakeUpSequence2 from _call_WakeUpSequence2_3
+        #call WakeUpSequence2 from _call_WakeUpSequence2_3
+        call WakeUpSequence
 
         window auto show
 
@@ -24,11 +26,6 @@ label WakingScene:
 
         #VFX red flash (on the edges)
         call PainFlash from _call_PainFlash
-        play soundb heart
-        with Pause(0.7)
-        stop soundb fadeout 0.5
-
-        window auto show
 
         "A stinging sensation fills your body as you attempt to sit up. Your fingers touch the tender wound on your shoulder, the bite from that… wolf, yesterday."
 
@@ -73,14 +70,14 @@ label WakingScene:
 
 
         #VSFX ashina steps closer
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
         with Pause(0.2)
         show ash annoyed at step_close
         with Pause(1.00)
 
         window auto show
 
-        ash "I asked you a question. I expect an answer."
+        ash "Do you lack manners, girl? I asked you a question. I expect an answer."
         
         #VSFX ashina steps back
         window auto hide
@@ -89,11 +86,11 @@ label WakingScene:
         window auto show
 
 
-        ash "I will ask once more, <i>how</i> was your slumber?"
+        ash "I will ask once more, {i}how{/i} was your slumber?"
         you "Uh, well... Fine, I guess, all things considered."
 
         #image ashina friendly
-        show ash friendly with dissolve
+        show ash friendly with fast_dissolve
         ash "Good, good."
 
         show ash friendly:
@@ -139,7 +136,7 @@ label WakingScene:
         window auto show
 
 
-        ash "Here you go. Feast to your heart's content."
+        ash "Here you are. Feast to your heart's content."
 
         scene bg meat plate with dissolve
         hide ash sadistic
@@ -150,12 +147,12 @@ label WakingScene:
         "On the plate is a pile of raw meat. Blood coagulates at the bottom of the chunks, and the stench of death reeks in the air."
 
         scene bg room mc with dissolve
-        show ash sadistic with dissolve:
+        show ash sadistic with fast_dissolve:
                 pos (0.53, 1)  zoom 1.88
 
-        you "You can't be serious… There's no way I can eat that!"
+        you "You can't be serious… There's no way I can eat {i}that{/i}!"
 
-        show ash neutral with dissolve
+        show ash neutral with fast_dissolve
 
         ash "Are you really so sure? Does your hunger not just feel so..."
 
@@ -197,19 +194,19 @@ label WakingScene:
         stop music fadeout 1.0
 
         scene bg mc room with dissolve
-        show ash sad with dissolve
+        show ash sad with fast_dissolve
         window auto show
 
 
-        ash "Ah, poor thing. You seem to you finally understand the severity of your predicament."
+        ash "You poor thing. You seem to you finally understand the severity of your predicament."
 
-        show ash neutral with dissolve
+        show ash neutral with fast_dissolve
 
         ash "You must consume this meal, lest the beast consume you."
 
         you "The... beast? What... what did you do to me? What's going on?"
 
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
 
         ash "I have had enough of your questions, girl. Are you going to eat, or not?"
 
@@ -242,7 +239,7 @@ label WakingScene:
                         scene bg room mc with dissolve
                         show ash neutral with dissolve
                         
-                        ash "You will need to nourish yourself eventually, girl, but I suppose I can allow you <i>some<i> time to adjust. Now, rest."
+                        ash "You will need to nourish yourself eventually, girl, but I suppose I can allow you {i}some{/i} time to adjust. Now, rest."
         
 
         window auto hide
@@ -368,7 +365,7 @@ label ExamineWindow:
                                 pause 0.3
                                 window auto show
 
-                                "You return to the bedside table, retrieve the plate of raw meat, and heavethe meat out of the window."
+                                "You return to the bedside table, retrieve the plate of raw meat, and heave the meat out of the window."
                                 
                                 "The dogs rush towards your offered meal, tails wagging. You can't help but smile."
 

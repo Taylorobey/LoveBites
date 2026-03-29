@@ -11,8 +11,7 @@ label FailedRescueScene:
         
         #SFX Creak
         play soundb creak volume 0.5 noloop
-        call WakeUpSequence1
-        call WakeUpSequence2
+        call WakeUpSequence
 
         window auto show
 
@@ -130,7 +129,7 @@ label FailedRescueScene:
         show cam friendly at stop_pacing
         with Pause(1.5)
         # Image Cameron Nervous
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
         window auto show
 
 
@@ -146,7 +145,7 @@ label FailedRescueScene:
         show cam nervous
         with Pause(0.5)
 
-        show cam neutral with dissolve
+        show cam neutral with fast_dissolve
         with Pause(0.5)
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
         show cam neutral at pacing
@@ -170,7 +169,7 @@ label FailedRescueScene:
 
         window auto hide
         # Image Cameron Neutral
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
         with Pause(0.5)
         # VSFX Cameron (slight up and down motion, as if shrugging)
         # looked a bit like jumping so i messed with it a little
@@ -188,7 +187,7 @@ label FailedRescueScene:
         you "That was really risky, Cam."
 
         # Image Cameron Friendly
-        show cam friendly with dissolve
+        show cam friendly with fast_dissolve
         show cam friendly:
                 subpixel True 
                 linear 0.15 ypos 0.95
@@ -265,7 +264,7 @@ label UrgeCamLeave:
         you "Cameron… It’s not that easy. "
 
         # Image Cameron Nervous
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
 
         cam "What do you mean? We can just walk out right now!"
 
@@ -274,14 +273,14 @@ label UrgeCamLeave:
         you "But, something... no, {i}someone{/i} is obviously after me. What’s to stop them from dragging me back here again? "
 
         # Image Cameron Friendly
-        show cam friendly with dissolve
+        show cam friendly with fast_dissolve
 
         cam "I’ll watch over you. When you get out of work, I can pick you up and take you home. I’ll even stay over at your place and keep a look out."
 
         you "And what makes you think they won’t hurt you to get to me?"
 
         # Image Cameron Nervous
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
 
         cam "…"
 
@@ -359,7 +358,7 @@ label CamCaught:
 
         # Image Cameron Scared
         # again xalign is playing opposites i don't know whyyy aaaaaa
-        show cam scared with dissolve:
+        show cam scared with fast_dissolve:
                 xalign 0.6 zoom 1.5 
 
         "In the blink of an eye, your captor wraps her claws around Cameron’s throat. At any moment, she could pierce their skin and tear them to shreds."

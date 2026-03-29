@@ -154,7 +154,7 @@ label PleadCase:
 
         window auto hide
         # VSFX Akari nod
-        show aki bow drawn with dissolve
+        show aki bow drawn with fast_dissolve
         show aki bow drawn at jump_in_place
         with Pause(0.40)
         show aki bow drawn
@@ -172,7 +172,7 @@ label PleadCase:
         aki "The smaller dogs you mentioned. Where are they now?"
 
         # Image Akari Bow Nocked
-        show aki bow nocked side with dissolve
+        show aki bow nocked side with fast_dissolve
         # The spelling on that is a pet peeve of mine
         # VSFX Akari (move horizontally across the screen, as if looking around)
 
@@ -185,7 +185,7 @@ label PleadCase:
         window auto hide
         show aki bow nocked side at stop_shortpacing
         with Pause(1.0)
-        show aki bow nocked with dissolve
+        show aki bow nocked with fast_dissolve
         window auto show
 
 
@@ -196,12 +196,12 @@ label PleadCase:
         you "My friend tried to rescue me, but now they’re trapped here too. She said she wouldn’t do anything to them so long as I behave, but…"
 
         # Image Akari Angry
-        show aki angry with dissolve
+        show aki angry with fast_dissolve
 
         aki "I see. So that lycanthrope is going around toying with the lives of innocent humans yet again. What a disgusting creature."
 
         # Image Akari thoughtful
-        show aki thoughtful with dissolve
+        show aki thoughtful with fast_dissolve
 
         "The woman turns her bow and arrow away from you, continuing to scan the surroundings."
 
@@ -216,7 +216,7 @@ label PleadCase:
         
         aki "Everything about this spells out a trap. I need to get out of here."
 
-        show aki thoughtful look with dissolve
+        show aki thoughtful look with fast_dissolve
 
         "She turns her dark gaze back to you."
         
@@ -225,7 +225,7 @@ label PleadCase:
 
         aki "Name's Akari. We have a common enemy. I will let you go, for now. Help me, and I will help you in turn."
 
-        show aki determined with dissolve
+        show aki determined with fast_dissolve
 
         aki "But do not forget, you are still a monster. Try anything funny with me, and I will not hesitate to kill you."
 
@@ -250,7 +250,7 @@ label CallOut:
         "You desperately call out for Ashina and the hooded woman jumps slightly. She looks at you with a confused expression and lowers her bow."
 
         # Image Akari Bow Nocked
-        show aki bow nocked side with dissolve
+        show aki bow nocked side with fast_dissolve
 
         aki "Who are you yelling for? You should be the only one here."
 
@@ -264,7 +264,7 @@ label CallOut:
         "The woman looks around, but there’s no sign of Ashina yet. The stranger’s dark gaze briefly returns to you."
         
         # Image Akari Thoughtful
-        show aki thoughtful look with dissolve
+        show aki thoughtful look with fast_dissolve
 
         #change name to show Akari after reveal
         $ aki_name = "Akari"
@@ -275,7 +275,7 @@ label CallOut:
 
         window auto hide
         #Image Akari Bow Nocked
-        show aki bow nocked with dissolve
+        show aki bow nocked with fast_dissolve
         #SFX Growl
         play soundb growl noloop
         with Pause(1.0)
@@ -288,10 +288,10 @@ label CallOut:
 
         window auto hide
         #Image Wolf Ashina Snarling
-        show wolf snarl with dissolve
+        show wolf snarl with fast_dissolve
         stop soundb fadeout 0.5
         #Image Wolf Ashina Docile
-        show wolf neutral with dissolve
+        show wolf neutral with fast_dissolve
         window auto show
 
         "The same beastly wolf that attacked you in the alley lunges forward at the treeline, then stops short, giving up the chase."
@@ -308,7 +308,7 @@ label BotchedConverge1:
         # Choices Converge Here
 
 
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
 
         ash "I seem to recall telling you to stay inside, did I not, pup?"
 
@@ -345,7 +345,7 @@ label BotchedConverge1:
 
         ash "Tell me, do you take joy in disrespecting me? In betraying the first ounce of trust I place in you?"
         pause (0.5)
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
 
         ash "I will not tolerate your behavior. Get back inside. Now."
 
@@ -612,7 +612,7 @@ label BotchedConverge2:
                 window auto show
 
                 stop sound
-                show ash caring with dissolve
+                show ash caring with fast_dissolve
 
                 ash "Perhaps you were feeling cooped up, and wanted to explore. I can’t blame you for that. However, you must restrain yourself."
 
@@ -624,7 +624,7 @@ label BotchedConverge2:
                 "Her grip on your hand lingers a moment longer, squeezing before pulling away."
 
                 #VSFX Ashina Neutral
-                show ash neutral with dissolve
+                show ash neutral with fast_dissolve
 
                 ash "Trust takes time. You will be allowed to roam soon enough, I promise. Now… Please, return to your room."
 
@@ -680,13 +680,13 @@ label BotchedConverge2:
                         ypos 0
                 with dissolve
                 #Image Ashina 
-                show ash thoughtful with dissolve
+                show ash thoughtful with fast_dissolve
                 #VSFX Ashina (closer)
                 call FastShake
                 "Ashina raises a hand as if she might hit you, and you reflexively flinch. She stops, a clear hesitation in her eyes."
 
                 # Image Ashina Concerned
-                show ash concerned with dissolve
+                show ash concerned with fast_dissolve
 
                 ash "...Go to your room."
 
@@ -728,7 +728,7 @@ label BotchedConverge2:
 
                 # Image Ashina Hybrid Angry
                 #VSFX Ashina (pacing)
-                show ash angry hybrid with dissolve
+                show ash angry hybrid with fast_dissolve
 
                 ash "You reckless, ungrateful fool. Clearly you do not understand your situation, despite me going to great lengths to explain it."
 

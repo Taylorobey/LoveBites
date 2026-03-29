@@ -248,3 +248,7 @@ transform corruptfade:
             linear random.uniform(1.3, 2.3) alpha 1.0
             linear random.uniform(1.3, 2.3)  alpha 0.0  
             repeat
+
+#custom dissolves for expression changes
+# Define a fast dissolve
+define fast_dissolve = Dissolve(0.25)

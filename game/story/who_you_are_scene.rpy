@@ -5,7 +5,7 @@ label WhoYouAreScene:
         #stop audio from previous scene
         stop sound
 
-        call WakeUpSequence1 from _call_WakeUpSequence1_4
+        call AsleepSequence
 
         hide bg onlayer screens with Dissolve(2.0)
 
@@ -15,7 +15,7 @@ label WhoYouAreScene:
 
         window auto hide
 
-        call WakeUpSequence2 from _call_WakeUpSequence2_4
+        call WakeUpSequence
 
         window auto show
 
@@ -95,7 +95,7 @@ label WhoYouAreScene:
         you "This is ridiculous. What do you want with me? I don’t even know who you are."
 
         # Image Ashina Friendly
-        show ash friendly with dissolve
+        show ash friendly with fast_dissolve
 
         "There’s a glitter of amusement in her eyes, her lips twitching at a smirk."
 
@@ -240,7 +240,7 @@ label WhoYouAreScene:
 
         ash "Now, pay attention. I am going to explain how your life will be from now on, girl."
 
-        show ash friendly with dissolve
+        show ash friendly with fast_dissolve
 
         ash "That is- What you have become, what you must do to survive, and why you can never return to your old life."
 
@@ -249,11 +249,11 @@ label WhoYouAreScene:
 
         ash "I am, and you are, lykánthrōpos, lycanthrope, or in layman's terms, werewolf. Descendants of witches, able to infect others with our so-called curse."
 
-        show ash sadistic with dissolve
+        show ash sadistic with fast_dissolve
 
         ash "There are many historical accounts of our supposed origins, most claiming that our distant ancestors became as we are through acts of heinous depravity, usually related to the consumption of human flesh."
 
-        show ash friendly with dissolve
+        show ash friendly with fast_dissolve
 
         ash "I have plenty of notes and readings on the subject that you will eventually be given access to, should you behave. Moving on."
 
@@ -319,7 +319,6 @@ label WhoYouAreScene:
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
                 subpixel True 
-
                 linear 0.30 xpos 0.03 zoom 3.36
         with Pause(0.40)
         show ash angry hybrid:
@@ -358,7 +357,7 @@ label WhoYouAreScene:
                 xpos 0.42 zoom 1.8
 
         # Image Ashina Neutral
-        show ash neutral with dissolve
+        show ash neutral with fast_dissolve
 
         "She looks at you expectantly as she looms over you, and you realize she’s waiting for a response."
         label WHOdemochoice:
@@ -380,7 +379,7 @@ label AppreciationResponse:
         you "I thought I knew what I wanted, but everything just ended up being so… hard. Weirdly, I feel more in control now than I have in a while."
 
         # Image Ashina Caring
-        show ash caring with dissolve
+        show ash caring with fast_dissolve
 
         "Ashina’s gaze softens."
 
@@ -437,7 +436,7 @@ label DisgustResponse:
 
         you "The only reason I’m even listening to you right now is because if I don’t, you’ll hurt Cameron. We don’t need to pretend this is anything it isn’t."
 
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
 
         "Ashina’s gaze grows especially cold."
 

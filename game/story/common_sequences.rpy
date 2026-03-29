@@ -1,32 +1,65 @@
 # functions to call for common parts of scenes
-label WakeUpSequence1:
-    #VSFX blur
-    #i put this before scene so it wouldn't be unblurred whilst the scene was being dissolved in
-    camera:
-            subpixel True blur 20.0 
 
-    # image captive cabin room (angled, zoomed in on ceiling)
-    scene bg room ceiling with dissolve
+label AsleepSequence:
+        window auto hide
 
-    #music cabin
-    play music cabin_music volume 0.3
+        scene bg color black
+        play music cabin_music fadein 0.5 loop volume 0.3
+        play crickets crickets fadein 0.5 loop volume 0.5
 
-    #SFX crickets
-    play crickets crickets loop volume 0.5
+        show overlay room ceiling:
+                subpixel True
+                additive 0.0
+                matrixcolor BrightnessMatrix(-1.0)
+                blur 10.0
+        
+        pause 2.0
 
-    return
+        show overlay room ceiling with dissolve:
+                subpixel True
+                parallel:
+                        linear 0.25 matrixcolor BrightnessMatrix(0.25)
+                        linear 0.5 matrixcolor BrightnessMatrix(-0.4)
+                        linear 0.5 matrixcolor BrightnessMatrix(-1.0)
+                        linear 0.5 matrixcolor BrightnessMatrix(-0.3)
+                parallel:
+                        linear 1.25 additive 0.75
+                        linear 0.5 additive 0.5
 
-label WakeUpSequence2:
-    window auto hide
-    camera:
-            subpixel True 
-            linear 1.00 blur 5.0 
-            linear 1.00 blur 20.0 
-            linear 1.00 blur 0.0
-    with Pause(3)
-    camera:
-            blur 0.0 
-    return
+        pause 1.75
+
+        show overlay room ceiling:
+                subpixel True
+                blur 10.0
+                additive 0.5
+                matrixcolor BrightnessMatrix(-0.3)
+
+        window auto show
+        return
+
+label WakeUpSequence:
+        window auto hide
+        show overlay room ceiling:
+                subpixel True
+                parallel:
+                        linear 1.0 matrixcolor BrightnessMatrix(-1.0)
+                        linear 1.0 matrixcolor BrightnessMatrix(0.0)
+                        linear 0.5 matrixcolor BrightnessMatrix(-1.0)
+                        linear 1.0 matrixcolor BrightnessMatrix(0.0) blur 0.0
+                parallel:
+                        linear 1.75 additive 1.0
+                        linear 1.75 additive 0.0
+        
+        pause 3.5
+
+        show bg room ceiling:
+                subpixel True
+                blur 0.0        
+                matrixcolor BrightnessMatrix(0.0)
+                additive 0.0
+
+        window auto show
+        return
 
 label AshinaShiftFromWolf:
         window auto hide
@@ -165,14 +198,20 @@ label PainShake:
 
 
 label PainFlash:
-    window auto hide
-    show pain:
+        window auto hide
+        show pain:
                 subpixel True
                 alpha 0.0
                 linear 0.5 alpha 1.0 
                 linear 1.0 alpha 0.5
                 linear 2.0 alpha 0.0
-    return
+
+        play soundb heart
+        with Pause(0.7)
+        stop soundb fadeout 0.5
+
+        window auto show
+        return
 
 label GoToHearth:
         window auto hide
@@ -237,13 +276,13 @@ label GoOutsideDogs:
         window auto hide
         play sound walking loop
         show bg door open with dissolve:
-            subpixel True
-            zoom 1.0 pos(0.5,0)
-            linear 2.00 zoom 2.0 yalign(0.5)
+                subpixel True
+                zoom 1.0 pos(0.5,0)
+                linear 2.00 zoom 2.0 yalign(0.5)
         with Pause(1.5)
         stop soundb fadeout 1.0
         show bg door open:
-            zoom 2.0 yalign(0.5)
+                zoom 2.0 yalign(0.5)
         play crickets crickets fadein 0.5
         scene bg cabin ext dogs with dissolve
         pause 1.0
@@ -255,13 +294,13 @@ label GoOutsideNoDogs:
         stop soundb fadeout 2.0
         play sound walking loop
         show bg door open with dissolve:
-            subpixel True
-            zoom 1.0 pos(0.5,0)
-            linear 2.00 zoom 2.0 yalign(0.5)
+                subpixel True
+                zoom 1.0 pos(0.5,0)
+                linear 2.00 zoom 2.0 yalign(0.5)
         with Pause(1.5)
         stop soundb fadeout 1.0
         show bg door open:
-            zoom 2.0 yalign(0.5)
+                zoom 2.0 yalign(0.5)
         play crickets crickets fadein 0.5
         scene bg cabin ext no dogs with dissolve
         pause 1.0
