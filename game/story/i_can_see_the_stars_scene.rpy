@@ -17,12 +17,12 @@ label ICanSeeTheStarsScene:
 
     "The door to your room opens, with Ashina's stance taking up the whole frame."
 
-    show ash thoughtful with dissolve
+    show ash thoughtful with fast_dissolve
 
     ash "Are you ready as I asked, pup? You could stand to go outside for a spell, and I’d much rather you do so with supervision this time."
 
     window auto hide
-    hide ash thoughtful with dissolve
+    hide ash thoughtful with fast_dissolve
 
     if ash_approval >= 0:
         window auto show
@@ -61,11 +61,11 @@ label ICanSeeTheStarsScene:
         you "I don't want to go outside. I've been through enough already tonight, I'm so tired…"
 
         #Image Ashina Hybrid Angry
-        show ash annoyed with dissolve
+        show ash annoyed with fast_dissolve
 
         ash "I wasn't making a request. It will only be for a brief moment, so quit your whining."
 
-        hide ash annoyed with dissolve
+        hide ash annoyed with fast_dissolve
 
         "Ashina grabs your wrist, and you can only resign yourself to being dragged along. "
 
@@ -175,7 +175,7 @@ label ICanSeeTheStarsScene:
     ash "I've been waiting for a chance to show you the view of the stars here. I find it relaxing, and was hoping it'd help you feel the same."
 
     #Image Ashina Neutral
-    show ash neutral with dissolve
+    show ash neutral with fast_dissolve
     #VSFX Ashina (closer)
 
     ash "Tell me, what do you think?"
@@ -303,7 +303,7 @@ label ICanSeeTheStarsScene:
                 you "I need to tell you something. Someone is after you. The other night-"
 
                 #Image Ashina Friendly
-                show ash sadistic with dissolve
+                show ash sadistic with fast_dissolve
 
                 ash "What, that little miscreant in the woods? I’ve been giving her the run around for years, don’t you fret your little head about it."
 
@@ -311,7 +311,7 @@ label ICanSeeTheStarsScene:
                 show ash sadistic at step_close
                 with Pause(1.0)
                 #Image Ashina Concerned
-                show ash concerned with dissolve
+                show ash concerned with fast_dissolve
                 window auto show
 
                 "Ashina waves a hand dismissively, but you catch her arm and look at her meaningfully. It gives her pause enough for you to carry on."
@@ -319,7 +319,7 @@ label ICanSeeTheStarsScene:
                 you "The other night, when… I went outside against your wishes…"
 
                 #Image Ashina Neutral
-                show ash neutral with dissolve
+                show ash neutral with fast_dissolve
 
                 you "I met a huntress armed with a bow and arrow, who I now know is named Akari. She shot a note up to my window earlier tonight, asking to meet in two days’ time, and told me she intends to kill you, Ashina. Soon."
 
@@ -362,13 +362,13 @@ label ICanSeeTheStarsScene:
 
                 you "I think I've been a Lycan for long enough to learn our vulnerabilities. The weaknesses that can leave us exposed."
 
-                show ash annoyed with dissolve
+                show ash annoyed with fast_dissolve
                 
                 "Ashina's expression shifts, her eyes locking onto yours with newfound seriousness."
                 
                 you "You’ve seemed worried about outsiders, people who would mean us harm. I need to know how to protect myself, just in case."
 
-                show ash sadistic with dissolve
+                show ash sadistic with fast_dissolve
                 
                 "Ashina waves a hand dismissively."
                 
@@ -376,15 +376,15 @@ label ICanSeeTheStarsScene:
                 
                 you "I don’t mean any disrespect, but… well, what if I'm alone, and you can't help me? Besides… We should watch each other’s backs, right? After all, we only have each other now."
 
-                show ash caring with dissolve
+                show ash caring with fast_dissolve
                 
                 "Ashina’s expression softens, a glimpse of vulnerability in her eyes, and something more. Hope, perhaps. It makes your stomach churn."
 
-                show ash thoughtful with dissolve
+                show ash thoughtful with fast_dissolve
                 
                 ash "...You make a fair point. We are one and the same. I must be able to trust you with this. We must stand united, for this world will snuff us out any chance that it gets."
 
-                show ash neutral with dissolve
+                show ash neutral with fast_dissolve
                 
                 ash "Let me ask you this then. What do you think our weakness is?"
                 
@@ -394,15 +394,15 @@ label ICanSeeTheStarsScene:
                 
                 you "I think… I feel weaker than I did last night. Has something changed?"
 
-                show ash friendly with dissolve
+                show ash friendly with fast_dissolve
                 
                 ash "Very intuitive, pup. You are correct."
 
-                show ash thoughtful with dissolve
+                show ash thoughtful with fast_dissolve
                 
                 ash "As I insinuated the other night, us Lycans are strongest during the full moon. Conversely, the new moon is when we are at our most vulnerable. We are nearing that phase, which is why you feel the way you do."
 
-                show ash sad with dissolve
+                show ash sad with fast_dissolve
                 
                 ash "We will neither have access to our supernatural healing abilities, nor to our full wolf forms. I urge you to stay inside for those three days. It will not be safe for you out here."
                 
@@ -410,7 +410,7 @@ label ICanSeeTheStarsScene:
                 
                 you "I’ll stay inside, I promise."
 
-                show ash caring with dissolve
+                show ash caring with fast_dissolve
                 
                 "Ashina’s expression relaxes, her relief evident."
                 
