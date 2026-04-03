@@ -38,7 +38,7 @@ label SpeakNoEvilSceneP2:
         you "Cam! It's me!"
  
         #Image Cameron Friendly
-        show cam friendly with dissolve
+        show cam friendly with fast_dissolve
         with Pause(0.2)
         show cam friendly at cam_surprise_jump
         with Pause(0.55)
@@ -53,12 +53,12 @@ label SpeakNoEvilSceneP2:
         "Cameron pulls you in for a big hug. Tears stream down their face as they squeeze you tight."
 
         #Image Cameron Caring
-        show cam caring with dissolve
+        show cam caring with fast_dissolve
 
         cam "I…honestly thought I’d never see you again. You don't know how glad I am that you're here."
 
         #Image Cameron Nervous (further)
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
 
         cam "How did you even get in? Does Ashina know you're here right now?"
 
@@ -83,33 +83,33 @@ label SpeakNoEvilSceneP2:
                 you "She agreed to let you go, on one condition."
 
                 #Image Cameron Neutral
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
 
                 cam "Alright, lay it on me."
 
                 you "You can never talk about anything that happened here ever again. No spreading chisme about a werewolf lady kidnapping us. No cabin in the woods."
 
                 #Image Cameron Nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 cam "What? But, how am I going to explain to people where I've been?"
 
                 #Image Cameron Frustrated (alt. Thoughtful)
-                show cam frustrated with dissolve
+                show cam frustrated with fast_dissolve
 
                 cam "Hell, what am I going to say when people start wondering about you?!"
 
                 you "I don't know, Cam. You'll have to make something up."
 
                 #Image Cameron Nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 cam "You'll get to come with me eventually, won't you…?"
 
                 you "I can't promise that, Cam. I’m sorry."
 
                 #Image Cameron Frustrated
-                show cam frustrated with dissolve
+                show cam frustrated with fast_dissolve
                 with Pause(0.1)
                 #VSFX Cameron (shaking, as if frustrated)
                 show cam frustrated at nervous_shake
@@ -205,7 +205,7 @@ label DieIfTell:
         you "Ashina won't be the only one affected if you tell people about this."
 
         #Image Cameron Nervous
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
 
         cam "What do you mean? This whole situation is her fault!"
 
@@ -215,7 +215,7 @@ label DieIfTell:
                 #Music Goodbyes
                 play music goodbyes_music volume 0.7 fadein 2.0
                 #Image Cameron Frustrated
-                show cam frustrated with dissolve
+                show cam frustrated with fast_dissolve
                 with Pause(1.0)
                 #VSFX Cameron (shake, as if shaking head no)
                 show cam frustrated at nervous_shake
@@ -227,14 +227,14 @@ label DieIfTell:
                 you "All they'll see is a big, scary wolf monster, and then they’ll point their weapons straight at me. Is that what you want?"
 
                 #Image Cameron Thoughtful
-                show cam thoughtful with dissolve
+                show cam thoughtful with fast_dissolve
 
                 cam "No…I don't want that. I could never handle the guilt if I let that happen to you."
 
                 "Cameron goes quiet, looking down in thought. Then, they sigh."
 
                 #Image Cameron Neutral
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
 
                 cam "Okay. If it’s really what you want, I promise, I won’t tell anyone."
 
@@ -242,11 +242,11 @@ label DieIfTell:
 
         else:
                 #Image Cameron Thoughtful
-                show cam thoughtful with dissolve
+                show cam thoughtful with fast_dissolve
 
                 "Cameron goes quiet, looking away in a clear show of guilt. After a moment, a few stray tears plummet down their cheeks."
 
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
                 with Pause(0.1)
                 #VSFX Cameron (shake, as if upset)
                 show cam nervous at nervous_shake
@@ -264,7 +264,7 @@ label CareAboutAshina:
         you "Ashina isn’t all bad, Cam. I don’t want anything to happen to her. I… I care about her. She isn’t keeping me here, I want to stay."
 
         #Image Cameron Nervous
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
 
         "Cameron looks at you in disbelief."
 
@@ -284,7 +284,7 @@ label CareAboutAshina:
                 play music goodbyes_music volume 0.7 fadein 2.5
                 
                 #Image Cameron Thoughtful
-                show cam thoughtful with dissolve
+                show cam thoughtful with fast_dissolve
 
                 cam "...You’re really serious, aren’t you? Ah, mierda."
 
@@ -296,7 +296,7 @@ label CareAboutAshina:
                 show cam thoughtful at stop_pacing
                 with Pause (0.2)
                 #Image Cameron Neutral
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
 
                 cam "Okay. If it’s really what you want, I promise, I won’t tell anyone."
 
@@ -304,12 +304,12 @@ label CareAboutAshina:
 
         else:
                 #Image Cameron nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 cam "You’ve gone mad. She… can’t you see she’s poisoned your head?"
 
                 #Image Cameron Frustrated
-                show cam frustrated with dissolve
+                show cam frustrated with fast_dissolve
                 with Pause(0.2)
                 #VSFX Cameron (shake, as if shaking head no)
                 show cam frustrated with nervous_shake
@@ -329,19 +329,19 @@ label ShellKillYou:
                 stop music fadeout 1.0
                 play music goodbyes_music volume 0.7 fadein 2.5
                 #Image Cameron Scared
-                show cam scared with dissolve
+                show cam scared with fast_dissolve
                 with Pause(0.2)
                 show cam scared at nervous_shake
 
                 "The reality of the situation seems to finally set in for Cameron. You watch as their suppressed terror takes over, before they are able to collect themself."
 
                 #Image Cameron Nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 cam "You’re… you’re right. I just want to go home. If this is what it takes, then…"
 
                 #Image Cameron Neutral
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
 
                 cam "Okay. I promise, I won’t tell anyone."
 
@@ -349,7 +349,7 @@ label ShellKillYou:
 
         else:
                 #Image Cameron Frustrated
-                show cam frustrated with dissolve
+                show cam frustrated with fast_dissolve
                 with Pause(0.2)
                 show cam frustrated at nervous_shake
 
@@ -361,13 +361,13 @@ label CameronGoodbye:
         $ cameron_leave = True
 
         #Image Cameron Thoughtful
-        show cam nervous with dissolve
+        show cam nervous with fast_dissolve
         window auto show
 
         "They give you a long, forlorn look, eyes tearing up."
 
         #Image Cameron Caring
-        show cam caring with dissolve
+        show cam caring with fast_dissolve
 
         cam "I’m really going to miss you."
 
@@ -423,14 +423,14 @@ label CorruptedChoice:
                 
                 #VSFX Screen (tints blue)
                 #Image Cameron Scared (further)
-                show cam scared with dissolve
+                show cam scared with fast_dissolve
                 with Pause(0.2)
                 show cam scared at nervous_shake
 
                 "Cameron recoils, suddenly looking terrified. It takes them a few moments of panicked breathing to compose themself. They can’t look you in the eyes."
 
                 #Image Cameron Nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 cam "Okay, okay, I won’t tell anyone, I swear. I just want to go home. Please."
 
@@ -440,7 +440,7 @@ label CorruptedChoice:
 
         else:
                 #Image Cameron Neutral
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
 
                 "Cameron stares at you, unaffected by your words."
 
@@ -482,7 +482,7 @@ label HumanityChoice:
                 play music goodbyes_music volume 0.7 fadein 2.5
                 #Image Cameron Neutral
                 
-                show cam neutral with dissolve
+                show cam neutral with fast_dissolve
                 with Pause(0.2)
                 #VSFX Cameron (zoom closer then fade out)
                 show cam nervous with dissolve
@@ -501,7 +501,7 @@ label HumanityChoice:
 
         else:
                 #Image Cameron Nervous
-                show cam nervous with dissolve
+                show cam nervous with fast_dissolve
 
                 "Cameron’s expression momentarily falters, before they steel themselves."
 
