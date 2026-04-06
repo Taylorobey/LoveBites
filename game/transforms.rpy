@@ -252,3 +252,8 @@ transform corruptfade:
 #custom dissolves for expression changes
 # Define a fast dissolve
 define fast_dissolve = Dissolve(0.25)
+
+# custom sprite movement transforms
+transform easeincloserightside:
+                subpixel True pos (1.2,0) zoom 2.0
+                easein(0.5) pos (0.6,0) zoom 2.0

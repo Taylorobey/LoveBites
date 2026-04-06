@@ -33,7 +33,8 @@ label WhoYouAreScene:
         window auto hide
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
-        show ash neutral with easeinright
+        show ash neutral at easeincloserightside
+
         window auto show
 
         ash "Come. It’s time we had a talk."
