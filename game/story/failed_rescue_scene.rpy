@@ -1,20 +1,16 @@
 label FailedRescueScene:
         $ save_name = "An Old Friend"
 
-
         window auto hide
-        
-        pause(0.5)
-        #otherwise the tint stays if you click too fast or use skip function
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
+
+        scene bg color black with dissolve
+        with Pause(0.5)
         
         #SFX Creak
         play soundb creak volume 0.5 noloop
         call WakeUpSequence
 
         window auto show
-
         "You stir groggily, your sleep disturbed by a loud creaking noise." 
         window auto hide
 
@@ -106,6 +102,8 @@ label FailedRescueScene:
         # VSFX Zoom (as if moving away from the window)
         show bg room mc at back_to_bg
         pause(1.1)
+        scene bg room mc with dissolve
+        #fixes skip issue from waking sequence
 
         # Image Cameron Friendly
         show cam friendly with dissolve

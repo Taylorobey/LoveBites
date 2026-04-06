@@ -11,7 +11,7 @@ label SpeakNoEvilSceneP1:
 
     stop sound
 
-    call WakeUpSequence1
+    call AsleepSequence
 
     #SFX Knock
     play sound knocking volume 1.5
@@ -20,7 +20,7 @@ label SpeakNoEvilSceneP1:
 
     "You are woken up by a loud rapping at the door."
 
-    call WakeUpSequence2
+    call WakeUpSequence
 
     #Image Captive Cabin Room (full view)
     scene bg room mc with dissolve

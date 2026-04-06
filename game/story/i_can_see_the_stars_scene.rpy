@@ -210,8 +210,8 @@ label ICanSeeTheStarsScene:
     menu:
         #Humanity Choice
         "Breathtaking.":
-            pause 0.3
             $ humanity += 1
+            call humanity_animation
             you "..."
 
             window auto hide
@@ -239,8 +239,9 @@ label ICanSeeTheStarsScene:
 
         #Corruption Choice
         "Depressing.":
-            pause 0.3
             $ corruption += 1
+            call corruption_animation
+
             you "..."
 
             window auto hide

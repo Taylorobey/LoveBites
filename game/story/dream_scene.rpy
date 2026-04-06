@@ -237,22 +237,21 @@ label DreamScene:
         show shadowse at shadowfade:
                 subpixel True pos (0.79, 27) 
         with Pause(0.5)
+        
         window auto show
 
         "More scenes play out, smaller moments of hope and reprieve, the end always the same. People passing through your life like ships in the night, as they say. Teaching you a valuable lesson."
 
         
         window auto hide
+        with Pause(0.5)
         
         menu:
                 #Humanity choice
                 "People are complicated.":
                         $ humanity +=1
-                # VSFX screen slowly tints yellow (broken needs to use a yellow bg with alpha linear stuff)
-                        #camera:
-                                #matrixcolor TintMatrix("#fff")
-                                #linear 3.0 matrixcolor TintMatrix("#b29231")
-                                #is this a good yellow?
+                        call humanity_animation
+
                         window auto show
 
                         "Everybody is living their own lives, dealing with their own struggles, and trying their best. You’re grateful for the impact they were able to have on your life, even if it left you wanting more."
@@ -263,48 +262,40 @@ label DreamScene:
                 #Corruption choice
                 "People are selfish.":
                         $ corruption += 1
-                        # VSFX screen slowly tints blue (broken needs to use a blue bg with alpha linear stuff)
-                        #camera:
-                                #matrixcolor TintMatrix("#fff")
-                                #linear 3.0 matrixcolor TintMatrix("#1C4587")
-                        #should we use straight blue instead
-                        window auto show
 
                         show shadowsb at corruptfade:
                                 subpixel True pos (-0.03, -63)
-                        with Pause(0.5)
                         show shadowsc onlayer screens at corruptfade:
                                 subpixel True pos (0.37, 58)
-                        with Pause(0.5)
                         show shadowsd at corruptfade:
                                 subpixel True pos (0.63, -234) 
-                        with Pause(0.5)
                         show shadowsf onlayer screens at corruptfade:
                                 subpixel True pos (0.03, -135) 
-                        with Pause(0.5)
                         show shadowsh at corruptfade:
                                 subpixel True pos (0.21, -185) 
-                        with Pause(0.5)
                         show shadowsi onlayer screens at corruptfade:
                                 subpixel True pos (0.51, -189) 
-                        with Pause(0.5)
                         show shadowse at corruptfade:
                                 subpixel True pos (0.79, 27) 
-                        with Pause(0.5)
+                        with Dissolve(1.0)
 
-                        "In the end, they all abandoned you. None of them were strong or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
+                        call corruption_animation
+
+                        window auto show
+
+                        "In the end, they all abandoned you. None of them were strong enough or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/b}{/color} be like them."
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
         stop music fadeout (2.5)
 
         window auto hide
-        hide shadowsb onlayer screens with dissolve
-        hide shadowsc onlayer screens with dissolve
-        hide shadowsd onlayer screens with dissolve
-        hide shadowsf onlayer screens with dissolve
-        hide shadowsh onlayer screens with dissolve
-        hide shadowsi onlayer screens with dissolve
-        hide shadowse onlayer screens with dissolve
-        with Pause(1.0)
+        hide shadowsb onlayer screens 
+        hide shadowsc onlayer screens 
+        hide shadowsd onlayer screens 
+        hide shadowsf onlayer screens 
+        hide shadowsh onlayer screens 
+        hide shadowsi onlayer screens 
+        hide shadowse onlayer screens
+        with Dissolve(2.0)
+        with Pause(2.0)
+        scene bg color black with Dissolve(2.0)
         jump WhoYouAreScene

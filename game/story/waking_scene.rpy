@@ -6,7 +6,6 @@ label WakingScene:
         scene bg color black with dissolve
         with Pause(0.5)
 
-        #call WakeUpSequence1 from _call_WakeUpSequence1_3
         call AsleepSequence
         
         window auto show
@@ -15,8 +14,8 @@ label WakingScene:
 
         window auto hide
 
-        #call WakeUpSequence2 from _call_WakeUpSequence2_3
         call WakeUpSequence
+
 
         window auto show
 
@@ -45,12 +44,12 @@ label WakingScene:
         menu:
                 "You regret what you wished for.":
                         $ humanity += 1
-                        pause 0.3
+                        call humanity_animation
 
                         "Flirting with disaster finally caught up with you. What in the world were you thinking? You vow that if you ever get out of this mess, you're going to have a serious think about your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
-                        pause 0.3
+                        call corruption_animation
 
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night and now you’ve gotten what you wanted, right? A new disaster to fight yourself out of."
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."

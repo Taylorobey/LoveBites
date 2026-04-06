@@ -10,8 +10,8 @@ label LettersScene:
 
     "You beeline towards the bed once you enter your room. As soon as your head hits the pillow, you already start to drift off…"
 
-    call WakeUpSequence1
-    call WakeUpSequence2
+    call AsleepSequence
+    call WakeUpSequence
     
     #SFX Arrow Hit
     play sound creak

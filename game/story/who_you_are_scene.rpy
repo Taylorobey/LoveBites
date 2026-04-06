@@ -10,7 +10,6 @@ label WhoYouAreScene:
         hide bg onlayer screens with Dissolve(2.0)
 
         window auto show
-
         "When you next awake, something feels off. It only takes you a few moments to figure it out."
 
         window auto hide
@@ -18,13 +17,13 @@ label WhoYouAreScene:
         call WakeUpSequence
 
         window auto show
-
         "You feel rested. No aches, no pains, a pleasant warmth radiating from within you. You can’t remember the last time you felt this good. But, there’s something else, too."
 
         call PainFlash from _call_PainFlash_1
         play soundb heart
-        with Pause(0.7)
+        with Pause(0.8)
         stop soundb fadeout 0.5
+        pause 0.5
 
         "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing {color=#1C4587}{b}outside{/b}{/color} of the door to your room."
 
