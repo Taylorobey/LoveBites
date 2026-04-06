@@ -36,7 +36,7 @@ label AsleepSequence:
 
         pause 0.1
         
-        window auto show
+        #window auto show / sometimes don't go to dialogue after this
         return
 
 label WakeUpSequence:
@@ -70,7 +70,7 @@ label WakeUpSequence:
 
         pause 0.1
 
-        window auto show
+        #window auto show / sometimes don't go to dialogue after this
         return
 
 label AshinaShiftFromWolf:
@@ -222,7 +222,7 @@ label PainFlash:
         with Pause(0.7)
         stop soundb fadeout 0.5
 
-        window auto show
+        #window auto show / don't always immedately go to dialogue after this
         return
 
 label GoToHearth:
