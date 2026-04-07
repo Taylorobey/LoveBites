@@ -16,11 +16,11 @@ label FailedRescueScene:
 
         # Image Captive Cabin Room (full view)
         scene bg room mc cam with dissolve:
-                pos (-0.05, 0) zoom 1.1
+                pos (-0.05, -0.05) zoom 1.1
         with Pause(0.5)
-        show bg room mc cam with dissolve:
+        show bg room mc cam:
                 subpixel True 
-                pos (-0.05, 0) zoom 1.1
+                pos (-0.05, -0.05) zoom 1.1
                 pause 0.1
                 linear 1.0 xoffset +70 zoom 1.25
                 pause 0.5  
@@ -40,12 +40,12 @@ label FailedRescueScene:
         window auto hide
         camera:
                 subpixel True 
-                ypos 0 
-                linear 0.15 ypos -90
-                linear 0.15 ypos 0 
+                yoffset 0 
+                easeout(0.15) yoffset -20
+                easein(0.15) yoffset 0
         with Pause(0.40)
         camera:
-                ypos 0 
+                yoffset 0 
         window auto show
 
         you "Cameron?!"
@@ -54,10 +54,10 @@ label FailedRescueScene:
         show bg room mc cam:
                 subpixel True 
                 zoom 1.1 
-                linear 0.30 xpos 0 zoom 1.0 
+                linear 0.30 xpos 0 ypos 0 zoom 1.0 
         with Pause(0.40)
         show bg room mc cam:
-                xpos 0 zoom 1.0
+                xpos 0 ypos 0 zoom 1.0
         scene bg room mc cam with fast_dissolve #otherwise walk to window doesn't work properly
         window auto show
 
