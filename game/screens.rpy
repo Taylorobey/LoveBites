@@ -241,12 +241,44 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+transform animated_button_show(time_delay):
+    alpha 0.0
+    xoffset -50
+    #on show:
+        #action Play("sound", "audio/scratch1.wav")
+    pause time_delay
+    parallel:
+        ease 0.6 xoffset 0
+    parallel:
+        easeout 0.6 alpha 1.0
+    on hide:
+        ease 0.4 alpha 0.0
+    
+
+#---------------
+
 screen choice(items):
     style_prefix "choice"
+    #default time_delay = 0.05
 
     vbox:
-        for i in items:
-            textbutton i.caption action i.action
+        for i, item in enumerate(items, start=1):
+            # Calculate a delay for each button (e.g., 0.3 seconds apart)
+            $ delay = i * 0.35
+            
+            # This timer plays the sound and shows the button after its specific delay
+            timer delay action Play("sound", "audio/scratch5.wav")
+
+            textbutton item.caption:
+                action item.action
+                at animated_button_show(i * 0.35)
+
+#screen choice(items):
+    #style_prefix "choice"
+
+    #vbox:
+        #for i in items:
+            #textbutton i.caption action i.action at choicewipe
 
 
 style choice_vbox is vbox
