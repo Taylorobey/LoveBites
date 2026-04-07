@@ -15,17 +15,21 @@ label FailedRescueScene:
         window auto hide
 
         # Image Captive Cabin Room (full view)
+        scene bg room mc cam with dissolve:
+                pos (-0.05, 0) zoom 1.1
+        with Pause(0.5)
         show bg room mc cam with dissolve:
                 subpixel True 
-                pos (0.5, 1.0) zoom 1.1
-                linear 1.0 pos (0.62, 1.2) zoom 1.25
+                pos (-0.05, 0) zoom 1.1
+                pause 0.1
+                linear 1.0 xoffset +70 zoom 1.25
                 pause 0.5  
-                linear 2.0 pos (0.38, 1.2) zoom 1.25
+                linear 2.0 xoffset -360 zoom 1.25
                 pause 0.5 
-                linear 0.5 pos (0.5, 1.0) zoom 1.1
+                linear 0.5 xoffset 0 zoom 1.1
         pause 5.0
         show bg room mc cam:
-                pos (0.5, 1.0) zoom 1.1
+                xoffset 0 zoom 1.1
 
         # VSFX Slow Pan or Back And Forth Pan (as if looking around the room, whichever looks more natural, before settling on the window)
         
@@ -50,10 +54,11 @@ label FailedRescueScene:
         show bg room mc cam:
                 subpixel True 
                 zoom 1.1 
-                linear 0.30 zoom 1.0 
+                linear 0.30 xpos 0 zoom 1.0 
         with Pause(0.40)
         show bg room mc cam:
-                zoom 1.0 
+                xpos 0 zoom 1.0
+        scene bg room mc cam with fast_dissolve #otherwise walk to window doesn't work properly
         window auto show
 
         "You quickly realize you should be quiet if you don’t want to draw any unwanted attention, so you lower your voice to a hushed tone."

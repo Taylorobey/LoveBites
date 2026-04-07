@@ -543,4 +543,5 @@ image spook logo            = "gui/Spooktober_Logo.png"
 image md logo               = "gui/MDLogo.png"
 image menu no logo          = "gui/main_menu_nologo.png"
 image main menu             = "gui/main_menu.png"
+image black_background      = Solid("#000",xysize=(config.screen_width,config.screen_height)) #for wipe and other effects that need a black background
 

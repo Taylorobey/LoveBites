@@ -26,6 +26,7 @@ define audio.knocking               = "SFX/Knock (Captive Room).mp3"
 define audio.mournfulhowls          = "SFX/Mournful_Howls.flac"
 define audio.gore                   = "SFX/Gore.mp3"
 define audio.bark                   = "SFX/Bark.mp3"
+define audio.door_open              = "SFX/Door_Open.wav"
 #placeholders until audio effects are available
 
 

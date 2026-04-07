@@ -70,6 +70,16 @@ init python:
 init python:
     import random
 
+init python:
+    # 'bottom' is behind 'master' (bg/sprites) and 'transient'
+    config.layers.insert(0, 'bottom') #0 is absolute bottom
+# so that wipe/slide/etc transitions don't show transparent background
+
+# changing the speed of wipes
+init:
+    $ wipeleft = CropMove(0.5, "wipeleft")
+    $ wiperight = CropMove(0.5, "wiperight")
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:

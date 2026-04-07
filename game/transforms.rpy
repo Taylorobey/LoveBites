@@ -8,7 +8,9 @@ transform step_close_short:
 
 # step closer to player
 transform step_close:
-    linear 0.50 ypos 2.0 zoom 2.0
+    easein(0.25) xoffset -150 zoom 2.0
+transform step_close_return:
+    linear 0.50 xoffset 0 zoom 1.5
 transform step_close_center_fast:
     linear 0.50 xpos 0.5 ypos 2.0 zoom 2.0
 
@@ -16,7 +18,7 @@ transform step_close_center_fast:
 transform step_closer:
     linear 1.00 ypos 3.8 zoom 4.0
 transform step_closer_center:
-    linear 1.00 pos(0,0) zoom 4.0
+    linear 1.00 pos(0.1,0) zoom 3.75
 
 # stepping closer threateningly
 transform threat_step:
@@ -193,7 +195,13 @@ transform nod:
     subpixel True 
     linear 0.15 ypos 2.03 
     linear 0.15 ypos 1.97 
-    linear 0.15 ypos 2.0 
+    linear 0.15 ypos 2.0
+
+transform nod_slow:
+    subpixel True
+    easeout(0.3) yoffset +20
+    linear 0.3 yoffset -10
+    easeout(0.3) yoffset 0
 
 #transform for cameron hugging the player
 transform hug:
@@ -257,3 +265,11 @@ define fast_dissolve = Dissolve(0.25)
 transform easeincloserightside:
                 subpixel True pos (1.2,0) zoom 2.0
                 easein(0.5) pos (0.6,0) zoom 2.0
+
+transform easeinhalfrightside:
+                subpixel True pos (1.2,0) zoom 1.5
+                easein(1.0) pos (0.5,0) zoom 1.5
+
+transform easeoutrightslower:
+                subpixel True
+                easeout(1.0) xpos 1.2

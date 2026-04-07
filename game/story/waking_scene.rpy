@@ -4,6 +4,8 @@ label WakingScene:
         window auto hide
 
         scene bg color black with dissolve
+        show black_background onlayer bottom #this scene has wipes
+
         with Pause(0.5)
 
         call AsleepSequence
@@ -15,7 +17,6 @@ label WakingScene:
         window auto hide
 
         call WakeUpSequence
-
 
         window auto show
 
@@ -52,36 +53,31 @@ label WakingScene:
                         call corruption_animation
 
                         "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night and now you’ve gotten what you wanted, right? A new disaster to fight yourself out of."
+        #play soundc door_open volume 5.0
+
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
 
 
         window auto hide
         #VSFX ashina slides in from the right
         #image ashina neutral
-        show ash neutral with MoveTransition(1.3, enter=offscreenright)
+        show ash neutral at easeinhalfrightside
 
         window auto show
 
         ash "I see you're finally awake. Tell me, how was your slumber?"
         you "Um, who are you? Where am I?"
 
-        window auto hide
-
-
         #VSFX ashina steps closer
         show ash annoyed with fast_dissolve
-        with Pause(0.2)
         show ash annoyed at step_close
-        with Pause(1.00)
-
-        window auto show
 
         ash "Do you lack manners, girl? I asked you a question. I expect an answer."
         
         #VSFX ashina steps back
         window auto hide
-        show ash annoyed at step_away
-        with Pause(1.00)
+        show ash annoyed at step_close_return
+        with Pause(0.5)
         window auto show
 
 
@@ -90,14 +86,10 @@ label WakingScene:
 
         #image ashina friendly
         show ash friendly with fast_dissolve
+
         ash "Good, good."
 
-        show ash friendly:
-                subpixel True 
-                ypos 1.0 
-                linear 0.3 ypos 1.02
-                linear 0.3 ypos 1.0 
-        with Pause(0.6)
+        show ash friendly at nod_slow
 
         ash "Now, sit up properly. I have generously prepared a meal for you."
 
@@ -115,7 +107,7 @@ label WakingScene:
 
         window auto hide
         show ash friendly:
-                linear 1 xpos 1.2
+                easeout(1.0) xpos 1.2
         with Pause(1)
         hide ash friendly
         #vsfx sit up?
@@ -126,34 +118,39 @@ label WakingScene:
 
         window auto hide
         stop music fadeout 1.0
-        show ash sadistic:
-                subpixel True pos (0.97, 1) zoom 1.88
-                linear 0.5 xpos 0.53 
-        with Pause(0.6)
-        show ash sadistic:
-                pos (0.53, 1) 
+        show ash sadistic at easeincloserightside
         window auto show
 
 
         ash "Here you are. Feast to your heart's content."
 
-        scene bg meat plate with dissolve
-        hide ash sadistic
+        window auto hide
+        scene bg meat plate with wipeleft:
+                alpha 0.0 blur 5.0
+                linear 1.0 alpha 1.0 blur 0.0
         play music eerie_outdoors_music volume 1.5 fadein 0.5
         stop sound
+        with Pause(0.2)
+        show bg meat plate with fast_dissolve
         window auto show
 
         "On the plate is a pile of raw meat. Blood coagulates at the bottom of the chunks, and the stench of death reeks in the air."
 
-        scene bg room mc with dissolve
+        window auto hide
+        scene bg room mc with wiperight:
+                alpha 0.0 blur 5.0
+                linear 1.0 alpha 1.0 blur 0.0
         show ash sadistic with fast_dissolve:
                 pos (0.53, 1)  zoom 1.88
+        with Pause(0.2)
+        show bg room mc with fast_dissolve
+        window auto show
 
         you "You can't be serious… There's no way I can eat {i}that{/i}!"
 
         show ash neutral with fast_dissolve
 
-        ash "Are you really so sure? Does your hunger not just feel so..."
+        ash "Are you really so sure? Does your hunger not just feel..."
 
         #VSFX ashina close up
         window auto hide
@@ -164,8 +161,12 @@ label WakingScene:
 
         ash "Unbearable?"
 
-        scene bg meat plate with dissolve
-        hide ash neutral
+        scene bg meat plate with wipeleft:
+                alpha 0.0 blur 5.0
+                linear 1.0 alpha 1.0 blur 0.0
+        with Pause(0.2)
+        show bg meat plate with fast_dissolve
+
         "You take another look at the plate. You hate to admit it, but your hunger betrays you. You don't just {i}want{/i} to eat it..."
 
         #vsfx red flash on edges like a blooming pain
@@ -174,6 +175,7 @@ label WakingScene:
 
         window auto hide
         play sound heart loop
+        play soundb growl volume 0.7
         image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext", font="CabinSketch-Bold.ttf")
         show hungertext
         show pain:
@@ -190,14 +192,19 @@ label WakingScene:
 
         #image ashina neutral
         stop sound fadeout 0.5
+        stop soundb fadeout 1.0
         stop music fadeout 1.0
 
-        scene bg mc room with dissolve
+        scene bg room mc with wiperight:
+                alpha 0.0 blur 5.0
+                linear 1.0 alpha 1.0 blur 0.0
         show ash sad with fast_dissolve
+        with Pause(0.2)
+        show bg room mc with fast_dissolve
         window auto show
 
 
-        ash "You poor thing. You seem to you finally understand the severity of your predicament."
+        ash "You poor thing. You seem to finally understand the severity of your predicament."
 
         show ash neutral with fast_dissolve
 
@@ -209,8 +216,12 @@ label WakingScene:
 
         ash "I have had enough of your questions, girl. Are you going to eat, or not?"
 
-        hide ash annoyed with dissolve
-        scene bg meat plate with dissolve
+        window auto hide
+        scene bg meat plate with wipeleft:
+                alpha 0.0 blur 5.0
+                linear 1.0 alpha 1.0 blur 0.0
+        with Pause(0.2)
+        show bg meat plate with fast_dissolve
 
         
         menu:
@@ -219,12 +230,18 @@ label WakingScene:
                         $ corruption += 1
                         $ ash_approval += 1
                         $ meat_eaten = True
-                        pause 0.3
+                        
+                        call corruption_animation
+
                         "The meat is… surprisingly palatable. It has a deep, tender richness to it. You barely restrain yourself from stuffing your face ravenously. It briefly occurs you that it should be more difficult to chew and swallow, but you can't bother to care. The clawing hunger soon subsides."
 
                         "You realize the woman has been watching you with an intense expression throughout."
 
-                        scene bg room mc with dissolve
+                        scene bg room mc with wiperight:
+                                alpha 0.0 blur 5.0
+                                linear 1.0 alpha 1.0 blur 0.0
+                        with Pause(0.2)
+                        scene bg room mc with fast_dissolve
                         #image ashina friendly
                         show ash friendly with dissolve
                         ash "Good girl. Now, rest."
@@ -232,10 +249,16 @@ label WakingScene:
                 #humanity choice
                 "Abstain from eating.":
                         $ humanity += 1
-                        pause 0.3
+                        
+                        call humanity_animation
+
                         "You turn away from the plate on the side table. The woman sighs theatrically."
 
-                        scene bg room mc with dissolve
+                        scene bg room mc with wiperight:
+                                alpha 0.0 blur 5.0
+                                linear 1.0 alpha 1.0 blur 0.0
+                        with Pause(0.2)
+                        scene bg room mc with fast_dissolve
                         show ash neutral with dissolve
                         
                         ash "You will need to nourish yourself eventually, girl, but I suppose I can allow you {i}some{/i} time to adjust. Now, rest."
@@ -243,8 +266,7 @@ label WakingScene:
 
         window auto hide
         ## slow this down?
-        hide ash with easeoutright
-        
+        show ash at easeoutrightslower
         #VSFX blur
         camera:
                 linear 1.0 blur 20.0
@@ -255,9 +277,12 @@ label WakingScene:
         
 
         window auto hide
+
         #VSFX return to normal
         camera:
-                linear 1.0 blur 0.0
+                subpixel True
+                linear 0.5 blur 0.0
+        with Pause(0.5)
         window auto show
 
 
