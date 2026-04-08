@@ -244,8 +244,6 @@ style input:
 transform animated_button_show(time_delay):
     alpha 0.0
     xoffset -50
-    #on show:
-        #action Play("sound", "audio/scratch1.wav")
     pause time_delay
     parallel:
         ease 0.6 xoffset 0
