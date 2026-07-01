@@ -16,7 +16,7 @@ label LettersScene:
     #SFX Arrow Hit
     play sound creak
 
-    "Just as you're about to fall asleep, you hear a sharp whistle, and then the splitting of wood near your window. You crawl out of your bed to investigate."
+    "Just as you're about to fall asleep, you hear a sharp whistle. A firm snap, like the cracking of bone, proclaims the splitting of wood outside the window. You crawl out of the bed to investigate."
 
     #SFX Walking
     #VSFX Zoom (towards window)
@@ -33,11 +33,11 @@ label LettersScene:
     stop sound
     window auto show
 
-    "The dogs yap and jump up at the window as if something’s there."
+    "The dogs yap and jump up at the window, alarmed by the sudden commotion."
 
     show bg room mc open window with dissolve
     
-    "You open the window and lean out, looking around. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
+    "You open the window, leaning out to get a better look. To the side of the window, you discover an arrow with a piece of paper bound to its shaft."
 
     "Your thoughts immediately turn towards that mysterious hooded woman in the woods."
 
@@ -48,7 +48,7 @@ label LettersScene:
 
     stop soundb fadeout 2.0
 
-    "You detach the arrow from the cabin wall, close the window, and unfurl the letter."
+    "You detach the arrow from the outer cabin wall and step back, closing the window. Unfurling the parchment reveals a letter written with distinct handwriting: large, cursive letters that border between meticulous and jagged."
 
     #Image Letter (centered in front of the captive cabin room bg)
     #VSFX Text (on screen in more of a letter format rather than in dialogue box)
@@ -64,9 +64,9 @@ label LettersScene:
 
     centered "To my unlikely ally…"
 
-    centered "Since our first meeting, I found myself intrigued by you. I have been keeping an eye on you from afar. From my understanding, you look to be a prisoner, and I know some of what that monster has subjected you to."
+    centered "Since our strange meeting, I have kept a close eye on you. From afar. I see now that you are being held prisoner by that monster. I truly pity you, knowing what cruelties that creature is capable of."
 
-    centered "I offer you a way out and a chance at redemption. It is my sole purpose to rid this world of the evil that presides over you."
+    centered "It is my sole purpose to rid this world of her evil influence. As such, I am offering you a way out. A chance at redemption."
 
     centered "Let us meet in two days' time at the forest’s edge. We shall then devise a plan to kill your dark mistress."
 
@@ -78,7 +78,7 @@ label LettersScene:
         centered "This is your one, and only, chance. Prove your allegiance to humanity, or share your mistress’s fate."
 
     if corruption > 0:
-        centered "I have seen, in your eyes, your struggle with the beast within you. Find it a warning or a comfort that if you do not keep it in check, I will not hesitate to do what must be done."
+        centered "Lastly, heed this. I have seen your struggle with the beast that that vile woman placed within you. Find it warning or comfort that if you do not keep it in check, I will not hesitate to strike you down."
 
     centered "Good luck. I will continue to watch over you until the time comes."
 
