@@ -43,7 +43,7 @@ label SpeakNoEvilSceneP2:
         show cam friendly at cam_surprise_jump
         with Pause(0.55)
 
-        cam "¡Dios mío!"
+        cam "Ohmygosh!"
 
         #VSFX Cameron (moves closer, then fades out)
         show cam friendly at hug
@@ -55,21 +55,21 @@ label SpeakNoEvilSceneP2:
         #Image Cameron Caring
         show cam caring with fast_dissolve
 
-        cam "I…honestly thought I’d never see you again. You don't know how glad I am that you're here."
+        cam "I… honestly thought I’d never see you again. You don't know how glad I am that you're here."
 
         #Image Cameron Nervous (further)
         show cam nervous with fast_dissolve
 
         cam "How did you even get in? Does Ashina know you're here right now?"
 
-        you "Right, about that. She let me visit you. But…there's a bit of a catch."
+        you "Right, about that. She let me visit you. But…"
 
         #VSFX Cameron (slide side to side movement as if shifting in place)
         show cam nervous at nervous_shake
 
         "Cameron shifts nervously, a flicker of fear in their eyes."
 
-        cam "Well… What is it?"
+        cam "What is it?"
 
         #for testing
         #define ash_approval = 3
@@ -87,7 +87,7 @@ label SpeakNoEvilSceneP2:
 
                 cam "Alright, lay it on me."
 
-                you "You can never talk about anything that happened here ever again. No spreading chisme about a werewolf lady kidnapping us. No cabin in the woods."
+                you "You can never talk about anything that happened here ever again. No fantastical stories about a werewolf lady kidnapping us. No secret cabin in the woods."
 
                 #Image Cameron Nervous
                 show cam nervous with fast_dissolve
@@ -99,12 +99,16 @@ label SpeakNoEvilSceneP2:
 
                 cam "Hell, what am I going to say when people start wondering about you?!"
 
-                you "I don't know, Cam. You'll have to make something up."
+                you "Nobody is going to care that I'm gone, Cam. You know that."
 
                 #Image Cameron Nervous
                 show cam nervous with fast_dissolve
 
-                cam "You'll get to come with me eventually, won't you…?"
+                cam "That's not..."
+
+                you "Either way, you'll have to make something up. That's just how it is."
+
+                cam "You'll get to come home with me eventually, won't you…?"
 
                 you "I can't promise that, Cam. I’m sorry."
 
@@ -114,7 +118,7 @@ label SpeakNoEvilSceneP2:
                 #VSFX Cameron (shaking, as if frustrated)
                 show cam frustrated at nervous_shake
                 
-                cam "How do you expect me to just leave you here?!"
+                cam "How can you expect me to just leave you here?!"
 
                 you "Cameron…"
 
@@ -286,7 +290,7 @@ label CareAboutAshina:
                 #Image Cameron Thoughtful
                 show cam thoughtful with fast_dissolve
 
-                cam "...You’re really serious, aren’t you? Ah, mierda."
+                cam "...You’re really serious, aren’t you? I can't believe this..."
 
                 #VSFX Cameron (pacing, then slight up and down sighing motion)
                 show cam thoughtful at pacing
@@ -298,7 +302,7 @@ label CareAboutAshina:
                 #Image Cameron Neutral
                 show cam neutral with fast_dissolve
 
-                cam "Okay. If it’s really what you want, I promise, I won’t tell anyone."
+                cam "Okay, fine. If it’s really what you want, I promise. I won’t tell anyone."
 
                 jump CameronGoodbye
 
@@ -338,12 +342,12 @@ label ShellKillYou:
                 #Image Cameron Nervous
                 show cam nervous with fast_dissolve
 
-                cam "You’re… you’re right. I just want to go home. If this is what it takes, then…"
+                cam "You’re… you’re right. I wanted to be brave, but really, I just want to go home. If this is what it takes, then…"
 
                 #Image Cameron Neutral
                 show cam neutral with fast_dissolve
 
-                cam "Okay. I promise, I won’t tell anyone."
+                cam "Okay, I promise. I won’t tell anyone."
 
                 jump CameronGoodbye
 
@@ -416,7 +420,9 @@ label CorruptedChoice:
         
         "You give Cameron a flat, tired look."
 
-        you "Can’t you see that you’re just causing me more trouble? I don’t want you here. Do I need to spell it out for you?"
+        you "Can’t you see that you’re just causing me more trouble? I don’t want you here. Do I need to fucking spell it out for you?"
+
+        "Your face twists into a snarl, a long-buried flame of emotion burning its way to the surface."
 
         if corrupted_chance:
                 $ cameron_leave = True
@@ -493,11 +499,11 @@ label HumanityChoice:
 
                 "Cameron tries to keep a straight face, but breaks down into tears, pulling you into a tight hug. You hug them back, tighter than you’ve ever hugged anyone."
 
-                cam "Okay, I won’t tell anyone. Te amo, I’m going to miss you so much."
+                cam "Okay, I won’t tell anyone. I love you, and… and I’m going to miss you so much."
 
                 you "I love you too, Cam. Stay safe."
 
-                "You hold each other for a long while, before you finally separate for the last time."
+                "You hold each other for a long while. Then, you pull away from what might be the last time you ever hug your best friend."
 
         else:
                 #Image Cameron Nervous
