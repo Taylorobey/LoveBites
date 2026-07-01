@@ -12,7 +12,7 @@ label SpeakNoEvilSceneP3:
         #if Cameron agrees to leave
         if cameron_leave:
 
-                "You head up the stairs with Cameron in tow."
+                "You head up the stairs, Cameron in tow."
 
                 play soundb fireplace volume 0.2 fadein 1.0
 
@@ -54,7 +54,7 @@ label SpeakNoEvilSceneP3:
                 #Image Cameron Thoughtful
                 show cam thoughtful with dissolve
 
-                cam "Right, um… I can leave, but only if I promise not to talk about anything that happened here. I can't tell anyone about you, or werewolves, or the cabin. Nada, nothing."
+                cam "Right, uh… I can leave, but only if I promise not to talk about what happened here. I can't tell anyone about you, or werewolves, or the cabin. Yeah?"
 
                 #Image Ashina Friendly
                 show ash friendly with dissolve
@@ -63,7 +63,7 @@ label SpeakNoEvilSceneP3:
                 show ash friendly at ash_steps_away
                 with Pause(0.40)
 
-                ash "Yes, you understand well. Act as though this never even happened."
+                ash "Yes, you understand well. Act as though this never happened."
 
                 #VSFX Ashina (closer to you, opposite side of Cameron)
 
@@ -111,7 +111,7 @@ label SpeakNoEvilSceneP3:
 
                 "With that, Ashina shuts the cabin door, and you are left to your own devices."
 
-                "You're uncertain of your future here, but you can at least rest easy now knowing that Cameron is safe."
+                "You're uncertain of your future here, but at least you can rest easy now knowing that Cameron is safe."
 
                 window auto hide
 
