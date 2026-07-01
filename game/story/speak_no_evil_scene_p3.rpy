@@ -287,9 +287,9 @@ label SpeakNoEvilSceneP3:
                         zoom 2.5
                         linear 5.0 alpha 0.8
 
-                play soundb gore volume 0.5 fadein 0.5 loop
+                #play soundb gore volume 0.5 fadein 0.5 loop (Too intense? A streamer had to skip it.)
                 "You hear an awful sound. The crunching of their bones, the splitting of their tendons, the twisting of their flesh. The sound of Cameron's heartbeat suddenly silences. Your eyes tightly shut."
-                stop soundb fadeout 0.5
+                #stop soundb fadeout 0.5
 
                 #SFX Heartbeat (stop)
                 stop sound

@@ -49,6 +49,7 @@ init python:
     renpy.music.register_channel('soundb', "sound")
     renpy.music.register_channel('soundc', "sound")
     renpy.music.register_channel('crickets', "sound")
+    renpy.music.register_channel('indicators', "sound") #placeholder for UI humanity/corruption indicators
 
 #For automatic VO rendering
 init python:
