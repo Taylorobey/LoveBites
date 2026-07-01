@@ -13,13 +13,13 @@ label ConfrontationPlanningScene:
     #VSFX Blur
     call WakeUpSequence2
 
-    "You awake hours before dawn, on the day of your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
-
-    if humanity > 2:
-        "Then again, best not to look upon the past with rose-tinted glasses. You know it’s dangerous to mistake routine for satisfaction. After all, that is in part what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You try to learn from them. You keep moving forward."
+    "You awake hours before dawn, tense with anticipation over your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
     if corruption > 2:
-        "Perhaps being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you into {color=#1C4587}{b}nothingness{/b}{/color}. The freedom to choose and act had lost its luster; It didn’t hold a candle to the crushing weight of reality."
+        "Maybe  being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you {color=#1C4587}{b}numb{/b}{/color}. The freedom to choose and act had lost its luster; It felt as useful as a candle in dense, endless fog."
+
+    if humanity > 2:
+        "“...Best not to look upon the past with rose-tinted glasses. You know that it’s dangerous to mistake routine for satisfaction. After all, that is, in part, what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You learn from them. You keep moving forward."
 
     #Both of these could appear
 
@@ -29,7 +29,7 @@ label ConfrontationPlanningScene:
     pause(0.8)
     stop sound
     
-    "Done with your musings, you rise from the bed. Downstairs, Ashina likely awaits, and you intend to speak with her before heading out. You've learned the hard way that careless departures can be costly. Now, each step is deliberate, weighed against the potential consequences."
+    "Done with your musings, you rise from the bed. Downstairs, Ashina awaits, and you intend to speak with her before leaving. You've learned the hard way that careless departures can be costly. Now, each step is deliberate, weighed against the potential consequences."
 
     call GoToHearth
 
@@ -53,7 +53,7 @@ label ConfrontationPlanningScene:
 
         "You linger for a moment, admiring the way the firelight dances over her form."
 
-        you "Good evening. How are you feeling?"
+        you "Hey. How are you feeling?"
 
         show ash friendly with fast_dissolve
 
@@ -61,7 +61,7 @@ label ConfrontationPlanningScene:
 
         show ash sadistic with fast_dissolve
 
-        ash "Just fine, pup. I’ve found the cabin a bit more lively these past few nights."
+        ash "Just fine, pup. I’ve found the cabin more lively these past few nights. A welcome change, to be sure."
 
         show ash friendly with fast_dissolve
 
@@ -71,14 +71,14 @@ label ConfrontationPlanningScene:
 
         ash "You’re off to your little rendezvous, yes? Good luck, and remember, I shall be nearby, should you have need of me."
 
-        "Ashina's voice is serene, but her fingers betray her composure, tapping anxiously on the chair's arm."
+        "Ashina's voice is serene, but her fingers betray her composure, tapping rhythmically on the chair's arm."
 
         you "What about the dogs?"
 
     else:
         "You linger for a moment, watching her, considering your words carefully."
 
-        you "Good evening. Are you… feeling well?"
+        you "Evening, Ashina. Are you… feeling well?"
 
         show ash friendly with fast_dissolve
 
@@ -86,19 +86,19 @@ label ConfrontationPlanningScene:
 
         show ash sadistic with fast_dissolve
 
-        ash "Just fine, pup. I’ve found the cabin a bit more lively these past few nights."
+        ash "Just fine, pup. I’ve found the cabin a bit more lively these past few nights. A welcome change, to be sure."
 
         show ash friendly with fast_dissolve
 
-        "She smirks in a way that you might find charming, if it weren’t for your situation. Instead, you see through the playfulness to something more sinister, a predator toying with its prey. You force a smile."
+        "She smirks in a way that you might find charming, if it weren’t for your situation. Instead, you see through the playfulness and find something more sinister, a predator toying with its prey. You force a smile."
 
-        you "Yes, well… It is a lovely home. I have to admit, though, I'm feelong a bit cooped up. It’s driving me crazy."
+        you "Yes, well… It is a lovely home. I have to admit, though, I'm feeling a bit cooped up. It’s driving me crazy."
 
         show ash neutral with fast_dissolve
 
         "Ashina stares at you unblinkingly, her expression unreadable. You shift nervously."
 
-        you "I… was wondering if you might allow me a short walk outside the cabin."
+        you "I… was wondering if you'd let me take a short walk outside the cabin."
 
         "Ashina continues to stare. With each long moment, your anxiety grows. You feel something. A presence, pushing in. You focus your thoughts on your desire for fresh air. Perhaps if you think about it, you’ll look more convincing."
 
@@ -106,7 +106,7 @@ label ConfrontationPlanningScene:
 
         "Ashina’s intense gaze finally releases you, returning to the fire."
 
-        ash "Very well, but you must stay in sight of the cabin. Should I lose sight of you, I promise you will not enjoy the consequences."
+        ash "Very well, but you must stay in sight of the cabin. Should I lose sight of you, you will not enjoy the consequences."
 
         show ash neutral with fast_dissolve
 
@@ -156,7 +156,7 @@ label ConfrontationPlanningScene:
 
         ash "There, they shouldn’t bother you."
 
-        you "How…?"
+        you "How can you be so sure?"
 
         #Image Ashina Neutral
         show ash neutral with fast_dissolve
@@ -180,11 +180,15 @@ label ConfrontationPlanningScene:
     pause 0.2
     window auto show
 
-    "You depart the cabin and make your way to the forest’s edge. After standing there for a few minutes, you begin to wonder if Akari is even going to show up. Then, you hear her voice from somewhere within the shadows."
+    "You depart the cabin and make your way to the forest’s edge. After standing around for a few minutes, you begin to wonder if Akari is even going to show up."
+
+    "Maybe she meant to trick you all along. It wouldn’t be the first time that someone betrayed your trust."
+
+    "Just as you start to lose hope , you hear her voice from somewhere within the thick, shadowy foliage."
 
     aki "You made it. Good."
 
-    "You’re not sure how Akari managed to evade your newly-keen senses, but considering her dedication, it makes sense that she would have honed her abilities. Akari leans out of her hiding spot, glancing side to side as if to make sure you’re alone."
+    "Akari leans out of her hiding spot, her eyes scanning your surroundings as if to ensure you’re alone. You’re not sure how she managed to evade your newly-keen senses. Although, considering her dedication, it made sense that she would have honed her abilities."
 
     #Image Akari Neutral
     show aki neutral:
@@ -214,7 +218,7 @@ label ConfrontationPlanningScene:
         
         play sound walking loop
 
-        "Akari nods and recedes into the undergrowth, just barely staying in your line of sight. You begin to walk parallel to the forest’s edge, doing your best to appear as if taking a leisurely stroll. You keep the movement of your lips subtle enough that you hope Ashina can’t tell you’re talking from a distance."
+        "Akari nods and recedes into the greenery, her form barely visible. You walk parallel to the forest’s edge, doing your best to appear as if taking a leisurely stroll. You keep the movement of your lips subtle enough that you hope Ashina can’t tell you’re talking from a distance."
 
         aki "So? The dogs?"
 
@@ -231,12 +235,12 @@ label ConfrontationPlanningScene:
     #Image Akari Thoughtful
     show aki thoughtful with fast_dissolve
 
-    aki "I dislike going in without a guarantee… but we will have to make it work."
+    aki "Hm. I dislike going in without a guarantee. But, we will have to make it work."
 
     #Image Akari Neutral
     show aki neutral with fast_dissolve
 
-    aki "Did you at least find out an angle to give us the upper hand? A weakness?"
+    aki "Did you at least discover an angle to give us the upper hand?"
 
     if aka_lock:
         
@@ -266,16 +270,20 @@ label ConfrontationPlanningScene:
         #Image Akari Neutral
         show aki neutral with fast_dissolve
                     
-        you "She didn’t tell me anything, but I think she’s fond of me, at least. Two against one is good odds, especially if she’s hesitating to hurt me."
+        you "She didn’t tell me anything, but I think she’s fond of me, at least. Two against one is good odds, especially if she’s hesitant to hurt me."
 
-        "You try to sound nonchalant, your heart beating hard in your chest. After a few more moments of staring at you, Akari relaxes, her hand moving away from her bow."
+        "You try to sound nonchalant, your heart pounding. After a few more moments of burrowing her eyes into your soul, Akari relaxes, hand moving away from her bow."
 
         #Image Akari Thoughtful
         show aki thoughtful with fast_dissolve
 
-        aki "True enough, that might be the best advantage we can get. Alright, meet me at dusk. Help me sneak in, and we will rid this world of that monster once and for all."
+        aki "True enough. You {i}are{/i} one of her own. That might be the best advantage we can get."
 
-        "You wonder briefly why Akari is so hell-bent on killing Ashina. However, now is not the time to go digging. Perhaps Ashina will have answers."
+        show aki frustrated with fast_dissolve
+
+        aki "Alright. Meet me at dusk. Help me sneak in. We will rid this world of that monster once and for all."
+
+        "You wonder briefly why Akari is so hell-bent on killing Ashina. However, you’re lucky that the hooded woman hasn’t caught on to your little act. It’s not the time to go digging. Perhaps Ashina will have answers?"
 
         you "Got it."
 
@@ -291,19 +299,23 @@ label ConfrontationPlanningScene:
 
         show aki determined with fast_dissolve
 
-        "You almost miss how Akari’s face subtly lights up, a look of determination flashing in her eyes."
+        "Akari’s face subtly lights up, determination flashing in her eyes. But, something else is there, too. An expression you thought you'd never catch from the stoic monster-huntress."
+
+        "A flame of hope, burning bright against the night sky."
 
         aki "Then we will attack on the first night of the new moon, ten days from now. That night, we will meet at dusk, you will help me sneak in, and we will rid this world of that monster once and for all."
 
-        "Seeing that determination in her eyes stirs something within you. You had a drive like that once, counting the days until you turned 18, saving every penny you could… it makes you wonder what stake Akari has in all this."
+        "Her expression stirs something within you. You had a drive like that once, counting the days until you turned 18, saving every penny you could… it makes you wonder what stake Akari has in all this."
 
-        you "Akari, forgive me for asking, but I can’t help but notice… this seems personal to you."
+        you "I can’t help but notice… this seems personal to you."
 
         show aki angry with fast_dissolve
 
         "Akari stiffens, her hands ball into fists, and her jaw clenches. You can tell you’re treading on dangerous ground here, and soften your tone."
 
-        you "I’m sorry, I don’t mean to be presumptuous, I just… I know what it’s like to be hurt by someone. To have all this anger bottled up inside, from how helpless they made you feel."
+        you "I’m sorry, I don’t mean to assume! You don't have to tell me anything if you don't want to."
+        
+        you "I just… I know what it’s like to be hurt by someone. To have all this rage and terror bottled up inside from how helpless they made you feel. If you think it'd help to have someone to talk to, I'm here for you, Akari."
 
         show aki thoughtful with fast_dissolve
 
@@ -316,11 +328,11 @@ label ConfrontationPlanningScene:
             show bg forest edge:
                 xpos -0.37
 
-            "Just when you almost think the conversation is over, she halts and speaks up, her voice softer than you’ve ever heard it."
+            "Just when you think this was yet another one of your awful ideas, she halts and speaks up. Her voice is softer than you’ve ever heard it."
 
             show aki thoughtful look with fast_dissolve
 
-            aki "I had a twin brother… Akio."
+            aki "I... had a twin brother. Akio."
 
             hide aki thoughtful with dissolve
 
@@ -371,9 +383,9 @@ label ConfrontationPlanningScene:
             show aki neutral with fast_dissolve
             stop music fadeout 2.5
 
-            aki "Leave, before Ashina suspects."
+            aki "You must go now, before that beast suspects something is wrong."
 
-            "You want to argue, but Akari is right. You can’t risk Ashina getting suspicious."
+            "You want to argue, but Akari is right. The longer you stay out here, the bigger the risk of Ashina catching onto you."
 
             you "Can we see each other again? Before the new moon?"
             
@@ -383,7 +395,7 @@ label ConfrontationPlanningScene:
 
             show aki thoughtful with fast_dissolve
 
-            aki "Too dangerous. Foolish."
+            aki "Foolish. Dangerous. Not only for me, but for you as well."
 
             show aki determined with fast_dissolve
 
@@ -487,167 +499,171 @@ label ConfrontationPlanningScene:
     #Image Ashina Neutral
     show ash neutral with dissolve
 
-    ash "Well? How did it go?"
+    if aka_lock:
 
-    you "I don’t think she suspects anything, and she wants me to sneak her in tonight." 
+        ash "Well? How did it go?"
 
-    "You pause, considering your next words carefully."
+        you "I don’t think she suspects anything, and she wants me to sneak her in tonight." 
 
-    you "Can I… ask you something?"
+        "You pause, considering your next words carefully."
 
-    "Ashina gives you an annoyed look."
+        you "Can I… ask you something?"
 
-    #Image Ashina Thoughtful
-    show ash thoughtful with fast_dissolve
-
-    ash "Asking to ask a question is rather trivial. Out with it, girl."
-
-    you "Do you know why Akari wants to kill you so badly?"
-
-    #Image Ashina Sad
-    show ash sad with fast_dissolve
-
-    "Her expression immediately falls."
-
-    if ash_approval >= 4:
-            
-        ash "I am not proud of it, and I prefer not to speak of it. However…"
-
-        #Image Ashina Caring
-        show ash caring with fast_dissolve
-
-        ash "You deserve to know. I wish for you to understand me, and I would like to prevent you from repeating my mistakes."
-
-        #Image Ashina Sad
-        show ash sad with fast_dissolve
-
-        ash "As I have mentioned before, there is a beastly wolf within both of us. If we are not careful, extreme conditions or emotions can cause them to take over."
-
-        #VSFX Ashina (slowly walking to the side)
-        show ash sad:
-            linear 4.0 xalign 1.0
-
-        ash "It was a harsh winter, and I was young. I went without food in secret, so that there would be more left for my kin. I knew that it was foolhardy and reckless, but I thought myself strong enough to resist the wolf."
+        "Ashina gives you an annoyed look."
 
         #Image Ashina Thoughtful
         show ash thoughtful with fast_dissolve
 
-        ash "I wasn’t. The next thing I knew, I was hunched over the remains of a child, covered in his blood. I had consumed half of him before being able to stop myself."
+        ash "Asking to ask a question is rather trivial. Out with it, girl."
+
+        you "Do you know why Akari wants to kill you so badly?"
 
         #Image Ashina Sad
         show ash sad with fast_dissolve
 
-        "You suck in a breath without meaning to, a sick feeling swirling within your stomach. Her eyes meet yours with a certain desperation, a tug at your heart begging you to let her in. So, you do."
+        "Her expression immediately falls."
 
-        #VSFX Screen Shake (as if stumbling)
-        #VSFX Blue (slowly tint)
-        #Image Ashina Concerned (close up)
-        show ash concerned with fast_dissolve
-        camera:
-                #matrixcolor TintMatrix("#1C4587")
-                matrixcolor TintMatrix("#fff")
-                linear 3.0 matrixcolor TintMatrix("#1C4587")
-        play music connection_music volume 0.4 fadein 1.5
+        if ash_approval >= 4:
+                
+            ash "I am not proud of it, and I prefer not to speak of it. However…"
 
-        "A wave of guilt and self-disgust hurls you forward. Deep, endless regret compresses your throat, causing you to cough and sputter. You barely feel Ashina catch your arms to keep you upright."
+            #Image Ashina Caring
+            show ash caring with fast_dissolve
 
-        #VSFX Blue (tint back to normal)
-        pause(0.5)
-        #otherwise the tint stays if you click too fast or use skip function
-        camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
-        stop music fadeout 2.5
+            ash "You deserve to know. I wish for you to understand me, and I would like to prevent you from repeating my mistakes."
 
-        "When the feeling passes, you find yourself amazed that Ashina could carry such overwhelming emotion and yet, still stand tall, still look so composed."
+            #Image Ashina Sad
+            show ash sad with fast_dissolve
 
-        #Image Ashina Caring
-        show ash caring with fast_dissolve
+            ash "As I have mentioned before, there is a beastly wolf within both of us. If we are not careful, extreme conditions or emotions can cause them to take over."
 
-        ash "Now you understand."
+            #VSFX Ashina (slowly walking to the side)
+            show ash sad:
+                linear 4.0 xalign 1.0
 
-        #Image Ashina Neutral
-        show ash neutral with fast_dissolve
+            ash "It was a harsh winter, and I was young. I went without food in secret, so that there would be more left for my kin. I knew that it was foolhardy and reckless, but I thought myself strong enough to resist the wolf."
 
-        ash "That little boy had a very determined sister, whom I’ve been evading ever since. She will stop at nothing to ensure my destruction, as is her right."
+            #Image Ashina Thoughtful
+            show ash thoughtful with fast_dissolve
 
-        you "Akari."
+            ash "I wasn’t. The next thing I knew, I was hunched over the remains of a child, covered in his blood. I had consumed half of him before being able to stop myself."
 
-        "You mumble the name, and Ashina nods. She releases you, and you straighten back up."
+            #Image Ashina Sad
+            show ash sad with fast_dissolve
 
-        #Image Ashina Thoughtful (further away again)
-        show ash thoughtful with fast_dissolve
+            "You suck in a breath without meaning to, a sick feeling swirling within your stomach. Her eyes meet yours with a certain desperation, a tug at your heart begging you to let her in. So, you do."
 
-        ash "Meet with her, and help her inside, as she asked. Then, I will face her, and give her the fight she deserves. What you do then, is up to you."
+            #VSFX Screen Shake (as if stumbling)
+            #VSFX Blue (slowly tint)
+            #Image Ashina Concerned (close up)
+            show ash concerned with fast_dissolve
+            camera:
+                    #matrixcolor TintMatrix("#1C4587")
+                    matrixcolor TintMatrix("#fff")
+                    linear 3.0 matrixcolor TintMatrix("#1C4587")
+            play music connection_music volume 0.4 fadein 1.5
 
-        #VSFX Ashina (fade out)
-        hide ash thoughtful with dissolve
+            "A wave of guilt and self-disgust hurls you forward. Deep, endless regret compresses your throat, causing you to cough and sputter. You barely feel Ashina catch your arms to keep you upright."
 
-        "You’re still reeling when you realize Ashina is halfway up the stairs. You reach out, considering calling after her, but hesitate as your eyelids flutter with exhaustion. Perhaps a side effect of your strange Lycan abilities."
+            #VSFX Blue (tint back to normal)
+            pause(0.5)
+            #otherwise the tint stays if you click too fast or use skip function
+            camera:
+                    linear 1.0 matrixcolor TintMatrix("#fff")
+            stop music fadeout 2.5
 
-        #SFX Walking
-        #Image Stairs Up
+            "When the feeling passes, you find yourself amazed that Ashina could carry such overwhelming emotion and yet, still stand tall, still look so composed."
 
-        "As you reach the stairs, you hear Ashina’s door close above. Left with your own churning thoughts and feelings, you make your way to bed."
+            #Image Ashina Caring
+            show ash caring with fast_dissolve
 
-    if ash_approval < 4:
+            ash "Now you understand."
 
-        #Image Ashina Thoughtful (further away)
-        show ash thoughtful with fast_dissolve
+            #Image Ashina Neutral
+            show ash neutral with fast_dissolve
 
-        ash "Yes… I know of Akari's motivations. It's nothing of your concern."
+            ash "That little boy had a very determined sister, whom I’ve been evading ever since. She will stop at nothing to ensure my destruction, as is her right."
 
-        #Image Ashina Neutral
-        show ash neutral with fast_dissolve
-            
-        ash "You don't need all of the details. Just let her in, and I will take care of the rest." 
+            you "Akari."
 
-        you "But if I'm going to help her sneak in, I think I should know–"
+            "You mumble the name, and Ashina nods. She releases you, and you straighten back up."
 
-        #VSFX Screen Shake
-        #Image Ashina Angry Hybrid (closer)
-        show ash angry hybrid:
-            subpixel True pos(0,0) zoom 2.0
-        # player shakes, scared
-        camera:
-                subpixel True 
-                linear 0.1 xpos 5 
-                linear 0.1 xpos -5
-                linear 0.1 xpos 5 
-                linear 0.1 xpos -5
-                linear 0.1 xpos 0
-        with dissolve
+            #Image Ashina Thoughtful (further away again)
+            show ash thoughtful with fast_dissolve
 
-        ash "I don't. Want. To talk about it! What about that don't you understand?!"
-            
-        "Ashina's chest heaves as she attempts to calm herself."
+            ash "Meet with her, and help her inside, as she asked. Then, I will face her, and give her the fight she deserves. What you do then, is up to you."
 
-        #Image Ashina Sad (further again)
-        show ash concerned:
-            subpixel True pos(0.15,0) zoom 2.0
-        with dissolve
+            #VSFX Ashina (fade out)
+            hide ash thoughtful with dissolve
 
-        ash "I apologize… I didn't mean to lash out like that. I need to be alone."
+            "You’re still reeling when you realize Ashina is halfway up the stairs. You reach out, considering calling after her, but hesitate as your eyelids flutter with exhaustion. Perhaps a side effect of your strange Lycan abilities."
 
-        show ash concerned:
-            yrotate -180
-        with dissolve
+            #SFX Walking
+            #Image Stairs Up
 
-        "Ashina turns to leave, but not without a final word."
+            "As you reach the stairs, you hear Ashina’s door close above. Left with your own churning thoughts and feelings, you make your way to bed."
 
-        #VSFX Ashina (further)
-        show ash sad with fast_dissolve
+        if ash_approval < 4:
 
-        ash "Tonight… Simply meet with Akari, and let her inside. I will confront her then. Join me in the fight, or don't. Just don't get in the way." 
+            #Image Ashina Thoughtful (further away)
+            show ash thoughtful with fast_dissolve
 
-        #VSFX Ashina (fade out)
-        hide ash sad with fast_dissolve
+            ash "Yes… I know of Akari's motivations. It's nothing of your concern."
 
-        "You watch as Ashina climbs up the stairs. Soon, you hear her shut the door to her room."
+            #Image Ashina Neutral
+            show ash neutral with fast_dissolve
+                
+            ash "You don't need all of the details. Just let her in, and I will take care of the rest." 
 
-        #SFX Walking
-        #Image Stairs Up
+            you "But if I'm going to help her sneak in, I think I should know–"
 
-        "Left with your own churning thoughts and feelings, you make your way to bed."
+            #VSFX Screen Shake
+            #Image Ashina Angry Hybrid (closer)
+            show ash angry hybrid:
+                subpixel True pos(0,0) zoom 2.0
+            # player shakes, scared
+            camera:
+                    subpixel True 
+                    linear 0.1 xpos 5 
+                    linear 0.1 xpos -5
+                    linear 0.1 xpos 5 
+                    linear 0.1 xpos -5
+                    linear 0.1 xpos 0
+            with dissolve
+
+            ash "I don't. Want. To talk about it! What about that don't you understand?!"
+                
+            "Ashina's chest heaves as she attempts to calm herself."
+
+            #Image Ashina Sad (further again)
+            show ash concerned:
+                subpixel True pos(0.15,0) zoom 2.0
+            with dissolve
+
+            ash "I apologize… I didn't mean to lash out like that. I need to be alone."
+
+            show ash concerned:
+                yrotate -180
+            with dissolve
+
+            "Ashina turns to leave, but not without a final word."
+
+            #VSFX Ashina (further)
+            show ash sad with fast_dissolve
+
+            ash "Tonight… Simply meet with Akari, and let her inside. I will confront her then. Join me in the fight, or don't. Just don't get in the way." 
+
+            #VSFX Ashina (fade out)
+            hide ash sad with fast_dissolve
+
+            "You watch as Ashina climbs up the stairs. Soon, you hear her shut the door to her room."
+
+            #SFX Walking
+            #Image Stairs Up
+
+            "Left with your own churning thoughts and feelings, you make your way to bed."
+    else:
+        
 
     window auto hide
     scene bg color black with dissolve
