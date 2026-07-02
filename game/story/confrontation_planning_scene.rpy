@@ -10,8 +10,6 @@ label ConfrontationPlanningScene:
 
     #Image Captive Cabin Room (angled, zoomed in on ceiling)
     scene bg room ceiling with dissolve
-    #VSFX Blur
-    call WakeUpSequence2
 
     "You awake hours before dawn, tense with anticipation over your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
@@ -19,7 +17,7 @@ label ConfrontationPlanningScene:
         "Maybe  being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you {color=#1C4587}{b}numb{/b}{/color}. The freedom to choose and act had lost its luster; It felt as useful as a candle in dense, endless fog."
 
     if humanity > 2:
-        "“...Best not to look upon the past with rose-tinted glasses. You know that it’s dangerous to mistake routine for satisfaction. After all, that is, in part, what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You learn from them. You keep moving forward."
+        "...However, best not to look upon the past with rose-tinted glasses. You know that it’s dangerous to mistake routine for satisfaction. After all, that is, in part, what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You learn from them. You keep moving forward."
 
     #Both of these could appear
 
@@ -38,7 +36,7 @@ label ConfrontationPlanningScene:
     show bg hearth with dissolve:
         subpixel True
         zoom 0.7
-        pos(0.52,-0.2)
+        pos(0.98,-0.2)
     #show flame zorder 99 with dissolve:
     #            subpixel True pos (-72, 0.45) zoom 0.65 
 
@@ -188,12 +186,13 @@ label ConfrontationPlanningScene:
 
     aki "You made it. Good."
 
-    "Akari leans out of her hiding spot, her eyes scanning your surroundings as if to ensure you’re alone. You’re not sure how she managed to evade your newly-keen senses. Although, considering her dedication, it made sense that she would have honed her abilities."
-
-    #Image Akari Neutral
-    show aki neutral:
+    show aki thoughtful:
         subpixel True pos (0, 0) zoom 2.5
     with dissolve
+
+    "Akari leans out of her hiding spot, her eyes scanning your surroundings as if to ensure you’re alone. You’re not sure how she managed to evade your newly-keen senses. Although, considering her dedication, it made sense that she would have honed her abilities."
+
+    show aki neutral with fast_dissolve
 
     aki "How did you get past the dogs?"
 
@@ -261,9 +260,10 @@ label ConfrontationPlanningScene:
         show aki at pacing_reverse
         #i think she's facing the wrong way, not sure why
         pause(3.5)
-        show aki at stop_pacing_left
 
         "Akari paces back and forth, looking thoroughly frustrated."
+
+        show aki at stop_pacing_left
 
         "{fast}She stops abruptly, her eyes scanning you with scrutiny, her hand moving towards her bow. You get the feeling you should say something before she decides you’re dead weight."
 
@@ -279,7 +279,7 @@ label ConfrontationPlanningScene:
 
         aki "True enough. You {i}are{/i} one of her own. That might be the best advantage we can get."
 
-        show aki frustrated with fast_dissolve
+        show aki determined with fast_dissolve
 
         aki "Alright. Meet me at dusk. Help me sneak in. We will rid this world of that monster once and for all."
 

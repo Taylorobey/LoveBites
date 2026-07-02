@@ -2,7 +2,6 @@ label ConfrontationScene:
     $ save_name = "High Moon"
 
     scene bg room ceiling with dissolve
-    call WakeUpSequence2
 
     if aka_lock:
         # don't know weakness path

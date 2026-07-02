@@ -186,16 +186,17 @@ label ICanSeeTheStarsScene:
     #VSFX Pan Up (Pan sky image up so that it’s the top half of the image, then fade in the colored version)
     #Image Sky Color
     #Music Starry Sky
-    stop crickets fadeout 1.5
+    #stop crickets fadeout 1.0
+    play music starry_music volume 0.5 fadein 4.0
+    pause 1.0
     camera:
         subpixel True
         pos (0, 0) 
-        linear 4.5 pos (0, -1080) 
-    play music starry_music volume 0.5 fadein 5.0
-    show sky_color with Dissolve(4.0)
-    with Pause(1.0)
+        linear 5.0 pos (0, -1080)
+    show sky_color with Dissolve(4.5)
+    with Pause(0.75)
     show starryeffect onlayer screens with Dissolve(4.0)
-    with Pause(4.0)
+    with Pause(3.0)
     camera:
         pos (0, -1080)
 
@@ -211,7 +212,8 @@ label ICanSeeTheStarsScene:
         #Humanity Choice
         "Breathtaking.":
             $ humanity += 1
-            call humanity_animation
+            call humanity_animation #bugged
+
             you "..."
 
             window auto hide
@@ -229,7 +231,9 @@ label ICanSeeTheStarsScene:
 
             centered "Something everyone knows when they’re young and ends up forgetting."
 
-            centered "There is so much beauty to be found in the world around you."
+            pause 0.5
+
+            centered "There is so much beauty to be found in the world around you." #text fade in slower with pretty effect?
 
             centered "Even in the bleakest life, if you simply stop and look, you can find hope. Wonder. Happiness. A reason to keep on living."
 
@@ -271,7 +275,8 @@ label ICanSeeTheStarsScene:
     
     #VSFX Pan (pan down to show the treeline)
     #Image Ashina Thoughtful (fade in)
-    hide starryeffect onlayer screens with dissolve
+    hide starryeffect onlayer screens with Dissolve(3.0)
+    pause 0.5
     camera:
         subpixel True
         pos (0, -1080) 
@@ -309,7 +314,7 @@ label ICanSeeTheStarsScene:
                 ash "What, that little miscreant in the woods? I’ve been giving her the run around for years, don’t you fret your little head about it."
 
                 window auto hide
-                show ash sadistic at step_close
+                show ash sadistic #at step_close bugged
                 with Pause(1.0)
                 #Image Ashina Concerned
                 show ash concerned with fast_dissolve
@@ -355,7 +360,7 @@ label ICanSeeTheStarsScene:
                 ash "You shouldn't be in any danger if she has no reason to believe you'll betray her. However… If something happens, call out to me, and I will come to your aid."
 
                 window auto hide
-                hide ash neutral with Dissolve(1.0)
+                hide ash neutral with Dissolve(0.5)
             #Akari Route Choice
             "I have a concern about our weaknesses.":
 
@@ -430,10 +435,10 @@ label ICanSeeTheStarsScene:
         subpixel True
         pos (0, 0) 
         linear 4.5 pos (0, -1080)
-    pause(4.0)
-    show starryeffect onlayer screens with Dissolve(4.0)
+    pause(4.5)
+    show starryeffect onlayer screens with Dissolve(3.5)
     with Pause(1.0)
-    hide ash caring
+    hide ash caring with fast_dissolve
     with Pause(0.1)
 
     if ash_approval >= 3:
@@ -443,6 +448,7 @@ label ICanSeeTheStarsScene:
 
         "You find yourself leaning just slightly into her touch, and you feel the tension in her body begin to ease, little by little. You glance to the side, wishing you could see her expression from this angle, but quickly avert your eyes when she suddenly speaks."
 
+    if ash_approval >= 2:
         ash "If I may confess something to you, pup…"
 
         ash "I think I have been lonely for a long, long time."
@@ -457,12 +463,14 @@ label ICanSeeTheStarsScene:
 
         ash "Regardless, I need you to know this: I did not bring you here to suffer. With time, I intend to show you all of the joy and freedom that comes with our so-called curse. Stay by my side, and I will protect you for as long as I live. I promise you that."
 
+        ash "..."
+
     ash "Let us continue our stargazing in silence. We can go back inside whenever you are ready."
     
     you "..."
 
-#window auto hide
-#with Pause(1.5)
+window auto hide
+with Pause(1.5)
 #
 #show thanks with Dissolve(2.0):
     #subpixel True pos (0.16, -0.58) 

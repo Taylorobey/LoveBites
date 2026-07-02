@@ -264,49 +264,49 @@ image ash hurt:
 #Akari
 image aki neutral:
     "chars/akari/akari_neutral.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki bow drawn:
     "chars/akari/akari_bow.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki bow drawn angry:
     "chars/akari/akari_bow_angry.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki bow nocked:
     "chars/akari/akari_arrowready.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki bow nocked side:
     "chars/akari/akari_arrowready_looktoside.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki thoughtful:
     "chars/akari/akari_thoughtful.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0.01 ypos -0.05
 image aki thoughtful look:
     "chars/akari/akari_thoughtful_look.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki angry:
     "chars/akari/akari_frustrated.png"
-    subpixel True zoom 0.33 
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki caring:
     "chars/akari/akari_caring.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki determined:
     "chars/akari/akari_determined.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki fighting blur:
     "chars/akari/akari_knifeslashblur.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki fighting:
     "chars/akari/akari_knifeslash.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki fighting blood:
     "chars/akari/akari_knifeslashblood.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki knife:
     "chars/akari/akari_knifeready.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 image aki hurt:
     "chars/akari/akari_wounded.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xpos 0 ypos 0
 
 
 #Cameron

@@ -43,12 +43,14 @@ label SpeakNoEvilSceneP2:
         show cam friendly at cam_surprise_jump
         with Pause(0.55)
 
-        cam "Ohmygosh!"
+        cam "{i}Ohmygosh{/i}"
 
         #VSFX Cameron (moves closer, then fades out)
+        window auto hide
         show cam friendly at hug
         with Pause(1.2)
         hide cam friendly with dissolve
+        window auto show
 
         "Cameron pulls you in for a big hug. Tears stream down their face as they squeeze you tight."
 
@@ -485,14 +487,15 @@ label HumanityChoice:
                 #VSFX Screen (tints yellow)
                 #Music Goodbyes
                 stop music fadeout 1.0
+                pause 1.0
                 play music goodbyes_music volume 0.7 fadein 2.5
                 #Image Cameron Neutral
                 
-                show cam neutral with fast_dissolve
-                with Pause(0.2)
+                show cam neutral with dissolve
+                with Pause(0.4)
                 #VSFX Cameron (zoom closer then fade out)
                 show cam nervous with dissolve
-                with Pause(0.2)
+                with Pause(0.3)
                 hide cam nervous with dissolve
                 window auto show
 

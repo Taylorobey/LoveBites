@@ -9,7 +9,7 @@ label BotchedEscapeScene:
         #Image Cabin Hearth
         camera:
                 subpixel True
-                linear 10.00 xpos -3000
+                linear 10.00 xpos 1.94
 
 
         pause 1.5
@@ -548,10 +548,10 @@ label GoWillingly:
         camera:
                 subpixel True 
                 ypos -0.1
-                ease_elastic 0.30 ypos -200 
+                ease_elastic 0.30 ypos 200 
         with Pause(0.40)
         camera:
-                ypos -200
+                ypos 200
         with Pause(0.2) 
         stop sound
         show ash concerned with dissolve
