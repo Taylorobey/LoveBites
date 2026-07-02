@@ -603,7 +603,7 @@ label ConfrontationPlanningScene:
 
             "As you reach the stairs, you hear Ashina’s door close above. Left with your own churning thoughts and feelings, you make your way to bed."
 
-        if ash_approval < 4:
+        else:
 
             #Image Ashina Thoughtful (further away)
             show ash thoughtful with fast_dissolve
@@ -662,7 +662,6 @@ label ConfrontationPlanningScene:
             #Image Stairs Up
 
             "Left with your own churning thoughts and feelings, you make your way to bed."
-    else:
         
 
     window auto hide
