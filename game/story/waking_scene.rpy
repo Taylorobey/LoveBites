@@ -47,26 +47,24 @@ label WakingScene:
                         $ humanity += 1
                         call humanity_animation
 
-                        "Flirting with disaster finally caught up with you. What in the world were you thinking? You vow that if you ever get out of this mess, you're going to have a serious think about your life choices."
+                        "Looks like flirting with disaster finally caught up with you. What in the world were you thinking? You vow that if you ever get out of this mess, you're going to have a serious sit-down to ponder your life choices."
                 "At least you won't have to go to work tomorrow.":
                         $ corruption += 1
                         call corruption_animation
 
-                        "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night and now you’ve gotten what you wanted, right? A new disaster to fight yourself out of."
+                        "It’s a dark, bitter thought, but you can’t help it. There’s a reason you were outside that night, and now you’ve gotten what you wanted, right? A new disaster to fight yourself out of."
+                #"Well. This is how it is now.":
+                        #"There’s no point in dwelling on the past. Your decision to walk alone at night, the attack, ending up here— none of it matters. None of it makes a difference. You’re here now."
         #play soundc door_open volume 5.0
 
         "You’re shaken from your thoughts by the sound of a door opening. A tall, muscular woman with tan skin enters the room."
 
-
-        window auto hide
         #VSFX ashina slides in from the right
         #image ashina neutral
         show ash neutral at easeinhalfrightside
 
-        window auto show
-
         ash "I see you're finally awake. Tell me, how was your slumber?"
-        you "Um, who are you? Where am I?"
+        you "...who are you? Where am I?"
 
         #VSFX ashina steps closer
         show ash annoyed with fast_dissolve
@@ -80,8 +78,7 @@ label WakingScene:
         with Pause(0.5)
         window auto show
 
-
-        ash "I will ask once more, {i}how{/i} was your slumber?"
+        ash "I will ask once more, {i}how {/i} was your slumber?"
         you "Uh, well... Fine, I guess, all things considered."
 
         #image ashina friendly
@@ -102,7 +99,7 @@ label WakingScene:
         window auto show
 
         
-        "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something to eat {i}now{/i}."
+        "Your stomach grumbles at the mere mention of food. You don't know what you're doing here, much less who this woman is, but you need something to eat {i}now.{/i}"
 
 
         window auto hide
@@ -134,7 +131,7 @@ label WakingScene:
         show bg meat plate with fast_dissolve
         window auto show
 
-        "On the plate is a pile of raw meat. Blood coagulates at the bottom of the chunks, and the stench of death reeks in the air."
+        "You turn to the plate and stare, taken aback. Red, jagged, meaty morsels are scattered across the surface. Blood coagulates at the bottom of the chunks, and the stench of death reeks in the air. Saliva pools in your mouth."
 
         window auto hide
         scene bg room mc with wiperight:
@@ -146,7 +143,7 @@ label WakingScene:
         show bg room mc with fast_dissolve
         window auto show
 
-        you "You can't be serious… There's no way I can eat {i}that{/i}!"
+        you "You can't be serious… There's no way I can eat {i}that!{/i}"
 
         show ash neutral with fast_dissolve
 
@@ -156,6 +153,7 @@ label WakingScene:
         window auto hide
         show ash neutral at step_closer_center
         with Pause(1.0)
+        pause 1.0
         window auto show
 
 
@@ -167,7 +165,7 @@ label WakingScene:
         with Pause(0.2)
         show bg meat plate with fast_dissolve
 
-        "You take another look at the plate. You hate to admit it, but your hunger betrays you. You don't just {i}want{/i} to eat it..."
+        "You take another look at the plate. You hate to admit it, but your hunger betrays you. You don't just {i}want {/i} to eat it..."
 
         #vsfx red flash on edges like a blooming pain
         #vsfx centered text, dim surroundings
@@ -176,8 +174,7 @@ label WakingScene:
         window auto hide
         play sound heart loop
         play soundb growl volume 0.7
-        image hungertext = Text("YOU {b}NEED{/b} TO EAT THE {b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}", style="bigtext", font="CabinSketch-Bold.ttf")
-        show hungertext
+        image hungertext1 = Text("{sc=[10]}{font=CabinSketch-Bold.ttf}{size=200}YOU {b}NEED{/b}{/size} \n{size=225}TO EAT THE {/size}\n{size=275}{b}{outlinecolor=#000}{color=#b70000}RAW MEAT.{/b}{/color}{/outlinecolor}{/size}{/font}{/sc}", style="bigtext", xalign=0.5, yalign=0, text_align=0.5)
         show pain:
                 subpixel True
                 alpha 0.0
@@ -186,8 +183,13 @@ label WakingScene:
                 linear 1.0 alpha 1.0 
                 linear 1.0 alpha 0.5
                 linear 1.0 alpha 1.0
+        show hungertext1:
+                subpixel True
+                alpha 0.75
+        with fast_dissolve
         pause(5.0)
-        hide hungertext
+        hide hungertext2 with dissolve
+        hide hungertext with dissolve
         hide pain with dissolve
 
         #image ashina neutral
@@ -286,7 +288,7 @@ label WakingScene:
         window auto show
 
 
-        "You force your eyes to focus. On the far wall, an open window stares down the foot of the bed. A possible escape route?"
+        "You force your eyes to focus. On the far wall, a window stares down the foot of the bed. A possible escape route?"
 
         window auto hide
 
