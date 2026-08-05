@@ -18,9 +18,9 @@ label DreamScene:
 
         you "{i}This dream again… Why? Why now?{/i}"
 
-        "You cry uncontrollably, standing alone on your front porch. Your heart aches with betrayal and confusion."
+        "Those same tears streak down your small, round face with the force of a dam breaking. You’re standing alone on your front porch, wracked with tremors, heart aching with betrayal and confusion."
 
-        you "{i}For the life of me, I couldn't tell you what I did to make them so upset. It was always something with them, no matter how good I tried to be.{/i}"
+        you "{i}For the life of me, I can’t even remember what I did to make them so upset. It was always something with them, no matter how good I tried to be. Like my very existence was a burden worth punishing.{/i}"
 
         # VSFX Shadowy Figure 1 fade in
         # Image Shadowy Figure 1
@@ -38,13 +38,13 @@ label DreamScene:
 
         "You struggle to speak through rising sobs, but somehow manage to croak out a response."
 
-        you "No… Mommy and Daddy just don't like me right now. They said I gotta stay out here until I learn my lesson…"
+        you "No… {bt}{i}hic {/i}{/bt}Mommy and Daddy {bt}{i}hic{/i}{/bt} just don't like me right now. They say I gotta {bt}{i}hic{/i}{/bt} stay out here until I learn my lesson…"
 
-        "Your neighbor frowns and looks deep in thought, before turning back to you with as much of a smile as she can muster."
+        "Your neighbor frowns and looks deep in thought, before turning back to you with as much of a smile as they can muster."
 
         neighbor "Alright, how about we hang out at my house for today? Does that sound good, honey? I'll let your folks know where you are. My wife's making cookies!"
 
-        "Your neighbor smiles encouragingly. Your sobs momentarily stop at the mention of sweet treats. You look up at them hopefully."
+        "Your neighbor smiles encouragingly. Your sobs stutter to a halt at the mention of sweet treats. You look up at them hopefully."
 
         you "Cookies…? Will there be chocolate chip?"
 
@@ -56,12 +56,8 @@ label DreamScene:
 
         neighbor "We have the biggest collection of movies at home! You can pick your favorite!"
 
-
-        window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor onlayer screens with dissolve
-        window auto show
-
 
         "That day was special. For the first time in your life, you felt like you had an adult you could trust. Your neighbor's place was somewhere you could go on the days when “home” felt more like a warzone."
 
@@ -87,11 +83,13 @@ label DreamScene:
         window auto show
 
 
-        you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?! Did I do something wrong?!"
+        you "But, why?! I still don't get it! Why do you have to move? Why can't you just stay here?!"
 
         "You bawl your eyes out just inside your neighbor’s front door. You're surrounded by boxes, a big moving truck parked in the driveway behind you. Your neighbor looks at you with sad eyes."
 
-        neighbor "We aren’t moving because of you. Please don't think that." 
+        you "{bt}{i}hic{/i}{/bt}…Did I do something wrong? Is that why you're going?"
+
+        neighbor "No, of course not, dear, we aren’t moving because of you. Please don't think that." 
 
         "They look away, speaking to you in a gentle, cautious tone."
 
@@ -103,11 +101,11 @@ label DreamScene:
 
         neighbor "But, we can't just take you from your parents. They're your family." 
 
-        you "No, they're not! {i}You're {/i} my family!" 
+        you "No, they're not! {i}You're{/i} my family!" 
 
         "Your neighbor gives you an empathetic smile as you sink down to the ground, crying." 
 
-        neighbor "Listen, sweetheart. How about we leave you our phone number? When we're all settled in, maybe your parents can bring you to visit us."
+        neighbor "Listen, sweetheart. How about we leave you our phone number? Once we're all settled in, maybe your parents can bring you to visit us."
 
         "Your blood boils and your emotions flood out all at once as you rise to your feet, wiping your tears with your arm."
 
@@ -118,11 +116,11 @@ label DreamScene:
         # VSFX Shadowy Figure 1 fade out
         hide neighbor onlayer screens with dissolve
 
-        "You run out of the house, never stopping to look back." 
+        "You run out of your neighbor's house, and don't look back." 
 
         "That was the last thing you ever said to them."
 
-        "You've always wished you could go back, to tell them what they meant to you. To thank them for what they did for you, for being a safe harbor in the never-ending storm of your life. But, life doesn't give second chances."
+        "You've always wished you could go back to tell them what they meant to you. To thank them for what they did for you, for being a safe harbor in the never-ending storm of your life. But life doesn't often give second chances."
 
         window auto hide
         pause 1.0
@@ -139,7 +137,7 @@ label DreamScene:
         
         "You're in a classroom and the teacher is giving yet another droning lesson. You're older now, just having started 9th grade."
 
-        "The lunch bell rings, jolting you out of your seat."
+        "The lunch bell {sc}rings{/sc}, jolting you out of your seat."
 
 
         window auto hide
@@ -151,19 +149,21 @@ label DreamScene:
         window auto show
 
 
-        teacher "Alright, class! That concludes the lesson for today. Remember that your reports are due this Friday!"
+        teacher "Alright, class dismissed! Remember that your reports are due this Friday!"
 
-        "As you're about to walk through the door, the teacher points at you with a stern face."
+        "As you're about to walk through the door, the teacher points at you with a grave face."
 
-        teacher "You there. Stay behind, I need to speak with you privately."
+        teacher "Wait. I need to speak with you privately for a moment. Please take a seat."
 
         "Nerves flutter in your stomach. You slowly walk over to their desk as the rest of the students filter out of the room. Great, what did you mess up this time?"
 
-        teacher "I’ve noticed you haven’t been eating lunch in a while. I checked with the lunch staff, and they said your account hasn’t had new funds added to it in weeks."
+        teacher "Now, I don’t want to pry… but I’m concerned."
 
-        "You frown, a defensive burning rising within your chest. That's not anyone else's business, why are they bringing it up?"
+        teacher "I noticed that you’re skipping lunch, at least on the days I have lunch duty. I checked with the lunch staff, and they said your account hasn’t had new funds added to it in weeks."
 
-        you "And?"
+        "You frown, a defensive heat rising within your chest. That's not anyone else's business, why are they bringing it up?"
+
+        you "And? What about it?"
 
         teacher "…Is everything alright at home? Should we sign you up for free lunches? What’s going on?"
 
@@ -177,19 +177,19 @@ label DreamScene:
 
         you "No!"
 
-        "You blurt the word out without thinking, then look away."
+        "You blurt the word out without thinking. Your teacher's eyes widen at the sudden outburst, making you avert your gaze in shame."
 
         you "…Look, I just don’t like asking them, okay? Trust me, it’s easier that way. Not like losing a few pounds would kill me, either."
 
-        "Whoops. You know that concerned look. You shouldn’t have said anything."
+        "You brave a glance back at their face. {i}Whoops.{/i} You know that concerned look. You shouldn’t have said anything."
 
-        teacher "Well… You know, my partner always packs me {i}way {/i} too much food for lunch, I can never eat it all."
+        teacher "Well… You know, my partner always packs me {i}way{/i} too much food for lunch, I can never eat it all."
 
-        "You give them a confused look as they set a lunchbox on the table."
+        "Brows furrowing, you stare as they set a shiny metal lunchbox out on the table."
 
         teacher "So, help me out with it? They always look so sad when I get home and haven’t eaten it all, so really, you’d be doing me a big favor."
 
-        "They open the lunchbox, and sure enough, it {i}is {/i} packed to the brim. Maybe they’re actually telling the truth."
+        "They open the lunchbox, and sure enough, it {i}is{/i} packed to the brim. Maybe they’re actually telling the truth."
 
         "Or maybe you’re just hungry. You feel your stomach gurgle."
 
@@ -200,7 +200,7 @@ label DreamScene:
         # VSFX Shadowy Figure 2 fade out
         hide teacher onlayer screens with dissolve
 
-        "From then on, that was your lunch routine. Your teacher never asked any too-hard questions, and you two would just chat about the simple things." 
+        "From then on, that was your lunch routine. Your teacher never asked any too-hard questions; You two would just chat about the simple things." 
 
         "Sometimes, you wished they would ask. Sometimes, you wished they would do something about it."
 
