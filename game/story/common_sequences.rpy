@@ -99,10 +99,10 @@ label AshinaShiftFromWolf:
         return
 
 label AshinaScaryShift:
-        show ash thoughtful_reverse:
-                xoffset 40
-        with dissolve
-        with Pause(0.05)
+        #show ash thoughtful_reverse:
+        #        xoffset 40
+        #with dissolve
+        #with Pause(0.05)
         show ash hybrid arms down:
                 xoffset -305
         with dissolve
@@ -121,10 +121,10 @@ label AshinaScaryShift:
         return
 
 label AshinaScaryShiftReverse:
-        show ash thoughtful:
-                xoffset 40
-        with dissolve
-        with Pause(0.15)
+        #show ash thoughtful:
+        #        xoffset 40
+        #with dissolve
+        #with Pause(0.15)
         show ash hybrid arms down:
                 xoffset 0
         with dissolve
@@ -169,14 +169,14 @@ label Shake:
         with dissolve
         return
 
-label FastShake:
+label Shiver:
         camera:
                 subpixel True 
-                linear 0.05 xpos 15
-                linear 0.05 xpos -15
-                linear 0.05 xpos 15
-                linear 0.05 xpos -15
-                linear 0.05 xpos 0
+                linear 0.05 xoffset 10 yoffset -1
+                linear 0.05 xoffset -10 yoffset 2
+                linear 0.05 xoffset 7 yoffset 1
+                linear 0.05 xoffset -7 yoffset -2
+                linear 0.05 xoffset 0 yoffset 0
         with dissolve
         return
 

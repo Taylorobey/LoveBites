@@ -118,9 +118,11 @@ label FailedRescueScene:
 
         you "How did you find this place? No, scratch that…how did you even know I was here?"
 
+        cam "Well..."
+
         show cam friendly at pacing
 
-        cam "I was making a run to the corner store, you know, the one on the edge of town, for my papi. Anyways, on my way out, I saw this huge wolf dragging you out into the woods!"
+        cam "I was grabbing some stuff for my papi at the corner store. You know, the one on the edge of town? Anyways, on my way out, I saw this huge wolf dragging you out into the woods!"
         # VSFX Cameron (Slowly moving across the screen, as if pacing)     
 
         cam "I didn’t even think, I just started following, but I couldn’t get close because there were a bunch of dogs around, and they didn’t look friendly. I followed you all the way to this cabin." 
@@ -202,13 +204,15 @@ label FailedRescueScene:
 
         # VSFX Cameron (Slowly moving across the screen, as if pacing)
         show cam friendly at pacing
-        cam "I’m probably the last person you thought would rescue you. I mean, when we found that wasp nest when we were kids, I ran screaming all the way home, just leaving you there."
+        cam "I’m probably the last person you thought would rescue you. I mean, remember when we found that wasp nest, when we were kids? I ran screaming all the way home, and just left you there!"
         
 
         window auto hide
         show cam friendly at stop_pacing
         pause(2)
-
+        show cam friendly:
+                pos(0.5,1.0)
+        pause(0.1)
         # VSFX Cameron (slight up and down motion, as if shrugging)
         show cam friendly:
                 subpixel True 
@@ -216,18 +220,40 @@ label FailedRescueScene:
                 linear 0.3 ypos 0.97
                 linear 0.3 ypos 1.0 
         with Pause(0.6)
+        show cam friendly:
+                pos(0.5,1.0)
+        pause(0.1)
         window auto show
 
 
-        cam "But, I dunno, I couldn’t leave without trying. So, come on, let’s go home and I’ll make you a nice, hot bowl of pozole."
-
-        "A shiver goes down your spine, and your breathing sounds... different. You get a {color=#1C4587}{b}strange feeling{/b}{/color}, like you're both here and standing outside of the room, but decide to refocus on Cam's words. This place is making you paranoid."
-
-
-        window auto hide
+        cam "But, I dunno, I couldn’t leave without trying. So come on, let’s go home and I’ll make you a nice, hot bowl of pozole."
 
         camera:
-                linear 1.0 matrixcolor TintMatrix("#fff")
+                subpixel True
+                parallel:
+                        linear 0.05 xoffset 10 yoffset -1
+                        linear 0.05 xoffset -10 yoffset 2
+                        linear 0.05 xoffset 7 yoffset 1
+                        linear 0.05 xoffset -7 yoffset -2
+                        linear 0.05 xoffset 0 yoffset 0
+                parallel:
+                        matrixcolor TintMatrix("#fff")
+                        linear 0.25 matrixcolor TintMatrix("#1C4587")
+        pause 0.25
+        show bg door closed onlayer screens:
+                subpixel True
+                alpha 0.25
+        with fast_dissolve
+
+        "A shiver goes down your spine, and your breathing sounds... different. You get a {color=#1C4587}{b}strange feeling{/b}{/color}, like you're both here and standing outside of the room."
+        
+        hide bg door closed onlayer screens with dissolve
+        camera:
+                linear 0.75 matrixcolor TintMatrix("#fff")
+
+        "You decide to refocus on Cam's words. This place is making you paranoid."
+
+        window auto hide
         menu:
                 "Agree to go with Cameron.":
                         jump GoWithCam
@@ -340,7 +366,7 @@ label CamCaught:
         show ash friendly with dissolve:
                 subpixel True xalign 0.4 zoom 1.5
 
-        show cam scared with dissolve
+        show cam scared with fast_dissolve
 
         # Music Capture
         play music capture_music volume 0.3 loop
@@ -377,7 +403,7 @@ label CamCaught:
 
         ash "A friend of yours, I take it?"
 
-        "Cameron, in contrast to their big talk beforehand, is now frozen with fear in your captor’s grasp."
+        "Cameron, despite their big talk beforehand, is now frozen with fear in your captor’s grasp."
 
         # VSFX Ashina and Cameron (further away)
         show ash angry hybrid:
@@ -409,11 +435,11 @@ label CamCaught:
                 xalign 0.78
         with moveinleft
 
-        ash "It’d be foolish of me to free a human that knows of this place. Much less someone so set on freeing my little pet." 
+        ash "It’d be foolish of me to set loose a human that knows of this place. Much less someone set on freeing my little pet." 
 
-        "You feel indignant over her calling you a \"little pet\", but decide this wouldn’t be the time to object."
+        "You feel indignant over her calling you a \"pet\", but decide this wouldn’t be the time to object."
 
-        ash "Perhaps, if you are a good girl, I’ll have mercy on your little friend here."
+        ash "Perhaps, if you are good, I’ll have mercy on your little friend here."
 
         # VSFX Ashina and Cameron (further away, as if backing out the door)
         show ash angry hybrid:
@@ -422,7 +448,7 @@ label CamCaught:
                 subpixel True xpos 0.61 ypos 45 zoom 1.1
         with dissolve
 
-        ash "Keep them in your thoughts whenever you feel like acting up again, won’t you?"
+        ash "Keep them in your thoughts whenever you feel like acting up, won’t you?"
 
         window auto hide
         stop music fadeout 2.0
