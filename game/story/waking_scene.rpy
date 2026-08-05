@@ -354,7 +354,6 @@ label ExamineWindow:
 
         #VSFX Slight Blue Tint (slow fade in)
         camera:
-                #matrixcolor TintMatrix("#1C4587")
                 matrixcolor TintMatrix("#fff")
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
 
