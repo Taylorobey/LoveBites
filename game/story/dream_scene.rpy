@@ -112,7 +112,7 @@ label DreamScene:
 
         you "Why did you have to have that stupid baby?!"
 
-        you "I {color=#ff0000}{b}hate{/b}{/color} you! I {color=#ff0000}{b}hate{/b}{/color} your wife, and I {color=#ff0000}{b}hate hate {i}hate{/i}{/b}{/color} your baby! I never want to see you again!"
+        you "I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} you! I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} your wife, and I {sc}{color=#ff0000}{b}hate hate {i}hate{/i}{/b}{/color}{/sc}  your baby! I never want to see you again!"
 
 
         window auto hide
