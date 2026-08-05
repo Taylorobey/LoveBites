@@ -390,7 +390,7 @@ label ExamineWindow:
                                 pause 0.3
                                 window auto show
 
-                                "You return to the bedside table, retrieve the plate of raw meat, and heave the meat out of the window."
+                                "You return to the bedside table, retrieve the plate of {color=#b70000}raw meat{/color}, and heave the meat out of the window."
                                 
                                 "The dogs rush towards your offered meal, tails wagging. You can't help but smile."
 

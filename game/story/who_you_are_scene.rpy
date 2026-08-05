@@ -10,18 +10,18 @@ label WhoYouAreScene:
         hide bg onlayer screens with dissolve
 
         window auto show
-        "When you next awake, something feels off. It only takes you a few moments to figure it out."
+        "When you next awake, you surprise yourself with a contented sigh."
 
         window auto hide
 
         call WakeUpSequence
 
         window auto show
-        "You feel rested. No aches, no pains, a pleasant warmth radiating from within you. You can’t remember the last time you felt this good. But, there’s something else, too."
+        "You feel rested. No aches, no pains... A pleasant warmth radiating from within you. You can’t remember the last time you felt this good. But, there’s something else, too."
 
         call PainFlash from _call_PainFlash_1
 
-        "Hunger, and a buzzing energy in your skin, making you acutely aware of every movement and the sensation of the sheets around you. You know somebody is standing {color=#1C4587}{b}outside{/b}{/color} of the door to your room."
+        "{color=#b70000}Hunger{/color} and a buzzing energy in your skin, making you hyperaware of every movement around you. You sense that somebody is standing {color=#1C4587}outside{/color} of the door to this room."
 
         stop soundb fadeout 0.5
 
@@ -44,7 +44,7 @@ label WhoYouAreScene:
         hide ash neutral with easeoutright
         window auto show
 
-        "You’re not sure if you want to follow her, but it's not like you have much of a choice."
+        "You’re not sure you {i}want{/i} to follow her, but it's not like you have much of a choice."
 
         window auto hide
 
@@ -70,7 +70,8 @@ label WhoYouAreScene:
         # VSFX Ashina (fade in)
         # Image Ashina Neutral
         ## change transform to have her standing in front of chair once hearth bg is done
-        show ash neutral at center
+        show ash neutral at center:
+                zoom 1.05 xzoom 1.10
         with dissolve
 
         "The woman stops and languidly gestures forward. You’re distracted by the muscles in her arm, the sight vivid and detailed in a way that’s unsettling. A loveseat made of furs and hides lies before you."
@@ -78,12 +79,15 @@ label WhoYouAreScene:
         ash "Well, don't just stand there. Sit."
 
         window auto hide
-        show ash neutral at center:
+        play sound walk
+        camera:
                 subpixel True
-                linear 1.0 pos(0.55,1.67) zoom 1.73
+                linear 1.0 offset (324.0, -153.0) zoom 1.35 
         with Pause(1.0)
-        show ash neutral:
-                pos(0.55,1.67) zoom 1.73
+        camera:
+                subpixel True
+                offset (324.0, -153.0) zoom 1.35
+        stop sound
         window auto show
 
         "Suddenly feeling bold, you meet her gaze instead, your hands balling into fists."
@@ -95,10 +99,23 @@ label WhoYouAreScene:
 
         "There’s a glitter of amusement in her eyes, her lips twitching at a smirk."
 
+        window auto hide
+        play sound fast_walk
+        camera:
+                subpixel True
+                linear 0.5 offset (0, 0) zoom 1.0
+        with Pause(1.0)
+        camera:
+                subpixel True
+                offset (0, 0) zoom 1.0
+        stop sound
+        pause 0.5
+        window auto show
+
         # Change name to show ashina now that it's been revealed
         $ ash_name = "Ashina"
 
-        ash "Ashina. Now, best you listen, unless you’d rather I pay your friend a visit."
+        ash "Ashina. Now, best you listen, unless you’d rather I pay your little friend a visit."
 
         window auto hide
 
@@ -124,9 +141,9 @@ label WhoYouAreScene:
                 pos(0.63,0.12) zoom 1.83 yrotate -180.0 
         window auto show
 
-        "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of raw meat sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
+        "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of {color=#b70000}raw meat{/color} sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
 
-        "The woman reaches forward and delicately plucks a slice of raw meat, before lowering it to her lips. She chews it as if it were soft as butter, her eyes burning into you with an intensity." 
+        "The woman reaches forward and delicately plucks a slice of {color=#b70000}raw meat{/color}, before lowering it to her lips. She chews as if it were soft as butter, her eyes burning into you with an intensity." 
         
         window auto hide
         # VSFX Ashina (fade out)
@@ -145,7 +162,7 @@ label WhoYouAreScene:
         play music eerie_outdoors_music volume 1.5
         # VSFX Zoom (as if looking down, at the table)
 
-        "You avert your gaze to the raw meat on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
+        "Your gaze is drawn to the {color=#b70000}raw meat{/color} on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
 
         window auto hide
         ## VSFX Screen Shake (like a shiver)
@@ -160,14 +177,15 @@ label WhoYouAreScene:
         call Shake
         window auto show
 
-
         you "What did you do to me…? I don't feel normal. Every little thing feels…"
 
         # VSFX Red (vision starts slowly tinting red)
-        show bg color red onlayer screens:
-                alpha 0.0
-                zoom 2.5
-                linear 5.0 alpha 0.8
+        camera:
+                matrixcolor TintMatrix("#fff")
+                linear 5.0 matrixcolor TintMatrix("#b70000")
+        show bg meat board onlayer screens:
+                alpha 0.0 zoom 3.0 xoffset -1300 yoffset -750
+                linear 1.0 alpha 0.20
 
         "Ashina’s voice sounds distant and muffled."
 
@@ -188,7 +206,7 @@ label WhoYouAreScene:
         ash "Take a deep breath and look at me."
 
         window auto hide
-        stop sound fadeout 1.0
+        stop sound fadeout 3.0
         pause(1.0)
         #skipping causes a zoom issue.
         
@@ -200,25 +218,34 @@ label WhoYouAreScene:
         with Pause(2.0)
         show ash caring with dissolve:
                 pos(0.5,0.22) zoom 1.8 yrotate -180.0 
-        window auto show
 
         # VSFX Effects gradually fade
-        camera:
-                subpixel True 
-                linear 1.0 blur 0.0
-        show bg color red onlayer screens:
+        stop music fadeout 5.0
+        show bg meat board onlayer screens:
                 subpixel True
-                linear 3.0 alpha 0.0
+                linear 2.0 alpha 0.0
+        camera:
+                subpixel True
+                parallel:
+                        linear 1.0 blur 0.0 
+                parallel:
+                        linear 1.0 matrixcolor TintMatrix("#fff")
+        with Pause(1.0)
         show pain onlayer screens:
                 subpixel True
                 linear 4.0 alpha 0.0
-        
-        stop music fadeout 3.0
+        with Pause(4.0)
+        hide bg meat board onlayer screens
+        hide bg color red onlayer screens
+        hide pain onlayer screens
         camera:
-                subpixel True 
+                subpixel True
+                matrixcolor TintMatrix("#fff")
                 pos (0, 0) zoom 1.0 blur 0.0
+        
+        window auto show
 
-        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {color=#1C4587}{b}depths{/b}{/color}, if you wanted to. You don’t. You definitely don’t."
+        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {color=#1C4587}depths{/color}, if you wanted to. You don’t. You definitely don’t."
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
 
@@ -238,14 +265,20 @@ label WhoYouAreScene:
 
         show ash friendly with fast_dissolve
 
-        ash "That is- What you have become, what you must do to survive, and why you can never return to your old life."
+        ash "That is — What you have become, what you must do to survive, and why you can never return to what your life once was."
 
         # Image Ashina Hybrid Thoughtful
-        show ash thoughtful with dissolve
+        show ash thoughtful:
+                subpixel True
+                xoffset -80
+        with dissolve
 
-        ash "I am, and you are, lykánthrōpos, lycanthrope, or in layman's terms, werewolf. Descendants of witches, able to infect others with our so-called curse."
+        ash "I am — no, {i}we{/i} are — {i}lykánthrōpos{/i}, lycanthropes, or in layman's terms, werewolves. Children of the night, descendants of witches, able to infect others with our so-called curse."
 
-        show ash sadistic with fast_dissolve
+        show ash sadistic:
+                subpixel True
+                xoffset 0
+        with fast_dissolve
 
         ash "There are many historical accounts of our supposed origins, most claiming that our distant ancestors became as we are through acts of heinous depravity, usually related to the consumption of human flesh."
 
@@ -266,11 +299,12 @@ label WhoYouAreScene:
         
         "The woman stands, walking around you as she speaks."
 
-        # VSFX Ashina (move from center to left)   
+        # VSFX Ashina (move from center to left)
+        pause 0.25  
         show ash neutral:
-                subpixel True ypos 0.03 
-                xpos 0.43 
-                linear 3.0 xpos -0.36
+                subpixel True
+                linear 4.0 xpos -0.36
+        play sound walk loop
 
         ash "We have heightened strength, senses, and connection with one another and canines. As the full moon approaches, we become closer to our beast, our wolf, and can change our skin with more ease."
 
@@ -289,7 +323,8 @@ label WhoYouAreScene:
         show ash neutral:
                 subpixel True ypos 0.03 
                 xpos 0.96 
-                linear 2.55 xpos 0.42 
+                linear 2.55 xpos 0.42
+        stop sound fadeout 4.0
 
         ash "You will need to be trained to handle your beast, lest you be driven mad with hunger and rage. And trust me, pup, you do not want that to happen."
 
@@ -310,7 +345,7 @@ label WhoYouAreScene:
 
         window auto show
 
-        ash "We are carnivores. We crave raw meat like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
+        ash "We are carnivores. We crave {color=#b70000}raw meat{/color} like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
@@ -335,7 +370,7 @@ label WhoYouAreScene:
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
         show ash thoughtful with dissolve:
-                xoffset -100
+                xoffset -180
                 xpos 0.2
 
         ash "And this is why we cannot be around people. The sight of us losing control for even a moment, or worse, the mistakes we make under the wolf’s influence, will be punished with death or torture."
@@ -344,16 +379,17 @@ label WhoYouAreScene:
         # Image Ashina Hybrid Thoughtful
         show ash thoughtful:
                 subpixel True
-                linear 0.30 xoffset 0 xpos 0.42 zoom 1.8
+                linear 0.30 xoffset -80 xpos 0.42 zoom 1.8
  
         ash "There is ugliness in what we are, but there is beauty, too. You will know it when you feel the wind flowing through your fur, and find you are a part of something so much greater than yourself."
 
         with Pause(0.30)
         show ash thoughtful:
-                xpos 0.42 zoom 1.8
+                xpos 0.42 zoom 1.8 xoffset -80
 
         # Image Ashina Neutral
-        show ash neutral with fast_dissolve
+        show ash neutral with fast_dissolve:
+                xoffset 0
 
         "She looks at you expectantly as she looms over you, and you realize she’s waiting for a response."
         label WHOdemochoice:
@@ -383,7 +419,7 @@ label AppreciationResponse:
 
         # Image Ashina Thoughtful
         show ash thoughtful:
-                xoffset -20
+                xoffset -80
         with dissolve
 
         ash "There used to be more of us, you know. Now I fear we may be the last. I, too, once had dreams. Those dreams died with my kin."
@@ -401,10 +437,10 @@ label AppreciationResponse:
 
         ash "Still… that doesn’t mean you cannot feel angry about it. The anger pushes us forward. That is its own kind of strength."
 
-        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {color=#1C4587}{b}sorrow{/b}{/color} that ebbs and flows into a {color=#1C4587}{b}calm{/b}{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
+        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {color=#1C4587}sorrow{/color} that ebbs and flows into a {color=#1C4587}calm{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
 
         window auto hide
-        pause 1.5
+        pause 2.5
         show ash neutral:
                 subpixel True
                 linear 1.0 pos(0.42,0.03) zoom 1.8
@@ -412,11 +448,13 @@ label AppreciationResponse:
 
         ash "I shall retire to my room. You may move about the cabin as you wish, but do stay inside."
 
+        window auto hide
         show ash neutral:
                 linear 0.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
         pause 0.5
         # VSFX Ashina (fade out)
         hide ash neutral with dissolve
+        window auto show
 
         "With that, she leaves, taking the calm with her."
 
@@ -483,7 +521,7 @@ label DisgustResponse:
         "Ashina takes a deep breath, clearly struggling to keep her own composure."
 
         show ash thoughtful:
-                xoffset -160
+                xoffset -80
         with dissolve
 
         ash "I see that you need more time to accept your new life."

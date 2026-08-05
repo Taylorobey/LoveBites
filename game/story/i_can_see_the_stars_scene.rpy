@@ -174,6 +174,10 @@ label ICanSeeTheStarsScene:
 
     ash "I've been waiting for a chance to show you the view of the stars here. I find it relaxing, and was hoping it'd help you feel the same."
 
+    show ash sad with fast_dissolve
+
+    ash "You see, when I look up at these stars, a favorite phrase of mine comes to mind: a sea of wonders. A place to let the mind… wander and wade."
+
     #Image Ashina Neutral
     show ash neutral with fast_dissolve
     #VSFX Ashina (closer)
