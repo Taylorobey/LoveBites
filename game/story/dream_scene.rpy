@@ -69,13 +69,14 @@ label DreamScene:
         #dramatic pause
         with Pause(1.0)
         hide bg ripple one onlayer screens with Dissolve(2.0)
+        pause 0.5
+        window auto show
+        "But, of course, good things don't last forever."
+        window auto hide
         pause 0.25
         show bg ripple two onlayer screens with Dissolve(2.0):
                 subpixel True xzoom 1.59 zoom 0.52
         pause 0.5
-        window auto show
-
-        "But, of course, good things don't last forever."
 
         window auto hide
         # VSFX Shadowy Figure 1 fade in
@@ -102,7 +103,7 @@ label DreamScene:
 
         neighbor "But, we can't just take you from your parents. They're your family." 
 
-        you "No, they're not! {i}You're{/i} my family!" 
+        you "No, they're not! {i}You're {/i} my family!" 
 
         "Your neighbor gives you an empathetic smile as you sink down to the ground, crying." 
 
@@ -112,14 +113,10 @@ label DreamScene:
 
         you "Why did you have to have that stupid baby?!"
 
-        you "I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} you! I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} your wife, and I {sc}{color=#ff0000}{b}hate hate {i}hate{/i}{/b}{/color}{/sc}  your baby! I never want to see you again!"
+        you "I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} you! I {sc}{color=#ff0000}{b}hate{/b}{/color}{/sc} your wife, and I {sc}{color=#ff0000}{b}hate hate {i}hate {/i}{/b}{/color}{/sc} your baby! I never want to see you again!"
 
-
-        window auto hide
         # VSFX Shadowy Figure 1 fade out
         hide neighbor onlayer screens with dissolve
-        window auto show
-
 
         "You run out of the house, never stopping to look back." 
 
@@ -130,13 +127,17 @@ label DreamScene:
         window auto hide
         pause 1.0
         hide bg ripple two onlayer screens with Dissolve(2.0)
+        pause 0.5
+        window auto show
+        "Soon, the scene is washed away, and the play begins anew."
+        window auto hide
         pause 0.25
         show bg ripple three onlayer screens with Dissolve(2.0):
                 subpixel True xzoom 1.59 zoom 0.52
         pause 0.5
         window auto show
-
-        "Soon, the scene is washed away, and the play begins anew. You're in a classroom and the teacher is giving yet another droning lesson. You're older now, just having started 9th grade."
+        
+        "You're in a classroom and the teacher is giving yet another droning lesson. You're older now, just having started 9th grade."
 
         "The lunch bell rings, jolting you out of your seat."
 
@@ -182,13 +183,13 @@ label DreamScene:
 
         "Whoops. You know that concerned look. You shouldn’t have said anything."
 
-        teacher "Well… You know, my partner always packs me {i}way{/i} too much food for lunch, I can never eat it all."
+        teacher "Well… You know, my partner always packs me {i}way {/i} too much food for lunch, I can never eat it all."
 
         "You give them a confused look as they set a lunchbox on the table."
 
         teacher "So, help me out with it? They always look so sad when I get home and haven’t eaten it all, so really, you’d be doing me a big favor."
 
-        "They open the lunchbox, and sure enough, it {i}is{/i} packed to the brim. Maybe they’re actually telling the truth."
+        "They open the lunchbox, and sure enough, it {i}is {/i} packed to the brim. Maybe they’re actually telling the truth."
 
         "Or maybe you’re just hungry. You feel your stomach gurgle."
 
@@ -196,12 +197,8 @@ label DreamScene:
 
         "Your teacher gives you a big smile."
 
-
-        window auto hide
         # VSFX Shadowy Figure 2 fade out
         hide teacher onlayer screens with dissolve
-        window auto show
-
 
         "From then on, that was your lunch routine. Your teacher never asked any too-hard questions, and you two would just chat about the simple things." 
 
@@ -283,7 +280,7 @@ label DreamScene:
 
                         window auto show
 
-                        "In the end, they all abandoned you. None of them were strong enough or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one{/i} of them had cared enough to {i}fight{/i} for you, to get you out of that terrible situation."
+                        "In the end, they all abandoned you. None of them were strong enough or kind enough to step out of their own damn comfort zones. Think of the person you could be now if just {i}one {/i} of them had cared enough to {i}fight {/i} for you, to get you out of that terrible situation."
                         "It fills you with rage. Rage at every not-so-innocent bystander with their plastered smiles, shielding themselves from the horrors of the world. It’s because of them you refuse to close your eyes to suffering. You’ll {color=#1C4587}{b}never{/b}{/color} be like them."
         stop music fadeout (2.5)
 
