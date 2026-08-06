@@ -111,7 +111,7 @@ label DreamScene:
 
         you "Why did you have to have that stupid baby?!"
 
-        you "I {sc}{=redtext}{b}hate{/b}{/}{/sc} you! I {sc}{=redtext}{b}hate{/b}{/}{/sc} your wife, and I {sc}{=redtext}hate hate hate{/b}{/}{/sc} your baby! I never want to see you again!"
+        you "I {sc}{=redtext}{b}hate{/b}{/}{/sc} you! I {sc}{=redtext}{b}hate{/b}{/}{/sc} your wife, and I {sc}{=redtext}{b}hate hate hate{/b}{/}{/sc} your baby! I never want to see you again!"
 
         # VSFX Shadowy Figure 1 fade out
         hide neighbor onlayer screens with dissolve

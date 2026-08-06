@@ -467,6 +467,7 @@ label ConfrontationPlanningScene:
     #SFX Walking
     play sound walking loop
     hide fog onlayer screens with dissolve
+    hide cabin smoke onlayer screens with fast_dissolve
     #Image Cabin Etx. Returning (With Dogs)
     #Image Cabin Door Open
     scene bg door open with dissolve
@@ -662,6 +663,61 @@ label ConfrontationPlanningScene:
             #Image Stairs Up
 
             "Left with your own churning thoughts and feelings, you make your way to bed."
+
+    else:
+        ash "Feeling better now?"
+
+        you "Yeah, the walk was nice. It felt good to stretch my limbs, get some fresh air…"
+
+        "You hope that Ashina doesn't notice your quickened breath and fidgeting fingers."
+
+        "Unfortunately, under the scrutiny of Ashina's gaze, it's as though your feelings are visible to the naked eye. Like you (blue)can't(blue) keep a secret from her, no matter how hard you try."
+
+        #Image Ashina Neutral
+        show ash neutral with fast_dissolve
+            
+        ash "Interesting how much you are sweating on such a very cold night…"
+
+        you "Oh, uh, it's nothing, I… I was just walking briskly and I worked up a bit of a sweat!"
+
+        "You chuckle nervously, your throat constricting."
+
+        #Image Ashina Annoyed
+        show ash annoyed with fast_dissolve
+
+        ash "Oh, please, pup. You can't hide the truth from me. I know {i}exactly{/i} what's going on here."
+
+        "Every hair on your body bristles as Ashina takes hold of your chin and tilts it up to meet her intense stare."
+
+        #Image Ashina Friendly
+        show ash friendly with fast_dissolve
+        #VSFX Ashina (closer)
+
+        ash "You must have loved feeling me watching your every move. Was that really all it took to get you so hot and bothered?"
+
+        "You stare blankly. That's the opposite of how you feel. Her invasive touch leaves a bitter taste in your mouth. How could she possibly think you {i}liked{/i} feeling so exposed and vulnerable?"
+
+        "But, you can't risk raising Ashina's suspicion. You recover with a submissive glance down, playing along with her fantasies for the time being."
+
+        show ash sadistic with fast_dissolve
+
+        ash "That look tells me all I have to know. I'm glad that you're starting to accept that you are mine, girl."
+
+        #Image Ashina Friendly 2
+        show ash caring with fast_dissolve
+
+        ash "This has been fun. I shall retire to my room for tonight. Be a good pet and get to sleep soon."
+
+        #VSFX Ashina (fade out)
+        hide ash caring with dissolve
+
+        "You watch as Ashina climbs up the stairs. Soon, you hear her shut the door to her room."
+
+        #SFX Walking
+        #Image Stairs Up
+
+        "Left with your own churning thoughts and feelings, you make your way to bed."
+
         
 
     window auto hide
@@ -669,7 +725,8 @@ label ConfrontationPlanningScene:
     stop soundb fadeout 1.0
 
     pause 2.0
-    # jump CreditsScene
-    jump ConfrontationScene
+    jump CreditsScene
+    
+    #jump ConfrontationScene
 
     return
