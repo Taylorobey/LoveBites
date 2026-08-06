@@ -232,10 +232,10 @@ image ash sadistic:
     subpixel True zoom 0.33  
 image ash thoughtful:
     "chars/ashina/ashina_thoughtful.png"
-    subpixel True zoom 0.33
+    subpixel True zoom 0.33 xoffset 20
 image ash thoughtful_reverse:
     "chars/ashina/ashina_thoughtful.png"
-    subpixel True xoffset -80 zoom 0.33
+    subpixel True zoom 0.33 xoffset -80
 image ash caring:
     "chars/ashina/ashina_caring.png"
     subpixel True zoom 0.33
@@ -264,49 +264,49 @@ image ash hurt:
 #Akari
 image aki neutral:
     "chars/akari/akari_neutral.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki bow drawn:
     "chars/akari/akari_bow.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki bow drawn angry:
     "chars/akari/akari_bow_angry.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki bow nocked:
     "chars/akari/akari_arrowready.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33 xoffset 10 yoffset -5
 image aki bow nocked side:
     "chars/akari/akari_arrowready_looktoside.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33 xoffset 10 yoffset -5
 image aki thoughtful:
     "chars/akari/akari_thoughtful.png"
-    subpixel True zoom 0.33 xpos 0.01 ypos -0.05
+    subpixel True zoom 0.33 xoffset 10 yoffset -5
 image aki thoughtful look:
     "chars/akari/akari_thoughtful_look.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33 xoffset 10 yoffset -5
 image aki angry:
     "chars/akari/akari_frustrated.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki caring:
     "chars/akari/akari_caring.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki determined:
     "chars/akari/akari_determined.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki fighting blur:
     "chars/akari/akari_knifeslashblur.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki fighting:
     "chars/akari/akari_knifeslash.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki fighting blood:
     "chars/akari/akari_knifeslashblood.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki knife:
     "chars/akari/akari_knifeready.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 image aki hurt:
     "chars/akari/akari_wounded.png"
-    subpixel True zoom 0.33 xpos 0 ypos 0
+    subpixel True zoom 0.33
 
 
 #Cameron
