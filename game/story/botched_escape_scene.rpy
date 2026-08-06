@@ -5,7 +5,7 @@ label BotchedEscapeScene:
         show bg hearth:
                 subpixel True
                 zoom 1.05 pos(1.44, -0.33)
-        
+        play sound walk loop
         #Image Cabin Hearth
         camera:
                 subpixel True
@@ -15,7 +15,6 @@ label BotchedEscapeScene:
         pause 1.5
 
         window auto show
-        play sound walk loop
 
         "You're left with your own thoughts as Ashina departs upstairs. You begin to wander the cabin aimlessly."
 
@@ -74,7 +73,7 @@ label BotchedEscapeScene:
         stop sound
         window auto show
 
-        "You take a few cautious steps outside, thinking your eyes must be playing tricks on you. Where did all the dogs go? Was this another lucky break, like when Cameron snuck in?"
+        "You take a few cautious steps outside, thinking your eyes must be playing tricks on you. Where did all the dogs go? Is this another lucky break, like when Cameron snuck in?"
 
         play sound walk loop
         # SFX Walking
@@ -154,8 +153,10 @@ label PleadCase:
 
         window auto hide
         # VSFX Akari nod
+        stop music fadeout 1.0
         show aki bow drawn with fast_dissolve
-        show aki bow drawn at jump_in_place
+        with Pause(0.25)
+        show aki bow drawn at nod_slow
         with Pause(0.40)
         show aki bow drawn
         window auto show
@@ -255,6 +256,7 @@ label CallOut:
         aki "Who are you yelling for? You should be the only one here."
 
         window auto hide
+        stop music fadeout 1.0
         # VSFX Akari (move slightly back and forth horizontally, a small look around)
         show aki bow nocked side at shortpacing
         pause 3.0
@@ -270,7 +272,7 @@ label CallOut:
         $ aki_name = "Akari"
 
 
-        aki "You do look… different than I expected. Name’s Akari. How about you tell me-"
+        aki "You do look… different than I expected. Less monstrous, somehow. Name’s Akari. How about you tell me-"
 
 
         window auto hide
@@ -310,7 +312,7 @@ label BotchedConverge1:
 
         show ash annoyed with fast_dissolve
 
-        ash "I seem to recall telling you to stay inside, did I not, pup?"
+        ash "I seem to recall telling you to stay inside. Did I not, pup?"
 
         # VSFX Ashina (closer)
         show ash annoyed at step_close_short
@@ -319,6 +321,13 @@ label BotchedConverge1:
         "You turn to face Ashina as she steps closer, looming over you. You reflexively swallow."
 
         you "You… did."
+
+        show ash annoyed at nervous_shake
+
+        ash "{alpha=0.5}{size=25}{i}It does not do to trust people too much.{/i}{/size}{/alpha}"
+
+        "Ashina growls the phrase beneath her breath. It seems more meant for her, than for you."
+
 
         window auto hide
         # VSFX Ashina (moving to the right)
@@ -400,7 +409,7 @@ label ResistAshina:
                 subpixel True pos (0.5, 5.0) zoom 6.0
         
 
-        call FastShake
+        call Shiver
         stop sound
         ash "You will not walk away from me!"
         window auto hide
@@ -471,7 +480,7 @@ label ResistAshina:
         show bg hearth:
                 subpixel True pos (-0.70,1.25) zoom 1.5
         with Dissolve(0.05)
-        call FastShake
+        call Shiver
         stop sound
         stop soundc
         pause(0.25)
@@ -682,7 +691,7 @@ label BotchedConverge2:
                 #Image Ashina 
                 show ash thoughtful with fast_dissolve
                 #VSFX Ashina (closer)
-                call FastShake
+                call Shiver
                 "Ashina raises a hand as if she might hit you, and you reflexively flinch. She stops, a clear hesitation in her eyes."
 
                 # Image Ashina Concerned

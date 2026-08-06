@@ -268,10 +268,7 @@ label WhoYouAreScene:
         ash "That is — What you have become, what you must do to survive, and why you can never return to what your life once was."
 
         # Image Ashina Hybrid Thoughtful
-        show ash thoughtful:
-                subpixel True
-                xoffset -80
-        with dissolve
+        show ash thoughtful_reverse with dissolve
 
         ash "I am — no, {i}we{/i} are — {i}lykánthrōpos{/i}, lycanthropes, or in layman's terms, werewolves. Children of the night, descendants of witches, able to infect others with our so-called curse."
 
@@ -369,23 +366,23 @@ label WhoYouAreScene:
         with Pause(0.1)
         "Her voice becomes more like a growl as she advances on you. You feel your breath catch in your throat."
 
-        show ash thoughtful with dissolve:
-                xoffset -180
+        show ash thoughtful_reverse with dissolve:
+                xoffset -100
                 xpos 0.2
 
         ash "And this is why we cannot be around people. The sight of us losing control for even a moment, or worse, the mistakes we make under the wolf’s influence, will be punished with death or torture."
 
         # VSFX Ashina (further)
         # Image Ashina Hybrid Thoughtful
-        show ash thoughtful:
+        show ash thoughtful_reverse:
                 subpixel True
-                linear 0.30 xoffset -80 xpos 0.42 zoom 1.8
+                linear 0.30 xoffset 50 xpos 0.50 zoom 1.8
  
         ash "There is ugliness in what we are, but there is beauty, too. You will know it when you feel the wind flowing through your fur, and find you are a part of something so much greater than yourself."
 
         with Pause(0.30)
-        show ash thoughtful:
-                xpos 0.42 zoom 1.8 xoffset -80
+        show ash thoughtful_reverse:
+                xpos 0.50 zoom 1.8
 
         # Image Ashina Neutral
         show ash neutral with fast_dissolve:
@@ -418,9 +415,7 @@ label AppreciationResponse:
         ash "The world can be cruel. No matter how clear your vision for the future, reality wears you down over time."
 
         # Image Ashina Thoughtful
-        show ash thoughtful:
-                xoffset -80
-        with dissolve
+        show ash thoughtful_reverse with dissolve
 
         ash "There used to be more of us, you know. Now I fear we may be the last. I, too, once had dreams. Those dreams died with my kin."
 
@@ -520,9 +515,7 @@ label DisgustResponse:
 
         "Ashina takes a deep breath, clearly struggling to keep her own composure."
 
-        show ash thoughtful:
-                xoffset -80
-        with dissolve
+        show ash thoughtful_reverse with dissolve
 
         ash "I see that you need more time to accept your new life."
 
