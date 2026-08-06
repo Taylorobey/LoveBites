@@ -14,10 +14,12 @@ label SpeakNoEvilSceneP2:
         "You reach the basement and are hit with an earthy chill. You unlock the door with the key Ashina gave you, and step inside."
 
         window auto hide
+        play sound unlock volume 0.7
+        pause 0.5
+        play soundb door_open volume 0.4 noloop
         #Image Cabin Door Open
         show bg door open with dissolve:
                 subpixel True pos (0.5, -0.48) zoom 1.8
-
         #Image Basement Room    
         show bg basement with dissolve:
                 subpixel True ypos 0.01 zoom 1.0

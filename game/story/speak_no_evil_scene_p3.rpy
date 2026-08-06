@@ -116,6 +116,7 @@ label SpeakNoEvilSceneP3:
                 window auto hide
 
                 stop music fadeout 1.5
+                stop sound fadeout 1.5
                 stop soundb fadeout 1.5
                 show bg color black with Dissolve (2.0)
 
