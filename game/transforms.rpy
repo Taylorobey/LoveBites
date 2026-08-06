@@ -193,9 +193,9 @@ transform cam_surprise_jump:
 #transform for nodding motion
 transform nod:
     subpixel True 
-    linear 0.15 ypos 2.03 
-    linear 0.15 ypos 1.97 
-    linear 0.15 ypos 2.0
+    linear 0.15 yoffset +20
+    linear 0.15 yoffset -10
+    linear 0.15 yoffset 0
 
 transform nod_slow:
     subpixel True
