@@ -108,6 +108,17 @@ label start:
     #temporary jump for testing
     #jump TestScene
     jump IntroductoryCutscene
+
+    #testing defines
+    #define corruption = 3
+    #define humanity = 3
+    #define aka_lock = True
+    #define aka_approval = 2
+    #define ash_approval = 3
+    #define dog_approval = 2
+
+    #stop music fadeout 2.0
+    #jump ConfrontationPlanningScene
     
     # This ends the game.
     return

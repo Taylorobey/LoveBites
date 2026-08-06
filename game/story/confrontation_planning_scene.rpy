@@ -14,10 +14,12 @@ label ConfrontationPlanningScene:
     "You awake hours before dawn, tense with anticipation over your meeting with Akari. For some minutes, you remain still, suspended in the quiet. It's not fatigue that holds you back, but a bittersweet nostalgia. It’s strangely comforting, these life-or-death stakes."
 
     if corruption > 2:
-        "Maybe  being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you {color=#1C4587}{b}numb{/b}{/color}. The freedom to choose and act had lost its luster; It felt as useful as a candle in dense, endless fog."
+        "Maybe  being turned into a monster was just what you needed. Mundanity was driving you crazy, or more accurately, driving you numb. The freedom to choose and act had lost its luster; It felt as useful as a candle in dense, endless fog."
+        
+        "Now, it's like that fog has lifted, and you can see the {=bluetext}determined{/} flame you once thought snuffed out."
 
     if humanity > 2:
-        "...However, best not to look upon the past with rose-tinted glasses. You know that it’s dangerous to mistake routine for satisfaction. After all, that is, in part, what led you down this treacherous path. But, that’s {color=#ffff00}{b}life{/b}{/color}. You make mistakes. You learn from them. You keep moving forward."
+        "Best not to look upon the past with rose-tinted glasses. You know that it’s dangerous to mistake routine for satisfaction. After all, that is, in part, what led you down this treacherous path. But, that’s {=yellowtext}life{/}. You make mistakes. You learn from them. You keep moving forward."
 
     #Both of these could appear
 
@@ -131,18 +133,31 @@ label ConfrontationPlanningScene:
         #Image Ashina Thoughtful
         show ash thoughtful with fast_dissolve
 
-        ash "Surely you’ve felt it by now. Not only your {color=#1C4587}{b}connection{/b}{/color} to {i}them…{/i} but to me, as well. Trust me, you are capable of this. With time, you’ll be able to do much more amazing feats with our abilities."
+        ash "Surely you’ve felt it by now. Not only your {=bluetext}connection{/} to {i}them…{/i} but to me, as well. Trust me, you are capable of this. With time, you’ll be able to do much more amazing feats with our abilities."
 
         #Image Ashina Neutral
         show ash neutral with fast_dissolve
+        play music connection_music
+        camera:
+                matrixcolor TintMatrix("#fff")
+                linear 1.5 matrixcolor TintMatrix("#1C4587")
 
-        "She looks at you intensely, as if to prove her point. You feel a wave of {color=#1C4587}{b}confidence{/b}{/color} surge within you, washing away your doubt. It’s not the first time you’ve felt something like this."
+        "She looks at you intensely, as if to prove her point. You feel a wave of {=bluetext}confidence{/} surge within you, washing away your doubt. It’s not the first time you’ve felt something like this."
 
+        window auto hide
         #Image Ashina Caring
         show ash caring with fast_dissolve
+        camera:
+            linear 1.5 matrixcolor TintMatrix("#fff")
+        pause 1.5
+        camera:
+            matrixcolor TintMatrix("#fff")
+        stop music fadeout 1.5
+        window auto show
 
         ash "Yes, I believe you understand. Go now, and know I will never be too far for you to reach."
 
+        window auto hide
         hide ash caring with dissolve
 
     if dog_approval < 2:
@@ -182,7 +197,7 @@ label ConfrontationPlanningScene:
 
     "Maybe she meant to trick you all along. It wouldn’t be the first time that someone betrayed your trust."
 
-    "Just as you start to lose hope , you hear her voice from somewhere within the thick, shadowy foliage."
+    "Just as you start to lose hope, you hear her voice from somewhere within the thick, shadowy foliage."
 
     aki "You made it. Good."
 
@@ -190,7 +205,7 @@ label ConfrontationPlanningScene:
         subpixel True pos (0, 0) zoom 2.5
     with dissolve
 
-    "Akari leans out of her hiding spot, her eyes scanning your surroundings as if to ensure you’re alone. You’re not sure how she managed to evade your newly-keen senses. Although, considering her dedication, it made sense that she would have honed her abilities."
+    "Akari leans out of her hiding spot, her eyes scanning your surroundings as if to ensure you’re alone. You’re not sure how she managed to evade your newly-keen senses. Although, considering her dedication, it makes sense that she would have honed her abilities."
 
     show aki neutral with fast_dissolve
 
@@ -213,7 +228,7 @@ label ConfrontationPlanningScene:
         show bg forest edge:
             subpixel True ypos 2.2 zoom 2.74 
             xpos 1.37 
-            linear 40 xpos -0.37
+            linear 60 xpos -0.37
         
         play sound walking loop
 
@@ -245,6 +260,7 @@ label ConfrontationPlanningScene:
         
         show bg forest edge:
             xpos -0.37
+        with dissolve
         stop sound
         
         "You stop walking, then you let out what you hope to be a believably disappointed sigh."
@@ -283,7 +299,7 @@ label ConfrontationPlanningScene:
 
         aki "Alright. Meet me at dusk. Help me sneak in. We will rid this world of that monster once and for all."
 
-        "You wonder briefly why Akari is so hell-bent on killing Ashina. However, you’re lucky that the hooded woman hasn’t caught on to your little act. It’s not the time to go digging. Perhaps Ashina will have answers?"
+        "You wonder briefly why Akari is so hell-bent on killing Ashina. However, it’s not the time to go digging. You’re lucky that the hooded woman hasn’t caught on to your little act.  Perhaps Ashina will have answers..."
 
         you "Got it."
 
@@ -301,7 +317,11 @@ label ConfrontationPlanningScene:
 
         "Akari’s face subtly lights up, determination flashing in her eyes. But, something else is there, too. An expression you thought you'd never catch from the stoic monster-huntress."
 
-        "A flame of hope, burning bright against the night sky."
+        show aki caring with fast_dissolve
+
+        "A flame of {=yellowtext}hope{/}, burning bright against the night sky."
+
+        show aki determined with fast_dissolve
 
         aki "Then we will attack on the first night of the new moon, ten days from now. That night, we will meet at dusk, you will help me sneak in, and we will rid this world of that monster once and for all."
 
@@ -332,41 +352,75 @@ label ConfrontationPlanningScene:
 
             show aki thoughtful look with fast_dissolve
 
-            aki "I... had a twin brother. Akio."
+            aki "I... {w}had a twin brother. {w}Akio."
 
+            window auto hide
             hide aki thoughtful with dissolve
+            hide fog onlayer screens with dissolve
+            play sound walk
+            show bg cabin approach dogs:
+                subpixel True pos (0.5, 1.0) zoom 1.0
+            with dissolve
+            show cabin smoke onlayer screens with dissolve
+            pause 0.4
+            stop sound
+            window auto show
 
             "You can tell this is hard for her. Pretending it’s just for the sake of looking natural, you settle down, sitting with your back against a tree and facing the cabin. You hear Akari sit behind you, nearby."
 
-            aki "He was such a bright, cheerful boy. Sure, we bickered, as siblings do, but he always found a way to make me smile. We were inseparable."
+            aki "He was such a bright, cheerful boy. We bickered, as siblings do, but he always found a way to make me smile. We were... inseparable."
 
             "She pauses. You can imagine her bittersweet expression, searching for words. You let her take all the time that she needs."
 
-            aki "He loved the forest, always pestering our parents to take us out to explore. It was inconvenient, as we lived near the center of the city."
+            window auto hide
+            pause 2.0
+            window auto show
 
-            aki "It happened when we were eight years old. I was staying over with a friend. Mom and dad were busy, and he slipped away… When my parents picked me up without him, I knew something was wrong."
+            aki "He loved the forest, always pestering our parents to take us out to explore. It was inconvenient, as we lived near the center of the city. But it made him {i}so{/i} happy."
 
-            aki "I overheard them seeking help from police, friends, neighbors. My gut told me he was in the forest."
+            aki "That's how I like to remember him. The way he was, not the way he ended up."
+
+            aki "It happened when we were eight years old. I was staying over with a friend. Mother and father were busy, and he slipped away… When my parents picked me up without him, I knew something was wrong."
+
+            aki "I overheard them calling the police, friends, neighbors. My gut told me he was in the forest."
 
             aki "Initially, my parents dismissed me, but I knew Akio was clever. When I brought it up again, my parents were desperate enough to try."
 
             "The tumbling words suddenly stall out, and you can hear the shake in Akari’s breath before she resumes."
 
-            aki "We found him. Mother tried to shield my eyes, but it was too late."
+            aki "We found him. Mother tried to shield my eyes, but it was {sc}too late.{/sc}"
 
-            "The {color=#ff0000}{b}pain{/b}{/color} in her voice stabs your heart as if it were your own. Without thinking, you reach back. Your hand finds hers, and she flinches back. Just when you’re about to pull away, her hand suddenly pins yours in a firm, trembling grip."
+            "The {sc}{=redtext}pain{/}{/sc} in her voice stabs your heart as if it were your own."
+            
+            "Without thinking, you reach back. Your hand finds hers, and she flinches away. Just when you’re about to settle back, her hand suddenly pins yours in a firm, {sc}trembling{/sc} grip."
 
-            aki "His body… ruined. Torn apart by a monster. Eyes, unforgettable eyes stared out from the forest. Later, the police said it was an animal attack, but I knew."
+            aki "His body… {w}{sc}ruined{/sc}. {w}Torn apart by... {w}{sc}a monster{/sc}."
+            
+            "Your heart sinks. There's a deep inhale behind you, followed by a rough exhale."
+            
+            aki "For just a moment, I saw a pair of eyes staring out from the forest, and the shadow of something… humanoid, before it vanished."
+            
+            aki "Later, the police said it was an animal attack, but I {i}knew.{/i} I knew there was more to it."
 
             "You squeeze Akari’s hand, ignoring the slight pain from her iron grip. Seeming to notice, her grip loosens. A long pause hangs in the air."
 
+            window auto hide
+            pause 5.0
+            window auto show
+
             aki "... I have never told anyone that before."
 
-            "Her voice is quietly shocked at her own confession. You let out a breath you didn’t realize you were holding, empathy weighing on your heart."
+            "Her voice is quietly shocked at her own confession. You let out a breath you didn’t realize you were holding."
 
             you "I am so sorry, Akari. You shouldn’t have had to see that."
 
+            show bg forest edge
+            show fog onlayer screens:
+                alpha 0.75
+            with dissolve
+            hide cabin smoke onlayer screens with fast_dissolve
             show aki thoughtful with fast_dissolve
+            pause 0.5
 
             "You turn to look at Akari. She’s looking away, her gaze distant."
 
@@ -441,7 +495,7 @@ label ConfrontationPlanningScene:
 
             show aki determined with fast_dissolve
 
-            aki "No. Too dangerous."
+            aki "No. We have no reason to do so."
 
             "Akari’s response is immediate, and her tone leaves no room for disagreement."
 
@@ -474,7 +528,7 @@ label ConfrontationPlanningScene:
     pause 0.5
     stop sound
 
-    "You walk back to the cabin like you mean business, just in case someone is watching you."
+    "You walk back to the cabin in a thoughtful silence."
 
     #Image Hearth
     play sound walking loop
@@ -510,6 +564,8 @@ label ConfrontationPlanningScene:
 
         you "Can I… ask you something?"
 
+        show ash annoyed with fast_dissolve
+
         "Ashina gives you an annoyed look."
 
         #Image Ashina Thoughtful
@@ -536,18 +592,18 @@ label ConfrontationPlanningScene:
             #Image Ashina Sad
             show ash sad with fast_dissolve
 
-            ash "As I have mentioned before, there is a beastly wolf within both of us. If we are not careful, extreme conditions or emotions can cause them to take over."
+            ash "As I have mentioned before, there is a beastly wolf within both of us. If we are not careful, extreme conditions or emotions can cause our instincts to take over."
 
             #VSFX Ashina (slowly walking to the side)
             show ash sad:
                 linear 4.0 xalign 1.0
 
-            ash "It was a harsh winter, and I was young. I went without food in secret, so that there would be more left for my kin. I knew that it was foolhardy and reckless, but I thought myself strong enough to resist the wolf."
+            ash "It was a harsh winter, and I was young. I went without food in secret, so that there would be more left for my kin. I knew that it was foolhardy and reckless, but I thought myself strong enough to resist."
 
             #Image Ashina Thoughtful
             show ash thoughtful with fast_dissolve
 
-            ash "I wasn’t. The next thing I knew, I was hunched over the remains of a child, covered in his blood. I had consumed half of him before being able to stop myself."
+            ash "I wasn’t. The next thing I knew, I was hunched over the remains of a child, covered in his blood. I had consumed half of him before I was able to stop myself."
 
             #Image Ashina Sad
             show ash sad with fast_dissolve
@@ -563,8 +619,10 @@ label ConfrontationPlanningScene:
                     matrixcolor TintMatrix("#fff")
                     linear 3.0 matrixcolor TintMatrix("#1C4587")
             play music connection_music volume 0.4 fadein 1.5
+            pause 2.0
+            call Shake
 
-            "A wave of guilt and self-disgust hurls you forward. Deep, endless regret compresses your throat, causing you to cough and sputter. You barely feel Ashina catch your arms to keep you upright."
+            "A wave of {=bluetext}guilt{/} and {=bluetext}self-disgust{/} hurls you forward. {=bluetext}Deep, endless regret{/} compresses your throat, causing you to cough and sputter. You barely feel Ashina catch your arms to keep you upright."
 
             #VSFX Blue (tint back to normal)
             pause(0.5)
@@ -592,7 +650,7 @@ label ConfrontationPlanningScene:
             #Image Ashina Thoughtful (further away again)
             show ash thoughtful with fast_dissolve
 
-            ash "Meet with her, and help her inside, as she asked. Then, I will face her, and give her the fight she deserves. What you do then, is up to you."
+            ash "Meet with her and help her inside, as she asked. Then, I will face her and give her the fight she deserves. What you do then, is up to you."
 
             #VSFX Ashina (fade out)
             hide ash thoughtful with dissolve
@@ -609,30 +667,23 @@ label ConfrontationPlanningScene:
             #Image Ashina Thoughtful (further away)
             show ash thoughtful with fast_dissolve
 
-            ash "Yes… I know of Akari's motivations. It's nothing of your concern."
+            ash "Yes… I know of what drives that girl. It is nothing of your concern."
 
             #Image Ashina Neutral
             show ash neutral with fast_dissolve
                 
-            ash "You don't need all of the details. Just let her in, and I will take care of the rest." 
+            ash "You don't need all of the details. Just let her in and I will take care of the rest." 
 
-            you "But if I'm going to help her sneak in, I think I should know–"
+            you "But, if I'm going to help her sneak in, I think I should know–"
 
             #VSFX Screen Shake
             #Image Ashina Angry Hybrid (closer)
             show ash angry hybrid:
                 subpixel True pos(0,0) zoom 2.0
             # player shakes, scared
-            camera:
-                    subpixel True 
-                    linear 0.1 xpos 5 
-                    linear 0.1 xpos -5
-                    linear 0.1 xpos 5 
-                    linear 0.1 xpos -5
-                    linear 0.1 xpos 0
-            with dissolve
+            call Shiver
 
-            ash "I don't. Want. To talk about it! What about that don't you understand?!"
+            ash "I don't. {w=10}Want. {w=10}To talk about it! {w=10}What about that don't you understand?!"
                 
             "Ashina's chest heaves as she attempts to calm herself."
 
@@ -652,7 +703,7 @@ label ConfrontationPlanningScene:
             #VSFX Ashina (further)
             show ash sad with fast_dissolve
 
-            ash "Tonight… Simply meet with Akari, and let her inside. I will confront her then. Join me in the fight, or don't. Just don't get in the way." 
+            ash "Tonight… Simply meet with Akari and let her inside. I will confront her then. Join me in the fight, or don't. Just don't get in the way." 
 
             #VSFX Ashina (fade out)
             hide ash sad with fast_dissolve
@@ -671,7 +722,7 @@ label ConfrontationPlanningScene:
 
         "You hope that Ashina doesn't notice your quickened breath and fidgeting fingers."
 
-        "Unfortunately, under the scrutiny of Ashina's gaze, it's as though your feelings are visible to the naked eye. Like you (blue)can't(blue) keep a secret from her, no matter how hard you try."
+        "Unfortunately, under the scrutiny of Ashina's gaze, it's as though your feelings are visible to the naked eye. Like you {=bluetext}can't{/} keep a secret from her, no matter how hard you try."
 
         #Image Ashina Neutral
         show ash neutral with fast_dissolve
@@ -701,22 +752,26 @@ label ConfrontationPlanningScene:
 
         show ash sadistic with fast_dissolve
 
-        ash "That look tells me all I have to know. I'm glad that you're starting to accept that you are mine, girl."
+        ash "That look tells me all I have to know. I'm glad that you're starting to accept that you are {i}mine{/i}, girl."
 
         #Image Ashina Friendly 2
         show ash caring with fast_dissolve
 
         ash "This has been fun. I shall retire to my room for tonight. Be a good pet and get to sleep soon."
 
-        #VSFX Ashina (fade out)
-        hide ash caring with dissolve
+        show ash thoughtful with fast_dissolve
 
-        "You watch as Ashina climbs up the stairs. Soon, you hear her shut the door to her room."
+        "There's a flicker of empty distance in Ashina's eyes, like she's distracted by some dark thought. Perhaps she isn't having as much fun as she's letting on. Or perhaps she's onto you."
+
+        #VSFX Ashina (fade out)
+        hide ash thoughtful with dissolve
+
+        "You watch as Ashina climbs up the stairs with an unsettled feeling in your gut. Soon, you hear her shut the door to her room."
 
         #SFX Walking
         #Image Stairs Up
 
-        "Left with your own churning thoughts and feelings, you make your way to bed."
+        "Left with your own churning thoughts, you make your way to bed."
 
         
 
@@ -726,7 +781,7 @@ label ConfrontationPlanningScene:
 
     pause 2.0
     jump CreditsScene
-    
+
     #jump ConfrontationScene
 
     return
