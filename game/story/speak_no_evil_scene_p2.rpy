@@ -43,7 +43,7 @@ label SpeakNoEvilSceneP2:
         show cam friendly at cam_surprise_jump
         with Pause(0.55)
 
-        cam "{i}Ohmygosh{/i}"
+        cam "{i}Ohmygosh!{/i}"
 
         #VSFX Cameron (moves closer, then fades out)
         window auto hide
@@ -129,14 +129,14 @@ label SpeakNoEvilSceneP2:
                 if humanity >= 3:
                         menu:
                                 #if Humanity is 3, this is the only option, and it auto-succeeds
-                                "{color=#ffff00}{b}It’s okay. You can go.{/b}{/color}":
+                                "{=yellowtext}{b}It’s okay. You can go.{/b}{/}":
                                         $ humanity_chance = True
                                         jump HumanityChoice
 
                 elif corruption >= 3:
                         menu:
                                 #if Corruption is 3, this is the only option, and it auto-succeeds
-                                "{color=#1C4587}{b}I don’t want you here.{/b}{/color}":
+                                "{=bluetext}{b}I don’t want you here.{/b}{/}":
                                         $ corrupted_chance = True
                                         jump CorruptedChoice
 
@@ -185,7 +185,7 @@ label SpeakNoEvilSceneP2:
 
                                 #Humanity % Choice
                                 #if Humanity is 1 or 2
-                                "{color=#ffff00}{b}It’s okay. You can go.{/b}{/color}":
+                                "{=yellowtext}{b}It’s okay. You can go.{/b}{/}":
                                         $ rand_chance = renpy.random.randint(0,100)
                                         $ compare_chance = humanity * 33
                                         if rand_chance <= compare_chance:
@@ -194,7 +194,7 @@ label SpeakNoEvilSceneP2:
 
                                 #Corruption % Choice
                                 #if Corruption is 1 or 2
-                                "{color=#1C4587}{b}I don’t want you here.{/b}{/color}":
+                                "{=bluetext}{b}I don’t want you here.{/b}{/}":
                                         $ rand_chance = renpy.random.randint(0,100)
                                         $ compare_chance = corruption * 33
                                         if rand_chance <= compare_chance:

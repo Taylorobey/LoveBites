@@ -245,7 +245,7 @@ label FailedRescueScene:
                 alpha 0.25
         with fast_dissolve
 
-        "A shiver goes down your spine, and your breathing sounds... different. You get a {color=#1C4587}{b}strange feeling{/b}{/color}, like you're both here and standing outside of the room."
+        "A shiver goes down your spine, and your breathing sounds... different. You get a {=bluetext}strange feeling{/}, like you're both here and standing outside of the room."
         
         hide bg door closed onlayer screens with dissolve
         camera:

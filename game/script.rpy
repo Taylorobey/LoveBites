@@ -1,12 +1,12 @@
 ﻿# Declare characters used by this game.
-define aki = DynamicCharacter("aki_name", color="#982313", who_outlines=[(3, "#e7d4d2", absolute(0), absolute(0))])
+define aki = DynamicCharacter("aki_name", color="#982313", who_outlines=[(3, "#e7d4d2", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
 
-define ash = DynamicCharacter("ash_name", color="#1e22ae", who_outlines=[(3, "#d5d6eb", absolute(0), absolute(0))])
+define ash = DynamicCharacter("ash_name", color="#1e22ae", who_outlines=[(3, "#d5d6eb", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
 
-define cam              = Character("Cameron", color="#e7ab19", who_outlines=[(1, "#493505", absolute(0), absolute(0))])
-define you              = Character("You", color="#cecece", who_outlines=[(1, "#292929", absolute(0), absolute(0))])
-define neighbor         = Character("Neighbor", color="#444444", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))])
-define teacher          = Character("Teacher", color="#292929", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))])
+define cam              = Character("Cameron", color="#e7ab19", who_outlines=[(1, "#493505", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
+define you              = Character("You", color="#cecece", who_outlines=[(1, "#292929", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
+define neighbor         = Character("Neighbor", color="#444444", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
+define teacher          = Character("Teacher", color="#292929", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-5, who_italic=True)
 
 # Declare other variables to track for this game.
 define humanity         = 0
@@ -42,6 +42,20 @@ style bigtext:
 style skytext:
     yalign -0.55
     xalign 0.5
+style redtext:
+    color "#b70000"
+    size 40
+    italic True
+style bluetext:
+    color "#1651af"
+    size 40
+    italic True
+style yellowtext:
+    color "#e7ab19"
+    size 40
+    italic True
+#yellow alt ffff00
+
 
 #Supplementary audio channels
 #Extra SFX

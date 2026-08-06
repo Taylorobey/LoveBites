@@ -357,7 +357,7 @@ label ExamineWindow:
                 matrixcolor TintMatrix("#fff")
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
 
-        "A strange sensation rises within you. You feel... a connection. No, a labyrinth of connections. Then... Recognition. You are a {color=#1C4587}{b}sheep{/b}{/color} to be herded. A {color=#1C4587}{b}pup{/b}{/color} to be corrected."
+        "A strange sensation rises within you. You feel... a connection. No, a labyrinth of connections. Then... Recognition. You are a {=bluetext}{b}sheep{/b}{/} to be herded. A {=bluetext}{b}pup{/b}{/} to be corrected."
         
         
         if meat_eaten == True:
@@ -390,7 +390,7 @@ label ExamineWindow:
                                 pause 0.3
                                 window auto show
 
-                                "You return to the bedside table, retrieve the plate of {color=#b70000}raw meat{/color}, and heave the meat out of the window."
+                                "You return to the bedside table, retrieve the plate of {=redtext}raw meat{/}, and heave the meat out of the window."
                                 
                                 "The dogs rush towards your offered meal, tails wagging. You can't help but smile."
 

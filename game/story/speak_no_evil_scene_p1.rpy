@@ -207,7 +207,7 @@ label SpeakNoEvilSceneP1:
         show fire with dissolve:
             alpha 0.5
 
-        "There’s a haunted look in her eyes. A {color=#1C4587}{b}memory{/b}{/color} tugs at the edge of your consciousness. Crackling fire and {color=#1C4587}{b}mournful{/b}{/color} howls. Bottomless agony, threatening to pull you {color=#1C4587}{b}under{/b}{/color}."
+        "There’s a haunted look in her eyes. A {=bluetext}memory{/} tugs at the edge of your consciousness. Crackling fire and {=bluetext}mournful{/} howls. Bottomless agony, threatening to pull you {=bluetext}under{/}."
 
         show ash sad with fast_dissolve
 

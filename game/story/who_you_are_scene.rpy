@@ -21,7 +21,7 @@ label WhoYouAreScene:
 
         call PainFlash from _call_PainFlash_1
 
-        "{color=#b70000}Hunger{/color} and a buzzing energy in your skin, making you hyperaware of every movement around you. You sense that somebody is standing {color=#1C4587}outside{/color} of the door to this room."
+        "{=redtext}Hunger{/} and a buzzing energy in your skin, making you hyperaware of every movement around you. You sense that somebody is standing {=bluetext}outside{/} of the door to this room."
 
         stop soundb fadeout 0.5
 
@@ -141,9 +141,9 @@ label WhoYouAreScene:
                 pos(0.63,0.12) zoom 1.83 yrotate -180.0 
         window auto show
 
-        "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of {color=#b70000}raw meat{/color} sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
+        "You sit. She glides toward the seat opposite you. A spread of elegantly plated slices of {=redtext}raw meat{/} sits between the two of you. You could've mistaken it for a charcuterie board, if you didn’t know better."
 
-        "The woman reaches forward and delicately plucks a slice of {color=#b70000}raw meat{/color}, before lowering it to her lips. She chews as if it were soft as butter, her eyes burning into you with an intensity." 
+        "The woman reaches forward and delicately plucks a slice of {=redtext}raw meat{/}, before lowering it to her lips. She chews as if it were soft as butter, her eyes burning into you with an intensity." 
         
         window auto hide
         # VSFX Ashina (fade out)
@@ -162,7 +162,7 @@ label WhoYouAreScene:
         play music eerie_outdoors_music volume 1.5
         # VSFX Zoom (as if looking down, at the table)
 
-        "Your gaze is drawn to the {color=#b70000}raw meat{/color} on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
+        "Your gaze is drawn to the {=redtext}raw meat{/} on the table, and feel your mouth start to drool. Your pulse races as the bloody scent overpowers you. Your skin itches with a widespread pin-pricking sensation."
 
         window auto hide
         ## VSFX Screen Shake (like a shiver)
@@ -245,7 +245,7 @@ label WhoYouAreScene:
         
         window auto show
 
-        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {color=#1C4587}depths{/color}, if you wanted to. You don’t. You definitely don’t."
+        "You do so, and feel the sensations begin to subside. You feel as if you could get lost in her eyes, tumbling down into their {=bluetext}depths{/}, if you wanted to. You don’t. You definitely don’t."
 
         "Your captor stretches her arms out to her sides in a dramatic gesture."
 
@@ -345,7 +345,7 @@ label WhoYouAreScene:
 
         window auto show
 
-        ash "We are carnivores. We crave {color=#b70000}raw meat{/color} like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
+        ash "We are carnivores. We crave {=redtext}raw meat{/} like nothing else. Our emotions, like our senses, are heightened and must be kept in check."
 
         # VSFX Ashina (close to the screen/MC)
         show ash angry hybrid:
@@ -437,7 +437,7 @@ label AppreciationResponse:
 
         ash "Still… that doesn’t mean you cannot feel angry about it. The anger pushes us forward. That is its own kind of strength."
 
-        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {color=#1C4587}sorrow{/color} that ebbs and flows into a {color=#1C4587}calm{/color}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
+        "Ashina goes quiet, staring into the embers of the fireplace. For a moment, you feel an intense {=bluetext}sorrow{/} that ebbs and flows into a {=bluetext}calm{/}. You’re not sure how long the two of you sit there in reflective silence, but eventually, she rises."
 
         window auto hide
         pause 2.5
