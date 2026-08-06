@@ -51,10 +51,9 @@ style bluetext:
     size 40
     italic True
 style yellowtext:
-    color "#e7ab19"
+    color "#ffff00"
     size 40
     italic True
-#yellow alt ffff00
 
 
 #Supplementary audio channels
