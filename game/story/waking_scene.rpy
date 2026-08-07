@@ -357,7 +357,7 @@ label ExamineWindow:
                 matrixcolor TintMatrix("#fff")
                 linear 3.0 matrixcolor TintMatrix("#1C4587")
 
-        "A strange sensation rises within you. You feel... a connection. No, a labyrinth of connections. Then... Recognition. You are a {=bluetext}{b}sheep{/b}{/} to be herded. A {=bluetext}{b}pup{/b}{/} to be corrected."
+        "A strange sensation rises within you. You feel... a connection. No, a labyrinth of connections. Then... Recognition. You are a {=bluetext}sheep{/} to be herded. A {=bluetext}pup{/} to be corrected."
         
         
         if meat_eaten == True:

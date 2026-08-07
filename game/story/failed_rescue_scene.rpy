@@ -228,6 +228,7 @@ label FailedRescueScene:
 
         cam "But, I dunno, I couldn’t leave without trying. So come on, let’s go home and I’ll make you a nice, hot bowl of pozole."
 
+        play sound connection_music volume 0.25
         camera:
                 subpixel True
                 parallel:

@@ -4,6 +4,7 @@ label IntroductoryCutscene:
 
         window auto hide
         
+        play sound car volume 1.5
         #Image Street Intersection
         scene bg intersection
         
@@ -16,21 +17,24 @@ label IntroductoryCutscene:
                 ypos 1.15 zoom 1.15 
                 linear 0.15 ypos 1.0 zoom 1.1 
                 linear 0.15 ypos 1.0 zoom 1.0 
-
+        pause 0.1
         #VSFX White Flash
         #SFX Car Speeding By
-        #Music Introduction
-        play music intro_music loop volume 0.5
-        play sound car
-        play soundb heart volume 1.5 fadein 0.5
+        play soundb heart volume 0.8 fadein 0.5
         hide placeholder with flash
+        pause 0.1
         show bg intersection:
                 ypos 1.0 zoom 1.0
-        stop soundb
         pause 0.1
+        #Music Introduction
+        play music intro_music loop volume 0.5
         window auto show
+        # Dynamically turn Auto-Forward on for this sequence
+        $ _preferences.afm_enable = True
 
         narrator "A car speeds through the intersection and your heart nearly leaps out of your chest."
+
+        stop soundb fadeout 1.0
 
         narrator "It’s always like this. The misleadingly calm night interrupted by reckless drivers, enjoying the lack of accountability that the darkness affords them."
 
@@ -41,7 +45,6 @@ label IntroductoryCutscene:
         #VSFX Shaking text
 
         narrator "{sc}M o n s t e r s.{/sc}"
-        narrator "…"
         
         #SFX Walking (ongoing)
         play sound walk loop
@@ -90,24 +93,30 @@ label IntroductoryCutscene:
 
         narrator "It was easier when you had something to fight against, someone to prove wrong. Now, you’re left alone with yourself, and you don’t like what you see."
 
+        stop music fadeout 5.0
+
         narrator "…There sure are a lot of dogs out tonight. Sure, you see the occasional stray out at night, but this is something else…"
         
         #SFX Heartbeat
-        play soundb heart loop
+        play soundb heart loop volume 0.8
         
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
 
-        #SFX Growling
-        play sound growl
         #Music Introduction stops
-        stop music
+        stop soundb
+        stop sound
+
+        pause 0.1
         
         #Image Black Screen
-        scene bg color black with dissolve
-        
-        #VSFX Slow Typing, use cps tag
+        scene bg color black with fast_dissolve
+        pause 1.0
+        #SFX Growling
+        play sound growl
 
+        #VSFX Slow Typing, use cps tag
         narrator "{cps=4.5}YOU FEEL THEIR BREATH ON YOUR HEELS.{/cps}"
+        
         camera:
                 offset (0,0) zoom 1.0
 
@@ -119,10 +128,11 @@ label IntroductoryCutscene:
         play music capture_music volume 0.3
         #SFX Running
         play sound run loop
+        play soundb heart loop volume 1.0
         #SFX Barking
         play crickets barking volume 0.4
         #Image Street full of dogs
-        scene bg street full with dissolve
+        scene bg street full with fast_dissolve
         pause 0.1
         show streetrun
 
@@ -130,19 +140,19 @@ label IntroductoryCutscene:
 
 
         window auto hide
-        with Pause(0.5)
-
         #Image Dead-End Alley
-        scene bg alley with dissolve:
+        scene bg alley with fast_dissolve:
                 subpixel True zoom 0.5
-
+        hide fog onlayer screens with fast_dissolve
         #Image Wolf
-        show wolf neutral with dissolve:
+        show wolf neutral with fast_dissolve:
                 subpixel True offset (794.0, 297.0)
 
 
         #SFX Running stops
         stop sound
+
+        pause 0.5
 
         window auto show
 
@@ -153,36 +163,40 @@ label IntroductoryCutscene:
 
 
         window auto hide
+        #turns off auto forward after this scene
+        $ _preferences.afm_enable = False
 
         stop soundb fadeout 3.0
         stop crickets fadeout 5.0
 
         #image wolf snarling
-        show wolf snarl with dissolve:
+        show wolf snarl with fast_dissolve:
                 subpixel True offset (794.0, 297.0)
         play sound growl volume 1.5
 
-        pause(1.5)
-        stop sound fadeout .5
+        pause(2.5)
+        stop sound fadeout 0.5
         #Music Capture stops
         stop music fadeout 3.0
 
         #Image Wolf Lunging
-        show wolf lunge with Dissolve(0.1):
-                subpixel True offset (-70.0, -495.0) zoom 0.75 
-        $ renpy.pause(delay=0.05, hard=False)
-
-        hide fog onlayer screens
+        show wolf lunge:
+                subpixel True offset (-70.0, -495.0) zoom 0.75
+        
+        play goresfx bite_gore volume 0.2 noloop
 
         #VSFX Red flash
-        scene bg color red with Dissolve(0.05)
-        $ renpy.pause(delay=0.05, hard=False)
+        hide placeholder with redflash
+        scene bg color red with Dissolve(0.01)
+        $ renpy.pause(delay=0.01, hard=False)
+        hide placeholder with Dissolve(0.01)
+        $ renpy.pause(delay=0.01, hard=False)
         #Image Black Screen
         scene bg color black with Dissolve(0.1)
 
 
         #pause slightly for dramatic effect/to let dissolve finish
-        pause(1.0)
+        pause(2.0)
         
         #Image Game Title Screen
         show logo:

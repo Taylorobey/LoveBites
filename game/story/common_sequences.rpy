@@ -320,61 +320,61 @@ label GoOutsideNoDogs:
         return
 
 label corruption_animation:
-        show corruption_flame:
+        show corruption_flame onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 0.9
         with Dissolve(0.15)
-        show corruption_light:
+        show corruption_light onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 0.9
         with Dissolve(0.15)
-        show corruption_paw:
+        show corruption_paw onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 1.0
         with Dissolve(0.3)
         pause 0.2
-        show corruption_light:
+        show corruption_light onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 0.9
                 linear 1.0 alpha 0.0
         pause 0.4
-        show corruption_flame:
+        show corruption_flame onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 0.9
                 linear 1.0 alpha 0.0
         pause 0.2
-        show corruption_paw:
+        show corruption_paw onlayer screens:
                 pos(0.85,0.00) zoom 0.5 alpha 1.0
                 linear 0.25 alpha 0.4
                 linear 0.2 alpha 1.0
         pause 0.5
-        hide corruption_flame
-        hide corruption_light
-        hide corruption_paw with Dissolve(0.75)
+        hide corruption_flame onlayer screens
+        hide corruption_light onlayer screens
+        hide corruption_paw onlayer screens with Dissolve(0.75)
         pause 0.5
         return
 
 label humanity_animation:
-        show humanity_flame:
-                pos(0.85,0.00) zoom 0.5 alpha 0.8
+        show humanity_flame onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.8
         with Dissolve(0.15)
-        show humanity_light:
-                pos(0.85,0.00) zoom 0.5 alpha 0.8
+        show humanity_light onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.8
         with Dissolve(0.15)
-        show humanity_hand:
-                pos(0.85,0.00) zoom 0.5 alpha 0.7
+        show humanity_hand onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.7
         with Dissolve(0.3)
         pause 0.2
-        show humanity_light:
-                pos(0.85,0.00) zoom 0.5 alpha 0.8
+        show humanity_light onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.8
                 linear 1.0 alpha 0.0
         pause 0.4
-        show humanity_flame:
-                pos(0.85,0.00) zoom 0.5 alpha 0.8
+        show humanity_flame onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.8
                 linear 1.0 alpha 0.0
         pause 0.2
-        show humanity_hand:
-                pos(0.85,0.00) zoom 0.5 alpha 0.7
+        show humanity_hand onlayer screens:
+                pos(0.85,0.05) zoom 0.5 alpha 0.7
                 linear 0.25 alpha 0.3
                 linear 0.2 alpha 0.7
         pause 0.5
-        hide humanity_flame
-        hide humanity_light
-        hide humanity_hand with Dissolve(0.75)
+        hide humanity_flame onlayer screens
+        hide humanity_light onlayer screens
+        hide humanity_hand onlayer screens with Dissolve(0.75)
         pause 0.5
         return

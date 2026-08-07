@@ -216,7 +216,7 @@ label ICanSeeTheStarsScene:
         #Humanity Choice
         "Breathtaking.":
             $ humanity += 1
-            call humanity_animation #bugged
+            call humanity_animation
 
             you "..."
 

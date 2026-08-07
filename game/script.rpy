@@ -3,10 +3,10 @@ define aki = DynamicCharacter("aki_name", color="#982313", who_outlines=[(3, "#e
 
 define ash = DynamicCharacter("ash_name", color="#1e22ae", who_outlines=[(3, "#d5d6eb", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-3, who_italic=True)
 
-define cam              = Character("Cameron", color="#e7ab19", who_outlines=[(1, "#493505", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-3, who_italic=True)
+define cam              = Character("Cameron", color="#e7ab19", who_outlines=[(1, "#493505", absolute(0), absolute(0))], who_kerning=5.0, size=65, yoffset=-3, who_italic=True)
 define you              = Character("You", color="#cecece", who_outlines=[(1, "#292929", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-3, who_italic=True)
-define neighbor         = Character("Neighbor", color="#444444", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-3, who_italic=True)
-define teacher          = Character("Teacher", color="#292929", who_outlines=[(2, "#FFFFFF", absolute(0), absolute(0))], who_kerning=10.0, size=65, yoffset=-3, who_italic=True)
+define neighbor         = Character("Neighbor", color="#444444", who_outlines=[(2, "#cecece", absolute(0), absolute(0))], who_kerning=6.0, size=60, yoffset=-3, who_italic=True)
+define teacher          = Character("Teacher", color="#292929", who_outlines=[(2, "#cecece", absolute(0), absolute(0))], who_kerning=8.0, size=65, yoffset=-3, who_italic=True)
 
 # Declare other variables to track for this game.
 define humanity         = 0
@@ -32,7 +32,9 @@ define aka_lock         = False
 define cam_lock         = False
 
 # Declare functions for use in scripts
-define flash = Fade(0.1, 0.0, 3.0, color="#fff")
+define flash = Fade(0.1, 0.0, 1.0, color="#fff")
+define redflash = Fade(0.1, 0.0, 0.1, color="#b70000")
+
 style bigtext:
     color "#000"
     size 72
@@ -61,6 +63,7 @@ style yellowtext:
 init python:
     renpy.music.register_channel('soundb', "sound")
     renpy.music.register_channel('soundc', "sound")
+    renpy.music.register_channel('goresfx', "sound") #for gore sfx so that it can be turned off in settings without affecting other sfx
     renpy.music.register_channel('crickets', "sound")
     renpy.music.register_channel('indicators', "sound") #placeholder for UI humanity/corruption indicators
 
@@ -94,6 +97,13 @@ init:
     $ wipeleft = CropMove(0.5, "wipeleft")
     $ wiperight = CropMove(0.5, "wiperight")
 
+init python:
+    # Forces auto-forward mode to wait for voice files to finish before advancing
+    preferences.wait_voice = True
+    
+    # Adjust how many seconds it pauses AFTER the voice finishes
+    _preferences.afm_time = 0.4
+
 # The game starts here, but immediately jumps to the first scene.
 # Each scene is its own file for organizational purposes
 label start:
@@ -107,6 +117,7 @@ label start:
 
     #temporary jump for testing
     #jump TestScene
+    stop music fadeout 2.0
     jump IntroductoryCutscene
 
     #testing defines
@@ -116,8 +127,6 @@ label start:
     #define aka_approval = 2
     #define ash_approval = 3
     #define dog_approval = 2
-
-    #stop music fadeout 2.0
     #jump ConfrontationPlanningScene
     
     # This ends the game.

@@ -28,6 +28,7 @@ define audio.gore                   = "SFX/Gore.mp3"
 define audio.bark                   = "SFX/Bark.mp3"
 define audio.door_open              = "SFX/Door_Open.wav"
 define audio.unlock                 = "SFX/Unlock.flac"
+define audio.bite_gore              = "SFX/Bite_Gore.wav"
 #placeholders until audio effects are available
 
 
