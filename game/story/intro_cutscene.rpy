@@ -27,7 +27,7 @@ label IntroductoryCutscene:
                 ypos 1.0 zoom 1.0
         pause 0.1
         #Music Introduction
-        play music intro_music loop volume 0.5
+        play music intro_music loop volume 0.4
         window auto show
         # Dynamically turn Auto-Forward on for this sequence
         $ _preferences.afm_enable = True
