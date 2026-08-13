@@ -97,22 +97,31 @@ define gui.title_text_size = 150
 
 label splashscreen:
     show bg color black
-    pause 0.5
+    pause 0.75
     play music main_menu_music
-    show spook logo with Dissolve(1.0):
-        pos (0.03, 0.2) 
+    show biz logo with Dissolve(0.75):
+        zoom 2.0
+        pos (0.4, 0.4)
     pause 2.0
-    hide spook logo with Dissolve(0.5)
-    pause 0.5
-    show md logo with Dissolve(1.0):
-        subpixel True pos (0.01, 0.25) zoom 0.82 
-    pause 2.0
-    hide md logo with Dissolve(0.5)
-    pause 0.5
-    show menu no logo with Dissolve(1.0)
-    pause 1
-    show main menu with Dissolve(1.0)
-    pause 1
+    hide biz logo with Dissolve(0.5)
+    pause 01.0
+    show spook logo:
+        subpixel True pos (0.22, 0.08) zoom 0.55
+    show md logo:
+        subpixel True pos (0.08, 0.55) zoom 0.4
+    show yuri logo:
+        subpixel True pos (0.57, 0.47) zoom 1.0
+    with Dissolve(1.0)
+    pause 2.5
+    hide spook logo
+    hide md logo
+    hide yuri logo
+    with Dissolve(0.5)
+    pause 1.0
+    show menu no logo with Dissolve(0.75)
+    pause 0.75
+    show main menu with Dissolve(0.75)
+    pause 0.75
     return
 
 image mainmenubackground:

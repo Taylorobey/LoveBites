@@ -541,6 +541,8 @@ image theend = Text("{size=150}THE END", font="FrederickatheGreat-Regular.ttf", 
 image thanks = Text("Thanks for playing the demo!", font="FrederickatheGreat-Regular.ttf", size=100)
 image spook logo            = "gui/Spooktober_Logo.png"
 image md logo               = "gui/MDLogo.png"
+image yuri logo             = "gui/yuri_jam_logo.png"
+image biz logo              = "gui/bizzybee_logo.png"
 image menu no logo          = "gui/main_menu_nologo.png"
 image main menu             = "gui/main_menu.png"
 image black_background      = Solid("#000",xysize=(config.screen_width,config.screen_height)) #for wipe and other effects that need a black background
