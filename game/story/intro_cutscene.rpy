@@ -102,10 +102,11 @@ label IntroductoryCutscene:
         
         narrator "No, they’re just dogs. Maybe somebody left food out and it’s attracting them."
 
+        window auto hide
         #Music Introduction stops
         stop soundb
         stop sound
-
+        
         pause 0.1
         
         #Image Black Screen
@@ -128,7 +129,7 @@ label IntroductoryCutscene:
         play music capture_music volume 0.3
         #SFX Running
         play sound run loop
-        play soundb heart loop volume 1.0
+        #play soundb heart loop volume 1.0
         #SFX Barking
         play crickets barking volume 0.4
         #Image Street full of dogs
@@ -166,7 +167,7 @@ label IntroductoryCutscene:
         #turns off auto forward after this scene
         $ _preferences.afm_enable = False
 
-        stop soundb fadeout 3.0
+        #stop soundb fadeout 3.0
         stop crickets fadeout 5.0
 
         #image wolf snarling
